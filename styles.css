@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url(assets/manrope-latin.woff2) format('woff2');
+}
+
 :root {
   --accent: #2fb4b6;
   --accent-hover: #1f8f91;
