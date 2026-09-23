@@ -215,6 +215,18 @@ h1, h2, h3, p { margin: 0; }
 }
 .card h3 { font-size: 20px; font-weight: 700; }
 .card p { font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); }
+.card.media { padding-top: 0; overflow: hidden; }
+.card.media img {
+  display: block;
+  width: calc(100% + 52px);
+  max-width: none;
+  height: auto;
+  margin: 0 -26px 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--card-border);
+}
+.card .fine { font-size: 13px; color: var(--text-dim); margin-top: auto; }
 
 .compare-table {
   width: 100%;

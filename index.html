@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sightline: screenshots for macOS, for you and your AI agents</title>
-  <meta name="description" content="A fast screenshot tool for macOS with a clean editor, scrolling capture and text recognition, plus a built in MCP server so Claude Code, Claude Desktop and Codex can see your screen when you let them.">
+  <title>Sightline: screenshots for macOS, for you and your AI agent</title>
+  <meta name="description" content="A fast screenshot tool for macOS with a clean editor, scrolling capture and text recognition. It names screenshots from what is in them, spots passwords and keys before you share, blurs the shape you click, and has a built in MCP server so your AI agent can see your screen when you let it.">
   <link rel="icon" type="image/png" href="assets/favicon.png?v=3">
   <link rel="apple-touch-icon" href="assets/icon.png?v=3">
   <link rel="preload" href="assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -216,6 +216,18 @@ h1, h2, h3, p { margin: 0; }
 }
 .card h3 { font-size: 20px; font-weight: 700; }
 .card p { font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); }
+.card.media { padding-top: 0; overflow: hidden; }
+.card.media img {
+  display: block;
+  width: calc(100% + 52px);
+  max-width: none;
+  height: auto;
+  margin: 0 -26px 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--card-border);
+}
+.card .fine { font-size: 13px; color: var(--text-dim); margin-top: auto; }
 
 .compare-table {
   width: 100%;
@@ -371,6 +383,7 @@ h1, h2, h3, p { margin: 0; }
   <header class="wrap nav">
     <a class="brand" href="#"><img src="assets/icon.png?v=3" alt="" width="34" height="34">Sightline</a>
     <nav class="nav-links">
+      <a href="#new">New in 1.1</a>
       <a href="#features">Features</a>
       <a href="#demo">Demo</a>
       <a href="#agents">AI agents</a>
@@ -381,15 +394,15 @@ h1, h2, h3, p { margin: 0; }
   <main>
     <section class="wrap hero">
       <p class="eyebrow">Screenshots for macOS</p>
-      <h1>Capture, annotate, done. For you and your AI agents.</h1>
-      <p class="lead">A fast screenshot tool with a clean editor, scrolling capture and text recognition, plus a built in MCP server so Claude Code, Claude Desktop and Codex can see your screen when you let them.</p>
+      <h1>Capture, annotate, done. For you and your AI agent.</h1>
+      <p class="lead">A fast screenshot tool with a clean editor, scrolling capture and text recognition, plus a built in MCP server so your AI agent, such as Claude Code or Codex, can see your screen when you let it.</p>
       <div class="cta">
         <!-- TODO before launch: replace this hand drawn badge with Apple's official "Download on the Mac App Store" badge asset and set the real App Store link. -->
         <a class="store-badge" href="https://apps.apple.com/app/sightline/id6812521593">
           <svg width="22" height="22" aria-hidden="true"><use href="#apple"/></svg>
           <div><small>Download on the</small><strong>Mac App Store</strong></div>
         </a>
-        <span class="cta-note">7 day free trial · macOS 14 or later</span>
+        <span class="cta-note">Version 1.1 · 7 day free trial · macOS 14 or later</span>
       </div>
     </section>
 
@@ -402,30 +415,57 @@ h1, h2, h3, p { margin: 0; }
       </div>
     </div>
 
+    <section id="new" class="wrap section">
+      <p class="eyebrow">New in 1.1</p>
+      <h2>Screenshots that know what they show.</h2>
+      <p class="section-intro">Three things Sightline now does with a capture before you even look at it. All of it runs on your Mac.</p>
+      <div class="cards">
+        <article class="card media">
+          <img src="assets/new-blur-1040.webp" srcset="assets/new-blur-640.webp 640w, assets/new-blur-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A rectangle blur covering a person and the text beside them, next to a blur that covers only the person">
+          <h3>Blur the shape, not a box</h3>
+          <p>Click a face, an avatar or a line of text and the blur follows its outline. Shift click adds a part it missed, Option click takes one away.</p>
+          <p class="fine">Apple's on-device Vision model. macOS 27 or later.</p>
+        </article>
+        <article class="card media">
+          <img src="assets/new-secrets-1040.webp" srcset="assets/new-secrets-640.webp 640w, assets/new-secrets-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A terminal with environment variables whose secret values are blurred, with a banner offering to blur them">
+          <h3>It spots the secrets you missed</h3>
+          <p>Passwords, API keys and tokens in a capture are flagged and their values covered while the names stay readable. It can blur without asking, and before an agent is handed the image.</p>
+          <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
+        </article>
+        <article class="card media">
+          <img src="assets/new-names-1040.webp" srcset="assets/new-names-640.webp 640w, assets/new-names-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="Timestamped screenshot names turning into descriptive ones, and Spotlight finding one by name">
+          <h3>Names you can actually search</h3>
+          <p>Instead of a row of timestamps, a capture is named after what is in it, like stripe-webhook-401.png, and Spotlight finds it by that name. Capture actions are in Shortcuts too.</p>
+          <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="features" class="wrap section">
       <h2>Everything a screenshot needs</h2>
       <div class="cards">
         <article class="card">
           <h3>Capture anything</h3>
-          <p>Area, window, full screen, scrolling pages and text straight to the clipboard. The shortcuts you already know.</p>
+          <p>Area, window, full screen, scrolling pages and text straight to the clipboard. The shortcuts you already know, and Shortcuts actions for your automations.</p>
         </article>
         <article class="card">
           <h3>Annotate in seconds</h3>
-          <p>Arrows, shapes, numbered steps, blur and text on a floating toolbar that stays out of the way.</p>
+          <p>Arrows, shapes, numbered steps, blur and text on a floating toolbar that stays out of the way. Zoom in for pixel work, and every mark stays editable until you save.</p>
         </article>
         <article class="card">
           <h3>Built for your AI agents</h3>
-          <p>Claude Code, Claude Desktop and Codex can take, read and annotate screenshots through Sightline. You approve each agent, and every action shows a notice. Agentic integration is our top priority: new capabilities ship for agents first.</p>
+          <p>Your AI agent, such as Claude Code or Codex, can take, read and annotate screenshots through Sightline. You approve each agent, and every action shows a notice.</p>
         </article>
       </div>
     </section>
 
     <section id="demo" class="wrap section centered">
       <h2>See it in action</h2>
-      <p class="section-intro">Twenty-one seconds: capture, scroll and stitch, annotate, and an agent doing the same on request.</p>
+      <p class="section-intro">Twenty-one seconds: your agent takes the shot, you finish it in the editor, a blur follows a shape, secrets get spotted, and a screenshot names itself.</p>
       <div class="frame">
-        <video controls preload="metadata" playsinline poster="assets/agent-poster.webp" aria-label="An AI agent capturing and annotating a screenshot through Sightline">
-          <source src="assets/agent.mp4?v=3" type="video/mp4">
+        <video controls preload="metadata" playsinline poster="assets/demo-poster.webp" aria-label="The Sightline 1.1 teaser: an agent capture, the editor, subject blur, secret spotting and smart names">
+          <source src="assets/demo.webm?v=4" type="video/webm">
+          <source src="assets/demo.mp4?v=4" type="video/mp4">
         </video>
       </div>
     </section>
@@ -445,7 +485,11 @@ h1, h2, h3, p { margin: 0; }
           <tr><td>Text on screen straight to the clipboard</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
           <tr><td>Arrows, numbered steps, blur and crop in one editor</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
           <tr><td>Light and dark mode, tool names on hover</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
-          <tr><td>Works with Claude Code, Claude Desktop and Codex</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
+          <tr><td>Blur that follows a face or a line of text</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
+          <tr><td>Finds passwords and keys before you share</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
+          <tr><td>Names screenshots after what is in them</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
+          <tr><td>Actions for the Shortcuts app</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
+          <tr><td>Works with your AI agent over MCP</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
         </tbody>
       </table>
     </section>
@@ -454,7 +498,7 @@ h1, h2, h3, p { margin: 0; }
       <div class="agents-text">
         <p class="eyebrow">AI first</p>
         <h2>Let your agent see the screen, on your terms.</h2>
-        <p>Ask in plain words. Your agent lists your windows, captures the right one, finds the text it needs, scroll-captures a long page or marks up the result, all through Sightline. One click in Settings connects it, and each agent asks for your approval the first time.</p>
+        <p>Ask in plain words. Your agent lists your windows, captures the right one, finds the text it needs, scroll-captures a long page or marks up the result, all through Sightline. Open its shot in the editor and every mark is still yours to move. One click in Settings connects it, and each agent asks for your approval the first time.</p>
         <div class="pills"><span>Claude Code</span><span>Claude Desktop</span><span>Codex</span><span>Any MCP client</span></div>
       </div>
       <div class="frame">
@@ -462,7 +506,7 @@ h1, h2, h3, p { margin: 0; }
              srcset="assets/agent-prompt-640.webp 640w, assets/agent-prompt-1040.webp 1040w, assets/agent-prompt-2080.webp 2080w"
              sizes="(min-width: 1168px) 1040px, (min-width: 901px) calc(100vw - 128px), (min-width: 601px) calc(100vw - 64px), calc(100vw - 40px)"
              width="2080" height="1170" loading="lazy"
-             alt="A prompt to Claude Code on the left and the annotated screenshot Sightline produced on the right">
+             alt="A prompt to an AI agent on the left and the annotated screenshot Sightline produced on the right">
       </div>
     </section>
 
@@ -479,7 +523,7 @@ h1, h2, h3, p { margin: 0; }
         </article>
         <article class="card">
           <h3>Nothing leaves your Mac</h3>
-          <p>No account, no cloud, no analytics. Screenshots stay in your folder, and the agent connection is local only.</p>
+          <p>No account, no cloud, no analytics. Screenshots stay in your folder, the agent connection is local only, and text recognition, naming and the credential check run on device.</p>
         </article>
       </div>
     </section>
