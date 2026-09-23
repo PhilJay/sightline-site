@@ -383,7 +383,6 @@ h1, h2, h3, p { margin: 0; }
   <header class="wrap nav">
     <a class="brand" href="#"><img src="assets/icon.png?v=3" alt="" width="34" height="34">Sightline</a>
     <nav class="nav-links">
-      <a href="#new">New in 1.1</a>
       <a href="#features">Features</a>
       <a href="#demo">Demo</a>
       <a href="#agents">AI agents</a>
@@ -402,59 +401,54 @@ h1, h2, h3, p { margin: 0; }
           <svg width="22" height="22" aria-hidden="true"><use href="#apple"/></svg>
           <div><small>Download on the</small><strong>Mac App Store</strong></div>
         </a>
-        <span class="cta-note">Version 1.1 · 7 day free trial · macOS 14 or later</span>
+        <span class="cta-note">7 day free trial · macOS 14 or later</span>
       </div>
     </section>
 
     <div class="wrap hero-video">
       <div class="frame">
-        <video autoplay muted loop playsinline poster="assets/hero-poster.webp" aria-label="Sightline capturing and annotating a screenshot">
-          <source src="assets/hero.webm?v=3" type="video/webm">
-          <source src="assets/hero.mp4?v=3" type="video/mp4">
+        <video autoplay muted loop playsinline poster="assets/hero-poster.webp?v=4" aria-label="Sightline: an agent capture, the editor, subject blur, secret spotting and smart names">
+          <source src="assets/hero.webm?v=4" type="video/webm">
+          <source src="assets/hero.mp4?v=4" type="video/mp4">
         </video>
       </div>
     </div>
 
-    <section id="new" class="wrap section">
-      <p class="eyebrow">New in 1.1</p>
-      <h2>Screenshots that know what they show.</h2>
-      <p class="section-intro">Three things Sightline now does with a capture before you even look at it. All of it runs on your Mac.</p>
-      <div class="cards">
-        <article class="card media">
-          <img src="assets/new-blur-1040.webp" srcset="assets/new-blur-640.webp 640w, assets/new-blur-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A rectangle blur covering a person and the text beside them, next to a blur that covers only the person">
-          <h3>Blur the shape, not a box</h3>
-          <p>Click a face, an avatar or a line of text and the blur follows its outline. Shift click adds a part it missed, Option click takes one away.</p>
-          <p class="fine">Apple's on-device Vision model. macOS 27 or later.</p>
-        </article>
-        <article class="card media">
-          <img src="assets/new-secrets-1040.webp" srcset="assets/new-secrets-640.webp 640w, assets/new-secrets-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A terminal with environment variables whose secret values are blurred, with a banner offering to blur them">
-          <h3>It spots the secrets you missed</h3>
-          <p>Passwords, API keys and tokens in a capture are flagged and their values covered while the names stay readable. It can blur without asking, and before an agent is handed the image.</p>
-          <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
-        </article>
-        <article class="card media">
-          <img src="assets/new-names-1040.webp" srcset="assets/new-names-640.webp 640w, assets/new-names-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="Timestamped screenshot names turning into descriptive ones, and Spotlight finding one by name">
-          <h3>Names you can actually search</h3>
-          <p>Instead of a row of timestamps, a capture is named after what is in it, like stripe-webhook-401.png, and Spotlight finds it by that name. Capture actions are in Shortcuts too.</p>
-          <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
-        </article>
-      </div>
-    </section>
-
     <section id="features" class="wrap section">
       <h2>Everything a screenshot needs</h2>
       <div class="cards">
-        <article class="card">
+        <article class="card media">
+          <img src="assets/feature-editor-1040.webp" srcset="assets/feature-editor-640.webp 640w, assets/feature-editor-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="The Sightline editor showing an agent's green marks and a yellow highlight and badge the person added">
+          <h3>Your agent starts. You finish.</h3>
+          <p>Open the agent's shot in the editor. Every mark stays editable, and you add your own in seconds. Zoom in for pixel work.</p>
+        </article>
+        <article class="card media">
+          <img src="assets/feature-capture-1040.webp" srcset="assets/feature-capture-640.webp 640w, assets/feature-capture-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="The capture overlay over a window next to the Sightline menu with every capture mode">
           <h3>Capture anything</h3>
           <p>Area, window, full screen, scrolling pages and text straight to the clipboard. The shortcuts you already know, and Shortcuts actions for your automations.</p>
         </article>
-        <article class="card">
-          <h3>Annotate in seconds</h3>
-          <p>Arrows, shapes, numbered steps, blur and text on a floating toolbar that stays out of the way. Zoom in for pixel work, and every mark stays editable until you save.</p>
+        <article class="card media">
+          <img src="assets/feature-secrets-1040.webp" srcset="assets/feature-secrets-640.webp 640w, assets/feature-secrets-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A terminal with environment variables whose secret values are blurred, with a banner offering to blur them">
+          <h3>It spots the secrets you missed</h3>
+          <p>Passwords, API keys and tokens are flagged and their values covered while the names stay readable. It can blur without asking, and before an agent is handed the image.</p>
+          <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
         </article>
-        <article class="card">
-          <h3>Built for your AI agents</h3>
-          <p>Your AI agent, such as Claude Code or Codex, can take, read and annotate screenshots through Sightline. You approve each agent, and every action shows a notice.</p>
+        <article class="card media">
+          <img src="assets/feature-plain-1040.webp" srcset="assets/feature-plain-640.webp 640w, assets/feature-plain-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A dashboard annotated by an agent next to the MCP calls it made">
+          <h3>Ask in plain words</h3>
+          <p>Your agent captures the right window, finds what you named and marks up the result, through capture_window, find_text and annotate.</p>
+        </article>
+        <article class="card media">
+          <img src="assets/feature-names-1040.webp" srcset="assets/feature-names-640.webp 640w, assets/feature-names-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="Timestamped screenshot names turning into descriptive ones, and Spotlight finding one by name">
+          <h3>Names you can actually search</h3>
+          <p>Instead of a row of timestamps, a capture is named after what is in it, like stripe-webhook-401.png, and Spotlight finds it by that name.</p>
+          <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
+        </article>
+        <article class="card media">
+          <img src="assets/feature-blur-1040.webp" srcset="assets/feature-blur-640.webp 640w, assets/feature-blur-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A rectangle blur covering a person and the text beside them, next to a blur that covers only the person">
+          <h3>Blur the shape, not a box</h3>
+          <p>Click a face, an avatar or a line of text and the blur follows its outline. Shift click adds a part it missed, Option click takes one away.</p>
+          <p class="fine">Apple's on-device Vision model. macOS 27 or later.</p>
         </article>
       </div>
     </section>
