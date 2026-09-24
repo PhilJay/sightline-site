@@ -16,10 +16,10 @@ Built on 15 September 2026 from `design/landing-reference.dc.html`.
 
 | File | Size | Notes |
 | --- | --- | --- |
-| hero.webm | 0.36 MB | VP9, 1280x720, crf 33, no audio |
-| hero.mp4 | 0.34 MB | H.264, 1280x720, crf 27, slow, faststart |
+| hero.webm | 1.4 MB | VP9, 1920x1080, crf 31, no audio |
+| hero.mp4 | 2.2 MB | H.264, 1920x1080, crf 24, slow, faststart |
 | hero-poster.jpg | 0.01 MB | second frame of the loop |
-| demo.mp4 | 5.76 MB | H.264 1280x720 crf 27 plus AAC 128k, 1:19 |
+| demo.mp4 | 3.2 MB | H.264 1920x1080 crf 24 plus AAC 128k, 0:30 |
 | demo-poster.jpg | 0.03 MB | frame at 8 s |
 | agent.mp4 | 1.99 MB | H.264, 1280x720, crf 27, no audio, 25 s |
 | agent-poster.jpg | 0.02 MB | frame at 1 s |

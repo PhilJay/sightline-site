@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sightline: screenshots for macOS, for you and your AI agent</title>
-  <meta name="description" content="A fast screenshot tool for macOS with a clean editor, scrolling capture and text recognition. It names screenshots from what is in them, spots passwords and keys before you share, blurs the shape you click, and has a built in MCP server so your AI agent can see your screen when you let it.">
+  <title>Sightline: screenshots, recording and AI agents for macOS</title>
+  <meta name="description" content="A fast screenshot and screen recording tool for macOS with one editor for pictures and clips. Mark up and trim a recording, keep a blur on a face while the page scrolls, spot passwords before you share, and let your AI agent see your screen over MCP.">
   <link rel="icon" type="image/png" href="assets/favicon.png?v=3">
   <link rel="apple-touch-icon" href="assets/icon.png?v=3">
   <link rel="preload" href="assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -205,6 +205,7 @@ h1, h2, h3, p { margin: 0; }
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
+.cards > .card:last-child:nth-child(3n + 1) { grid-column: 2; }
 .card {
   display: flex;
   flex-direction: column;
@@ -392,9 +393,9 @@ h1, h2, h3, p { margin: 0; }
 
   <main>
     <section class="wrap hero">
-      <p class="eyebrow">Screenshots for macOS</p>
-      <h1>Capture, annotate, done. For you and your AI agent.</h1>
-      <p class="lead">A fast screenshot tool with a clean editor, scrolling capture and text recognition, plus a built in MCP server so your AI agent, such as Claude Code or Codex, can see your screen when you let it.</p>
+      <p class="eyebrow">Screenshots and recording for macOS</p>
+      <h1>Capture, record, annotate, done. For you and your AI agent.</h1>
+      <p class="lead">A fast screenshot and screen recording tool with one editor for pictures and clips, scrolling capture and text recognition, plus a built in MCP server so your AI agent, such as Claude Code or Codex, can see your screen when you let it.</p>
       <div class="cta">
         <!-- TODO before launch: replace this hand drawn badge with Apple's official "Download on the Mac App Store" badge asset and set the real App Store link. -->
         <a class="store-badge" href="https://apps.apple.com/app/sightline/id6812521593">
@@ -407,20 +408,20 @@ h1, h2, h3, p { margin: 0; }
 
     <div class="wrap hero-video">
       <div class="frame">
-        <video autoplay muted loop playsinline poster="assets/hero-poster.webp?v=5" aria-label="Sightline: an agent capture, the editor, subject blur, secret spotting and smart names">
-          <source src="assets/hero.webm?v=5" type="video/webm">
-          <source src="assets/hero.mp4?v=5" type="video/mp4">
+        <video autoplay muted loop playsinline poster="assets/hero-poster.webp?v=8" aria-label="Sightline: an agent capture, the editor, subject blur, secret spotting, smart names and a recording with a following blur">
+          <source src="assets/hero.webm?v=8" type="video/webm">
+          <source src="assets/hero.mp4?v=8" type="video/mp4">
         </video>
       </div>
     </div>
 
     <section id="features" class="wrap section">
-      <h2>Everything a screenshot needs</h2>
+      <h2>Everything a screenshot or a recording needs</h2>
       <div class="cards">
         <article class="card media">
           <img src="assets/feature-editor-1040.webp" srcset="assets/feature-editor-640.webp 640w, assets/feature-editor-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="The Sightline editor showing an agent's green marks and a yellow highlight and badge the person added">
           <h3>Your agent starts. You finish.</h3>
-          <p>Open the agent's shot in the editor. Every mark stays editable, and you add your own in seconds. Zoom in for pixel work.</p>
+          <p>Open the agent's shot in the editor. Every mark stays editable, and you add your own in seconds. Open a PNG, a JPEG or a clip from Finder and edit that too.</p>
         </article>
         <article class="card media">
           <img src="assets/feature-capture-1040.webp" srcset="assets/feature-capture-640.webp 640w, assets/feature-capture-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="The capture overlay over a window next to the Sightline menu with every capture mode">
@@ -428,9 +429,21 @@ h1, h2, h3, p { margin: 0; }
           <p>Area, window, full screen, scrolling pages and text straight to the clipboard. The shortcuts you already know, and Shortcuts actions for your automations.</p>
         </article>
         <article class="card media">
-          <img src="assets/feature-secrets-1040.webp" srcset="assets/feature-secrets-640.webp 640w, assets/feature-secrets-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A terminal with environment variables whose secret values are blurred, with a banner offering to blur them">
+          <img src="assets/feature-video-edit-1040.webp" srcset="assets/feature-video-edit-640.webp 640w, assets/feature-video-edit-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A recording open in the editor with an arrow, two blurs, a Trim button and a timeline under the picture">
+          <h3>Record it, then edit it</h3>
+          <p>Record an area, a window or the whole display to MP4 with system audio. The clip lands in the same editor: arrows, text and blur for the whole thing or for a few seconds of it, then trim the ends and save.</p>
+          <p class="fine">Recording needs macOS 15.</p>
+        </article>
+        <article class="card media">
+          <img src="assets/feature-recording-1040.webp" srcset="assets/feature-recording-640.webp 640w, assets/feature-recording-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A frame of a recording in the editor four seconds in, the page scrolled, with the blur still on the account avatar">
+          <h3>A blur that follows</h3>
+          <p>Cover a face, an avatar or a name once and it stays covered while the page scrolls and the window moves. No keyframes, nothing to line up frame by frame.</p>
+          <p class="fine">Following a subject needs macOS 27.</p>
+        </article>
+        <article class="card media">
+          <img src="assets/feature-secrets-1040.webp" srcset="assets/feature-secrets-640.webp 640w, assets/feature-secrets-1040.webp 1040w" sizes="(min-width: 901px) 33vw, 100vw" width="1040" height="585" loading="lazy" alt="A terminal with environment variables whose secret values are blurred, and a key in the editor toolbar offering to cover them">
           <h3>It spots the secrets you missed</h3>
-          <p>Passwords, API keys and tokens are flagged and their values covered while the names stay readable. It can blur without asking, and before an agent is handed the image.</p>
+          <p>Passwords, API keys and tokens are flagged and their values covered while the names stay readable. A key appears in the toolbar to cover them all, and agents can be handed the covered image.</p>
           <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
         </article>
         <article class="card media">
@@ -455,11 +468,11 @@ h1, h2, h3, p { margin: 0; }
 
     <section id="demo" class="wrap section centered">
       <h2>See it in action</h2>
-      <p class="section-intro">Twenty-one seconds: your agent takes the shot, you finish it in the editor, a blur follows a shape, secrets get spotted, and a screenshot names itself.</p>
+      <p class="section-intro">Under thirty seconds: your agent takes the shot, you finish it in the editor, a blur follows a shape, secrets get spotted, a screenshot names itself, and a recording gets a blur that follows the page as it scrolls. The pictures and clips you already have open in the same editor.</p>
       <div class="frame">
-        <video controls preload="metadata" playsinline poster="assets/demo-poster.webp" aria-label="The Sightline 1.1 teaser: an agent capture, the editor, subject blur, secret spotting and smart names">
-          <source src="assets/demo.webm?v=5" type="video/webm">
-          <source src="assets/demo.mp4?v=5" type="video/mp4">
+        <video controls preload="metadata" playsinline poster="assets/demo-poster.webp?v=8" aria-label="The Sightline teaser: an agent capture, the editor, subject blur, secret spotting, smart names, a recording with a following blur, and the file kinds the editor opens">
+          <source src="assets/demo.webm?v=8" type="video/webm">
+          <source src="assets/demo.mp4?v=8" type="video/mp4">
         </video>
       </div>
     </section>
@@ -480,6 +493,9 @@ h1, h2, h3, p { margin: 0; }
           <tr><td>Arrows, numbered steps, blur and crop in one editor</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
           <tr><td>Light and dark mode, tool names on hover</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
           <tr><td>Blur that follows a face or a line of text</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
+          <tr><td>Record an area or window to MP4 with system audio</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
+          <tr><td>Arrows, text and blur drawn onto a recording, then trimmed</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
+          <tr><td>Blur that follows scrolling content in a recording</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
           <tr><td>Finds passwords and keys before you share</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
           <tr><td>Names screenshots after what is in them</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
           <tr><td>Actions for the Shortcuts app</td><td><span class="col-label">macOS</span><svg width="18" height="18" aria-label="no"><use href="#dash"/></svg></td><td class="ours"><span class="col-label">Sightline</span><svg width="18" height="18" aria-label="yes"><use href="#check"/></svg></td></tr>
