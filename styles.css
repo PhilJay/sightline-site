@@ -350,28 +350,11 @@ kbd {
   gap: 20px;
 }
 
-.pricing {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  max-width: 920px;
-  margin: 0 auto;
-}
-.plan { gap: 18px; padding: 36px; }
-.plan.pro { border-color: rgba(47, 180, 182, 0.75); box-shadow: 0 0 0 1px rgba(47, 180, 182, 0.3), var(--shadow); }
-.plan h3 { font-size: 22px; }
-.price { font-size: 16px; line-height: 1.5; color: var(--text-soft); }
-.price strong { display: block; font-size: 36px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); }
-.plan ul { margin: 0; padding: 18px 0 0; border-top: 1px solid var(--line); list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.plan li { display: flex; gap: 10px; font-size: 15px; line-height: 1.5; color: var(--text-soft); }
-.plan li svg { flex: none; margin-top: 2px; }
-
 .closing {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-top: 64px;
+  gap: 22px;
   text-align: center;
 }
 
@@ -429,7 +412,6 @@ kbd {
 
 @media (max-width: 720px) {
   .nav-links { display: none; }
-  .pricing { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -447,7 +429,6 @@ kbd {
   .card { padding: 24px; }
   .grid .card.media { padding-bottom: 24px; }
   .card.media > :not(img) { margin-inline: 24px; }
-  .plan { padding: 28px 24px; }
 
   .compare-table thead { display: none; }
   .compare-table, .compare-table tbody, .compare-table tr, .compare-table td { display: block; }
