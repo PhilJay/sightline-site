@@ -3,8 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sightline: screenshots, recording and AI agents for macOS</title>
-  <meta name="description" content="A menu bar screenshot and screen recording tool for macOS. Capture and mark up in a slim editor, stitch scrolling pages, remove backgrounds, keep a blur on what scrolls in a recording, and let your AI agent check its own work over MCP.">
+  <title>Sightline: Mac screenshot tool and screen recorder for you and your AI agent</title>
+  <meta name="description" content="A screenshot tool and screen recorder for macOS. Annotate in a slim editor, capture scrolling pages, copy text with OCR, remove backgrounds, and let your AI agent see its work over MCP.">
+  <link rel="canonical" href="https://philjay.github.io/sightline-site/">
+  <link rel="author" href="https://philjay.cc/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sightline">
+  <meta property="og:title" content="Sightline: screenshots, recording and AI agents for macOS">
+  <meta property="og:description" content="A screenshot tool and screen recorder for macOS. Annotate in a slim editor, capture scrolling pages, copy text with OCR, remove backgrounds, and let your AI agent see its work over MCP.">
+  <meta property="og:url" content="https://philjay.github.io/sightline-site/">
+  <meta property="og:image" content="https://philjay.github.io/sightline-site/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sightline: capture, record, annotate, done. The editor with an arrow and a numbered badge on a captured jobs table.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://philjay.github.io/sightline-site/#website",
+      "name": "Sightline",
+      "url": "https://philjay.github.io/sightline-site/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://philjay.cc/#person"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://philjay.github.io/sightline-site/#app",
+      "name": "Sightline",
+      "description": "A menu bar screenshot and screen recording tool for macOS with a slim editor, scrolling capture, text recognition, Remove Background, pins and a capture history, plus a built in MCP server so your AI agent can capture, read and annotate the screen.",
+      "url": "https://philjay.github.io/sightline-site/",
+      "image": "https://philjay.github.io/sightline-site/assets/og-image.png",
+      "screenshot": "https://philjay.github.io/sightline-site/assets/feature-v3-capture-2080.webp",
+      "operatingSystem": "macOS 14 or later",
+      "applicationCategory": "UtilitiesApplication",
+      "downloadUrl": "https://apps.apple.com/app/sightline/id6812521593",
+      "installUrl": "https://apps.apple.com/app/sightline/id6812521593",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free download with in-app purchases",
+        "url": "https://apps.apple.com/app/sightline/id6812521593"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://philjay.cc/#person",
+        "name": "Philipp Jahoda",
+        "url": "https://philjay.cc/"
+      },
+      "publisher": {
+        "@id": "https://philjay.cc/#person"
+      }
+    }
+  ]
+}
+  </script>
   <link rel="icon" type="image/png" href="assets/favicon.png?v=3">
   <link rel="apple-touch-icon" href="assets/icon.png?v=3">
   <link rel="preload" href="assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -577,13 +635,13 @@ kbd {
         </div>
         <div class="grid">
           <article class="card media reveal">
-            <img src="assets/feature-secrets-1040.webp" srcset="assets/feature-secrets-640.webp 640w, assets/feature-secrets-1040.webp 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="A terminal with environment variables whose secret values are blurred, and a key in the editor tool bar offering to cover them">
+            <img src="assets/feature-secrets-1040.webp?v=2" srcset="assets/feature-secrets-640.webp?v=2 640w, assets/feature-secrets-1040.webp?v=2 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="A terminal with environment variables whose secret values are blurred, and a key in the editor tool bar offering to cover them">
             <h3>Spots credentials before you share</h3>
             <p>A password, an API key or a token is found and its value blurred while its name stays readable. The key in the tool bar highlights what it found. Cover everything at once, or Choose them one by one.</p>
             <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
           </article>
           <article class="card media reveal">
-            <img src="assets/feature-names-1040.webp" srcset="assets/feature-names-640.webp 640w, assets/feature-names-1040.webp 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Timestamped screenshot names turning into descriptive ones, and Spotlight finding one by name">
+            <img src="assets/feature-names-1040.webp?v=2" srcset="assets/feature-names-640.webp?v=2 640w, assets/feature-names-1040.webp?v=2 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Timestamped screenshot names turning into descriptive ones, and Spotlight finding one by name">
             <h3>Names you can search</h3>
             <p>Instead of a row of timestamps, a capture is named after what is in it, like stripe-webhook-401.png.</p>
             <p class="fine">Apple Intelligence on device. macOS 26 or later.</p>
