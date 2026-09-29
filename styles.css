@@ -152,20 +152,11 @@ h1, h2, h3 { font-weight: 600; color: var(--text); text-wrap: balance; }
 .store-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  height: 52px;
-  padding: 0 20px;
-  border-radius: 12px;
-  background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.28);
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(4, 22, 26, 0.35);
-  transition: border-color 0.3s var(--ease);
+  transition: opacity 0.3s var(--ease);
 }
-.store-badge:hover { border-color: rgba(255, 255, 255, 0.6); }
-.store-badge div { display: flex; flex-direction: column; line-height: 1.05; }
-.store-badge small { font-size: 10px; opacity: 0.85; }
-.store-badge strong { font-size: 18px; font-weight: 700; }
+.store-badge:hover { opacity: 0.82; }
+.store-badge img { height: 44px; width: auto; display: block; }
 
 .frame {
   position: relative;

@@ -165,20 +165,11 @@ h1, h2, h3 { font-weight: 600; color: var(--text); text-wrap: balance; }
 .store-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  height: 52px;
-  padding: 0 20px;
-  border-radius: 12px;
-  background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.28);
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(4, 22, 26, 0.35);
-  transition: border-color 0.3s var(--ease);
+  transition: opacity 0.3s var(--ease);
 }
-.store-badge:hover { border-color: rgba(255, 255, 255, 0.6); }
-.store-badge div { display: flex; flex-direction: column; line-height: 1.05; }
-.store-badge small { font-size: 10px; opacity: 0.85; }
-.store-badge strong { font-size: 18px; font-weight: 700; }
+.store-badge:hover { opacity: 0.82; }
+.store-badge img { height: 44px; width: auto; display: block; }
 
 .frame {
   position: relative;
@@ -479,7 +470,7 @@ kbd {
     <p>This notice covers the Sightline website and the Sightline app for macOS. The short version: neither collects personal data.</p>
 
     <h2>The website</h2>
-    <p>This website is a static page. It sets no cookies, runs no analytics and collects no data about you. The only third party request it makes is for the Manrope web font, which is loaded from Google Fonts. Your browser sends its IP address to Google to fetch the font. Google's privacy policy applies to that request.</p>
+    <p>This website is a static page. It sets no cookies, runs no analytics and collects no data about you. The Manrope web font it uses is served from this website itself, not from Google Fonts or any other font provider, so no connection is made and no data is sent to a third party for it.</p>
     <p>The site is hosted on GitHub Pages by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Like any web host, GitHub records technical details of each request (such as IP address, time, requested page and browser) in server logs to run and secure the service. We have no access to these logs. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a> for details.</p>
 
     <h2>The app</h2>
