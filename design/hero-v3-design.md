@@ -43,3 +43,14 @@ Taken from "Make your product videos look expensive" (leo, September 2026):
 ## Site (phase 2, after the loop)
 
 Present Sightline as a whole: most important features first, the same order as the loop, with new rendered feature images (remove background, the agent checking its work, the slim editor, history, pins with tracing). Also premium tweaks to the site itself: more whitespace, calmer type scale, fewer and larger feature blocks, subtle eased reveal on scroll, one accent. Detailed in its own design once the loop is approved.
+
+## Revision 1 (after the first preview)
+
+Philipp's feedback: it doesn't feel premium like an Apple video yet, the windows and captions are too small, the colors should be lighter, and the agent scene needs more time.
+
+- **Typography carries the story.** Each scene opens with its statement as a large headline, Manrope semibold at about 3x the first cut's caption size, centered above the window or briefly filling the frame. It then eases up and smaller while the product takes the stage. The headlines are the scene captions, at most five words.
+- **Camera.** A slow push-in (about 1.00 to 1.05) through every shot. A focused zoom into the key detail where the scene needs it (the misaligned button, the lamp subject, the blurred line). Windows arrive with a slight 3D tilt settling to flat. All eased, no linear moves.
+- **Windows** about 25 % larger than the first cut, so the UI stays readable at 720p.
+- **Lighter palette.** A lighter, more luminous teal stage (for example `#2a6b74` to `#123238`) with a soft white-teal glow behind the key object. The accent stays `#2fb4b6`, and the text on the stage stays near white.
+- **Agent scene about 6 s:** type the prompt, the button appears, and the notice drops in. The camera zooms onto the button, a measurement guide shows the gap labeled "8 px", and the terminal says it's fixing. The button eases into line, the guide turns teal and reads "0 px", and the camera zooms back out to the terminal's "Aligned" check.
+- **New timing** (20.0 s total): intro 1.0, capture and annotate 3.2, agent 6.0, remove background 2.9, scrolling capture 2.7, recording with a following blur 2.8, close and return 1.4.
