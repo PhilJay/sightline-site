@@ -335,6 +335,7 @@ kbd {
 .compare-table svg { display: inline-block; vertical-align: middle; }
 .compare-table .col-label { display: none; }
 .compare-table td strong { font-weight: 700; color: var(--text); }
+p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 
 .trio {
   display: grid;
