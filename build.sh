@@ -18,7 +18,7 @@ target = re.compile(
     re.S,
 )
 
-for page in sorted(Path('.').glob('*.html')):
+for page in sorted(Path('.').glob('*.html')) + sorted(Path('.').glob('*/index.html')):
     html = page.read_text()
     updated, count = target.subn(lambda _: block, html, count=1)
     if count != 1:

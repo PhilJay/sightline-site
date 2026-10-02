@@ -6,6 +6,16 @@
   <title>Sightline: Mac screenshot tool and screen recorder for you and your AI agent</title>
   <meta name="description" content="A screenshot tool and screen recorder for macOS. Annotate in a slim editor, capture scrolling pages, copy text with OCR and remove backgrounds. Your AI agent captures the screen through Sightline and checks its own work over MCP.">
   <link rel="canonical" href="https://philjay.github.io/sightline-site/">
+  <link rel="alternate" hreflang="en" href="https://philjay.github.io/sightline-site/">
+  <link rel="alternate" hreflang="de" href="https://philjay.github.io/sightline-site/de/">
+  <link rel="alternate" hreflang="x-default" href="https://philjay.github.io/sightline-site/">
+  <script>
+    // Visitors whose browser prefers German over English start on the German page, unless they picked a language.
+    try {
+      var preferred = (navigator.languages || [navigator.language]).map(function (l) { return l.slice(0, 2).toLowerCase(); }).filter(function (l) { return l === 'en' || l === 'de'; })[0];
+      if (!localStorage.getItem('sightline-lang') && preferred === 'de') location.replace('de/');
+    } catch (e) {}
+  </script>
   <link rel="author" href="https://philjay.cc/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sightline">
@@ -533,7 +543,7 @@ kbd {
     <section class="wrap hero">
       <p class="eyebrow">Screenshots and recording for macOS</p>
       <h1>Capture, record, annotate, done. For you and your AI agent.</h1>
-      <p class="lead">A menu bar screenshot and screen recording tool with a slim editor, scrolling capture and Remove Background, plus a built in MCP server so your AI agent can see what it built.</p>
+      <p class="lead">A menu bar screenshot and screen recording tool with a slim editor, scrolling capture and Remove Background, plus a built in MCP server so your AI agent can use it too.</p>
       <div class="cta">
         <a class="store-badge" href="https://apps.apple.com/app/sightline/id6812521593" aria-label="Download Sightline on the Mac App Store">
           <img src="assets/mac-app-store-badge-black.svg" alt="" width="156" height="40">
@@ -744,10 +754,16 @@ kbd {
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="imprint.html">Imprint</a>
+      <a href="de/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
     </nav>
   </footer>
 </div>
 <script>
+document.querySelectorAll('[data-lang]').forEach(function (link) {
+  link.addEventListener('click', function () {
+    try { localStorage.setItem('sightline-lang', link.dataset.lang); } catch (e) {}
+  });
+});
 (function () {
   var items = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
