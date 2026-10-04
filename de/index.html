@@ -16,7 +16,7 @@
   <meta property="og:description" content="Screenshots und Bildschirmaufnahmen für macOS. Beschrifte im schlanken Editor, nimm scrollende Seiten auf, kopiere Text per Texterkennung und entferne Hintergründe. Dein KI-Agent nimmt per MCP über Sightline den Bildschirm auf und prüft seine eigene Arbeit.">
   <meta property="og:url" content="https://philjay.github.io/sightline-site/de/">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="https://philjay.github.io/sightline-site/assets/og-image.png">
+  <meta property="og:image" content="https://philjay.github.io/sightline-site/assets/og-image.png?v=10">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Sightline: aufnehmen, aufzeichnen, beschriften, fertig. Der Editor mit einem Pfeil und einer Schrittnummer auf einer aufgenommenen Job-Tabelle.">
@@ -154,8 +154,8 @@
   ]
 }
   </script>
-  <link rel="icon" type="image/png" href="../assets/favicon.png?v=3">
-  <link rel="apple-touch-icon" href="../assets/icon.png?v=3">
+  <link rel="icon" type="image/png" href="../assets/favicon.png?v=10">
+  <link rel="apple-touch-icon" href="../assets/icon.png?v=10">
   <link rel="preload" href="../assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <script>document.documentElement.classList.add('js')</script>
   <!-- inlined from styles.css, run build.sh after editing it -->
@@ -611,21 +611,94 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 .faq-item[open] summary::after { content: "–"; }
 .faq-item p { padding: 0 28px 24px; font-size: 15px; line-height: 1.6; color: var(--text-soft); }
 .faq-item code { font-size: 13px; overflow-wrap: anywhere; }
+
+/* light theme preview */
+:root {
+  --accent: #1f9fa1;
+  --accent-soft: rgba(31, 159, 161, 0.12);
+  --card-bg: #ffffff;
+  --card-border: rgba(16, 38, 43, 0.08);
+  --line: rgba(16, 38, 43, 0.1);
+  --text: #10262b;
+  --text-soft: #3b5359;
+  --text-dim: #5f7479;
+  --shadow: 0 18px 50px rgba(16, 38, 43, 0.12), 0 2px 8px rgba(16, 38, 43, 0.06);
+}
+body { background: #f6f8f7; }
+.stage {
+  background:
+    radial-gradient(70% 900px at 18% 0, #d9f3ef 0%, rgba(217, 243, 239, 0) 60%),
+    radial-gradient(60% 800px at 88% 120px, #e3ecff 0%, rgba(227, 236, 255, 0) 60%),
+    #f6f8f7;
+}
+.lead { color: var(--text-soft); }
+.frame { background: #e9efee; }
+.frame::after { border-color: rgba(16, 38, 43, 0.08); }
+kbd { background: rgba(16, 38, 43, 0.05); }
+.band.light { background: rgba(255, 255, 255, 0.6); }
+.band.dark { background: rgba(16, 38, 43, 0.03); }
+.card { box-shadow: var(--shadow); }
+.faq-item { box-shadow: 0 6px 20px rgba(16, 38, 43, 0.06); }
+
+.ai-band {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(50% 60% at 12% 18%, rgba(47, 180, 182, 0.22), rgba(47, 180, 182, 0) 70%),
+    radial-gradient(45% 55% at 88% 30%, rgba(108, 140, 255, 0.2), rgba(108, 140, 255, 0) 70%),
+    radial-gradient(60% 50% at 50% 100%, rgba(217, 243, 239, 0.9), rgba(217, 243, 239, 0) 70%),
+    linear-gradient(180deg, #eef7f6 0%, #f1f4ff 100%);
+}
+.showcase-agents { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; margin-top: 22px; font-size: 14px; color: var(--text-dim); }
+.showcase-agents .pill { background: rgba(255, 255, 255, 0.8); border: 1px solid var(--card-border); border-radius: 999px; padding: 6px 13px; font-weight: 600; color: var(--text-soft); }
+.showcase { display: grid; grid-template-columns: 360px 1fr; gap: 32px; align-items: center; }
+.showcase-prompts { display: grid; gap: 10px; }
+.showcase-prompt {
+  position: relative; overflow: hidden; text-align: left; font: inherit; font-size: 15px; line-height: 1.45; color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(16, 38, 43, 0.06); border-radius: 18px 18px 18px 6px;
+  padding: 14px 16px 16px 50px; cursor: pointer; backdrop-filter: blur(10px);
+  transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.showcase-prompt:hover { background: rgba(255, 255, 255, 0.85); transform: translateY(-1px); }
+.showcase-prompt[aria-pressed="true"] { background: #fff; color: var(--text); box-shadow: 0 14px 34px rgba(16, 38, 43, 0.12); }
+.showcase-prompt .k {
+  position: absolute; left: 14px; top: 13px; width: 24px; height: 24px; border-radius: 8px; display: grid; place-items: center;
+  font-family: ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 700; color: #fff;
+  background: linear-gradient(135deg, #2fb4b6, #5b8cff); margin: 0;
+}
+.showcase-prompt:not([aria-pressed="true"]) .k { background: rgba(16, 38, 43, 0.12); color: var(--text-soft); }
+.showcase-progress { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: linear-gradient(90deg, #2fb4b6, #5b8cff); transform: scaleX(0); transform-origin: left; transition: transform 0.25s linear; }
+.showcase-prompt:not([aria-pressed="true"]) .showcase-progress { opacity: 0; }
+.showcase-stage { position: relative; }
+.showcase-stage::before {
+  content: ""; position: absolute; inset: 8% -4% -8% -4%; z-index: 0; border-radius: 40px; filter: blur(46px);
+  background: linear-gradient(120deg, rgba(47, 180, 182, 0.45), rgba(108, 140, 255, 0.4));
+}
+.showcase-stage .frame { position: relative; z-index: 1; box-shadow: 0 30px 80px rgba(16, 38, 43, 0.22), 0 4px 14px rgba(16, 38, 43, 0.1); }
+.showcase-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+.showcase-steps div { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(16, 38, 43, 0.06); border-radius: 20px; padding: 20px 22px; font-size: 15px; line-height: 1.55; color: var(--text-soft); backdrop-filter: blur(10px); }
+.showcase-steps b { display: block; color: var(--text); font-size: 16px; margin: 12px 0 4px; }
+.step-icon { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(47, 180, 182, 0.16), rgba(91, 140, 255, 0.16)); }
+.step-icon svg { width: 21px; height: 21px; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 900px) {
+  .showcase { grid-template-columns: 1fr; }
+  .showcase-steps { grid-template-columns: 1fr; }
+}
   </style>
   <!-- end styles.css -->
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="#2fb4b6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="dash" viewBox="0 0 24 24"><path d="M6 12h12" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="dash" viewBox="0 0 24 24"><path d="M6 12h12" fill="none" stroke="rgba(16,38,43,0.3)" stroke-width="2.4" stroke-linecap="round"/></symbol>
 </svg>
 
 <div class="stage">
   <header class="wrap nav">
-    <a class="brand" href="#"><img src="../assets/icon.png?v=3" alt="" width="34" height="34">Sightline</a>
+    <a class="brand" href="#"><img src="../assets/icon.png?v=10" alt="" width="34" height="34">Sightline</a>
     <nav class="nav-links">
       <a href="#features">Funktionen</a>
-      <a href="#agent">KI-Agenten</a>
+      <a href="#showcases">KI-Agenten</a>
       <a href="#compare">Vergleich</a>
       <a href="#faq">FAQ</a>
       <a href="#download">Laden</a>
@@ -647,9 +720,9 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 
     <div class="wrap hero-video">
       <div class="frame">
-        <video autoplay muted loop playsinline width="1280" height="720" poster="../assets/hero-poster.webp?v=9" aria-label="Sightline in 23 Sekunden: eine Aufnahme wird im Editor beschriftet, ein Agent sieht, dass sein Button 8 px daneben liegt, und korrigiert ihn, eine Lampe wird von ihrem Hintergrund freigestellt, eine Seite wird beim Scrollen aufgenommen, und in einer Bildschirmaufnahme folgt die Unschärfe einer E-Mail-Adresse">
-          <source src="../assets/hero.webm?v=9" type="video/webm">
-          <source src="../assets/hero.mp4?v=9" type="video/mp4">
+        <video autoplay muted loop playsinline width="1280" height="720" poster="../assets/hero-poster.webp?v=10" aria-label="Sightline in 23 Sekunden: eine Aufnahme wird im Editor beschriftet, ein Agent sieht, dass sein Button 8 px daneben liegt, und korrigiert ihn, eine Lampe wird von ihrem Hintergrund freigestellt, eine Seite wird beim Scrollen aufgenommen, und in einer Bildschirmaufnahme folgt die Unschärfe einer E-Mail-Adresse">
+          <source src="../assets/hero.webm?v=10" type="video/webm">
+          <source src="../assets/hero.mp4?v=10" type="video/mp4">
         </video>
       </div>
     </div>
@@ -658,7 +731,7 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
       <div class="wrap">
         <article class="feature reveal">
           <div class="frame">
-            <img src="../assets/feature-v3-capture-1040.webp" srcset="../assets/feature-v3-capture-1040.webp 1040w, ../assets/feature-v3-capture-2080.webp 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Der Sightline-Editor mit einer aufgenommenen Job-Tabelle, einem türkisen Pfeil auf einem Status Failed, einer Schrittnummer und der schlanken Werkzeugleiste darunter">
+            <img src="../assets/feature-v3-capture-1040.webp?v=10" srcset="../assets/feature-v3-capture-1040.webp?v=10 1040w, ../assets/feature-v3-capture-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Der Sightline-Editor mit einer aufgenommenen Job-Tabelle, einem türkisen Pfeil auf einem Status Failed, einer Schrittnummer und der schlanken Werkzeugleiste darunter">
           </div>
           <div class="feature-text">
             <p class="eyebrow">Aufnehmen und beschriften</p>
@@ -670,7 +743,7 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 
         <article id="agent" class="feature flip reveal">
           <div class="frame">
-            <img src="../assets/feature-v3-agent-1040.webp" srcset="../assets/feature-v3-agent-1040.webp 1040w, ../assets/feature-v3-agent-2080.webp 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Ein Claude Code Terminal meldet, dass der Button 8 px daneben liegt, und korrigiert ihn, daneben ein Bestellformular, in dem eine rote Hilfslinie den Abstand von 8 px misst">
+            <img src="../assets/feature-v3-agent-1040.webp?v=10" srcset="../assets/feature-v3-agent-1040.webp?v=10 1040w, ../assets/feature-v3-agent-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Ein Claude Code Terminal meldet, dass der Button 8 px daneben liegt, und korrigiert ihn, daneben ein Bestellformular, in dem eine rote Hilfslinie den Abstand von 8 px misst">
           </div>
           <div class="feature-text">
             <p class="eyebrow">Gebaut für KI-Agenten</p>
@@ -683,7 +756,7 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 
         <article class="feature reveal">
           <div class="frame">
-            <img src="../assets/feature-v3-cutout-1040.webp" srcset="../assets/feature-v3-cutout-1040.webp 1040w, ../assets/feature-v3-cutout-2080.webp 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine Tischlampe, aus ihrem Foto freigestellt, auf transparentem Schachbrettmuster im Editor, mit Hintergrund wiederherstellen in der Werkzeugleiste">
+            <img src="../assets/feature-v3-cutout-1040.webp?v=10" srcset="../assets/feature-v3-cutout-1040.webp?v=10 1040w, ../assets/feature-v3-cutout-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine Tischlampe, aus ihrem Foto freigestellt, auf transparentem Schachbrettmuster im Editor, mit Hintergrund wiederherstellen in der Werkzeugleiste">
           </div>
           <div class="feature-text">
             <p class="eyebrow">Hintergrund entfernen</p>
@@ -695,7 +768,7 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 
         <article class="feature flip reveal">
           <div class="frame">
-            <img src="../assets/feature-v3-scrolling-1040.webp" srcset="../assets/feature-v3-scrolling-1040.webp 1040w, ../assets/feature-v3-scrolling-2080.webp 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine lange Webseite in einem roten Aufnahmerahmen, der Bereich darum abgedunkelt, darüber ein Bildzähler und daneben das zusammengesetzte hohe Bild, das wächst">
+            <img src="../assets/feature-v3-scrolling-1040.webp?v=10" srcset="../assets/feature-v3-scrolling-1040.webp?v=10 1040w, ../assets/feature-v3-scrolling-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine lange Webseite in einem roten Aufnahmerahmen, der Bereich darum abgedunkelt, darüber ein Bildzähler und daneben das zusammengesetzte hohe Bild, das wächst">
           </div>
           <div class="feature-text">
             <p class="eyebrow">Scroll-Aufnahme</p>
@@ -706,7 +779,7 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 
         <article class="feature reveal">
           <div class="frame">
-            <img src="../assets/feature-v3-recording-1040.webp" srcset="../assets/feature-v3-recording-1040.webp 1040w, ../assets/feature-v3-recording-2080.webp 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine Kontoseite wird in einem roten Rahmen mit laufendem Timer aufgezeichnet, die E-Mail-Adresse ist unter einer Unschärfe verdeckt">
+            <img src="../assets/feature-v3-recording-1040.webp?v=10" srcset="../assets/feature-v3-recording-1040.webp?v=10 1040w, ../assets/feature-v3-recording-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine Kontoseite wird in einem roten Rahmen mit laufendem Timer aufgezeichnet, die E-Mail-Adresse ist unter einer Unschärfe verdeckt">
           </div>
           <div class="feature-text">
             <p class="eyebrow">Bildschirmaufnahme</p>
@@ -719,6 +792,36 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
       </div>
     </section>
 
+    <section id="showcases" class="band ai-band">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Für KI-Agenten</p>
+          <h2>Gib die Arbeit an deinen Agenten ab.</h2>
+          <p class="section-intro">Sightline hat einen eingebauten <strong>MCP-Server</strong>. Sag <strong>Claude Code</strong> oder <strong>Codex</strong> in klaren Worten, was du brauchst, und dein Agent nimmt den Bildschirm für dich auf, liest ihn, beschriftet und zeichnet auf, oder prüft seine eigene Arbeit.</p>
+          <div class="showcase-agents"><span>Funktioniert mit</span><span class="pill">Claude Code</span><span class="pill">Claude Desktop</span><span class="pill">Codex</span><span class="pill">Jeder MCP-Client</span></div>
+        </div>
+        <div class="showcase reveal">
+          <div class="showcase-prompts">
+            <button type="button" class="showcase-prompt" data-video="1-pr-tabs" aria-pressed="true"><span class="k" aria-hidden="true">&gt;</span>Mach Screenshots meiner offenen Pull-Request-Tabs und markiere die fehlgeschlagenen Checks<span class="showcase-progress" aria-hidden="true"></span></button>
+            <button type="button" class="showcase-prompt" data-video="5-bug-screenshots" aria-pressed="false"><span class="k" aria-hidden="true">&gt;</span>Geh die Bug-Screenshots von heute durch und markiere bei jedem die Fehlermeldung<span class="showcase-progress" aria-hidden="true"></span></button>
+            <button type="button" class="showcase-prompt" data-video="3-find-freeze" aria-pressed="false"><span class="k" aria-hidden="true">&gt;</span>Zeichne auf, wie ich den Fehler nachstelle, und sag mir, wo es hängt<span class="showcase-progress" aria-hidden="true"></span></button>
+            <button type="button" class="showcase-prompt" data-video="2-blur-secrets" aria-pressed="false"><span class="k" aria-hidden="true">&gt;</span>Mach jeden API-Schlüssel am Bildschirm unkenntlich und kopier das Bild für Slack<span class="showcase-progress" aria-hidden="true"></span></button>
+            <button type="button" class="showcase-prompt" data-video="4-changelog" aria-pressed="false"><span class="k" aria-hidden="true">&gt;</span>Nimm das ganze Changelog auf und markiere alles, was veraltet ist<span class="showcase-progress" aria-hidden="true"></span></button>
+          </div>
+          <div class="showcase-stage">
+          <div class="frame">
+            <video id="showcase-video" autoplay muted playsinline width="1280" height="720" poster="../assets/showcase/1-pr-tabs.jpg?v=10" src="../assets/showcase/1-pr-tabs.mp4?v=10"></video>
+          </div>
+          </div>
+        </div>
+        <div class="showcase-steps reveal">
+          <div><span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5"/><path d="M9 12.5l2 2 4-4.5"/></svg></span><b>Sightline installieren</b>Aus dem Mac App Store, dann Bildschirmaufnahme erlauben.</div>
+          <div><span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l2.6-2.6a4 4 0 0 0-5.7-5.7L11.5 6.8"/><path d="M14 10a4 4 0 0 0-5.7 0l-2.6 2.6a4 4 0 0 0 5.7 5.7l1.1-1.1"/></svg></span><b>Mit einem Klick verbinden</b>Einstellungen › KI-Agenten › Verbinden für Claude Code, Claude Desktop oder Codex.</div>
+          <div><span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v6a2.5 2.5 0 0 1-2.5 2.5H11l-4 3.5V15h0.5A2.5 2.5 0 0 1 5 12.5z"/><path d="M9 9.5h6M9 12h3.5"/></svg></span><b>Einfach fragen</b>Jeder neue Agent fragt zuerst, und jede Markierung, die er zeichnet, bleibt für dich bearbeitbar.</div>
+        </div>
+      </div>
+    </section>
+
     <section class="band light">
       <div class="wrap">
         <div class="section-head reveal">
@@ -726,45 +829,45 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
         </div>
         <div class="grid">
           <article class="card media reveal">
-            <img src="../assets/feature-secrets-1040.webp?v=2" srcset="../assets/feature-secrets-640.webp?v=2 640w, ../assets/feature-secrets-1040.webp?v=2 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein Terminal mit Umgebungsvariablen, deren geheime Werte unkenntlich sind, und ein Schlüssel in der Werkzeugleiste des Editors, der anbietet, sie abzudecken">
+            <img src="../assets/feature-secrets-1040.webp?v=10" srcset="../assets/feature-secrets-640.webp?v=10 640w, ../assets/feature-secrets-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein Terminal mit Umgebungsvariablen, deren geheime Werte unkenntlich sind, und ein Schlüssel in der Werkzeugleiste des Editors, der anbietet, sie abzudecken">
             <h3>Erkennt Zugangsdaten, bevor du teilst</h3>
             <p>Sightline findet Passwörter, API-Schlüssel und Token und macht ihren Wert unkenntlich, der Name davor bleibt lesbar. Der Schlüssel in der Werkzeugleiste hebt hervor, was er gefunden hat. Deck alles auf einmal ab oder wähl die Funde mit Auswählen einzeln aus.</p>
             <p class="fine"><strong>Apple Intelligence</strong> auf dem Gerät. macOS 26 oder neuer.</p>
           </article>
           <article class="card media reveal">
-            <img src="../assets/feature-names-1040.webp?v=2" srcset="../assets/feature-names-640.webp?v=2 640w, ../assets/feature-names-1040.webp?v=2 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Screenshot-Namen mit Zeitstempel werden zu sprechenden Namen, und Spotlight findet einen davon nach Namen">
+            <img src="../assets/feature-names-1040.webp?v=10" srcset="../assets/feature-names-640.webp?v=10 640w, ../assets/feature-names-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Screenshot-Namen mit Zeitstempel werden zu sprechenden Namen, und Spotlight findet einen davon nach Namen">
             <h3>Namen, die du findest</h3>
             <p>Statt einer Reihe von Zeitstempeln bekommt eine Aufnahme einen Namen nach ihrem Inhalt, etwa stripe-webhook-401.png.</p>
             <p class="fine"><strong>Apple Intelligence</strong> auf dem Gerät. macOS 26 oder neuer.</p>
           </article>
           <article class="card media reveal">
-            <img src="../assets/feature-pins-1040.webp" srcset="../assets/feature-pins-640.webp 640w, ../assets/feature-pins-1040.webp 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Eine Aufnahme mit 72 Prozent Deckkraft über einem anderen Fenster angeheftet">
+            <img src="../assets/feature-pins-1040.webp?v=10" srcset="../assets/feature-pins-640.webp?v=10 640w, ../assets/feature-pins-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Eine Aufnahme mit 72 Prozent Deckkraft über einem anderen Fenster angeheftet">
             <h3>Am Bildschirm anheften</h3>
             <p>Jede Aufnahme schwebt in voller Größe über deinen anderen Fenstern. Verschieb sie, skalier sie per Fingerzug und änder ihre Deckkraft. <strong>Fokus</strong> blendet alle anderen angehefteten Aufnahmen aus.</p>
           </article>
           <article class="card media reveal">
-            <img src="../assets/feature-history-1040.webp" srcset="../assets/feature-history-640.webp 640w, ../assets/feature-history-1040.webp 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Der Verlauf mit einem Suchfeld und einem Raster der letzten Aufnahmen, eine davon ausgewählt, mit Kopieren, Bearbeiten, Anheften und Löschen">
+            <img src="../assets/feature-history-1040.webp?v=10" srcset="../assets/feature-history-640.webp?v=10 640w, ../assets/feature-history-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Der Verlauf mit einem Suchfeld und einem Raster der letzten Aufnahmen, eine davon ausgewählt, mit Kopieren, Bearbeiten, Anheften und Löschen">
             <h3>Keine Aufnahme geht verloren</h3>
             <p><kbd>⌃⌥H</kbd> öffnet einen durchsuchbaren Verlauf von allem, was du kopiert oder gesichert hast, mit Kopieren, Bearbeiten, Anheften und Löschen. Die letzten 24 Stunden sind kostenlos.</p>
           </article>
           <article class="card media reveal">
-            <img src="../assets/feature-text-1040.webp" srcset="../assets/feature-text-640.webp 640w, ../assets/feature-text-1040.webp 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein ausgewählter Bereich mit Öffnungszeiten und einem QR-Code, daneben das Ergebnis mit dem Link und den Textzeilen, bereit zum Kopieren">
+            <img src="../assets/feature-text-1040.webp?v=10" srcset="../assets/feature-text-640.webp?v=10 640w, ../assets/feature-text-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein ausgewählter Bereich mit Öffnungszeiten und einem QR-Code, daneben das Ergebnis mit dem Link und den Textzeilen, bereit zum Kopieren">
             <h3>Text erfassen und QR-Codes</h3>
             <p>Bereich auswählen, und der Text darin liegt in deiner Zwischenablage. Auch QR-Codes und Strichcodes werden gelesen, und nichts verlässt deinen Mac.</p>
           </article>
           <article class="card media reveal">
-            <img src="../assets/feature-arrange-1040.webp" srcset="../assets/feature-arrange-640.webp 640w, ../assets/feature-arrange-1040.webp 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein eingefügtes Foto und ein Textetikett, im Editor auf einem Screenshot angeordnet, mit Ganz nach vorne im Menü">
+            <img src="../assets/feature-arrange-1040.webp?v=10" srcset="../assets/feature-arrange-640.webp?v=10 640w, ../assets/feature-arrange-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein eingefügtes Foto und ein Textetikett, im Editor auf einem Screenshot angeordnet, mit Ganz nach vorne im Menü">
             <h3>Einfügen und anordnen</h3>
             <p>Füg mit <kbd>⌘V</kbd> Bilder und Text in den Editor ein oder zieh eine Bilddatei hinein. Verschieben, skalieren und stapeln, mit Ganz nach vorne und Ganz nach hinten.</p>
           </article>
           <article class="card media reveal">
-            <img src="../assets/feature-replay-1040.webp" srcset="../assets/feature-replay-640.webp 640w, ../assets/feature-replay-1040.webp 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Die Tasten Befehl-Umschalt-8 sichern die letzten 15 Sekunden des Bildschirms als Clip">
+            <img src="../assets/feature-replay-1040.webp?v=10" srcset="../assets/feature-replay-640.webp?v=10 640w, ../assets/feature-replay-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Die Tasten Befehl-Umschalt-8 sichern die letzten 15 Sekunden des Bildschirms als Clip">
             <h3>Replay</h3>
             <p>Behalte die letzten 15 Sekunden deines Bildschirms und sichere mit <kbd>⌘⇧8</kbd>, was gerade passiert ist.</p>
             <p class="fine">Braucht macOS 27.</p>
           </article>
           <article class="card media reveal">
-            <img src="../assets/feature-shortcuts-1040.webp" srcset="../assets/feature-shortcuts-640.webp 640w, ../assets/feature-shortcuts-1040.webp 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Spotlight findet gesicherte Screenshots nach Namen, und eine Aktion der App Kurzbefehle läuft nach jeder Aufnahme">
+            <img src="../assets/feature-shortcuts-1040.webp?v=10" srcset="../assets/feature-shortcuts-640.webp?v=10 640w, ../assets/feature-shortcuts-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Spotlight findet gesicherte Screenshots nach Namen, und eine Aktion der App Kurzbefehle läuft nach jeder Aufnahme">
             <h3>Kurzbefehle und Spotlight</h3>
             <p>Eine Aufnahme kann einen Kurzbefehl starten, und Spotlight findet gesicherte Screenshots nach Namen.</p>
           </article>
@@ -902,6 +1005,27 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
   </footer>
 </div>
 <script>
+(function () {
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.showcase-prompt'));
+  var video = document.getElementById('showcase-video');
+  if (!video || !buttons.length) return;
+  var current = 0;
+  function show(i, play) {
+    current = i;
+    buttons.forEach(function (b, k) {
+      b.setAttribute('aria-pressed', k === i ? 'true' : 'false');
+      b.querySelector('.showcase-progress').style.transform = 'scaleX(0)';
+    });
+    video.poster = '../assets/showcase/' + buttons[i].dataset.video + '.jpg?v=10';
+    video.src = '../assets/showcase/' + buttons[i].dataset.video + '.mp4?v=10';
+    if (play) video.play();
+  }
+  buttons.forEach(function (b, i) { b.addEventListener('click', function () { show(i, true); }); });
+  video.addEventListener('timeupdate', function () {
+    if (video.duration) buttons[current].querySelector('.showcase-progress').style.transform = 'scaleX(' + (video.currentTime / video.duration) + ')';
+  });
+  video.addEventListener('ended', function () { show((current + 1) % buttons.length, true); });
+})();
 document.querySelectorAll('[data-lang]').forEach(function (link) {
   link.addEventListener('click', function () {
     try { localStorage.setItem('sightline-lang', link.dataset.lang); } catch (e) {}

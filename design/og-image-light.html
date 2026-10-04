@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- Source of assets/og-image.png. Render at 1200x630 with headless Chrome from the site root. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sightline og image</title>
+<style>
+@font-face { font-family: Manrope; font-weight: 500 800; src: url(../assets/manrope-latin.woff2) format('woff2'); }
+html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+body {
+  font-family: Manrope, sans-serif;
+  color: #10262b;
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(55% 420px at 30% 120px, rgba(217, 243, 239, 0.95), rgba(217, 243, 239, 0) 70%),
+    radial-gradient(50% 360px at 85% 95%, rgba(227, 236, 255, 0.95), rgba(227, 236, 255, 0) 75%), #f6f8f7;
+  position: relative;
+}
+.text { position: absolute; left: 72px; top: 0; bottom: 0; width: 470px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.brand { display: flex; align-items: center; gap: 18px; font-size: 52px; font-weight: 800; letter-spacing: -1px; }
+.brand img { width: 84px; height: 84px; }
+h1 { margin: 0; font-size: 42px; line-height: 1.12; font-weight: 800; letter-spacing: -0.8px; }
+p { margin: 0; font-size: 22px; line-height: 1.45; color: rgba(16, 38, 43, 0.72); }
+.url { font-size: 18px; font-weight: 700; color: #1f9fa1; }
+.shot { position: absolute; left: 590px; top: 95px; width: 700px; border-radius: 18px; box-shadow: 0 30px 80px rgba(16, 38, 43, 0.18), 0 6px 18px rgba(16, 38, 43, 0.10); }
+</style>
+</head>
+<body>
+  <div class="text">
+    <div class="brand"><img src="../assets/icon.png" alt="">Sightline</div>
+    <h1>Capture, record, annotate, done.</h1>
+    <p>Screenshots and screen recording for macOS. For you and your AI agent.</p>
+    <span class="url">Mac App Store</span>
+  </div>
+  <img class="shot" src="../assets/feature-v3-capture-2080.webp" alt="">
+</body>
+</html>
