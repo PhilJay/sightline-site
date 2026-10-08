@@ -106,7 +106,7 @@
           "name": "Ersetzt Sightline das Bildschirmfoto-Werkzeug von macOS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Es funktioniert genauso, mit ⌘⇧3, ⌘⇧4 und ⌘⇧5 und dem Vorschaubild in der Ecke, und bringt dazu einen Editor, Scroll-Aufnahme, Texterkennung, Hintergrund entfernen, angeheftete Aufnahmen, einen Verlauf und Bildschirmaufnahmen mit mitlaufender Unschärfe."
+            "text": "Es funktioniert genauso, mit ⌘⇧3, ⌘⇧4 und ⌘⇧5 und dem Vorschaubild in der Ecke, und bringt dazu einen Editor, Scroll-Aufnahme, Texterkennung, Hintergrund entfernen, angeheftete Aufnahmen, einen Verlauf und Bildschirmaufnahmen mit deiner Stimme, einem Videoeditor und mitlaufender Unschärfe."
           }
         },
         {
@@ -130,7 +130,15 @@
           "name": "Kann Sightline meinen Bildschirm aufzeichnen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf, zeichne dann im selben Editor Pfeile, Text und Unschärfen auf den Clip und trimme Anfang und Ende. Eine Unschärfe bleibt auf einer E-Mail-Adresse oder einem Gesicht, während die Seite scrollt. Auf macOS 27 behält Replay die letzten 15 Sekunden, damit du sichern kannst, was gerade passiert ist."
+            "text": "Ja. Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf, wenn du willst auch mit Mikrofon und nach einem Countdown. Die Aufnahme öffnet sich in einem Editor, in dem du Clips schneidest, umsortierst und beschleunigst, Teile des Tons stummschaltest oder lauter machst und Pfeile, Text und Unschärfen zeichnest, die jeweils für ihre eigene Zeitspanne zu sehen sind. Eine Unschärfe bleibt auf einer E-Mail-Adresse oder einem Gesicht, während die Seite scrollt. Auf macOS 27 behält Replay die letzten 15 Sekunden, damit du sichern kannst, was gerade passiert ist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Screencasts mit meiner Stimme aufnehmen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Schalte in den Einstellungen unter Aufnahme Mikrofon aufzeichnen ein und wähle ein Mikrofon. Deine Stimme wird mit dem Systemton in die Aufnahme gemischt, und in der Aufnahmeleiste schaltest du das Mikrofon stumm oder pausierst, während du sprichst. Danach bringst du den Screencast im Editor in Form und teilst ihn."
           }
         },
         {
@@ -138,7 +146,7 @@
           "name": "Was kann ich im Editor machen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pfeile, Formen, Text, Markierungen, Spotlight, Lupe, Unschärfe und Schrittnummern zeichnen, jedes Werkzeug auf einer einzigen Taste. Zuschneiden, den Hintergrund entfernen, mehrere Aufnahmen einfügen und anordnen und eine Aufnahme über deinen anderen Fenstern anheften. Jede Markierung bleibt bearbeitbar, auch die deines KI-Agenten."
+            "text": "Pfeile, Formen, Text, Markierungen, Spotlight, Lupe, Unschärfe und Schrittnummern zeichnen, jedes Werkzeug auf einer einzigen Taste. Zuschneiden, den Hintergrund entfernen, mehrere Aufnahmen einfügen und anordnen und eine Aufnahme über deinen anderen Fenstern anheften. Aufnahmen bekommen eine Zeitleiste mit Clips, einer Tonspur und einer Zeile für jede Markierung. Jede Markierung bleibt bearbeitbar, auch nachdem du die Datei gesichert und wieder geöffnet hast, und auch die deines KI-Agenten."
           }
         },
         {
@@ -784,9 +792,25 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <div class="feature-text">
             <p class="eyebrow">Bildschirmaufnahme</p>
             <h2>Unschärfe, die mitgeht.</h2>
-            <p>Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf. Der Clip öffnet sich im selben Editor: Pfeile, Text und Unschärfen für den ganzen Clip oder ein paar Sekunden davon, dann trimmst du Anfang und Ende.</p>
+            <p>Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf und, für einen Screencast, mit <strong>deinem Mikrofon</strong>. Ein Countdown gibt dir einen Moment Zeit, und in der Aufnahmeleiste pausierst du oder schaltest dich stumm.</p>
             <p>Verdecke eine E-Mail-Adresse einmal, und <strong>die Unschärfe bleibt darauf, während die Seite scrollt</strong>. Keine Keyframes, nichts auszurichten.</p>
             <p class="fine">Aufzeichnen braucht macOS 15.</p>
+          </div>
+        </article>
+
+        <article id="video-editor" class="feature flip reveal">
+          <div class="frame">
+            <video autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="../assets/editor-poster.jpg?v=10" aria-label="Ein Screencast, nach einem Countdown mit Mikrofon aufgenommen und dann in Sightline bearbeitet: Der Clip wird geschnitten, umsortiert und ein Teil auf 4x beschleunigt, der Anfang des Tons wird stummgeschaltet und der Rest auf 200 % angehoben, ein Rechteck wird in seiner eigenen Zeile gekürzt und geteilt, und eine Unschärfe folgt einer E-Mail-Adresse, während die Seite scrollt">
+              <source src="../assets/editor.webm?v=10" type="video/webm">
+              <source src="../assets/editor.mp4?v=10" type="video/mp4">
+            </video>
+          </div>
+          <div class="feature-text">
+            <p class="eyebrow">Screencasts</p>
+            <h2>Ein echter Videoeditor für deine Aufnahmen.</h2>
+            <p>Nimm einen Screencast mit deiner Stimme auf und bring ihn dann in Form. Jede Bildschirmaufnahme öffnet sich in einem Editor mit Spuren: <strong>Clips</strong> mit Vorschaubildern, eine <strong>Tonspur</strong>, die deine Stimme als Wellenform zeigt, und eine eigene Zeile für jede Markierung.</p>
+            <p>Schneide mit <kbd>⌘B</kbd>, kürze Anfang und Ende, zieh Clips in eine neue Reihenfolge und spiel einen mit 0,5x bis 15x ab. Schalte einen Teil des Tons stumm oder mach ihn bis zu 400 % lauter. Pfeile, Text und Unschärfen haben <strong>ihre eigene Zeit</strong>, die du verschiebst, kürzt und teilst, und eine Unschärfe folgt dem, was sie verdeckt.</p>
+            <p>Gesicherte Aufnahmen und Screenshots bleiben bearbeitbar, wenn du sie wieder öffnest.</p>
           </div>
         </article>
       </div>
@@ -861,6 +885,11 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p>Füg mit <kbd>⌘V</kbd> Bilder und Text in den Editor ein oder zieh eine Bilddatei hinein. Verschieben, skalieren und stapeln, mit Ganz nach vorne und Ganz nach hinten.</p>
           </article>
           <article class="card media reveal">
+            <img src="../assets/feature-editor-v6-screencast-1040.webp?v=10" srcset="../assets/feature-editor-v6-screencast-640.webp?v=10 640w, ../assets/feature-editor-v6-screencast-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein Kontofenster wird in einem roten Rahmen aufgezeichnet, darüber die Aufnahmeleiste mit laufendem Timer, Mikrofon, Pause und Stopp, darunter die Stimme als Wellenform">
+            <h3>Screencasts mit deiner Stimme</h3>
+            <p>Schalte <strong>Mikrofon aufzeichnen</strong> in den Einstellungen unter Aufnahme ein, und deine Stimme landet mit dem Systemton in der Aufnahme. Ein Countdown gibt dir Zeit, dich bereit zu machen, und in der Aufnahmeleiste schaltest du das Mikrofon stumm oder pausierst.</p>
+          </article>
+          <article class="card media reveal">
             <img src="../assets/feature-replay-1040.webp?v=10" srcset="../assets/feature-replay-640.webp?v=10 640w, ../assets/feature-replay-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Die Tasten Befehl-Umschalt-8 sichern die letzten 15 Sekunden des Bildschirms als Clip">
             <h3>Replay</h3>
             <p>Behalte die letzten 15 Sekunden deines Bildschirms und sichere mit <kbd>⌘⇧8</kbd>, was gerade passiert ist.</p>
@@ -920,7 +949,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <tr><td><strong>Pfeile, Schrittnummern, Unschärfe und Zuschneiden in einem Editor</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Findet Passwörter und Schlüssel, bevor du teilst</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Unschärfe, die einem Gesicht oder einer Textzeile folgt</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
-            <tr><td><strong>Pfeile, Text und Unschärfe auf einer Aufzeichnung, danach getrimmt</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
+            <tr><td><strong>Aufnahmen schneiden, umsortieren und beschleunigen, mit Ton und jeder Markierung in eigenen Zeilen</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Unschärfe, die in einer Aufzeichnung scrollendem Inhalt folgt</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Text und QR-Codes vom Bildschirm direkt in die Zwischenablage</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Hintergrund einer Aufnahme entfernen</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
@@ -957,7 +986,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </details>
           <details class="faq-item">
             <summary>Ersetzt Sightline das Bildschirmfoto-Werkzeug von macOS?</summary>
-            <p>Es funktioniert genauso, mit ⌘⇧3, ⌘⇧4 und ⌘⇧5 und dem Vorschaubild in der Ecke, und bringt dazu einen Editor, Scroll-Aufnahme, Texterkennung, Hintergrund entfernen, angeheftete Aufnahmen, einen Verlauf und Bildschirmaufnahmen mit mitlaufender Unschärfe.</p>
+            <p>Es funktioniert genauso, mit ⌘⇧3, ⌘⇧4 und ⌘⇧5 und dem Vorschaubild in der Ecke, und bringt dazu einen Editor, Scroll-Aufnahme, Texterkennung, Hintergrund entfernen, angeheftete Aufnahmen, einen Verlauf und Bildschirmaufnahmen mit deiner Stimme, einem Videoeditor und mitlaufender Unschärfe.</p>
           </details>
           <details class="faq-item">
             <summary>Verlassen meine Screenshots meinen Mac?</summary>
@@ -969,11 +998,15 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </details>
           <details class="faq-item">
             <summary>Kann Sightline meinen Bildschirm aufzeichnen?</summary>
-            <p>Ja. Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf, zeichne dann im selben Editor Pfeile, Text und Unschärfen auf den Clip und trimme Anfang und Ende. Eine Unschärfe bleibt auf einer E-Mail-Adresse oder einem Gesicht, während die Seite scrollt. Auf macOS 27 behält Replay die letzten 15 Sekunden, damit du sichern kannst, was gerade passiert ist.</p>
+            <p>Ja. Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf, wenn du willst auch mit Mikrofon und nach einem Countdown. Die Aufnahme öffnet sich in einem Editor, in dem du Clips schneidest, umsortierst und beschleunigst, Teile des Tons stummschaltest oder lauter machst und Pfeile, Text und Unschärfen zeichnest, die jeweils für ihre eigene Zeitspanne zu sehen sind. Eine Unschärfe bleibt auf einer E-Mail-Adresse oder einem Gesicht, während die Seite scrollt. Auf macOS 27 behält Replay die letzten 15 Sekunden, damit du sichern kannst, was gerade passiert ist.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kann ich Screencasts mit meiner Stimme aufnehmen?</summary>
+            <p>Ja. Schalte in den Einstellungen unter Aufnahme Mikrofon aufzeichnen ein und wähle ein Mikrofon. Deine Stimme wird mit dem Systemton in die Aufnahme gemischt, und in der Aufnahmeleiste schaltest du das Mikrofon stumm oder pausierst, während du sprichst. Danach bringst du den Screencast im Editor in Form und teilst ihn.</p>
           </details>
           <details class="faq-item">
             <summary>Was kann ich im Editor machen?</summary>
-            <p>Pfeile, Formen, Text, Markierungen, Spotlight, Lupe, Unschärfe und Schrittnummern zeichnen, jedes Werkzeug auf einer einzigen Taste. Zuschneiden, den Hintergrund entfernen, mehrere Aufnahmen einfügen und anordnen und eine Aufnahme über deinen anderen Fenstern anheften. Jede Markierung bleibt bearbeitbar, auch die deines KI-Agenten.</p>
+            <p>Pfeile, Formen, Text, Markierungen, Spotlight, Lupe, Unschärfe und Schrittnummern zeichnen, jedes Werkzeug auf einer einzigen Taste. Zuschneiden, den Hintergrund entfernen, mehrere Aufnahmen einfügen und anordnen und eine Aufnahme über deinen anderen Fenstern anheften. Aufnahmen bekommen eine Zeitleiste mit Clips, einer Tonspur und einer Zeile für jede Markierung. Jede Markierung bleibt bearbeitbar, auch nachdem du die Datei gesichert und wieder geöffnet hast, und auch die deines KI-Agenten.</p>
           </details>
           <details class="faq-item">
             <summary>Welche macOS-Version brauche ich?</summary>
