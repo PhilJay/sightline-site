@@ -145,7 +145,7 @@ h1, h2, h3 { font-weight: 600; color: var(--text); text-wrap: balance; }
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 6px;
+  margin-top: 22px;
 }
 .cta-note { font-size: 14px; color: var(--text-soft); }
 
