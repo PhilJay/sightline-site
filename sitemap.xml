@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://philjay.github.io/sightline-site/</loc>
+    <loc>https://sightlinemac.com/</loc>
     <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://philjay.github.io/sightline-site/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://philjay.github.io/sightline-site/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/"/>
   </url>
   <url>
-    <loc>https://philjay.github.io/sightline-site/de/</loc>
+    <loc>https://sightlinemac.com/de/</loc>
     <lastmod>2026-10-02</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://philjay.github.io/sightline-site/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://philjay.github.io/sightline-site/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/"/>
   </url>
 </urlset>

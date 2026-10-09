@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sightline: Screenshots und Bildschirmaufnahme für den Mac, für dich und deinen KI-Agenten</title>
   <meta name="description" content="Screenshots und Bildschirmaufnahmen für macOS. Beschrifte im schlanken Editor, nimm scrollende Seiten auf, kopiere Text per Texterkennung und entferne Hintergründe. Dein KI-Agent nimmt per MCP über Sightline den Bildschirm auf und prüft seine eigene Arbeit.">
-  <link rel="canonical" href="https://philjay.github.io/sightline-site/de/">
-  <link rel="alternate" hreflang="en" href="https://philjay.github.io/sightline-site/">
-  <link rel="alternate" hreflang="de" href="https://philjay.github.io/sightline-site/de/">
-  <link rel="alternate" hreflang="x-default" href="https://philjay.github.io/sightline-site/">
+  <link rel="canonical" href="https://sightlinemac.com/de/">
+  <link rel="alternate" hreflang="en" href="https://sightlinemac.com/">
+  <link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/">
+  <link rel="alternate" hreflang="x-default" href="https://sightlinemac.com/">
   <link rel="author" href="https://philjay.cc/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sightline">
   <meta property="og:title" content="Sightline: Screenshots und Bildschirmaufnahme für macOS, bereit für KI-Agenten">
   <meta property="og:description" content="Screenshots und Bildschirmaufnahmen für macOS. Beschrifte im schlanken Editor, nimm scrollende Seiten auf, kopiere Text per Texterkennung und entferne Hintergründe. Dein KI-Agent nimmt per MCP über Sightline den Bildschirm auf und prüft seine eigene Arbeit.">
-  <meta property="og:url" content="https://philjay.github.io/sightline-site/de/">
+  <meta property="og:url" content="https://sightlinemac.com/de/">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="https://philjay.github.io/sightline-site/assets/og-image.png?v=10">
+  <meta property="og:image" content="https://sightlinemac.com/assets/og-image.png?v=10">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Sightline: aufnehmen, aufzeichnen, beschriften, fertig. Der Editor mit einem Pfeil und einer Schrittnummer auf einer aufgenommenen Job-Tabelle.">
@@ -27,9 +27,9 @@
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://philjay.github.io/sightline-site/#website",
+      "@id": "https://sightlinemac.com/#website",
       "name": "Sightline",
-      "url": "https://philjay.github.io/sightline-site/",
+      "url": "https://sightlinemac.com/",
       "inLanguage": "de",
       "publisher": {
         "@id": "https://philjay.cc/#person"
@@ -37,12 +37,12 @@
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://philjay.github.io/sightline-site/#app",
+      "@id": "https://sightlinemac.com/#app",
       "name": "Sightline",
       "description": "Screenshots und Bildschirmaufnahmen aus der Menüleiste des Mac, mit schlankem Editor, Scroll-Aufnahme, Texterkennung, Hintergrund entfernen, angehefteten Aufnahmen und Verlauf, dazu ein eingebauter MCP-Server, über den dein KI-Agent den Bildschirm aufnehmen, lesen und beschriften kann.",
-      "url": "https://philjay.github.io/sightline-site/",
-      "image": "https://philjay.github.io/sightline-site/assets/og-image.png",
-      "screenshot": "https://philjay.github.io/sightline-site/assets/feature-v3-capture-2080.webp",
+      "url": "https://sightlinemac.com/",
+      "image": "https://sightlinemac.com/assets/og-image.png",
+      "screenshot": "https://sightlinemac.com/assets/feature-v3-capture-2080.webp",
       "operatingSystem": "macOS 14 oder neuer",
       "applicationCategory": "UtilitiesApplication",
       "downloadUrl": "https://apps.apple.com/app/sightline/id6812521593",
@@ -66,7 +66,7 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://philjay.github.io/sightline-site/#faq",
+      "@id": "https://sightlinemac.com/#faq",
       "inLanguage": "de",
       "mainEntity": [
         {
@@ -692,6 +692,32 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   .showcase { grid-template-columns: 1fr; }
   .showcase-steps { grid-template-columns: 1fr; }
 }
+
+.jump { display: flex; gap: 12px; align-items: center; justify-content: center; font-size: 15px; color: var(--text-dim); }
+.jump a { color: var(--text-soft); text-decoration: none; font-weight: 600; }
+.jump a:hover { color: var(--text); }
+.centerpiece { max-width: 1080px; margin: 0 auto 72px; }
+.grid.three .card.media { grid-column: span 2; }
+.section-fine { margin-top: 32px; text-align: center; }
+.grid .card.media.wide { grid-column: span 6; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: 1fr auto 1fr; column-gap: 0; padding: 0; }
+.card.media.wide img { grid-column: 1; grid-row: 1 / span 3; margin: 0; border-bottom: 0; border-right: 1px solid var(--card-border); }
+.card.media.wide > :not(img) { grid-column: 2; margin-inline: 40px; }
+.card.media.wide h3 { grid-row: 1; align-self: end; }
+.card.media.wide p { grid-row: 2; }
+.agent-feature { margin-top: 128px; }
+@media (max-width: 1000px) {
+  .grid.three .card.media, .grid .card.media.wide { grid-column: span 1; }
+  .grid .card.media.wide { display: flex; padding-bottom: 28px; }
+  .card.media.wide img { border-right: 0; border-bottom: 1px solid var(--card-border); margin-bottom: 14px; }
+  .card.media.wide > :not(img) { margin-inline: 28px; }
+  .card.media.wide h3 { align-self: auto; }
+  .centerpiece { margin-bottom: 48px; }
+  .agent-feature { margin-top: 96px; }
+}
+@media (max-width: 600px) {
+  .grid .card.media.wide { padding-bottom: 24px; }
+  .card.media.wide > :not(img) { margin-inline: 24px; }
+}
   </style>
   <!-- end styles.css -->
 </head>
@@ -705,8 +731,9 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   <header class="wrap nav">
     <a class="brand" href="#"><img src="../assets/icon.png?v=10" alt="" width="34" height="34">Sightline</a>
     <nav class="nav-links">
-      <a href="#features">Funktionen</a>
-      <a href="#showcases">KI-Agenten</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#recordings">Aufnahmen</a>
+      <a href="#agents">KI-Agenten</a>
       <a href="#compare">Vergleich</a>
       <a href="#faq">FAQ</a>
       <a href="#download">Laden</a>
@@ -724,6 +751,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         </a>
         <span class="cta-note">Optimiert für <strong>macOS 27</strong> und <strong>Apple Intelligence</strong></span>
       </div>
+      <nav class="jump" aria-label="Bereiche"><a href="#screenshots">Screenshots</a><span aria-hidden="true">·</span><a href="#recordings">Aufnahmen</a><span aria-hidden="true">·</span><a href="#agents">KI-Agenten</a></nav>
     </section>
 
     <div class="wrap hero-video">
@@ -735,11 +763,15 @@ kbd { background: rgba(16, 38, 43, 0.05); }
       </div>
     </div>
 
-    <section id="features" class="band first">
+    <section id="screenshots" class="band first">
       <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Screenshots</p>
+          <h2>Screenshots, die sich selbst erklären.</h2>
+        </div>
         <article class="feature reveal">
           <div class="frame">
-            <img src="../assets/feature-v3-capture-1040.webp?v=10" srcset="../assets/feature-v3-capture-1040.webp?v=10 1040w, ../assets/feature-v3-capture-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Der Sightline-Editor mit einer aufgenommenen Job-Tabelle, einem türkisen Pfeil auf einem Status Failed, einer Schrittnummer und der schlanken Werkzeugleiste darunter">
+            <img src="../assets/feature-annotate-v6-1040.webp?v=10" srcset="../assets/feature-annotate-v6-1040.webp?v=10 1040w, ../assets/feature-annotate-v6-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Der Sightline-Editor mit einer Dashboard-Aufnahme: eine markierte Erfolgsquote, ein roter Rahmen um einen fehlgeschlagenen Job, ein roter Pfeil mit dem Text Retry after lunch und drei Schrittnummern, darunter die schlanke Werkzeugleiste">
           </div>
           <div class="feature-text">
             <p class="eyebrow">Aufnehmen und beschriften</p>
@@ -749,20 +781,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </div>
         </article>
 
-        <article id="agent" class="feature flip reveal">
-          <div class="frame">
-            <img src="../assets/feature-v3-agent-1040.webp?v=10" srcset="../assets/feature-v3-agent-1040.webp?v=10 1040w, ../assets/feature-v3-agent-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Ein Claude Code Terminal meldet, dass der Button 8 px daneben liegt, und korrigiert ihn, daneben ein Bestellformular, in dem eine rote Hilfslinie den Abstand von 8 px misst">
-          </div>
-          <div class="feature-text">
-            <p class="eyebrow">Gebaut für KI-Agenten</p>
-            <h2>Lass deinen KI-Agenten Sightline nutzen.</h2>
-            <p>Sightline bringt einen <strong>MCP-Server</strong> mit. Dein Agent kann damit für dich den Bildschirm aufnehmen, Fenster auflisten, Text lesen, beschriften, einen Screenshot im Editor öffnen und mehr. Er baut einen Button, schaut hin, merkt, dass er daneben liegt, und korrigiert ihn.</p>
-            <p><strong>Claude Code, Claude Desktop und Codex CLI</strong> verbindest du <strong>mit einem Klick</strong> in den Einstellungen. Jede Markierung, die ein Agent zeichnet, kannst du weiter bearbeiten.</p>
-            <div class="pills"><span>Claude Code</span><span>Claude Desktop</span><span>Codex</span><span>Jeder MCP-Client</span></div>
-          </div>
-        </article>
-
-        <article class="feature reveal">
+        <article class="feature flip reveal">
           <div class="frame">
             <img src="../assets/feature-v3-cutout-1040.webp?v=10" srcset="../assets/feature-v3-cutout-1040.webp?v=10 1040w, ../assets/feature-v3-cutout-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine Tischlampe, aus ihrem Foto freigestellt, auf transparentem Schachbrettmuster im Editor, mit Hintergrund wiederherstellen in der Werkzeugleiste">
           </div>
@@ -774,7 +793,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </div>
         </article>
 
-        <article class="feature flip reveal">
+        <article class="feature reveal">
           <div class="frame">
             <img src="../assets/feature-v3-scrolling-1040.webp?v=10" srcset="../assets/feature-v3-scrolling-1040.webp?v=10 1040w, ../assets/feature-v3-scrolling-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine lange Webseite in einem roten Aufnahmerahmen, der Bereich darum abgedunkelt, darüber ein Bildzähler und daneben das zusammengesetzte hohe Bild, das wächst">
           </div>
@@ -785,43 +804,78 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </div>
         </article>
 
-        <article class="feature reveal">
+        <article class="feature flip reveal">
           <div class="frame">
-            <img src="../assets/feature-v3-recording-1040.webp?v=10" srcset="../assets/feature-v3-recording-1040.webp?v=10 1040w, ../assets/feature-v3-recording-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Eine Kontoseite wird in einem roten Rahmen mit laufendem Timer aufgezeichnet, die E-Mail-Adresse ist unter einer Unschärfe verdeckt">
+            <img src="../assets/feature-beautify-v6-1040.webp?v=10" srcset="../assets/feature-beautify-v6-1040.webp?v=10 1040w, ../assets/feature-beautify-v6-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Ein Dashboard-Screenshot auf einem türkisen Verlauf mit Rand, runden Ecken und weichem Schatten, daneben das Feld Verschönern mit Looks, Hintergründen und Reglern">
           </div>
           <div class="feature-text">
-            <p class="eyebrow">Bildschirmaufnahme</p>
-            <h2>Unschärfe, die mitgeht.</h2>
-            <p>Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf und, für einen Screencast, mit <strong>deinem Mikrofon</strong>. Ein Countdown gibt dir einen Moment Zeit, und in der Aufnahmeleiste pausierst du oder schaltest dich stumm.</p>
-            <p>Verdecke eine E-Mail-Adresse einmal, und <strong>die Unschärfe bleibt darauf, während die Seite scrollt</strong>. Keine Keyframes, nichts auszurichten.</p>
-            <p class="fine">Aufzeichnen braucht macOS 15.</p>
-          </div>
-        </article>
-
-        <article id="video-editor" class="feature flip reveal">
-          <div class="frame">
-            <video autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="../assets/editor-poster.jpg?v=10" aria-label="Ein Screencast, nach einem Countdown mit Mikrofon aufgenommen und dann in Sightline bearbeitet: Der Clip wird geschnitten, umsortiert und ein Teil auf 4x beschleunigt, der Anfang des Tons wird stummgeschaltet und der Rest auf 200 % angehoben, ein Rechteck wird in seiner eigenen Zeile gekürzt und geteilt, und eine Unschärfe folgt einer E-Mail-Adresse, während die Seite scrollt">
-              <source src="../assets/editor.webm?v=10" type="video/webm">
-              <source src="../assets/editor.mp4?v=10" type="video/mp4">
-            </video>
-          </div>
-          <div class="feature-text">
-            <p class="eyebrow">Screencasts</p>
-            <h2>Ein echter Videoeditor für deine Aufnahmen.</h2>
-            <p>Nimm einen Screencast mit deiner Stimme auf und bring ihn dann in Form. Jede Bildschirmaufnahme öffnet sich in einem Editor mit Spuren: <strong>Clips</strong> mit Vorschaubildern, eine <strong>Tonspur</strong>, die deine Stimme als Wellenform zeigt, und eine eigene Zeile für jede Markierung.</p>
-            <p>Schneide mit <kbd>⌘B</kbd>, kürze Anfang und Ende, zieh Clips in eine neue Reihenfolge und spiel einen mit 0,5x bis 15x ab. Schalte einen Teil des Tons stumm oder mach ihn bis zu 400 % lauter. Pfeile, Text und Unschärfen haben <strong>ihre eigene Zeit</strong>, die du verschiebst, kürzt und teilst, und eine Unschärfe folgt dem, was sie verdeckt.</p>
-            <p>Gesicherte Aufnahmen und Screenshots bleiben bearbeitbar, wenn du sie wieder öffnest.</p>
+            <p class="eyebrow">Verschönern</p>
+            <h2>Mit einem Klick bereit zum Teilen.</h2>
+            <p>Verschönern legt einen Screenshot auf einen Hintergrund, mit Abstand, runden Ecken und weichem Schatten. Wähle einen Look oder einen Verlauf, eine Farbe oder ein eigenes Bild, und ein Format von Auto bis 16:9 oder 1:1.</p>
+            <p>Sichere einen Look als Vorlage oder nutze ihn für jeden neuen Screenshot.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="showcases" class="band ai-band">
+    <section id="recordings" class="band light">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Aufnahmen</p>
+          <h2>Nimm einen Screencast auf. Bring ihn in Form.</h2>
+          <p class="section-intro">Zeichne den Bildschirm mit deiner Stimme auf und bearbeite ihn dann auf einer echten Zeitleiste: Clips, Ton, Zooms und eine Zeile für jede Markierung. Gesicherte Aufnahmen bleiben bearbeitbar, wenn du sie wieder öffnest.</p>
+        </div>
+        <div class="centerpiece reveal">
+          <div class="frame">
+            <video autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="../assets/editor-poster.jpg?v=10" aria-label="Ein Screencast, nach einem Countdown mit Mikrofon aufgenommen und dann in Sightline bearbeitet: Der Clip wird geschnitten, umsortiert und ein Teil auf 4x beschleunigt, der Anfang des Tons wird stummgeschaltet und der Rest auf 200 % angehoben, ein Rechteck wird in seiner eigenen Zeile gekürzt und geteilt, ein sanfter 2x-Zoom bekommt seine eigene Zeile, eine Unschärfe folgt einer E-Mail-Adresse, während die Seite scrollt, und ein Screenshot bekommt mit einem Klick Hintergrund, Rand und Schatten">
+              <source src="../assets/editor.webm?v=10" type="video/webm">
+              <source src="../assets/editor.mp4?v=10" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="grid three">
+          <article class="card media reveal">
+            <img src="../assets/card-editor-voice-1040.webp?v=10" srcset="../assets/card-editor-voice-640.webp?v=10 640w, ../assets/card-editor-voice-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein Kontofenster wird in einem roten Rahmen aufgezeichnet, darüber die Aufnahmeleiste mit Timer, Mikrofon, Pause und Stopp, darunter die Stimme als Wellenform">
+            <h3>Deine Stimme und ein Countdown</h3>
+            <p>Nimm dein Mikrofon mit dem Bildschirm auf. Ein Countdown macht dich bereit, und in der Aufnahmeleiste pausierst du oder schaltest dich stumm.</p>
+          </article>
+          <article class="card media reveal">
+            <img src="../assets/card-editor-clips-1040.webp?v=10" srcset="../assets/card-editor-clips-640.webp?v=10 640w, ../assets/card-editor-clips-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Die Zeile Clips mit einem Clip in 4x und seinem Abzeichen, der Abspielkopf bei 0:08 und darüber der Knopf Tempo 4x">
+            <h3>Clips und Tempo</h3>
+            <p>Schneide mit <kbd>⌘B</kbd>, kürze, zieh Clips in eine neue Reihenfolge und spiel einen mit 0,5x bis 15x ab.</p>
+          </article>
+          <article class="card media reveal">
+            <img src="../assets/card-editor-sound-1040.webp?v=10" srcset="../assets/card-editor-sound-640.webp?v=10 640w, ../assets/card-editor-sound-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Die Tonspur in zwei Teilen, der erste stummgeschaltet, der Rest auf 200 % mit höherer Wellenform">
+            <h3>Ton, den du formst</h3>
+            <p>Teile den Ton, schalte einen Teil stumm oder mach ihn bis zu 400 % lauter.</p>
+          </article>
+          <article class="card media reveal">
+            <img src="../assets/card-editor-zoom-1040.webp?v=10" srcset="../assets/card-editor-zoom-640.webp?v=10 640w, ../assets/card-editor-zoom-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Der Aufnahme-Editor mit einem 2x-Zoom in seiner eigenen Zeile Zoom, darunter die Zeilen für Rechteck und Unschärfe">
+            <h3>Sanft heranzoomen</h3>
+            <p>Zieh einen Rahmen auf, und das Video zoomt sanft hinein. Jeder Zoom bekommt einen Balken zum Verschieben und Kürzen.</p>
+          </article>
+          <article class="card media reveal">
+            <img src="../assets/card-editor-blur-1040.webp?v=10" srcset="../assets/card-editor-blur-640.webp?v=10 640w, ../assets/card-editor-blur-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Die Zeitleiste mit einer Unschärfe-Zeile, die beim Verfolgen der E-Mail-Adresse Unschärfe 72 % zeigt">
+            <h3>Unschärfe, die mitgeht</h3>
+            <p>Verdecke eine E-Mail-Adresse einmal, und die Unschärfe bleibt darauf, während die Seite scrollt. Jede Markierung hat ihre eigene Zeit.</p>
+          </article>
+          <article class="card media reveal">
+            <img src="../assets/feature-replay-1040.webp?v=10" srcset="../assets/feature-replay-640.webp?v=10 640w, ../assets/feature-replay-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Die Tasten Befehl-Umschalt-8 sichern die letzten 15 Sekunden des Bildschirms als Clip">
+            <h3>Replay</h3>
+            <p>Behalte die letzten 15 Sekunden deines Bildschirms und sichere mit <kbd>⌘⇧8</kbd>, was gerade passiert ist.</p>
+            <p class="fine">Braucht macOS 27.</p>
+          </article>
+        </div>
+        <p class="fine section-fine">Aufzeichnen braucht macOS 15.</p>
+      </div>
+    </section>
+
+    <section id="agents" class="band ai-band">
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">Für KI-Agenten</p>
           <h2>Gib die Arbeit an deinen Agenten ab.</h2>
-          <p class="section-intro">Sightline hat einen eingebauten <strong>MCP-Server</strong>. Sag <strong>Claude Code</strong> oder <strong>Codex</strong> in klaren Worten, was du brauchst, und dein Agent nimmt den Bildschirm für dich auf, liest ihn, beschriftet und zeichnet auf, oder prüft seine eigene Arbeit.</p>
+          <p class="section-intro">Sightline hat einen eingebauten <strong>MCP-Server</strong>. Sag <strong>Claude Code</strong> oder <strong>Codex</strong> in klaren Worten, was du brauchst, und dein Agent nimmt den Bildschirm für dich auf, liest ihn, beschriftet und zeichnet auf. Er kann auch eine Aufnahme schneiden, heranzoomen und einen Screenshot verschönern.</p>
           <div class="showcase-agents"><span>Funktioniert mit</span><span class="pill">Claude Code</span><span class="pill">Claude Desktop</span><span class="pill">Codex</span><span class="pill">Jeder MCP-Client</span></div>
         </div>
         <div class="showcase reveal">
@@ -843,6 +897,16 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <div><span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l2.6-2.6a4 4 0 0 0-5.7-5.7L11.5 6.8"/><path d="M14 10a4 4 0 0 0-5.7 0l-2.6 2.6a4 4 0 0 0 5.7 5.7l1.1-1.1"/></svg></span><b>Mit einem Klick verbinden</b>Einstellungen › KI-Agenten › Verbinden für Claude Code, Claude Desktop oder Codex.</div>
           <div><span class="step-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v6a2.5 2.5 0 0 1-2.5 2.5H11l-4 3.5V15h0.5A2.5 2.5 0 0 1 5 12.5z"/><path d="M9 9.5h6M9 12h3.5"/></svg></span><b>Einfach fragen</b>Jeder neue Agent fragt zuerst, und jede Markierung, die er zeichnet, bleibt für dich bearbeitbar.</div>
         </div>
+        <article id="agent" class="feature flip reveal agent-feature">
+          <div class="frame">
+            <img src="../assets/feature-v3-agent-1040.webp?v=10" srcset="../assets/feature-v3-agent-1040.webp?v=10 1040w, ../assets/feature-v3-agent-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="Ein Claude Code Terminal meldet, dass der Button 8 px daneben liegt, und korrigiert ihn, daneben ein Bestellformular, in dem eine rote Hilfslinie den Abstand von 8 px misst">
+          </div>
+          <div class="feature-text">
+            <p class="eyebrow">Prüft die eigene Arbeit</p>
+            <h2>Dein Agent sieht, was er gebaut hat.</h2>
+            <p>Er baut einen Button, nimmt das Fenster auf, merkt, dass der Button 8 px daneben liegt, und korrigiert ihn. Jede Markierung, die ein Agent zeichnet, bleibt für dich bearbeitbar.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -884,18 +948,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <h3>Einfügen und anordnen</h3>
             <p>Füg mit <kbd>⌘V</kbd> Bilder und Text in den Editor ein oder zieh eine Bilddatei hinein. Verschieben, skalieren und stapeln, mit Ganz nach vorne und Ganz nach hinten.</p>
           </article>
-          <article class="card media reveal">
-            <img src="../assets/feature-editor-v6-screencast-1040.webp?v=10" srcset="../assets/feature-editor-v6-screencast-640.webp?v=10 640w, ../assets/feature-editor-v6-screencast-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein Kontofenster wird in einem roten Rahmen aufgezeichnet, darüber die Aufnahmeleiste mit laufendem Timer, Mikrofon, Pause und Stopp, darunter die Stimme als Wellenform">
-            <h3>Screencasts mit deiner Stimme</h3>
-            <p>Schalte <strong>Mikrofon aufzeichnen</strong> in den Einstellungen unter Aufnahme ein, und deine Stimme landet mit dem Systemton in der Aufnahme. Ein Countdown gibt dir Zeit, dich bereit zu machen, und in der Aufnahmeleiste schaltest du das Mikrofon stumm oder pausierst.</p>
-          </article>
-          <article class="card media reveal">
-            <img src="../assets/feature-replay-1040.webp?v=10" srcset="../assets/feature-replay-640.webp?v=10 640w, ../assets/feature-replay-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Die Tasten Befehl-Umschalt-8 sichern die letzten 15 Sekunden des Bildschirms als Clip">
-            <h3>Replay</h3>
-            <p>Behalte die letzten 15 Sekunden deines Bildschirms und sichere mit <kbd>⌘⇧8</kbd>, was gerade passiert ist.</p>
-            <p class="fine">Braucht macOS 27.</p>
-          </article>
-          <article class="card media reveal">
+          <article class="card media wide reveal">
             <img src="../assets/feature-shortcuts-1040.webp?v=10" srcset="../assets/feature-shortcuts-640.webp?v=10 640w, ../assets/feature-shortcuts-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Spotlight findet gesicherte Screenshots nach Namen, und eine Aktion der App Kurzbefehle läuft nach jeder Aufnahme">
             <h3>Kurzbefehle und Spotlight</h3>
             <p>Eine Aufnahme kann einen Kurzbefehl starten, und Spotlight findet gesicherte Screenshots nach Namen.</p>
