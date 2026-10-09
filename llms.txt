@@ -1,0 +1,30 @@
+# Sightline
+
+> Sightline is the screenshot and recording app for Mac. Capture anything from the menu bar, polish it in a powerful editor for images and video, or let your AI agent do it through Sightline's built in MCP server. Everything runs on the Mac, with no account.
+
+- Website: https://sightlinemac.com/ (German: https://sightlinemac.com/de/)
+- Mac App Store: https://apps.apple.com/app/sightline/id6812521593
+- MCP setup for AI agents: https://github.com/PhilJay/sightline-mcp
+- Privacy policy: https://sightlinemac.com/privacy.html
+
+## Screenshots
+
+- Area, window, full screen and scrolling screenshots with the familiar macOS shortcuts, a magnifier, a floating thumbnail and a searchable history.
+- Image editor: arrows, shapes, text, highlights, step numbers, magnify, blur and pixelate, each on a single key.
+- Beautify: put a screenshot on a background with padding, rounded corners and a shadow; save looks as presets or let Apple Intelligence suggest some.
+- Text recognition (OCR), Remove Background, pins that float above other windows, and detection of passwords and keys before you share.
+
+## Screen recordings and screencasts
+
+- Record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown.
+- Video editor with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, marks with their own timing, and blurs that follow moving content.
+- Saved screenshots and recordings stay editable when opened again.
+
+## AI agents
+
+- A built in MCP server lets Claude Code, Claude Desktop, Codex and other MCP clients capture the screen, read text, annotate, record, cut and zoom recordings and beautify screenshots. Each agent asks for permission first.
+
+## Requirements and pricing
+
+- macOS 14 or later; Apple Intelligence features need a supported Mac with Apple Intelligence turned on.
+- Free download with a trial; Sightline Pro by subscription or a one-time purchase in the App Store.
