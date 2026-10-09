@@ -80,6 +80,14 @@
         },
         {
           "@type": "Question",
+          "name": "Hat Sightline ein Kommandozeilen-Tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. In der App steckt sightline-cli. Mit /Applications/Sightline.app/Contents/MacOS/sightline-cli tools siehst du, was es kann, und rufst ein Werkzeug mit seinem Namen und den Optionen als JSON auf, zum Beispiel sightline-cli capture_window --json '{\"app\": \"Safari\"}'. Das Ergebnis kommt als JSON zurück. Sightline muss laufen und der Agentenzugriff in den Einstellungen unter KI-Agenten eingeschaltet sein; beim ersten Mal fragt Sightline, ob du das Kommandozeilen-Tool erlaubst. sightline-cli mcp stellt dieselben Werkzeuge als MCP-Server für KI-Agenten bereit."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Kann mein KI-Agent seine eigene Arbeit an der Oberfläche prüfen?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -1029,6 +1037,10 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <details class="faq-item">
             <summary>Kann Claude Code oder Codex auf meinem Mac Screenshots machen?</summary>
             <p>Ja. Sightline hat einen eingebauten MCP-Server, über den Claude Code, Claude Desktop, Codex CLI und andere MCP-Clients den Bildschirm, ein Fenster oder einen Bereich aufnehmen, den Text darauf lesen und ihn beschriften. Schalte in den Einstellungen unter KI-Agenten den Zugriff ein und klicke auf Verbinden.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Hat Sightline ein Kommandozeilen-Tool?</summary>
+            <p>Ja. In der App steckt <code>sightline-cli</code>. Mit <code>/Applications/Sightline.app/Contents/MacOS/sightline-cli tools</code> siehst du, was es kann, und rufst ein Werkzeug mit seinem Namen und den Optionen als JSON auf, zum Beispiel <code>sightline-cli capture_window --json '{"app": "Safari"}'</code>. Das Ergebnis kommt als JSON zurück. Sightline muss laufen und der Agentenzugriff in den Einstellungen unter KI-Agenten eingeschaltet sein; beim ersten Mal fragt Sightline, ob du das Kommandozeilen-Tool erlaubst. <code>sightline-cli mcp</code> stellt dieselben Werkzeuge als MCP-Server für KI-Agenten bereit.</p>
           </details>
           <details class="faq-item">
             <summary>Kann mein KI-Agent seine eigene Arbeit an der Oberfläche prüfen?</summary>

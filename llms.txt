@@ -23,6 +23,7 @@
 ## AI agents
 
 - A built in MCP server lets Claude Code, Claude Desktop, Codex and other MCP clients capture the screen, read text, annotate, record, cut and zoom recordings and beautify screenshots. Each agent asks for permission first.
+- Command line: `/Applications/Sightline.app/Contents/MacOS/sightline-cli tools` lists the tools; `sightline-cli <tool> --json '{...}'` calls one and prints JSON; `sightline-cli mcp` runs the MCP server over stdio.
 
 ## Requirements and pricing
 
