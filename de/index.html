@@ -164,6 +164,7 @@
   </script>
   <link rel="icon" type="image/png" href="../assets/favicon.png?v=10">
   <link rel="apple-touch-icon" href="../assets/icon.png?v=10">
+  <link rel="preload" href="../assets/hero-poster.webp?v=10" as="image" fetchpriority="high">
   <link rel="preload" href="../assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <script>document.documentElement.classList.add('js')</script>
   <!-- inlined from styles.css, run build.sh after editing it -->
@@ -172,8 +173,8 @@
   font-family: Manrope;
   font-style: normal;
   font-weight: 500 800;
-  font-display: swap;
-  src: url(assets/manrope-latin.woff2) format('woff2');
+  font-display: optional;
+  src: url(/assets/manrope-latin.woff2) format('woff2');
 }
 
 :root {
@@ -729,7 +730,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 
 <div class="stage">
   <header class="wrap nav">
-    <a class="brand" href="#"><img src="../assets/icon.png?v=10" alt="" width="34" height="34">Sightline</a>
+    <a class="brand" href="#"><img src="../assets/icon-68.webp" srcset="../assets/icon-68.webp 2x, ../assets/icon-102.webp 3x" alt="" width="34" height="34">Sightline</a>
     <nav class="nav-links">
       <a href="#screenshots">Screenshots</a>
       <a href="#recordings">Aufnahmen</a>
@@ -757,7 +758,8 @@ kbd { background: rgba(16, 38, 43, 0.05); }
     <div class="wrap hero-video">
       <div class="frame">
         <video autoplay muted loop playsinline width="1280" height="720" poster="../assets/hero-poster.webp?v=10" aria-label="Sightline in 23 Sekunden: eine Aufnahme wird im Editor beschriftet, ein Agent sieht, dass sein Button 8 px daneben liegt, und korrigiert ihn, eine Lampe wird von ihrem Hintergrund freigestellt, eine Seite wird beim Scrollen aufgenommen, und in einer Bildschirmaufnahme folgt die Unschärfe einer E-Mail-Adresse">
-          <source src="../assets/hero.webm?v=10" type="video/webm">
+          <source src="../assets/hero-av1.mp4?v=10" type="video/mp4; codecs=&quot;av01.0.05M.08&quot;">
+          <source src="../assets/hero-hevc.mp4?v=10" type="video/mp4; codecs=&quot;hvc1.1.6.L93.B0&quot;">
           <source src="../assets/hero.mp4?v=10" type="video/mp4">
         </video>
       </div>
@@ -827,8 +829,9 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         </div>
         <div class="centerpiece reveal">
           <div class="frame">
-            <video autoplay muted loop playsinline preload="metadata" width="1280" height="720" poster="../assets/editor-poster.jpg?v=10" aria-label="Ein Screencast, nach einem Countdown mit Mikrofon aufgenommen und dann in Sightline bearbeitet: Der Clip wird geschnitten, umsortiert und ein Teil auf 4x beschleunigt, der Anfang des Tons wird stummgeschaltet und der Rest auf 200 % angehoben, ein Rechteck wird in seiner eigenen Zeile gekürzt und geteilt, ein sanfter 2x-Zoom bekommt seine eigene Zeile, eine Unschärfe folgt einer E-Mail-Adresse, während die Seite scrollt, und ein Screenshot bekommt mit einem Klick Hintergrund, Rand und Schatten">
-              <source src="../assets/editor.webm?v=10" type="video/webm">
+            <video class="play-when-shown" muted loop playsinline preload="none" width="1280" height="720" poster="../assets/editor-poster.jpg?v=10" aria-label="Ein Screencast, nach einem Countdown mit Mikrofon aufgenommen und dann in Sightline bearbeitet: Der Clip wird geschnitten, umsortiert und ein Teil auf 4x beschleunigt, der Anfang des Tons wird stummgeschaltet und der Rest auf 200 % angehoben, ein Rechteck wird in seiner eigenen Zeile gekürzt und geteilt, ein sanfter 2x-Zoom bekommt seine eigene Zeile, eine Unschärfe folgt einer E-Mail-Adresse, während die Seite scrollt, und ein Screenshot bekommt mit einem Klick Hintergrund, Rand und Schatten">
+              <source src="../assets/editor-av1.mp4?v=10" type="video/mp4; codecs=&quot;av01.0.05M.08&quot;">
+              <source src="../assets/editor-hevc.mp4?v=10" type="video/mp4; codecs=&quot;hvc1.1.6.L93.B0&quot;">
               <source src="../assets/editor.mp4?v=10" type="video/mp4">
             </video>
           </div>
@@ -888,7 +891,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </div>
           <div class="showcase-stage">
           <div class="frame">
-            <video id="showcase-video" autoplay muted playsinline width="1280" height="720" poster="../assets/showcase/1-pr-tabs.jpg?v=10" src="../assets/showcase/1-pr-tabs.mp4?v=10"></video>
+            <video id="showcase-video" muted playsinline preload="none" width="1280" height="720" poster="../assets/showcase/1-pr-tabs.jpg?v=10"></video>
           </div>
           </div>
         </div>
@@ -1091,11 +1094,22 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   </footer>
 </div>
 <script>
+function playWhenShown(video, start) {
+  if (!('IntersectionObserver' in window)) { start(); return; }
+  new IntersectionObserver(function (entries, observer) {
+    if (entries[0].isIntersecting) { observer.disconnect(); start(); }
+  }, { rootMargin: '300px 0px' }).observe(video);
+}
+document.querySelectorAll('video.play-when-shown').forEach(function (video) {
+  playWhenShown(video, function () { video.play(); });
+});
 (function () {
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.showcase-prompt'));
   var video = document.getElementById('showcase-video');
   if (!video || !buttons.length) return;
   var current = 0;
+  var format = video.canPlayType('video/mp4; codecs="av01.0.05M.08"') ? '-av1.mp4'
+    : video.canPlayType('video/mp4; codecs="hvc1.1.6.L93.B0"') ? '-hevc.mp4' : '.mp4';
   function show(i, play) {
     current = i;
     buttons.forEach(function (b, k) {
@@ -1103,7 +1117,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
       b.querySelector('.showcase-progress').style.transform = 'scaleX(0)';
     });
     video.poster = '../assets/showcase/' + buttons[i].dataset.video + '.jpg?v=10';
-    video.src = '../assets/showcase/' + buttons[i].dataset.video + '.mp4?v=10';
+    video.src = '../assets/showcase/' + buttons[i].dataset.video + format + '?v=10';
     if (play) video.play();
   }
   buttons.forEach(function (b, i) { b.addEventListener('click', function () { show(i, true); }); });
@@ -1111,6 +1125,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
     if (video.duration) buttons[current].querySelector('.showcase-progress').style.transform = 'scaleX(' + (video.currentTime / video.duration) + ')';
   });
   video.addEventListener('ended', function () { show((current + 1) % buttons.length, true); });
+  playWhenShown(video, function () { if (!video.src) show(current, true); else video.play(); });
 })();
 document.querySelectorAll('[data-lang]').forEach(function (link) {
   link.addEventListener('click', function () {

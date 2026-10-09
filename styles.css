@@ -2,8 +2,8 @@
   font-family: Manrope;
   font-style: normal;
   font-weight: 500 800;
-  font-display: swap;
-  src: url(assets/manrope-latin.woff2) format('woff2');
+  font-display: optional;
+  src: url(/assets/manrope-latin.woff2) format('woff2');
 }
 
 :root {
