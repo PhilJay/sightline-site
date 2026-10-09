@@ -136,6 +136,14 @@
         },
         {
           "@type": "Question",
+          "name": "Warum funktionieren die automatischen Namen oder die Vorschläge in Verschönern nicht?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sie brauchen Apple Intelligence, und macOS verrät Apps nicht, warum es aus ist. Prüfe in den Systemeinstellungen, ob Apple Intelligence unter Apple Intelligence & Siri (bei neueren macOS-Versionen unter Siri) eingeschaltet ist und ob die Sprache von Siri genau der Sprache deines Mac entspricht, zum Beispiel beide Deutsch (Deutschland). Weichen die beiden ab, blendet macOS Apple Intelligence ganz aus. Nach dem Einschalten oder nach einem macOS-Update muss der Mac am Strom und online bleiben, während das Modell lädt, was eine Weile dauern kann. Außerdem braucht Apple Intelligence einen Mac mit Apple Chip, macOS 26 oder neuer und eine unterstützte Region."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Kann Sightline meinen Bildschirm aufzeichnen?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -1066,6 +1074,10 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <summary>Nutzt Sightline Apple Intelligence?</summary>
             <p>Ja, auf Macs, die es unterstützen. Apple Intelligence benennt deine Screenshots nach ihrem Inhalt und findet Passwörter, Schlüssel und Token, bevor du teilst, alles auf dem Gerät ab macOS 26. Hintergrund entfernen und die Motiv-Unschärfe nutzen Apples Vision-Modell auf dem Gerät ab macOS 27.</p>
           </details>
+          <details class="faq-item" id="apple-intelligence">
+            <summary>Warum funktionieren die automatischen Namen oder die Vorschläge in Verschönern nicht?</summary>
+            <p>Sie brauchen Apple Intelligence, und macOS verrät Apps nicht, warum es aus ist. Prüfe in den Systemeinstellungen, ob Apple Intelligence unter Apple Intelligence &amp; Siri (bei neueren macOS-Versionen unter Siri) eingeschaltet ist und ob die Sprache von Siri genau der Sprache deines Mac entspricht, zum Beispiel beide Deutsch (Deutschland). Weichen die beiden ab, blendet macOS Apple Intelligence ganz aus. Nach dem Einschalten oder nach einem macOS-Update muss der Mac am Strom und online bleiben, während das Modell lädt, was eine Weile dauern kann. Außerdem braucht Apple Intelligence einen Mac mit Apple Chip, macOS 26 oder neuer und eine unterstützte Region.</p>
+          </details>
           <details class="faq-item">
             <summary>Kann Sightline meinen Bildschirm aufzeichnen?</summary>
             <p>Ja. Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf, wenn du willst auch mit Mikrofon und nach einem Countdown. Die Aufnahme öffnet sich in einem Editor, in dem du Clips schneidest, umsortierst und beschleunigst, Teile des Tons stummschaltest oder lauter machst und Pfeile, Text und Unschärfen zeichnest, die jeweils für ihre eigene Zeitspanne zu sehen sind. Eine Unschärfe bleibt auf einer E-Mail-Adresse oder einem Gesicht, während die Seite scrollt. Auf macOS 27 behält Replay die letzten 15 Sekunden, damit du sichern kannst, was gerade passiert ist.</p>
@@ -1140,6 +1152,14 @@ document.querySelectorAll('video.play-when-shown').forEach(function (video) {
   });
   video.addEventListener('ended', function () { show((current + 1) % buttons.length, true); });
   playWhenShown(video, function () { if (!video.src) show(current, true); else video.play(); });
+})();
+(function () {
+  function openFromHash() {
+    var item = location.hash && document.getElementById(location.hash.slice(1));
+    if (item && item.tagName === 'DETAILS') item.open = true;
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
 })();
 document.querySelectorAll('[data-lang]').forEach(function (link) {
   link.addEventListener('click', function () {
