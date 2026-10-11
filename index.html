@@ -51,7 +51,7 @@
       "screenshot": "https://sightlinemac.com/assets/feature-v3-capture-2080.webp?v=10",
       "operatingSystem": "macOS 14 or later",
       "applicationCategory": "UtilitiesApplication",
-      "featureList": ["Area, window, full screen and scrolling screenshots from the menu bar", "Screen recording with system sound and your voice from the microphone, with a countdown", "Video editor with a timeline: split, trim and reorder clips, speed from 0.5x to 15x, a sound lane with mute and volume up to 400 %, smooth or instant zooms", "Image editor with arrows, shapes, text, highlights, step numbers, magnify, blur and pixelate", "Blurs that follow moving content in recordings", "Beautify: backgrounds, padding, rounded corners and shadows, with presets and Apple Intelligence suggestions", "Saved screenshots and recordings stay editable", "Text recognition (OCR), Remove Background, pins and a searchable capture history", "Built in MCP server so AI agents such as Claude Code and Codex can capture, annotate and edit"],
+      "featureList": ["Area, window, full screen and scrolling screenshots from the menu bar", "Screen recording with system sound and your voice from the microphone, with a countdown", "Video editor with a timeline: split, trim and reorder clips, speed from 0.5x to 15x, a sound lane with mute and volume up to 400 %, smooth or instant zooms, zooms on every click that can follow the pointer, click highlights, and export at 1080p or 720p as MP4 or MOV", "Image editor with arrows, shapes, text in five fonts, highlights, step numbers, magnify, blur and pixelate, plus rotate, flip, resize and export as PNG, JPEG or WebP", "Show Differences: pin a design over the running app and see every spot that differs, with Tracing to click through", "Blurs that follow moving content in recordings", "Beautify: backgrounds, padding, rounded corners and shadows, with presets and Apple Intelligence suggestions", "Saved screenshots and recordings stay editable", "Text recognition (OCR), Remove Background, pins and a searchable capture history", "Built in MCP server so AI agents such as Claude Code and Codex can capture, annotate and edit"],
       "downloadUrl": "https://apps.apple.com/app/sightline/id6812521593",
       "installUrl": "https://apps.apple.com/app/sightline/id6812521593",
       "offers": {
@@ -97,7 +97,15 @@
           "name": "Can my AI agent check its own UI work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Your agent builds something, captures the window and looks at the result, so it notices when a button sits off."
+            "text": "Yes. Your agent builds something, captures the window and looks at the result, so it notices when a button sits off. It can also compare the screen with a design image and get a list of what still differs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I compare my app with a design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pin the design, a mockup or an earlier screenshot over the running app and choose Show Differences in the pin's bar or right-click menu. Sightline captures what is below the pin, lines it up and numbers every spot that differs, with a list that says whether it moved, is missing or only looks different. Turn on Tracing to click through to the app while the marks follow. Your AI agent can run the same comparison over MCP."
           }
         },
         {
@@ -177,7 +185,7 @@
           "name": "Can I edit screen recordings on a Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in, and add arrows, text and blurs that follow what they cover. Copy, Save or Share the result as MP4."
+            "text": "Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, highlight clicks, and add arrows, text and blurs that follow what they cover. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV."
           }
         },
         {
@@ -201,7 +209,7 @@
           "name": "What can I do in the editor?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Draw arrows, shapes, text, highlights, a spotlight, a magnifier, blur and step numbers, each on a single key. Crop, remove the background, paste and arrange several captures, and pin a capture over your other windows. Recordings get a timeline with clips, a sound row and a row for every mark. Every mark stays editable, also after you save and open the file again, including the ones your AI agent drew."
+            "text": "Draw arrows, shapes, text, highlights, a spotlight, a magnifier, blur and step numbers, each on a single key. Crop, rotate, flip and resize, remove the background, paste and arrange several captures, and pin a capture over your other windows. Recordings get a timeline with clips, a sound row, zooms on clicks, click highlights and a row for every mark. Every mark stays editable, also after you save and open the file again, including the ones your AI agent drew."
           }
         },
         {
@@ -834,7 +842,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p class="eyebrow">Capture and annotate</p>
             <h2>Capture. Mark it up.</h2>
             <p>Area, window and full screen with the shortcuts you already know, a magnifier for pixel exact edges and a floating thumbnail. While you drag, <kbd>⌘C</kbd>, <kbd>⌘S</kbd>, <kbd>⌘P</kbd> and <kbd>⌘B</kbd> copy, save, pin or cut out the background right away.</p>
-            <p>The editor draws arrows, shapes, text, highlights, spotlight, magnify, blur and step numbers, each on a single key. It also opens the PNG, JPEG or MP4 files you already have.</p>
+            <p>The editor draws arrows, shapes, text in five fonts, highlights, spotlight, magnify, blur and step numbers, each on a single key. Rotate, flip and resize a screenshot, export it as PNG, JPEG or WebP, or open the PNG, JPEG or MP4 files you already have.</p>
           </div>
         </article>
 
@@ -872,6 +880,17 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p>Save a look as a preset, or use it for every new screenshot.</p>
           </div>
         </article>
+        <article class="feature reveal">
+          <div class="frame">
+            <img src="assets/feature-differences-1040.webp?v=10" srcset="assets/feature-differences-1040.webp?v=10 1040w, assets/feature-differences-2080.webp?v=10 2080w" sizes="(min-width: 1201px) 584px, (min-width: 1001px) 52vw, calc(100vw - 40px)" width="2080" height="1300" loading="lazy" alt="A sign up design next to the running app, where three numbered pink boxes mark a changed heading, a lighter Continue button and a renamed Sign in with Apple button, with a badge saying 3 differences">
+          </div>
+          <div class="feature-text">
+            <p class="eyebrow">Show Differences</p>
+            <h2>Check your app against the design.</h2>
+            <p>Pin a design or an earlier capture over your running app and turn on <strong>Show Differences</strong>. Sightline numbers every spot that differs and says whether it moved, is missing or only looks different.</p>
+            <p>With <strong>Tracing</strong>, clicks go through to the app below and the marks follow while you change it. Your AI agent can run the same check and fix what differs.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -880,7 +899,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         <div class="section-head reveal">
           <p class="eyebrow">Recordings</p>
           <h2>Record a screencast. Cut it into shape.</h2>
-          <p class="section-intro">Record the screen with your voice, then edit it on a real timeline: clips, sound, zooms and a row for every mark. Saved recordings stay editable when you open them again.</p>
+          <p class="section-intro">Record the screen with your voice, then edit it on a real timeline: clips, sound, zooms, click highlights and a row for every mark. Saved recordings stay editable when you open them again.</p>
         </div>
         <div class="centerpiece reveal">
           <div class="frame">
@@ -910,7 +929,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <article class="card media reveal">
             <img src="assets/card-editor-zoom-1040.webp?v=10" srcset="assets/card-editor-zoom-640.webp?v=10 640w, assets/card-editor-zoom-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="The recording editor with a 2x zoom on its own Zoom row, the rectangle and blur rows below">
             <h3>Zoom in, smoothly</h3>
-            <p>Draw a frame and the video eases in on it. Every zoom gets a bar to move and trim.</p>
+            <p>Draw a frame and the video eases in on it, or let <strong>Zoom on Clicks</strong> add one for every click. A zoom can follow the pointer, and every zoom gets a bar to move and trim.</p>
           </article>
           <article class="card media reveal">
             <img src="assets/card-editor-blur-1040.webp?v=10" srcset="assets/card-editor-blur-640.webp?v=10 640w, assets/card-editor-blur-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="The timeline with a blur row labelled Blur 72 % while it tracks the email address">
@@ -933,7 +952,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         <div class="section-head reveal">
           <p class="eyebrow">Built for AI agents</p>
           <h2>Hand the work to your agent.</h2>
-          <p class="section-intro">Sightline has a built in <strong>MCP server</strong> and <strong>CLI</strong>. Ask <strong>Claude Code</strong> or <strong>Codex</strong> in plain words, and it captures, reads, marks up and records the screen for you. It can also cut a recording, zoom in and beautify a screenshot.</p>
+          <p class="section-intro">Sightline has a built in <strong>MCP server</strong> and <strong>CLI</strong>. Ask <strong>Claude Code</strong> or <strong>Codex</strong> in plain words, and it captures, reads, marks up and records the screen for you. It can also cut a recording, zoom in on every click, compare the screen with a design and beautify a screenshot.</p>
           <div class="showcase-agents"><span>Works with</span><span class="pill">Claude Code</span><span class="pill">Claude Desktop</span><span class="pill">Codex</span><span class="pill">Any MCP client</span></div>
         </div>
         <div class="showcase reveal">
@@ -989,7 +1008,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <article class="card media reveal">
             <img src="assets/feature-pins-1040.webp?v=10" srcset="assets/feature-pins-640.webp?v=10 640w, assets/feature-pins-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="A capture pinned over another window at 72 percent opacity">
             <h3>Pin it to the screen</h3>
-            <p>Any capture floats over your other windows at full size. Drag it, pinch to resize, and change its opacity. <strong>Focus</strong> hides every other pin.</p>
+            <p>Any capture floats over your other windows at full size. Drag it, pinch to resize, and change its opacity. <strong>Tracing</strong> lets clicks reach the app below, <strong>Show Differences</strong> marks where a design and the app below don&#x27;t match yet, and <strong>Focus</strong> hides every other pin.</p>
           </article>
           <article class="card media reveal">
             <img src="assets/feature-history-1040.webp?v=10" srcset="assets/feature-history-640.webp?v=10 640w, assets/feature-history-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="The capture history with a search field and a grid of recent captures, one selected with copy, edit, pin and delete">
@@ -1056,11 +1075,13 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <tr><td>Floating thumbnail after each capture</td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td>Record an area or window to MP4 with system audio</td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Works with your AI agent over MCP</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
+            <tr><td><strong>Shows where a design and the app below it don&#x27;t match yet</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Scrolling capture of long pages, up and down</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Arrows, numbered steps, blur and crop in one editor</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Finds passwords and keys before you share</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Blur that follows a face or a line of text</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Split, reorder and speed up a recording, with its sound and every mark on their own rows</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
+            <tr><td><strong>Zooms in on every click and highlights clicks in a recording</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Blur that follows scrolling content in a recording</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Text and QR codes on screen straight to the clipboard</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Remove the background from a capture</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
@@ -1090,7 +1111,11 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </details>
           <details class="faq-item">
             <summary>Can my AI agent check its own UI work?</summary>
-            <p>Yes. Your agent builds something, captures the window and looks at the result, so it notices when a button sits off.</p>
+            <p>Yes. Your agent builds something, captures the window and looks at the result, so it notices when a button sits off. It can also compare the screen with a design image and get a list of what still differs.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I compare my app with a design?</summary>
+            <p>Pin the design, a mockup or an earlier screenshot over the running app and choose Show Differences in the pin&#x27;s bar or right-click menu. Sightline captures what is below the pin, lines it up and numbers every spot that differs, with a list that says whether it moved, is missing or only looks different. Turn on Tracing to click through to the app while the marks follow. Your AI agent can run the same comparison over MCP.</p>
           </details>
           <details class="faq-item">
             <summary>Which AI agents work with Sightline?</summary>
@@ -1130,7 +1155,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </details>
           <details class="faq-item">
             <summary>Can I edit screen recordings on a Mac?</summary>
-            <p>Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in, and add arrows, text and blurs that follow what they cover. Copy, Save or Share the result as MP4.</p>
+            <p>Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, highlight clicks, and add arrows, text and blurs that follow what they cover. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV.</p>
           </details>
           <details class="faq-item">
             <summary>How do I take a scrolling screenshot on a Mac?</summary>
@@ -1142,7 +1167,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </details>
           <details class="faq-item">
             <summary>What can I do in the editor?</summary>
-            <p>Draw arrows, shapes, text, highlights, a spotlight, a magnifier, blur and step numbers, each on a single key. Crop, remove the background, paste and arrange several captures, and pin a capture over your other windows. Recordings get a timeline with clips, a sound row and a row for every mark. Every mark stays editable, also after you save and open the file again, including the ones your AI agent drew.</p>
+            <p>Draw arrows, shapes, text, highlights, a spotlight, a magnifier, blur and step numbers, each on a single key. Crop, rotate, flip and resize, remove the background, paste and arrange several captures, and pin a capture over your other windows. Recordings get a timeline with clips, a sound row, zooms on clicks, click highlights and a row for every mark. Every mark stays editable, also after you save and open the file again, including the ones your AI agent drew.</p>
           </details>
           <details class="faq-item">
             <summary>Which macOS versions does it need?</summary>

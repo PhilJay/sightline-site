@@ -10,19 +10,21 @@
 ## Screenshots
 
 - Area, window, full screen and scrolling screenshots with the familiar macOS shortcuts, a magnifier, a floating thumbnail and a searchable history.
-- Image editor: arrows, shapes, text, highlights, step numbers, magnify, blur and pixelate, each on a single key.
+- Image editor: arrows, shapes, text in five fonts with an optional background box, highlights, step numbers, magnify, blur and pixelate, each on a single key. Rotate, flip and resize a screenshot, and export it as PNG, JPEG or WebP.
 - Beautify: put a screenshot on a background with padding, rounded corners and a shadow; save looks as presets or let Apple Intelligence suggest some.
 - Text recognition (OCR), Remove Background, pins that float above other windows, and detection of passwords and keys before you share.
+- Show Differences: pin a design or an earlier capture over the running app and Sightline numbers every spot that differs, with a hint whether it moved, is missing or only looks different. Tracing lets clicks reach the app below while the marks follow.
 
 ## Screen recordings and screencasts
 
 - Record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown.
-- Video editor with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, marks with their own timing, and blurs that follow moving content.
+- Video editor with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, click highlights and a larger pointer, marks with their own timing, and blurs that follow moving content.
+- Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality.
 - Saved screenshots and recordings stay editable when opened again.
 
 ## AI agents
 
-- A built in MCP server lets Claude Code, Claude Desktop, Codex and other MCP clients capture the screen, read text, annotate, record, cut and zoom recordings and beautify screenshots. Each agent asks for permission first.
+- A built in MCP server lets Claude Code, Claude Desktop, Codex and other MCP clients capture the screen, read text, annotate, record, cut and zoom recordings (also on every click), compare the screen with a design, rotate, resize and export screenshots and beautify them. Each agent asks for permission first.
 - Command line: `/Applications/Sightline.app/Contents/MacOS/sightline-cli tools` lists the tools; `sightline-cli <tool> --json '{...}'` calls one and prints JSON; `sightline-cli mcp` runs the MCP server over stdio.
 
 ## Requirements and pricing
