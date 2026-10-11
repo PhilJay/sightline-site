@@ -45,7 +45,7 @@
       "screenshot": "https://sightlinemac.com/assets/feature-v3-capture-2080.webp",
       "operatingSystem": "macOS 14 oder neuer",
       "applicationCategory": "UtilitiesApplication",
-      "featureList": ["Bereichs-, Fenster-, Vollbild- und Scroll-Screenshots aus der Menüleiste", "Bildschirmaufnahme mit Systemton und deiner Stimme vom Mikrofon, mit Countdown", "Videoeditor mit Zeitleiste: Clips teilen, kürzen und umsortieren, Tempo von 0,5x bis 15x, eine Tonspur mit Stummschalten und Lautstärke bis 400 %, weiche oder sofortige Zooms, Zooms auf jeden Klick, die dem Zeiger folgen können, Klick-Hervorhebung und Export in 1080p oder 720p als MP4 oder MOV", "Bildeditor mit Pfeilen, Formen, Text in fünf Schriften, Markierungen, Schrittnummern, Lupe, Unschärfe und Verpixeln, dazu Drehen, Spiegeln, Verkleinern und Export als PNG, JPEG oder WebP", "Unterschiede zeigen: ein Design über die laufende App heften und jede Abweichung sehen, mit Nachzeichnen zum Durchklicken", "Unschärfe, die bewegten Inhalten in Aufnahmen folgt", "Verschönern: Hintergründe, Rand, abgerundete Ecken und Schatten, mit Vorlagen und Vorschlägen von Apple Intelligence", "Gesicherte Screenshots und Aufnahmen bleiben bearbeitbar", "Texterkennung (OCR), Hintergrund entfernen, angeheftete Aufnahmen und ein durchsuchbarer Verlauf", "Eingebauter MCP-Server, über den KI-Agenten wie Claude Code und Codex aufnehmen, beschriften und bearbeiten"],
+      "featureList": ["Bereichs-, Fenster-, Vollbild- und Scroll-Screenshots aus der Menüleiste", "Bildschirmaufnahme mit Systemton und deiner Stimme vom Mikrofon, mit Countdown", "Videoeditor mit Zeitleiste: Clips teilen, kürzen und umsortieren, Tempo von 0,5x bis 15x, eine Tonspur mit Stummschalten und Lautstärke bis 400 %, weiche oder sofortige Zooms, Zooms auf jeden Klick, die dem Zeiger folgen können, Klick-Hervorhebung und Export in 1080p oder 720p als MP4 oder MOV oder als endlos laufendes GIF", "Bildeditor mit Pfeilen, Formen, Text in fünf Schriften, Markierungen, Schrittnummern, Lupe, Unschärfe und Verpixeln, dazu Drehen, Spiegeln, Verkleinern und Export als PNG, JPEG oder WebP", "Unterschiede zeigen: ein Design über die laufende App heften und jede Abweichung sehen, mit Nachzeichnen zum Durchklicken", "Unschärfe, die bewegten Inhalten in Aufnahmen folgt", "Verschönern: Hintergründe, Rand, abgerundete Ecken und Schatten, mit Vorlagen und Vorschlägen von Apple Intelligence", "Gesicherte Screenshots und Aufnahmen bleiben bearbeitbar", "Texterkennung (OCR), Hintergrund entfernen, angeheftete Aufnahmen und ein Verlauf, den du nach dem Text in Screenshots durchsuchst, mit Favoriten", "Bildschirm beim Auswählen eines Bereichs einfrieren, damit offene Menüs und Tooltips im Screenshot bleiben", "Eingebauter MCP-Server, über den KI-Agenten wie Claude Code und Codex aufnehmen, beschriften und bearbeiten"],
       "downloadUrl": "https://apps.apple.com/app/sightline/id6812521593",
       "installUrl": "https://apps.apple.com/app/sightline/id6812521593",
       "offers": {
@@ -179,7 +179,15 @@
           "name": "Kann ich Bildschirmaufnahmen auf dem Mac bearbeiten?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Öffne eine Aufnahme über ihre Miniatur oder den Verlauf, und Sightlines Videoeditor öffnet sich mit einer Zeitleiste: Clips teilen, kürzen und umsortieren, Teile mit 0,5- bis 15-fachem Tempo abspielen, den Ton stummschalten oder lauter machen, von Hand oder auf jeden Klick hineinzoomen, Klicks hervorheben und Pfeile, Text und mitlaufende Unschärfe hinzufügen. Kopiere, sichere oder teile das Ergebnis als MP4, oder exportiere es in 1080p oder 720p als MP4 oder MOV."
+            "text": "Ja. Öffne eine Aufnahme über ihre Miniatur oder den Verlauf, und Sightlines Videoeditor öffnet sich mit einer Zeitleiste: Clips teilen, kürzen und umsortieren, Teile mit 0,5- bis 15-fachem Tempo abspielen, den Ton stummschalten oder lauter machen, von Hand oder auf jeden Klick hineinzoomen, Klicks hervorheben und Pfeile, Text und mitlaufende Unschärfe hinzufügen. Kopiere, sichere oder teile das Ergebnis als MP4, oder exportiere es in 1080p oder 720p als MP4 oder MOV oder als GIF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich eine Bildschirmaufnahme als GIF exportieren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Öffne die Aufnahme in Sightlines Videoeditor, wähle Datei > Exportieren und dann GIF. „Für Chat“ macht ein kleines GIF mit 640 Pixeln Breite und 10 Bildern pro Sekunde, „Für Doku“ ein schärferes mit 960 Pixeln und 15 Bildern. Breite und Bildrate kannst du auch selbst wählen. Das GIF läuft endlos, hat keinen Ton und behält deine Schnitte, Tempi, Zooms, Markierungen und Unschärfen, und Sightline schätzt seine Größe schon vor dem Export. Auch dein KI-Agent kann ein GIF exportieren."
           }
         },
         {
@@ -204,6 +212,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Wähle im Sightline-Menü Scroll-Aufnahme, such den Bereich oder das Fenster aus und scrolle selbst oder lass Sightline für dich scrollen. Die Bilder werden zu einem langen Bild zusammengesetzt, für lange Webseiten, Chats oder Terminal-Ausgaben."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie mache ich einen Screenshot von einem geöffneten Menü auf dem Mac?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Drück F, während du einen Bereich auswählst, und Sightline friert den Bildschirm ein. Das offene Menü, ein Tooltip oder ein Hover-Effekt bleibt genau so, wie er war, während du aufziehst. Ein weiteres F gibt den Bildschirm wieder frei. Soll jede Bereichsauswahl eingefroren beginnen, schalte in den Einstellungen unter Aufnehmen „Bildschirm beim Auswählen eines Bereichs einfrieren“ ein."
           }
         },
         {
@@ -853,7 +869,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <div class="feature-text">
             <p class="eyebrow">Aufnehmen und beschriften</p>
             <h2>Aufnehmen. Beschriften.</h2>
-            <p>Bereich, Fenster und ganzer Bildschirm mit den Kurzbefehlen, die du schon kennst, dazu eine Lupe für pixelgenaue Kanten und ein schwebendes Vorschaubild. Schon beim Aufziehen kopierst, sicherst, heftest du an oder entfernst den Hintergrund, mit <kbd>⌘C</kbd>, <kbd>⌘S</kbd>, <kbd>⌘P</kbd> und <kbd>⌘B</kbd>.</p>
+            <p>Bereich, Fenster und ganzer Bildschirm mit den Kurzbefehlen, die du schon kennst, dazu eine Lupe für pixelgenaue Kanten und ein schwebendes Vorschaubild. Schon beim Aufziehen kopierst, sicherst, heftest du an oder entfernst den Hintergrund, mit <kbd>⌘C</kbd>, <kbd>⌘S</kbd>, <kbd>⌘P</kbd> und <kbd>⌘B</kbd>. Mit <kbd>F</kbd> frierst du den Bildschirm ein, damit ein offenes Menü oder ein Tooltip im Bild bleibt.</p>
             <p>Der Editor zeichnet Pfeile, Formen, Text in fünf Schriften, Markierungen, Spotlight, Lupe, Unschärfe und Schrittnummern, jedes Werkzeug auf einer einzigen Taste. Drehe, spiegle und verkleinere einen Screenshot, exportiere ihn als PNG, JPEG oder WebP oder öffne deine vorhandenen PNG-, JPEG- und MP4-Dateien.</p>
           </div>
         </article>
@@ -877,7 +893,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <div class="feature-text">
             <p class="eyebrow">Scroll-Aufnahme</p>
             <h2>Die ganze Seite.</h2>
-            <p>Lange Seiten, Chatverläufe und Terminal-Ausgaben werden ein einziges hohes Bild. <strong>Sightline scrollt für dich</strong>, oder du scrollst selbst, nach oben oder unten, und Sightline folgt dir und setzt die Bilder zusammen.</p>
+            <p>Lange Seiten, Chatverläufe und Terminal-Ausgaben werden ein einziges hohes Bild. <strong>Sightline scrollt für dich</strong>, oder du scrollst selbst, nach oben oder unten, und Sightline folgt dir und setzt die Bilder zusammen. Eine Live-Vorschau in der Ecke zeigt die Seite, während sie wächst.</p>
           </div>
         </article>
 
@@ -911,7 +927,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         <div class="section-head reveal">
           <p class="eyebrow">Aufnahmen</p>
           <h2>Nimm einen Screencast auf. Bring ihn in Form.</h2>
-          <p class="section-intro">Zeichne den Bildschirm mit deiner Stimme auf und bearbeite ihn dann auf einer echten Zeitleiste: Clips, Ton, Zooms, Klick-Hervorhebung und eine Zeile für jede Markierung. Gesicherte Aufnahmen bleiben bearbeitbar, wenn du sie wieder öffnest.</p>
+          <p class="section-intro">Zeichne den Bildschirm mit deiner Stimme auf und bearbeite ihn dann auf einer echten Zeitleiste: Clips, Ton, Zooms, Klick-Hervorhebung und eine Zeile für jede Markierung. Gesicherte Aufnahmen bleiben bearbeitbar, wenn du sie wieder öffnest, und du exportierst sie als MP4, MOV oder endlos laufendes GIF für Chats und Dokus.</p>
         </div>
         <div class="centerpiece reveal">
           <div class="frame">
@@ -965,7 +981,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         <div class="section-head reveal">
           <p class="eyebrow">Für KI-Agenten</p>
           <h2>Gib die Arbeit an deinen Agenten ab.</h2>
-          <p class="section-intro">Sightline hat einen eingebauten <strong>MCP-Server</strong> und eine <strong>CLI</strong>. Sag <strong>Claude Code</strong> oder <strong>Codex</strong> in klaren Worten, was du brauchst, und dein Agent nimmt den Bildschirm für dich auf, liest ihn, beschriftet und zeichnet auf. Er kann auch eine Aufnahme schneiden, auf jeden Klick zoomen, den Bildschirm mit einem Design vergleichen und einen Screenshot verschönern.</p>
+          <p class="section-intro">Sightline hat einen eingebauten <strong>MCP-Server</strong> und eine <strong>CLI</strong>. Sag <strong>Claude Code</strong> oder <strong>Codex</strong> in klaren Worten, was du brauchst, und dein Agent nimmt den Bildschirm für dich auf, liest ihn, beschriftet und zeichnet auf. Er kann auch eine alte Aufnahme über ihren Text finden, eine Aufnahme schneiden, auf jeden Klick zoomen, ein GIF exportieren, den Bildschirm mit einem Design vergleichen und einen Screenshot verschönern.</p>
           <div class="showcase-agents"><span>Funktioniert mit</span><span class="pill">Claude Code</span><span class="pill">Claude Desktop</span><span class="pill">Codex</span><span class="pill">Jeder MCP-Client</span></div>
         </div>
         <div class="showcase reveal">
@@ -1026,7 +1042,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <article class="card media reveal">
             <img src="../assets/feature-history-1040.webp?v=10" srcset="../assets/feature-history-640.webp?v=10 640w, ../assets/feature-history-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Der Verlauf mit einem Suchfeld und einem Raster der letzten Aufnahmen, eine davon ausgewählt, mit Kopieren, Bearbeiten, Anheften und Löschen">
             <h3>Keine Aufnahme geht verloren</h3>
-            <p><kbd>⌃⌥H</kbd> öffnet einen durchsuchbaren Verlauf von allem, was du kopiert oder gesichert hast, mit Kopieren, Bearbeiten, Anheften und Löschen. Die letzten 24 Stunden sind kostenlos.</p>
+            <p><kbd>⌃⌥H</kbd> öffnet einen Verlauf von allem, was du kopiert oder gesichert hast. Durchsuche ihn nach dem Text in deinen Screenshots, markiere Favoriten mit <kbd>⌘D</kbd>, und kopiere, bearbeite, hefte an oder lösche. Die letzten 24 Stunden sind kostenlos.</p>
           </article>
           <article class="card media reveal">
             <img src="../assets/feature-text-1040.webp?v=10" srcset="../assets/feature-text-640.webp?v=10 640w, ../assets/feature-text-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein ausgewählter Bereich mit Öffnungszeiten und einem QR-Code, daneben das Ergebnis mit dem Link und den Textzeilen, bereit zum Kopieren">
@@ -1056,7 +1072,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <article class="card reveal">
             <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg></span>
             <h3>Auf dem Gerät</h3>
-            <p>Screenshots bleiben auf deinem Mac. Benennung und die Prüfung auf Zugangsdaten nutzen <strong>Apple Intelligence</strong>, die Texterkennung Apples Vision, alles auf dem Gerät. Keine Analysedaten und kein eigener Server.</p>
+            <p>Screenshots bleiben auf deinem Mac. Benennung und die Prüfung auf Zugangsdaten nutzen <strong>Apple Intelligence</strong>, die Texterkennung, auch für die Suche im Verlauf, Apples Vision, alles auf dem Gerät. Keine Analysedaten und kein eigener Server.</p>
           </article>
           <article class="card reveal">
             <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1-3.5 3.8-5.5 7-5.5s6 2 7 5.5"/><path d="M4 4l16 16"/></svg></span>
@@ -1099,7 +1115,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <tr><td><strong>Text und QR-Codes vom Bildschirm direkt in die Zwischenablage</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Hintergrund einer Aufnahme entfernen</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Aufnahme über deinen anderen Fenstern anheften</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
-            <tr><td><strong>Durchsuchbarer Verlauf aller Aufnahmen</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
+            <tr><td><strong>Ein Verlauf, durchsuchbar bis in den Text der Screenshots</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Benennt Screenshots nach ihrem Inhalt</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Aktionen für die App Kurzbefehle</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="nein"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="ja"><use href="#check"/></svg></td></tr>
           </tbody>
@@ -1145,6 +1161,10 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p>Wähle im Sightline-Menü Scroll-Aufnahme, such den Bereich oder das Fenster aus und scrolle selbst oder lass Sightline für dich scrollen. Die Bilder werden zu einem langen Bild zusammengesetzt, für lange Webseiten, Chats oder Terminal-Ausgaben.</p>
           </details>
           <details class="faq-item">
+            <summary>Wie mache ich einen Screenshot von einem geöffneten Menü auf dem Mac?</summary>
+            <p>Drück F, während du einen Bereich auswählst, und Sightline friert den Bildschirm ein. Das offene Menü, ein Tooltip oder ein Hover-Effekt bleibt genau so, wie er war, während du aufziehst. Ein weiteres F gibt den Bildschirm wieder frei. Soll jede Bereichsauswahl eingefroren beginnen, schalte in den Einstellungen unter Aufnehmen „Bildschirm beim Auswählen eines Bereichs einfrieren“ ein.</p>
+          </details>
+          <details class="faq-item">
             <summary>Wie mache ich etwas in einem Screenshot unkenntlich?</summary>
             <p>Öffne den Screenshot im Editor, drücke B für die Unschärfe und zieh über das, was privat bleiben soll, oder stell auf Verpixeln um. Sightline erkennt außerdem Passwörter und API-Schlüssel und bietet an, sie vor dem Teilen unkenntlich zu machen. In Aufnahmen folgt die Unschärfe dem, was sie verdeckt.</p>
           </details>
@@ -1171,7 +1191,11 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </details>
           <details class="faq-item">
             <summary>Kann ich Bildschirmaufnahmen auf dem Mac bearbeiten?</summary>
-            <p>Ja. Öffne eine Aufnahme über ihre Miniatur oder den Verlauf, und Sightlines Videoeditor öffnet sich mit einer Zeitleiste: Clips teilen, kürzen und umsortieren, Teile mit 0,5- bis 15-fachem Tempo abspielen, den Ton stummschalten oder lauter machen, von Hand oder auf jeden Klick hineinzoomen, Klicks hervorheben und Pfeile, Text und mitlaufende Unschärfe hinzufügen. Kopiere, sichere oder teile das Ergebnis als MP4, oder exportiere es in 1080p oder 720p als MP4 oder MOV.</p>
+            <p>Ja. Öffne eine Aufnahme über ihre Miniatur oder den Verlauf, und Sightlines Videoeditor öffnet sich mit einer Zeitleiste: Clips teilen, kürzen und umsortieren, Teile mit 0,5- bis 15-fachem Tempo abspielen, den Ton stummschalten oder lauter machen, von Hand oder auf jeden Klick hineinzoomen, Klicks hervorheben und Pfeile, Text und mitlaufende Unschärfe hinzufügen. Kopiere, sichere oder teile das Ergebnis als MP4, oder exportiere es in 1080p oder 720p als MP4 oder MOV oder als GIF.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kann ich eine Bildschirmaufnahme als GIF exportieren?</summary>
+            <p>Ja. Öffne die Aufnahme in Sightlines Videoeditor, wähle Datei &gt; Exportieren und dann GIF. „Für Chat“ macht ein kleines GIF mit 640 Pixeln Breite und 10 Bildern pro Sekunde, „Für Doku“ ein schärferes mit 960 Pixeln und 15 Bildern. Breite und Bildrate kannst du auch selbst wählen. Das GIF läuft endlos, hat keinen Ton und behält deine Schnitte, Tempi, Zooms, Markierungen und Unschärfen, und Sightline schätzt seine Größe schon vor dem Export. Auch dein KI-Agent kann ein GIF exportieren.</p>
           </details>
           <details class="faq-item">
             <summary>Wie zeige ich Klicks in einer Bildschirmaufnahme auf dem Mac?</summary>

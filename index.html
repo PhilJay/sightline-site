@@ -51,7 +51,7 @@
       "screenshot": "https://sightlinemac.com/assets/feature-v3-capture-2080.webp?v=10",
       "operatingSystem": "macOS 14 or later",
       "applicationCategory": "UtilitiesApplication",
-      "featureList": ["Area, window, full screen and scrolling screenshots from the menu bar", "Screen recording with system sound and your voice from the microphone, with a countdown", "Video editor with a timeline: split, trim and reorder clips, speed from 0.5x to 15x, a sound lane with mute and volume up to 400 %, smooth or instant zooms, zooms on every click that can follow the pointer, click highlights, and export at 1080p or 720p as MP4 or MOV", "Image editor with arrows, shapes, text in five fonts, highlights, step numbers, magnify, blur and pixelate, plus rotate, flip, resize and export as PNG, JPEG or WebP", "Show Differences: pin a design over the running app and see every spot that differs, with Tracing to click through", "Blurs that follow moving content in recordings", "Beautify: backgrounds, padding, rounded corners and shadows, with presets and Apple Intelligence suggestions", "Saved screenshots and recordings stay editable", "Text recognition (OCR), Remove Background, pins and a searchable capture history", "Built in MCP server so AI agents such as Claude Code and Codex can capture, annotate and edit"],
+      "featureList": ["Area, window, full screen and scrolling screenshots from the menu bar", "Screen recording with system sound and your voice from the microphone, with a countdown", "Video editor with a timeline: split, trim and reorder clips, speed from 0.5x to 15x, a sound lane with mute and volume up to 400 %, smooth or instant zooms, zooms on every click that can follow the pointer, click highlights, and export at 1080p or 720p as MP4 or MOV, or as a looping GIF", "Image editor with arrows, shapes, text in five fonts, highlights, step numbers, magnify, blur and pixelate, plus rotate, flip, resize and export as PNG, JPEG or WebP", "Show Differences: pin a design over the running app and see every spot that differs, with Tracing to click through", "Blurs that follow moving content in recordings", "Beautify: backgrounds, padding, rounded corners and shadows, with presets and Apple Intelligence suggestions", "Saved screenshots and recordings stay editable", "Text recognition (OCR), Remove Background, pins and a capture history you can search by the text inside screenshots, with favorites", "Freeze the screen while selecting an area, so open menus and tooltips stay in the screenshot", "Built in MCP server so AI agents such as Claude Code and Codex can capture, annotate and edit"],
       "downloadUrl": "https://apps.apple.com/app/sightline/id6812521593",
       "installUrl": "https://apps.apple.com/app/sightline/id6812521593",
       "offers": {
@@ -185,7 +185,15 @@
           "name": "Can I edit screen recordings on a Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, highlight clicks, and add arrows, text and blurs that follow what they cover. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV."
+            "text": "Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, highlight clicks, and add arrows, text and blurs that follow what they cover. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV, or as a GIF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export a screen recording as a GIF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Open the recording in Sightline's video editor and choose File > Export, then GIF. For Chat makes a small GIF, 640 pixels wide at 10 frames a second, and For Docs a sharper one, 960 pixels wide at 15. You can also pick the width and frame rate yourself. The GIF loops, has no sound and keeps your cuts, speeds, zooms, marks and blurs, and Sightline estimates its size before you export. Your AI agent can export a GIF too."
           }
         },
         {
@@ -210,6 +218,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Choose Scrolling Capture in Sightline's menu, pick the area or window, and scroll yourself or let Sightline scroll for you. It stitches the frames into one tall image, for long web pages, chats or Terminal output."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I screenshot an open menu on a Mac?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Press F while you select an area and Sightline freezes the screen, so the open menu, a tooltip or a hover state stays exactly as it was while you drag. Press F again to unfreeze. To freeze every area selection from the start, turn on Freeze the screen while selecting an area in Settings > Capture."
           }
         },
         {
@@ -859,7 +875,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <div class="feature-text">
             <p class="eyebrow">Capture and annotate</p>
             <h2>Capture. Mark it up.</h2>
-            <p>Area, window and full screen with the shortcuts you already know, a magnifier for pixel exact edges and a floating thumbnail. While you drag, <kbd>⌘C</kbd>, <kbd>⌘S</kbd>, <kbd>⌘P</kbd> and <kbd>⌘B</kbd> copy, save, pin or cut out the background right away.</p>
+            <p>Area, window and full screen with the shortcuts you already know, a magnifier for pixel exact edges and a floating thumbnail. While you drag, <kbd>⌘C</kbd>, <kbd>⌘S</kbd>, <kbd>⌘P</kbd> and <kbd>⌘B</kbd> copy, save, pin or cut out the background right away. Press <kbd>F</kbd> to freeze the screen, so an open menu or a tooltip stays in the shot.</p>
             <p>The editor draws arrows, shapes, text in five fonts, highlights, spotlight, magnify, blur and step numbers, each on a single key. Rotate, flip and resize a screenshot, export it as PNG, JPEG or WebP, or open the PNG, JPEG or MP4 files you already have.</p>
           </div>
         </article>
@@ -883,7 +899,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <div class="feature-text">
             <p class="eyebrow">Scrolling capture</p>
             <h2>Capture the whole page.</h2>
-            <p>Long pages, chat logs and Terminal output become one tall image. <strong>Sightline scrolls for you</strong>, or you scroll yourself, up or down, and it follows along and stitches the frames together.</p>
+            <p>Long pages, chat logs and Terminal output become one tall image. <strong>Sightline scrolls for you</strong>, or you scroll yourself, up or down, and it follows along and stitches the frames together. A live preview in the corner shows the page as it grows.</p>
           </div>
         </article>
 
@@ -917,7 +933,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         <div class="section-head reveal">
           <p class="eyebrow">Recordings</p>
           <h2>Record a screencast. Cut it into shape.</h2>
-          <p class="section-intro">Record the screen with your voice, then edit it on a real timeline: clips, sound, zooms, click highlights and a row for every mark. Saved recordings stay editable when you open them again.</p>
+          <p class="section-intro">Record the screen with your voice, then edit it on a real timeline: clips, sound, zooms, click highlights and a row for every mark. Saved recordings stay editable when you open them again, and export as MP4, MOV or a looping GIF for chats and docs.</p>
         </div>
         <div class="centerpiece reveal">
           <div class="frame">
@@ -971,7 +987,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         <div class="section-head reveal">
           <p class="eyebrow">Built for AI agents</p>
           <h2>Hand the work to your agent.</h2>
-          <p class="section-intro">Sightline has a built in <strong>MCP server</strong> and <strong>CLI</strong>. Ask <strong>Claude Code</strong> or <strong>Codex</strong> in plain words, and it captures, reads, marks up and records the screen for you. It can also cut a recording, zoom in on every click, compare the screen with a design and beautify a screenshot.</p>
+          <p class="section-intro">Sightline has a built in <strong>MCP server</strong> and <strong>CLI</strong>. Ask <strong>Claude Code</strong> or <strong>Codex</strong> in plain words, and it captures, reads, marks up and records the screen for you. It can also find an old capture by the text in it, cut a recording, zoom in on every click, export a GIF, compare the screen with a design and beautify a screenshot.</p>
           <div class="showcase-agents"><span>Works with</span><span class="pill">Claude Code</span><span class="pill">Claude Desktop</span><span class="pill">Codex</span><span class="pill">Any MCP client</span></div>
         </div>
         <div class="showcase reveal">
@@ -1032,7 +1048,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <article class="card media reveal">
             <img src="assets/feature-history-1040.webp?v=10" srcset="assets/feature-history-640.webp?v=10 640w, assets/feature-history-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="The capture history with a search field and a grid of recent captures, one selected with copy, edit, pin and delete">
             <h3>Never lose a capture</h3>
-            <p><kbd>⌃⌥H</kbd> opens a searchable history of everything you copied or saved, with copy, edit, pin and delete. The last 24 hours are free.</p>
+            <p><kbd>⌃⌥H</kbd> opens a history of everything you copied or saved. Search it by the text inside your screenshots, star favorites with <kbd>⌘D</kbd>, and copy, edit, pin or delete. The last 24 hours are free.</p>
           </article>
           <article class="card media reveal">
             <img src="assets/feature-text-1040.webp?v=10" srcset="assets/feature-text-640.webp?v=10 640w, assets/feature-text-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="A selected area with opening hours and a QR code, and the text result with the link and the lines ready to copy">
@@ -1062,7 +1078,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <article class="card reveal">
             <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg></span>
             <h3>On-device</h3>
-            <p>Screenshots stay on your Mac. Naming and the credential check use <strong>Apple Intelligence</strong> and text recognition uses Apple's Vision, all on device. No analytics and no server of its own.</p>
+            <p>Screenshots stay on your Mac. Naming and the credential check use <strong>Apple Intelligence</strong> and text recognition, also for searching History, uses Apple's Vision, all on device. No analytics and no server of its own.</p>
           </article>
           <article class="card reveal">
             <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 20c1-3.5 3.8-5.5 7-5.5s6 2 7 5.5"/><path d="M4 4l16 16"/></svg></span>
@@ -1105,7 +1121,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <tr><td><strong>Text and QR codes on screen straight to the clipboard</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Remove the background from a capture</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Pin a capture over your other windows</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
-            <tr><td><strong>A searchable history of every capture</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
+            <tr><td><strong>A history you can search by the text inside screenshots</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Names screenshots after what is in them</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
             <tr><td><strong>Actions for the Shortcuts app</strong></td><td><span class="col-label">macOS</span><svg width="18" height="18" role="img" aria-label="no"><use href="#dash"/></svg></td><td><span class="col-label">Sightline</span><svg width="18" height="18" role="img" aria-label="yes"><use href="#check"/></svg></td></tr>
           </tbody>
@@ -1151,6 +1167,10 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p>Choose Scrolling Capture in Sightline's menu, pick the area or window, and scroll yourself or let Sightline scroll for you. It stitches the frames into one tall image, for long web pages, chats or Terminal output.</p>
           </details>
           <details class="faq-item">
+            <summary>How do I screenshot an open menu on a Mac?</summary>
+            <p>Press F while you select an area and Sightline freezes the screen, so the open menu, a tooltip or a hover state stays exactly as it was while you drag. Press F again to unfreeze. To freeze every area selection from the start, turn on Freeze the screen while selecting an area in Settings &gt; Capture.</p>
+          </details>
+          <details class="faq-item">
             <summary>How do I blur something in a screenshot?</summary>
             <p>Open the screenshot in the editor, press B for the blur tool and drag over what should stay private, or switch it to pixelate. Sightline also spots passwords and API keys and offers to blur them before you share. In recordings a blur follows what it covers.</p>
           </details>
@@ -1177,7 +1197,11 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </details>
           <details class="faq-item">
             <summary>Can I edit screen recordings on a Mac?</summary>
-            <p>Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, highlight clicks, and add arrows, text and blurs that follow what they cover. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV.</p>
+            <p>Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, highlight clicks, and add arrows, text and blurs that follow what they cover. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV, or as a GIF.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I export a screen recording as a GIF?</summary>
+            <p>Yes. Open the recording in Sightline&#x27;s video editor and choose File &gt; Export, then GIF. For Chat makes a small GIF, 640 pixels wide at 10 frames a second, and For Docs a sharper one, 960 pixels wide at 15. You can also pick the width and frame rate yourself. The GIF loops, has no sound and keeps your cuts, speeds, zooms, marks and blurs, and Sightline estimates its size before you export. Your AI agent can export a GIF too.</p>
           </details>
           <details class="faq-item">
             <summary>How do I show clicks in a screen recording on a Mac?</summary>

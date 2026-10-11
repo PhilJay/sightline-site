@@ -14,7 +14,8 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 ## Screenshots and the screenshot editor
 
-- Area, window, full screen and scrolling screenshots with the familiar macOS shortcuts, a magnifier, a timer, a floating thumbnail and a searchable history.
+- Area, window, full screen and scrolling screenshots with the familiar macOS shortcuts, a magnifier, a timer and a floating thumbnail. Scrolling capture shows a live preview of the stitched page. Press F while selecting an area to freeze the screen, so open menus, tooltips and hover states stay in the screenshot; a setting freezes every area selection.
+- History of every capture, searchable by the text inside screenshots (read on the Mac into a private index, the files stay untouched), with a snippet of the match, favorites and filters for screenshots, recordings and favorites.
 - Screenshot editor to annotate screenshots: arrows, lines, shapes, text in five fonts with an optional background box, highlights, step numbers, magnify, pen, blur and pixelate, each on a single key. Crop, rotate, flip and resize a screenshot, and export it as PNG, JPEG or WebP.
 - Beautify: put a screenshot on a background with padding, rounded corners and a shadow; save looks as presets or let Apple Intelligence suggest some.
 - Capture Text reads the text on screen (OCR) and copies it. A color picker copies any color on screen.
@@ -26,12 +27,12 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - Screen recorder for Mac: record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown.
 - Replay keeps the last 15 seconds of the screen, so you can save what just happened.
 - Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, click highlights and a larger pointer, marks with their own timing, and blurs that follow moving content.
-- Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality.
+- Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality, or as a looping GIF without sound (For Chat 640 px at 10 fps, For Docs 960 px at 15 fps, or your own width and frame rate).
 - Saved screenshots and recordings stay editable when opened again.
 
 ## MCP integration for AI agents
 
-- Sightline has a built in MCP server. AI agents use it to capture the screen, read text, annotate, record and edit screencasts, and check their own UI work against a design.
+- Sightline has a built in MCP server. AI agents use it to capture the screen, read text, find earlier captures, annotate, record and edit screencasts, and check their own UI work against a design.
 - Connect: in Sightline, open Settings > AI Agents, turn on agent access and click Connect for Claude Code, Claude Desktop or Codex. Any other MCP client works by running `/Applications/Sightline.app/Contents/MacOS/sightline-cli mcp` as a stdio server. Each agent asks for permission the first time.
 - Command line (CLI): `sightline-cli tools` lists the tools; `sightline-cli <tool> --json '{...}'` calls one and prints JSON.
 
@@ -41,11 +42,12 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - `list_windows`, `list_displays`: find what can be captured.
 - `capture_text`, `find_text`: read the text on screen (OCR) or find where a word is.
 - `pick_color`: read the color at a point.
-- `annotate`: draw arrows, boxes, text, highlights, step numbers and blurs on a screenshot or recording; crop, rotate, flip, resize and export; cut, speed up and zoom recordings, also on every click.
+- `annotate`: draw arrows, boxes, text, highlights, step numbers and blurs on a screenshot or recording; crop, rotate, flip, resize and export; cut, speed up and zoom recordings, also on every click, and export them as MP4, MOV or GIF.
 - `beautify`, `list_looks`, `save_look`: put a screenshot on a background, list or save looks.
 - `open_in_editor`, `copy_to_clipboard`: hand the result to the user.
 - `record_screen`, `last_recording`, `inspect_recording`, `save_replay`: record the screen, find and inspect recordings, save the last seconds.
 - `last_screenshot`: the newest screenshot.
+- `search_captures`: search the user's screenshots and recordings by file name and by the text inside screenshots, like History, with a snippet of the match and favorites.
 - `compare_with_design`: compare the screen with a design image and list what differs.
 
 ## Privacy
