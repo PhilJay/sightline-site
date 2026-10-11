@@ -2,10 +2,15 @@
 
 > Sightline is the screenshot and recording app for Mac. Capture anything from the menu bar, polish it in a powerful editor for images and video, or let your AI agent do it through Sightline's built in MCP server. Everything runs on the Mac, with no account.
 
-- Website: https://sightlinemac.com/ (German: https://sightlinemac.com/de/)
-- Mac App Store: https://apps.apple.com/app/sightline/id6812521593
-- MCP setup for AI agents: https://github.com/PhilJay/sightline-mcp
-- Privacy policy: https://sightlinemac.com/privacy.html
+## Links
+
+- [Website](https://sightlinemac.com/): features, videos and FAQ
+- [Website in German](https://sightlinemac.com/de/)
+- [FAQ](https://sightlinemac.com/#faq): common questions about agents, screenshots, recordings and privacy
+- [Mac App Store](https://apps.apple.com/app/sightline/id6812521593): download Sightline
+- [MCP setup for AI agents](https://github.com/PhilJay/sightline-mcp): connect Claude Code, Codex and other MCP clients, with every tool and its options
+- [Privacy policy](https://sightlinemac.com/privacy.html)
+- [Terms of use](https://sightlinemac.com/terms.html)
 
 ## Screenshots
 
