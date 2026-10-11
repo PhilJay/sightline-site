@@ -27,7 +27,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - Screen recorder for Mac: record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown.
 - Replay keeps the last 15 seconds of the screen, so you can save what just happened.
 - Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, click highlights and a larger pointer, marks with their own timing, and blurs that follow moving content.
-- Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality, or as a looping GIF without sound (For Chat 640 px at 10 fps, For Docs 960 px at 15 fps, or your own width and frame rate).
+- Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality, or as a looping GIF without sound, at the width and frame rate you choose, 640 px at 10 fps by default.
 - Saved screenshots and recordings stay editable when opened again.
 
 ## MCP integration for AI agents
