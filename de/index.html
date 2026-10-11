@@ -686,6 +686,8 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 }
 
 .faq { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-group { margin: 36px 0 4px 4px; font-size: 13px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--text-soft); }
+.faq-group:first-child { margin-top: 0; }
 .faq-item { border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--card-border); }
 .faq-item summary { cursor: pointer; list-style: none; padding: 22px 28px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; display: flex; justify-content: space-between; gap: 16px; }
 .faq-item summary::-webkit-details-marker { display: none; }
@@ -773,6 +775,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 .centerpiece { max-width: 1080px; margin: 0 auto 72px; }
 .grid.three .card.media { grid-column: span 2; }
 .section-fine { margin-top: 32px; text-align: center; }
+.subhead { margin: 0 auto 28px; text-align: center; font-size: clamp(22px, 2.4vw, 28px); letter-spacing: -0.02em; line-height: 1.2; }
 .grid .card.media.wide { grid-column: span 6; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: 1fr auto 1fr; column-gap: 0; padding: 0; }
 .card.media.wide img { grid-column: 1; grid-row: 1 / span 3; margin: 0; border-bottom: 0; border-right: 1px solid var(--card-border); }
 .card.media.wide > :not(img) { grid-column: 2; margin-inline: 40px; }
@@ -919,6 +922,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             </video>
           </div>
         </div>
+        <h3 class="subhead reveal">Mehr für jede Aufnahme</h3>
         <div class="grid three">
           <article class="card media reveal">
             <img src="../assets/card-editor-voice-1040.webp?v=10" srcset="../assets/card-editor-voice-640.webp?v=10 640w, ../assets/card-editor-voice-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="Ein Kontofenster wird in einem roten Rahmen aufgezeichnet, darüber die Aufnahmeleiste mit Timer, Mikrofon, Pause und Stopp, darunter die Stimme als Wellenform">
@@ -1110,6 +1114,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <p class="section-intro">Häufig gestellte Fragen</p>
         </div>
         <div class="faq reveal">
+          <h3 class="faq-group">KI-Agenten und CLI</h3>
           <details class="faq-item">
             <summary>Kann Claude Code oder Codex auf meinem Mac Screenshots machen?</summary>
             <p>Ja. Sightline hat einen eingebauten MCP-Server, über den Claude Code, Claude Desktop, Codex CLI und andere MCP-Clients den Bildschirm, ein Fenster oder einen Bereich aufnehmen, den Text darauf lesen und ihn beschriften. Schalte in den Einstellungen unter KI-Agenten den Zugriff ein und klicke auf Verbinden.</p>
@@ -1123,10 +1128,6 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p>Ja. Dein Agent baut etwas, nimmt das Fenster auf und schaut sich das Ergebnis an, so merkt er, wenn ein Button daneben liegt. Er kann den Bildschirm auch mit einem Design vergleichen und bekommt eine Liste, was noch abweicht.</p>
           </details>
           <details class="faq-item">
-            <summary>Wie vergleiche ich meine App mit einem Design?</summary>
-            <p>Hefte das Design, ein Mockup oder einen früheren Screenshot über die laufende App und wähle Unterschiede zeigen in der Leiste oder im Kontextmenü der angehefteten Aufnahme. Sightline nimmt auf, was darunter liegt, richtet es aus und nummeriert jede Abweichung, mit einer Liste, die sagt, ob etwas verschoben ist, fehlt oder nur anders aussieht. Schalte Nachzeichnen ein, um zur App durchzuklicken, während die Markierungen mitgehen. Dein KI-Agent kann denselben Vergleich per MCP machen.</p>
-          </details>
-          <details class="faq-item">
             <summary>Welche KI-Agenten funktionieren mit Sightline?</summary>
             <p>Claude Code, Claude Desktop und Codex CLI verbindest du mit einem Klick. Jeder andere MCP-Client funktioniert, wenn er <code>/Applications/Sightline.app/Contents/MacOS/sightline-cli mcp</code> als stdio-Server startet.</p>
           </details>
@@ -1134,22 +1135,28 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <summary>Was kann ein KI-Agent auf meinem Mac sehen und tun?</summary>
             <p>Nur, was du erlaubst. Agenten-Zugriff ist aus, bis du ihn einschaltest, jeder neue Agent fragt erst um Erlaubnis, und erlaubte Agenten entfernst du jederzeit in den Einstellungen. Agenten ändern keine Einstellungen und lesen und schreiben nur in deinem Screenshot-Ordner.</p>
           </details>
+          <h3 class="faq-group">Screenshots und Editor</h3>
           <details class="faq-item">
             <summary>Ersetzt Sightline das Bildschirmfoto-Werkzeug von macOS?</summary>
             <p>Es funktioniert genauso, mit ⌘⇧3, ⌘⇧4 und ⌘⇧5 und dem Vorschaubild in der Ecke, und bringt dazu einen Editor, Scroll-Aufnahme, Texterkennung, Hintergrund entfernen, angeheftete Aufnahmen, einen Verlauf und Bildschirmaufnahmen mit deiner Stimme, einem Videoeditor und mitlaufender Unschärfe.</p>
           </details>
           <details class="faq-item">
-            <summary>Verlassen meine Screenshots meinen Mac?</summary>
-            <p>Nein. Aufnahmen bleiben auf deinem Mac, und Texterkennung, Benennung und die Prüfung auf Passwörter laufen auf dem Gerät mit Apple Intelligence und Apples Vision. Es gibt kein Konto, keine Analysedaten und keinen eigenen Server.</p>
+            <summary>Wie mache ich einen scrollenden Screenshot auf dem Mac?</summary>
+            <p>Wähle im Sightline-Menü Scroll-Aufnahme, such den Bereich oder das Fenster aus und scrolle selbst oder lass Sightline für dich scrollen. Die Bilder werden zu einem langen Bild zusammengesetzt, für lange Webseiten, Chats oder Terminal-Ausgaben.</p>
           </details>
           <details class="faq-item">
-            <summary>Nutzt Sightline Apple Intelligence?</summary>
-            <p>Ja, auf Macs, die es unterstützen. Apple Intelligence benennt deine Screenshots nach ihrem Inhalt und findet Passwörter, Schlüssel und Token, bevor du teilst, alles auf dem Gerät ab macOS 26. Hintergrund entfernen und die Motiv-Unschärfe nutzen Apples Vision-Modell auf dem Gerät ab macOS 27.</p>
+            <summary>Wie mache ich etwas in einem Screenshot unkenntlich?</summary>
+            <p>Öffne den Screenshot im Editor, drücke B für die Unschärfe und zieh über das, was privat bleiben soll, oder stell auf Verpixeln um. Sightline erkennt außerdem Passwörter und API-Schlüssel und bietet an, sie vor dem Teilen unkenntlich zu machen. In Aufnahmen folgt die Unschärfe dem, was sie verdeckt.</p>
           </details>
-          <details class="faq-item" id="apple-intelligence">
-            <summary>Warum funktionieren die automatischen Namen oder die Vorschläge in Verschönern nicht?</summary>
-            <p>Sie brauchen Apple Intelligence, und macOS verrät Apps nicht, warum es aus ist. Prüfe in den Systemeinstellungen, ob Apple Intelligence unter Apple Intelligence &amp; Siri (bei neueren macOS-Versionen unter Siri) eingeschaltet ist und ob die Sprache von Siri genau der Sprache deines Mac entspricht, zum Beispiel beide Deutsch (Deutschland). Weichen die beiden ab, blendet macOS Apple Intelligence ganz aus. Nach dem Einschalten oder nach einem macOS-Update muss der Mac am Strom und online bleiben, während das Modell lädt, was eine Weile dauern kann. Außerdem braucht Apple Intelligence einen Mac mit Apple Chip, macOS 26 oder neuer und eine unterstützte Region.</p>
+          <details class="faq-item">
+            <summary>Was kann ich im Editor machen?</summary>
+            <p>Pfeile, Formen, Text, Markierungen, Spotlight, Lupe, Unschärfe und Schrittnummern zeichnen, jedes Werkzeug auf einer einzigen Taste. Zuschneiden, drehen, spiegeln und verkleinern, den Hintergrund entfernen, mehrere Aufnahmen einfügen und anordnen und eine Aufnahme über deinen anderen Fenstern anheften. Aufnahmen bekommen eine Zeitleiste mit Clips, einer Tonspur, Zooms auf Klicks, Klick-Hervorhebung und einer Zeile für jede Markierung. Jede Markierung bleibt bearbeitbar, auch nachdem du die Datei gesichert und wieder geöffnet hast, und auch die deines KI-Agenten.</p>
           </details>
+          <details class="faq-item">
+            <summary>Wie vergleiche ich meine App mit einem Design?</summary>
+            <p>Hefte das Design, ein Mockup oder einen früheren Screenshot über die laufende App und wähle Unterschiede zeigen in der Leiste oder im Kontextmenü der angehefteten Aufnahme. Sightline nimmt auf, was darunter liegt, richtet es aus und nummeriert jede Abweichung, mit einer Liste, die sagt, ob etwas verschoben ist, fehlt oder nur anders aussieht. Schalte Nachzeichnen ein, um zur App durchzuklicken, während die Markierungen mitgehen. Dein KI-Agent kann denselben Vergleich per MCP machen.</p>
+          </details>
+          <h3 class="faq-group">Aufnahmen</h3>
           <details class="faq-item">
             <summary>Kann Sightline meinen Bildschirm aufzeichnen?</summary>
             <p>Ja. Zeichne einen Bereich, ein Fenster oder den ganzen Bildschirm als MP4 mit Systemton auf, wenn du willst auch mit Mikrofon und nach einem Countdown. Die Aufnahme öffnet sich in einem Editor, in dem du Clips schneidest, umsortierst und beschleunigst, Teile des Tons stummschaltest oder lauter machst und Pfeile, Text und Unschärfen zeichnest, die jeweils für ihre eigene Zeitspanne zu sehen sind. Eine Unschärfe bleibt auf einer E-Mail-Adresse oder einem Gesicht, während die Seite scrollt. Auf macOS 27 behält Replay die letzten 15 Sekunden, damit du sichern kannst, was gerade passiert ist.</p>
@@ -1174,17 +1181,18 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <summary>Kann ich den Zeiger nach der Aufnahme vergrößern oder ausblenden?</summary>
             <p>Ja. Stell vor der Aufnahme in Einstellungen &gt; Aufnahme den Zeiger auf „Im Editor anpassbar“. Dann lässt Sightline den Systemzeiger im Video weg, und der Editor zeichnet ihn in 1x, 1,5x oder 2x und blendet ihn auf Wunsch aus, solange er sich nicht bewegt. Mit „Im Video“ nimmt macOS den Zeiger direkt ins Bild auf, dann lassen sich nur Klick-Hervorhebungen hinzufügen.</p>
           </details>
+          <h3 class="faq-group">Datenschutz, Apple Intelligence und Voraussetzungen</h3>
           <details class="faq-item">
-            <summary>Wie mache ich einen scrollenden Screenshot auf dem Mac?</summary>
-            <p>Wähle im Sightline-Menü Scroll-Aufnahme, such den Bereich oder das Fenster aus und scrolle selbst oder lass Sightline für dich scrollen. Die Bilder werden zu einem langen Bild zusammengesetzt, für lange Webseiten, Chats oder Terminal-Ausgaben.</p>
+            <summary>Verlassen meine Screenshots meinen Mac?</summary>
+            <p>Nein. Aufnahmen bleiben auf deinem Mac, und Texterkennung, Benennung und die Prüfung auf Passwörter laufen auf dem Gerät mit Apple Intelligence und Apples Vision. Es gibt kein Konto, keine Analysedaten und keinen eigenen Server.</p>
           </details>
           <details class="faq-item">
-            <summary>Wie mache ich etwas in einem Screenshot unkenntlich?</summary>
-            <p>Öffne den Screenshot im Editor, drücke B für die Unschärfe und zieh über das, was privat bleiben soll, oder stell auf Verpixeln um. Sightline erkennt außerdem Passwörter und API-Schlüssel und bietet an, sie vor dem Teilen unkenntlich zu machen. In Aufnahmen folgt die Unschärfe dem, was sie verdeckt.</p>
+            <summary>Nutzt Sightline Apple Intelligence?</summary>
+            <p>Ja, auf Macs, die es unterstützen. Apple Intelligence benennt deine Screenshots nach ihrem Inhalt und findet Passwörter, Schlüssel und Token, bevor du teilst, alles auf dem Gerät ab macOS 26. Hintergrund entfernen und die Motiv-Unschärfe nutzen Apples Vision-Modell auf dem Gerät ab macOS 27.</p>
           </details>
-          <details class="faq-item">
-            <summary>Was kann ich im Editor machen?</summary>
-            <p>Pfeile, Formen, Text, Markierungen, Spotlight, Lupe, Unschärfe und Schrittnummern zeichnen, jedes Werkzeug auf einer einzigen Taste. Zuschneiden, drehen, spiegeln und verkleinern, den Hintergrund entfernen, mehrere Aufnahmen einfügen und anordnen und eine Aufnahme über deinen anderen Fenstern anheften. Aufnahmen bekommen eine Zeitleiste mit Clips, einer Tonspur, Zooms auf Klicks, Klick-Hervorhebung und einer Zeile für jede Markierung. Jede Markierung bleibt bearbeitbar, auch nachdem du die Datei gesichert und wieder geöffnet hast, und auch die deines KI-Agenten.</p>
+          <details class="faq-item" id="apple-intelligence">
+            <summary>Warum funktionieren die automatischen Namen oder die Vorschläge in Verschönern nicht?</summary>
+            <p>Sie brauchen Apple Intelligence, und macOS verrät Apps nicht, warum es aus ist. Prüfe in den Systemeinstellungen, ob Apple Intelligence unter Apple Intelligence &amp; Siri (bei neueren macOS-Versionen unter Siri) eingeschaltet ist und ob die Sprache von Siri genau der Sprache deines Mac entspricht, zum Beispiel beide Deutsch (Deutschland). Weichen die beiden ab, blendet macOS Apple Intelligence ganz aus. Nach dem Einschalten oder nach einem macOS-Update muss der Mac am Strom und online bleiben, während das Modell lädt, was eine Weile dauern kann. Außerdem braucht Apple Intelligence einen Mac mit Apple Chip, macOS 26 oder neuer und eine unterstützte Region.</p>
           </details>
           <details class="faq-item">
             <summary>Welche macOS-Version brauche ich?</summary>

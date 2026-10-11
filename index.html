@@ -692,6 +692,8 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 }
 
 .faq { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-group { margin: 36px 0 4px 4px; font-size: 13px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--text-soft); }
+.faq-group:first-child { margin-top: 0; }
 .faq-item { border-radius: var(--radius); background: var(--card-bg); border: 1px solid var(--card-border); }
 .faq-item summary { cursor: pointer; list-style: none; padding: 22px 28px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; display: flex; justify-content: space-between; gap: 16px; }
 .faq-item summary::-webkit-details-marker { display: none; }
@@ -779,6 +781,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 .centerpiece { max-width: 1080px; margin: 0 auto 72px; }
 .grid.three .card.media { grid-column: span 2; }
 .section-fine { margin-top: 32px; text-align: center; }
+.subhead { margin: 0 auto 28px; text-align: center; font-size: clamp(22px, 2.4vw, 28px); letter-spacing: -0.02em; line-height: 1.2; }
 .grid .card.media.wide { grid-column: span 6; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: 1fr auto 1fr; column-gap: 0; padding: 0; }
 .card.media.wide img { grid-column: 1; grid-row: 1 / span 3; margin: 0; border-bottom: 0; border-right: 1px solid var(--card-border); }
 .card.media.wide > :not(img) { grid-column: 2; margin-inline: 40px; }
@@ -925,6 +928,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             </video>
           </div>
         </div>
+        <h3 class="subhead reveal">More for every recording</h3>
         <div class="grid three">
           <article class="card media reveal">
             <img src="assets/card-editor-voice-1040.webp?v=10" srcset="assets/card-editor-voice-640.webp?v=10 640w, assets/card-editor-voice-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="An Account window recorded inside a red frame, the recording bar with timer, microphone, pause and stop above it, and the voice as a waveform below">
@@ -1116,6 +1120,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <p class="section-intro">Frequently asked questions</p>
         </div>
         <div class="faq reveal">
+          <h3 class="faq-group">AI agents and CLI</h3>
           <details class="faq-item">
             <summary>Can Claude Code or Codex take screenshots on my Mac?</summary>
             <p>Yes. Sightline has a built in MCP server, so Claude Code, Claude Desktop, Codex CLI and other MCP clients can capture the screen, a window or an area, read the text on it and mark it up. Turn on agent access and click Connect in Settings &gt; AI Agents.</p>
@@ -1129,10 +1134,6 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p>Yes. Your agent builds something, captures the window and looks at the result, so it notices when a button sits off. It can also compare the screen with a design image and get a list of what still differs.</p>
           </details>
           <details class="faq-item">
-            <summary>How do I compare my app with a design?</summary>
-            <p>Pin the design, a mockup or an earlier screenshot over the running app and choose Show Differences in the pin&#x27;s bar or right-click menu. Sightline captures what is below the pin, lines it up and numbers every spot that differs, with a list that says whether it moved, is missing or only looks different. Turn on Tracing to click through to the app while the marks follow. Your AI agent can run the same comparison over MCP.</p>
-          </details>
-          <details class="faq-item">
             <summary>Which AI agents work with Sightline?</summary>
             <p>Claude Code, Claude Desktop and Codex CLI connect with one click. Any other MCP client works by running <code>/Applications/Sightline.app/Contents/MacOS/sightline-cli mcp</code> as a stdio server.</p>
           </details>
@@ -1140,22 +1141,28 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <summary>What can an AI agent see and do on my Mac?</summary>
             <p>Only what you allow. Agent access is off until you turn it on, each new agent asks first, and you can remove an agent at any time in Settings. Agents can&#x27;t change settings and only read and write inside your screenshot folder.</p>
           </details>
+          <h3 class="faq-group">Screenshots and the editor</h3>
           <details class="faq-item">
             <summary>Does Sightline replace the macOS screenshot tool?</summary>
             <p>It works the same way, with ⌘⇧3, ⌘⇧4 and ⌘⇧5 and the thumbnail in the corner, and adds an editor, scrolling capture, text recognition, Remove Background, pins, a history, and screen recording with your voice, a video editor and blur that follows.</p>
           </details>
           <details class="faq-item">
-            <summary>Do my screenshots leave my Mac?</summary>
-            <p>No. Captures stay on your Mac, and text recognition, naming and the password check run on device with Apple Intelligence and Apple&#x27;s Vision. There is no account, no analytics and no server of its own.</p>
+            <summary>How do I take a scrolling screenshot on a Mac?</summary>
+            <p>Choose Scrolling Capture in Sightline's menu, pick the area or window, and scroll yourself or let Sightline scroll for you. It stitches the frames into one tall image, for long web pages, chats or Terminal output.</p>
           </details>
           <details class="faq-item">
-            <summary>Does Sightline use Apple Intelligence?</summary>
-            <p>Yes, on Macs that support it. Apple Intelligence names your screenshots after what is in them and finds passwords, keys and tokens before you share, all on device with macOS 26 or later. Remove Background and the subject blur use Apple&#x27;s on-device Vision model on macOS 27.</p>
+            <summary>How do I blur something in a screenshot?</summary>
+            <p>Open the screenshot in the editor, press B for the blur tool and drag over what should stay private, or switch it to pixelate. Sightline also spots passwords and API keys and offers to blur them before you share. In recordings a blur follows what it covers.</p>
           </details>
-          <details class="faq-item" id="apple-intelligence">
-            <summary>Why are smart names or Beautify suggestions not working?</summary>
-            <p>They need Apple Intelligence, and macOS doesn&#x27;t tell apps why it is off. In System Settings, check that Apple Intelligence is turned on under Apple Intelligence &amp; Siri (Siri on newer macOS), and that the Siri language exactly matches the language of your Mac, for example both English (United States). If the two differ, macOS hides Apple Intelligence completely. After turning it on or after a macOS update, keep the Mac plugged in and online while the model downloads, which can take a while. Apple Intelligence also needs a Mac with Apple silicon, macOS 26 or later and a supported region.</p>
+          <details class="faq-item">
+            <summary>What can I do in the editor?</summary>
+            <p>Draw arrows, shapes, text, highlights, a spotlight, a magnifier, blur and step numbers, each on a single key. Crop, rotate, flip and resize, remove the background, paste and arrange several captures, and pin a capture over your other windows. Recordings get a timeline with clips, a sound row, zooms on clicks, click highlights and a row for every mark. Every mark stays editable, also after you save and open the file again, including the ones your AI agent drew.</p>
           </details>
+          <details class="faq-item">
+            <summary>How do I compare my app with a design?</summary>
+            <p>Pin the design, a mockup or an earlier screenshot over the running app and choose Show Differences in the pin&#x27;s bar or right-click menu. Sightline captures what is below the pin, lines it up and numbers every spot that differs, with a list that says whether it moved, is missing or only looks different. Turn on Tracing to click through to the app while the marks follow. Your AI agent can run the same comparison over MCP.</p>
+          </details>
+          <h3 class="faq-group">Recordings</h3>
           <details class="faq-item">
             <summary>Can Sightline record my screen?</summary>
             <p>Yes. Record an area, a window or the whole display to MP4 with system audio and, if you like, your microphone, after an optional countdown. The recording opens in an editor where you split, reorder and speed up clips, mute or raise parts of the sound, and draw arrows, text and blurs that each show for their own stretch of time. A blur stays on an email address or a face while the page scrolls. On macOS 27, Replay keeps the last 15 seconds so you can save what just happened.</p>
@@ -1180,17 +1187,18 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <summary>Can I make the pointer larger or hide it after recording?</summary>
             <p>Yes. Before you record, set Pointer to Editable in the editor in Settings &gt; Recording. Sightline then leaves the system pointer out of the video and the editor draws it at 1x, 1.5x or 2x, and can hide it while it isn&#x27;t moving. With In the video, macOS records the pointer into the picture as it is, and only click highlights can be added.</p>
           </details>
+          <h3 class="faq-group">Privacy, Apple Intelligence and requirements</h3>
           <details class="faq-item">
-            <summary>How do I take a scrolling screenshot on a Mac?</summary>
-            <p>Choose Scrolling Capture in Sightline's menu, pick the area or window, and scroll yourself or let Sightline scroll for you. It stitches the frames into one tall image, for long web pages, chats or Terminal output.</p>
+            <summary>Do my screenshots leave my Mac?</summary>
+            <p>No. Captures stay on your Mac, and text recognition, naming and the password check run on device with Apple Intelligence and Apple&#x27;s Vision. There is no account, no analytics and no server of its own.</p>
           </details>
           <details class="faq-item">
-            <summary>How do I blur something in a screenshot?</summary>
-            <p>Open the screenshot in the editor, press B for the blur tool and drag over what should stay private, or switch it to pixelate. Sightline also spots passwords and API keys and offers to blur them before you share. In recordings a blur follows what it covers.</p>
+            <summary>Does Sightline use Apple Intelligence?</summary>
+            <p>Yes, on Macs that support it. Apple Intelligence names your screenshots after what is in them and finds passwords, keys and tokens before you share, all on device with macOS 26 or later. Remove Background and the subject blur use Apple&#x27;s on-device Vision model on macOS 27.</p>
           </details>
-          <details class="faq-item">
-            <summary>What can I do in the editor?</summary>
-            <p>Draw arrows, shapes, text, highlights, a spotlight, a magnifier, blur and step numbers, each on a single key. Crop, rotate, flip and resize, remove the background, paste and arrange several captures, and pin a capture over your other windows. Recordings get a timeline with clips, a sound row, zooms on clicks, click highlights and a row for every mark. Every mark stays editable, also after you save and open the file again, including the ones your AI agent drew.</p>
+          <details class="faq-item" id="apple-intelligence">
+            <summary>Why are smart names or Beautify suggestions not working?</summary>
+            <p>They need Apple Intelligence, and macOS doesn&#x27;t tell apps why it is off. In System Settings, check that Apple Intelligence is turned on under Apple Intelligence &amp; Siri (Siri on newer macOS), and that the Siri language exactly matches the language of your Mac, for example both English (United States). If the two differ, macOS hides Apple Intelligence completely. After turning it on or after a macOS update, keep the Mac plugged in and online while the model downloads, which can take a while. Apple Intelligence also needs a Mac with Apple silicon, macOS 26 or later and a supported region.</p>
           </details>
           <details class="faq-item">
             <summary>Which macOS versions does it need?</summary>
