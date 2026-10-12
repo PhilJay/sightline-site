@@ -14,8 +14,8 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 ## Screenshots and the screenshot editor
 
-- Area, window, full screen and scrolling screenshots with the familiar macOS shortcuts, a magnifier, a timer and a floating thumbnail. Scrolling capture shows a live preview of the stitched page. Press F while selecting an area to freeze the screen, so open menus, tooltips and hover states stay in the screenshot; a setting freezes every area selection.
-- History of every capture, searchable by the text inside screenshots (read on the Mac into a private index, the files stay untouched), with a snippet of the match, favorites and filters for screenshots, recordings and favorites.
+- Area, window, full screen and scrolling screenshots with the familiar macOS shortcuts, a magnifier, a precise crosshair (a setting hides it), a timer and a floating thumbnail. Drag the thumbnail into any app, which also saves the capture to the screenshots folder, or right-click it to convert it to another format (PNG, JPEG or WebP; MP4, MOV or GIF for recordings). Scrolling capture shows a live preview of the stitched page. Press F while selecting an area to freeze the screen, so open menus, tooltips and hover states stay in the screenshot; a setting freezes every area selection.
+- History of every capture, searchable by the text inside screenshots (read on the Mac into a private index, the files stay untouched), with a snippet of the match, favorites and filters for screenshots, recordings and favorites. Press Space for Quick Look, open a capture in Preview or another app, copy it with the Copy button on hover, or move it to the Trash.
 - Screenshot editor to annotate screenshots: arrows, lines, shapes, text in five fonts with an optional background box, highlights, step numbers, magnify, pen, blur and pixelate, each on a single key. Crop, rotate, flip and resize a screenshot, and export it as PNG, JPEG or WebP.
 - Beautify: put a screenshot on a background with padding, rounded corners and a shadow; save looks as presets or let Apple Intelligence suggest some.
 - Capture Text reads the text on screen (OCR) and copies it. A color picker copies any color on screen.
@@ -24,11 +24,11 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 ## Screen recording and screencasts
 
-- Screen recorder for Mac: record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown.
+- Screen recorder for Mac: record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown. The recording controls sit above the recorded area or window.
 - Replay keeps the last 15 seconds of the screen, so you can save what just happened.
 - Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, click highlights and a larger pointer, marks with their own timing, and blurs that follow moving content.
 - Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality, or as a looping GIF without sound, at the width and frame rate you choose, 640 px at 10 fps by default.
-- Saved screenshots and recordings stay editable when opened again.
+- Saved screenshots and recordings stay editable when opened again, and Sightline asks before quitting while an editor has unsaved changes.
 
 ## MCP integration for AI agents
 

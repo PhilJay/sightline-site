@@ -230,6 +230,14 @@
         },
         {
           "@type": "Question",
+          "name": "Can I search my screenshots by the text in them?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Press ⌃⌥H for History and type a word you saw in a screenshot. Sightline reads the text on your Mac into a private index, your files stay untouched, and each match shows the line it found. Star favorites with ⌘D, filter by screenshots, recordings or favorites, and press Space to look at one with Quick Look. Your AI agent can search the same way."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How do I blur something in a screenshot?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -875,7 +883,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <div class="feature-text">
             <p class="eyebrow">Capture and annotate</p>
             <h2>Capture. Mark it up.</h2>
-            <p>Area, window and full screen with the shortcuts you already know, a magnifier for pixel exact edges and a floating thumbnail. While you drag, <kbd>⌘C</kbd>, <kbd>⌘S</kbd>, <kbd>⌘P</kbd> and <kbd>⌘B</kbd> copy, save, pin or cut out the background right away. Press <kbd>F</kbd> to freeze the screen, so an open menu or a tooltip stays in the shot.</p>
+            <p>Area, window and full screen with the shortcuts you already know, a magnifier and a precise crosshair for pixel exact edges, and a floating thumbnail you drag into any app or convert with a right click. While you drag, <kbd>⌘C</kbd>, <kbd>⌘S</kbd>, <kbd>⌘P</kbd> and <kbd>⌘B</kbd> copy, save, pin or cut out the background right away. Press <kbd>F</kbd> to freeze the screen, so an open menu or a tooltip stays in the shot.</p>
             <p>The editor draws arrows, shapes, text in five fonts, highlights, spotlight, magnify, blur and step numbers, each on a single key. Rotate, flip and resize a screenshot, export it as PNG, JPEG or WebP, or open the PNG, JPEG or MP4 files you already have.</p>
           </div>
         </article>
@@ -899,7 +907,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <div class="feature-text">
             <p class="eyebrow">Scrolling capture</p>
             <h2>Capture the whole page.</h2>
-            <p>Long pages, chat logs and Terminal output become one tall image. <strong>Sightline scrolls for you</strong>, or you scroll yourself, up or down, and it follows along and stitches the frames together. A live preview in the corner shows the page as it grows.</p>
+            <p>Long pages, chat logs and Terminal output become one tall image. Scroll up or down at your own pace, and <strong>Sightline follows along</strong> and stitches the frames together. A live preview in the corner shows the page as it grows.</p>
           </div>
         </article>
 
@@ -949,7 +957,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <article class="card media reveal">
             <img src="assets/card-editor-voice-1040.webp?v=10" srcset="assets/card-editor-voice-640.webp?v=10 640w, assets/card-editor-voice-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="An Account window recorded inside a red frame, the recording bar with timer, microphone, pause and stop above it, and the voice as a waveform below">
             <h3>Your voice and a countdown</h3>
-            <p>Record your microphone with the screen. A countdown gets you ready, and the recording bar pauses or mutes you.</p>
+            <p>Record your microphone with the screen. A countdown gets you ready, and the recording bar above the area pauses or mutes you.</p>
           </article>
           <article class="card media reveal">
             <img src="assets/card-editor-clips-1040.webp?v=10" srcset="assets/card-editor-clips-640.webp?v=10 640w, assets/card-editor-clips-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 350px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="The Clips row with a clip at 4x and its badge, the playhead at 0:08 and the Speed 4x button above">
@@ -1048,7 +1056,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <article class="card media reveal">
             <img src="assets/feature-history-1040.webp?v=10" srcset="assets/feature-history-640.webp?v=10 640w, assets/feature-history-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="The capture history with a search field and a grid of recent captures, one selected with copy, edit, pin and delete">
             <h3>Never lose a capture</h3>
-            <p><kbd>⌃⌥H</kbd> opens a history of everything you copied or saved. Search it by the text inside your screenshots, star favorites with <kbd>⌘D</kbd>, and copy, edit, pin or delete. The last 24 hours are free.</p>
+            <p><kbd>⌃⌥H</kbd> opens a history of everything you copied or saved. Search it by the text inside your screenshots, star favorites with <kbd>⌘D</kbd>, look at one with <kbd>Space</kbd>, and copy, edit, pin, open in another app or move to the Trash. The last 24 hours are free.</p>
           </article>
           <article class="card media reveal">
             <img src="assets/feature-text-1040.webp?v=10" srcset="assets/feature-text-640.webp?v=10 640w, assets/feature-text-1040.webp?v=10 1040w" sizes="(min-width: 1001px) 530px, (min-width: 601px) calc(50vw - 42px), calc(100vw - 40px)" width="1040" height="585" loading="lazy" alt="A selected area with opening hours and a QR code, and the text result with the link and the lines ready to copy">
@@ -1169,6 +1177,10 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           <details class="faq-item">
             <summary>How do I screenshot an open menu on a Mac?</summary>
             <p>Press F while you select an area and Sightline freezes the screen, so the open menu, a tooltip or a hover state stays exactly as it was while you drag. Press F again to unfreeze. To freeze every area selection from the start, turn on Freeze the screen while selecting an area in Settings &gt; Capture.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I search my screenshots by the text in them?</summary>
+            <p>Yes. Press ⌃⌥H for History and type a word you saw in a screenshot. Sightline reads the text on your Mac into a private index, your files stay untouched, and each match shows the line it found. Star favorites with ⌘D, filter by screenshots, recordings or favorites, and press Space to look at one with Quick Look. Your AI agent can search the same way.</p>
           </details>
           <details class="faq-item">
             <summary>How do I blur something in a screenshot?</summary>
