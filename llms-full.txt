@@ -37,7 +37,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - Screen recorder for Mac: record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown. The recording controls sit above the recorded area or window.
 - Show keystrokes: with Settings > Recording > Show keystrokes set to Shortcuts only or All keys (needs Input Monitoring), the keys you press appear in the video as small labels. The Keys row of the recording editor sets each part to Words, Letter by Letter, Shortcuts Only or Hidden, and the Keys button sets position, size and a dark or light look. Keys typed into password fields never show.
 - Replay keeps the last 15 seconds of the screen, so you can save what just happened.
-- Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, click highlights and a larger pointer, keystrokes, marks with their own timing, and blurs that follow moving content. Marks and zooms are named on their bars, such as "2×" or the text of a label, and a right click on a clip, the sound, a zoom, a mark or the keys splits it at the playhead.
+- Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, a Crop tool (C) with Free, 16:9, 4:3, 1:1 and 9:16 shapes for the whole recording (crop and zoom do not mix), click highlights and a larger pointer, keystrokes, marks with their own timing, and blurs that follow moving content. Marks and zooms are named on their bars, such as "2×" or the text of a label, and a right click on a clip, the sound, a zoom, a mark or the keys splits it at the playhead.
 - Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality, or as a looping GIF without sound, at the width and frame rate you choose, 640 px at 10 fps by default.
 - Saved screenshots and recordings stay editable when opened again, and Sightline asks before quitting while an editor has unsaved changes.
 
@@ -65,7 +65,7 @@ Screenshots:
 Editing:
 
 - `list_editors` (see your open editors): each open editor with `id`, `kind` (screenshot or recording), `title`, `width`, `height`, `path` and `front`, plus an image of the front screenshot.
-- `annotate` (annotate a screenshot or recording): `path` or `editor` (an id from list_editors or "front", the change appears live as one undo step), `annotations`, `crop`, `rotate`, `flip`, `resize`, `beautify`, `export`; for recordings also `trim`, `pieces`, `sound`, `zooms`, `zoom_on_clicks`, `pointer` and `keys` {parts with start_second, end_second and mode words, letters, shortcuts or hidden; position; size; look}.
+- `annotate` (annotate a screenshot or recording): `path` or `editor` (an id from list_editors or "front", the change appears live as one undo step), `annotations`, `crop`, `rotate`, `flip`, `resize`, `beautify`, `export`; for recordings also `trim`, `pieces`, `sound`, `zooms`, `zoom_on_clicks`, `crop` (a rectangle in video pixels, `aspect` 16:9, 4:3, 1:1 or 9:16, or `false` to remove it; not with zooms), `pointer` and `keys` {parts with start_second, end_second and mode words, letters, shortcuts or hidden; position; size; look}.
 - `open_in_editor` (open a screenshot or recording in the editor): the same marks and recording options as annotate, `editor`, or `from_clipboard`.
 - `beautify` (style a screenshot): sets the look of the editor's Style panel with `look` (none, soft, sunset, night, paper, sightline, a saved preset or default), `background`, `background_image`, `padding`, `corners`, `shadow`, `aspect`, also in an open `editor`.
 - `list_looks` (list the Style looks) and `save_look` (save a Style look).
@@ -75,7 +75,7 @@ Editing:
 Recordings and captures:
 
 - `record_screen` (record your screen): `seconds` (1 to 60), `area`, `window`, `display`, `include_audio`, `pointer` (off, video, drawn), `size` (original, 1080p, 720p), `quality` (high, medium, small). Never records the microphone or the keys pressed.
-- `inspect_recording` (look at a recording): still and moving stretches, text in chosen frames, a frame as an image, `has_pointer_track` with `clicks`, and `has_key_track` with `keys`.
+- `inspect_recording` (look at a recording): still and moving stretches, text in chosen frames, a frame as an image, `width` and `height` after the crop with `source_width`, `source_height` and `crop`, `has_pointer_track` with `clicks`, and `has_key_track` with `keys`.
 - `last_recording` (find the latest recording), `save_replay` (save the last seconds of your screen).
 - `search_captures` (search your captures): `query`, `kind`, `favorites_only`, `limit`.
 
