@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MCP server and CLI docs · Sightline</title>
-  <meta name="description" content="Connect Claude Code, Claude Desktop, Codex or any MCP client to Sightline, and use its 23 tools to capture, read, annotate, record and edit the screen on your Mac. Setup, CLI, tool reference and troubleshooting.">
+  <title>MCP server · Sightline docs</title>
+  <meta name="description" content="Connect Claude Code, Claude Desktop, Codex or any MCP client to Sightline. Setup, how approval works, all 23 tools with parameters and examples, multi-step workflows and troubleshooting.">
   <link rel="canonical" href="https://sightlinemac.com/docs/mcp/">
   <link rel="icon" type="image/png" href="/assets/favicon.png?v=10">
   <link rel="apple-touch-icon" href="/assets/icon.png?v=10">
   <link rel="preload" href="/assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sightline">
-  <meta property="og:title" content="Sightline MCP server and CLI">
-  <meta property="og:description" content="Setup, tool reference and troubleshooting for Sightline's MCP server and CLI.">
+  <meta property="og:title" content="Sightline docs: MCP server">
+  <meta property="og:description" content="Connect Claude Code, Claude Desktop, Codex or any MCP client to Sightline. Setup, how approval works, all 23 tools with parameters and examples, multi-step workflows and troubleshooting.">
   <meta property="og:url" content="https://sightlinemac.com/docs/mcp/">
   <meta property="og:image" content="https://sightlinemac.com/assets/og-image.png?v=11">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Sightline MCP server and CLI",
+  "headline": "Sightline: MCP server",
   "url": "https://sightlinemac.com/docs/mcp/",
   "inLanguage": "en",
   "dateModified": "2026-10-24",
@@ -627,8 +627,33 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 .table th { text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--text-dim); padding: 10px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
 .table td { padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; }
 .table tr:first-child td { border-top: 0; }
-.table td:first-child { white-space: nowrap; }
-.table td:first-child code { overflow-wrap: normal; }
+.table.params td:first-child { white-space: nowrap; }
+.table.params td:first-child code { overflow-wrap: normal; }
+.table.plain td:first-child { width: 42%; }
+.table.plain td:first-child code { overflow-wrap: anywhere; }
+.table.keys td:first-child { width: 34%; white-space: nowrap; }
+.docs-body kbd { font-family: inherit; font-size: 0.85em; font-weight: 600; color: var(--text); background: #fff; border: 1px solid var(--card-border); border-bottom-width: 2px; border-radius: 6px; padding: 1px 6px; white-space: nowrap; }
+.docs-side { position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow-y: auto; font-size: 14px; padding-right: 8px; }
+.docs-side > p { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 10px; }
+.docs-side ol { list-style: none; margin: 0; padding: 0; }
+.docs-side > ol > li { margin: 2px 0; }
+.docs-side > ol > li > a { display: block; padding: 5px 10px; margin-left: -10px; border-radius: 8px; color: var(--text-soft); text-decoration: none; line-height: 1.35; font-weight: 500; }
+.docs-side > ol > li > a[aria-current] { background: var(--accent-soft); color: var(--text); font-weight: 650; }
+.docs-side > ol > li > a:hover { color: var(--accent); }
+.docs-side .toc { position: static; max-height: none; overflow: visible; padding: 0; margin: 6px 0 12px 2px; }
+.docs-side .toc ol { margin: 0; padding-left: 10px; border-left: 1px solid var(--line); }
+.docs-side .toc ol ol { margin: 2px 0 6px 8px; }
+.hub { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 8px 0 24px; }
+.hub a { display: block; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 18px 20px; text-decoration: none; color: var(--text-soft); }
+.hub a:hover { border-color: var(--accent); }
+.hub b { display: block; color: var(--text); font-size: 17px; margin-bottom: 4px; }
+.hub span { font-size: 14.5px; line-height: 1.5; }
+.flow { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 18px 20px 6px; margin: 18px 0 24px; }
+.flow > .ask { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; color: var(--text); margin-bottom: 12px; }
+.flow ol { padding-left: 20px; }
+.flow li::marker { color: var(--accent); font-weight: 700; }
+.flow .code { margin: 8px 0 10px; }
+.flow .then { font-size: 14.5px; color: var(--text-dim); }
 .returns { font-size: 15px; }
 .returns span { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-right: 6px; }
 .recipe { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 14px 18px; margin-bottom: 10px; }
@@ -636,6 +661,9 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 .recipe p { margin: 4px 0 0; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13.5px; }
 @media (max-width: 1000px) {
   .docs-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .docs-side { position: static; max-height: none; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card-bg); padding: 16px 18px; }
+  .docs-side .toc { display: none; }
+  .hub { grid-template-columns: minmax(0, 1fr); }
   .toc { position: static; max-height: none; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card-bg); padding: 16px 18px; }
   .toc ol ol { display: none; }
 }
@@ -645,10 +673,10 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   .table tr { padding: 12px 14px; border-top: 1px solid var(--line); }
   .table tr:first-child { border-top: 0; }
   .table td { padding: 2px 0; border: 0; }
-  .table td:first-child { white-space: normal; margin-bottom: 2px; }
-  .table td:nth-child(2), .table td:nth-child(3) { display: inline; font-size: 13px; color: var(--text-dim); }
-  .table td:nth-child(3):not(:empty)::before { content: " · default "; }
-  .table td:nth-child(4) { margin-top: 4px; }
+  .table td:first-child, .table.plain td:first-child, .table.keys td:first-child { white-space: normal; width: auto; margin-bottom: 2px; }
+  .table.params td:nth-child(2), .table.params td:nth-child(3) { display: inline; font-size: 13px; color: var(--text-dim); }
+  .table.params td:nth-child(3):not(:empty)::before { content: " · default "; }
+  .table.params td:nth-child(4) { margin-top: 4px; }
   .docs-body .anchor { display: none; }
   .code pre { font-size: 12.5px; }
 }
@@ -662,7 +690,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
     <nav class="nav-links">
       <a href="/">Home</a>
       <a href="/#faq">FAQ</a>
-      <a href="/docs/mcp/" aria-current="page">Docs</a>
+      <a href="/docs/" aria-current="page">Docs</a>
       <a href="https://apps.apple.com/app/sightline/id6812521593">Download</a>
     </nav>
   </header>
@@ -670,35 +698,28 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   <main class="wrap docs">
     <div class="docs-head">
       <p class="eyebrow">Docs</p>
-      <h1>MCP server and CLI</h1>
-      <p class="docs-lead">Let Claude Code, Codex or any MCP client capture, read, mark up and record your screen with Sightline. Everything runs on your Mac.</p>
+      <h1>MCP server</h1>
+      <p class="docs-lead">Let Claude Code, Codex or any MCP client capture, read, mark up, record and edit your screen with Sightline. Everything runs on your Mac.</p>
     </div>
     <div class="docs-grid">
-      <nav class="toc" aria-label="On this page"><p>On this page</p><ol><li><a href="#overview">Overview</a><ol><li><a href="#requirements">Requirements</a></li></ol></li><li><a href="#connect">Connect a client</a><ol><li><a href="#claude-code">Claude Code</a></li><li><a href="#claude-desktop">Claude Desktop</a></li><li><a href="#codex">Codex CLI</a></li><li><a href="#cursor">Cursor and others</a></li></ol></li><li><a href="#cli">Command line</a></li><li><a href="#control">You stay in control</a></li><li><a href="#tools">Tool reference</a><ol><li><a href="#tools-capture">Capture</a></li><li><a href="#tools-read">Read the screen</a></li><li><a href="#tools-edit">Edit and annotate</a></li><li><a href="#tools-recordings">Recordings</a></li><li><a href="#tools-editors">Editors</a></li><li><a href="#tools-style">Style</a></li><li><a href="#tools-history">Captures and history</a></li><li><a href="#tools-clipboard">Clipboard and replay</a></li></ol></li><li><a href="#live-editor">Working in the open editor</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#privacy">Privacy</a></li></ol></nav>
+      <nav class="docs-side" aria-label="Docs"><p>Docs</p><ol><li><a href="/docs/">Overview</a></li><li><a href="/docs/mcp/" aria-current="page">MCP server</a><div class="toc"><ol><li><a href="#overview">Overview</a><ol><li><a href="#requirements">Requirements</a></li></ol></li><li><a href="#connect">Connect a client</a><ol><li><a href="#claude-code">Claude Code</a></li><li><a href="#claude-desktop">Claude Desktop</a></li><li><a href="#codex">Codex CLI</a></li><li><a href="#cursor">Cursor and others</a></li></ol></li><li><a href="#control">Approval and safety</a></li><li><a href="#concepts">Coordinates, files and seconds</a><ol><li><a href="#points-pixels">Points and pixels</a></li><li><a href="#paths">Which files a tool takes</a></li><li><a href="#seconds">Seconds in recordings</a></li><li><a href="#saved-edits">Saved edits</a></li></ol></li><li><a href="#tools">Tool reference</a><ol><li><a href="#tools-capture">Capture</a></li><li><a href="#tools-read">Read the screen</a></li><li><a href="#tools-edit">Edit and annotate</a></li><li><a href="#tools-recordings">Recordings</a></li><li><a href="#tools-editors">Open editors</a></li><li><a href="#tools-style">Style</a></li><li><a href="#tools-history">Captures and history</a></li><li><a href="#tools-clipboard">Clipboard and replay</a></li></ol></li><li><a href="#live-editor">Working in the open editor</a></li><li><a href="#workflows">Workflows</a><ol><li><a href="#flow-secrets">Blur secrets, then share</a></li><li><a href="#flow-gif">Turn a recording into a short GIF</a></li><li><a href="#flow-live">Mark up what the user is looking at</a></li><li><a href="#flow-design">Check an app against its design, fix, check again</a></li><li><a href="#flow-bug-report">A complete bug report from one prompt</a></li><li><a href="#flow-history">Find an old capture and continue editing it</a></li><li><a href="#flow-docs">Consistent screenshots for documentation</a></li><li><a href="#flow-scrolling">Read a long page the agent can't scroll</a></li><li><a href="#flow-recording-live">Edit the recording the user has open</a></li><li><a href="#flow-qr">Read a code and a color from the screen</a></li></ol></li><li><a href="#prompts">Prompt ideas</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#privacy">Privacy</a></li></ol></div></li><li><a href="/docs/cli/">Command line</a></li><li><a href="/docs/recordings/">Recordings and the video editor</a></li><li><a href="/docs/keyboard/">Keyboard shortcuts</a></li><li><a href="/docs/automation/">Shortcuts, Siri and Spotlight</a></li><li><a href="/docs/files/">Files and editable captures</a></li><li><a href="/docs/privacy/">Permissions and privacy</a></li></ol></nav>
       <article class="docs-body">
 <section><h2 id="overview"><a class="anchor" href="#overview" aria-hidden="true">#</a>Overview</h2>
-
-<p>Sightline has an <strong>MCP server</strong> built in. Any AI agent that speaks the Model Context Protocol, such as Claude Code, Claude Desktop, Codex or Cursor, can use it to take screenshots, read text on screen, mark up and style images, record and edit screencasts, and compare the screen with a design. The same tools also run from the terminal through <code>sightline-cli</code>.</p>
-<p>The server runs on your Mac over stdio. It talks to the Sightline app, which does the work with its own permissions. Nothing goes over the network.</p>
+<p>Sightline has an <strong>MCP server</strong> built in. Any AI agent that speaks the Model Context Protocol, such as Claude Code, Claude Desktop, Codex or Cursor, can use it to take screenshots, read text and codes on screen, mark up and style images, record and edit screencasts, find old captures and compare the screen with a design. The same 23 tools also run from the terminal, see <a href="/docs/cli/">Command line</a>.</p>
+<p>The server is <code>sightline-cli mcp</code>, a small program inside the app that speaks MCP over stdio. It hands every call to the running Sightline app over a local socket, and the app does the work with its own permissions. Nothing goes over the network.</p>
 <h3 id="requirements"><a class="anchor" href="#requirements" aria-hidden="true">#</a>Requirements</h3>
-<ul>
-<li>Sightline from the <a href="https://apps.apple.com/app/sightline/id6812521593">Mac App Store</a>, on macOS 14 or later. Recording tools need macOS 15, a blur by subject and <code>save_replay</code> need macOS 27.</li>
-<li>Sightline Pro, or the free 7 day trial. Agent access is a Pro feature.</li>
-<li>Screen Recording permission for Sightline, in System Settings &gt; Privacy &amp; Security &gt; Screen &amp; System Audio Recording.</li>
-<li>Agent access turned on in Sightline under Settings &gt; AI Agents (Allow AI agents to use Sightline).</li>
-<li>Sightline running. When it isn't, <code>sightline-cli</code> starts it for you.</li>
-</ul>
-</section>
+<ul><li>Sightline from the <a href="https://apps.apple.com/app/sightline/id6812521593">Mac App Store</a> on macOS 14 or later. Recording tools need macOS 15, a blur by subject and <code>save_replay</code> need macOS 27.</li><li>Sightline Pro, or the free 7 day trial. Agent access is a Pro feature; without it every call returns <code>Sightline Pro is required for agent access.</code></li><li>Screen Recording permission for Sightline, in System Settings &gt; Privacy &amp; Security &gt; Screen &amp; System Audio Recording.</li><li><strong>Allow AI agents to use Sightline</strong> turned on in Sightline under Settings &gt; AI Agents. It is off until you turn it on.</li><li>Sightline running. When it isn't, <code>sightline-cli</code> starts it in the background and waits up to 8 seconds for it.</li></ul></section>
 <section><h2 id="connect"><a class="anchor" href="#connect" aria-hidden="true">#</a>Connect a client</h2>
-
-<p>The quickest way: open Sightline, go to <strong>Settings &gt; AI Agents</strong>, turn on agent access and click <strong>Connect</strong> next to Claude Code, Claude Desktop or Codex CLI. Sightline adds itself to that client's config. Start a new session in the client (or restart Claude Desktop) and the Sightline tools show up. Disconnect removes the entry again.</p>
-<p>To set it up by hand, point your client at <code>sightline-cli mcp</code> as a stdio server:</p>
+<p>The quickest way: open Sightline, go to <strong>Settings &gt; AI Agents</strong>, turn on agent access and click <strong>Connect</strong> next to Claude Code, Claude Desktop or Codex CLI. Sightline offers three ways:</p>
+<ul><li><strong>Connect automatically</strong> adds Sightline's entry to the client's config file. Because the App Store version can only change files you give it, the first time it asks you to choose the folder that holds the config (<strong>Grant access and connect</strong>).</li><li><strong>Let your agent connect itself</strong> copies a short prompt. Paste it into a running agent session and the agent adds the entry.</li><li><strong>Copy config</strong> copies the entry so you can paste it into the file yourself.</li></ul>
+<p>Then start a new session in the client, or quit and reopen Claude Desktop. <strong>Disconnect</strong> removes only Sightline's entry. When a config points to an older copy of Sightline, Settings shows <strong>Update</strong>.</p>
+<p>To set it up by hand, point the client at <code>sightline-cli mcp</code> as a stdio server:</p>
 <h3 id="claude-code"><a class="anchor" href="#claude-code" aria-hidden="true">#</a>Claude Code</h3>
 <div class="code"><pre><code class=lang-sh>claude mcp add --scope user sightline -- \
   "/Applications/Sightline.app/Contents/MacOS/sightline-cli" mcp</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p>Start a new Claude Code session afterwards. <code>claude mcp list</code> should show <code>sightline</code>.</p>
+<p>This is what Connect writes too: a <code>sightline</code> entry with type <code>stdio</code> under <code>mcpServers</code> in <code>~/.claude.json</code>. Start a new session afterwards; <code>claude mcp list</code> shows <code>sightline</code>.</p>
 <h3 id="claude-desktop"><a class="anchor" href="#claude-desktop" aria-hidden="true">#</a>Claude Desktop</h3>
-<p>Add the <code>sightline</code> entry to <code>mcpServers</code> in <code>~/Library/Application Support/Claude/claude_desktop_config.json</code>, then quit and reopen Claude Desktop.</p>
+<p>Add the <code>sightline</code> entry to <code>mcpServers</code> in <code>~/Library/Application Support/Claude/claude_desktop_config.json</code>, keep the other servers, then quit and reopen Claude Desktop.</p>
 <div class="code"><pre><code class=lang-json>{
   "mcpServers": {
     "sightline": {
@@ -708,292 +729,734 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
 <h3 id="codex"><a class="anchor" href="#codex" aria-hidden="true">#</a>Codex CLI</h3>
-<p>Add this block to <code>~/.codex/config.toml</code> and start a new Codex session.</p>
+<p>Add this block to <code>~/.codex/config.toml</code>, replacing an older <code>[mcp_servers.sightline]</code> block, and start a new Codex session.</p>
 <div class="code"><pre><code class=lang-toml>[mcp_servers.sightline]
 command = "/Applications/Sightline.app/Contents/MacOS/sightline-cli"
 args = ["mcp"]</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
 <h3 id="cursor"><a class="anchor" href="#cursor" aria-hidden="true">#</a>Cursor and other clients</h3>
-<p>Any MCP client that can start a stdio server works. In Cursor, add the same entry as for Claude Desktop to <code>~/.cursor/mcp.json</code>. Elsewhere, use this command and argument:</p>
+<p>Any MCP client that can start a stdio server works. Cursor reads the same <code>mcpServers</code> entry as Claude Desktop from <code>~/.cursor/mcp.json</code>. Elsewhere, use this command with the single argument <code>mcp</code>:</p>
 <div class="code"><pre><code class=lang-sh>"/Applications/Sightline.app/Contents/MacOS/sightline-cli" mcp</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-</section>
-<section><h2 id="cli"><a class="anchor" href="#cli" aria-hidden="true">#</a>Command line</h2>
-
-<p><code>sightline-cli</code> calls the same tools from a terminal or a script and prints the result as JSON. It lives inside the app:</p>
-<div class="code"><pre><code class=lang-sh>/Applications/Sightline.app/Contents/MacOS/sightline-cli</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p>Add an alias if you use it often:</p>
-<div class="code"><pre><code class=lang-sh>alias sightline-cli='/Applications/Sightline.app/Contents/MacOS/sightline-cli'</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<div class="code"><pre><code class=lang-sh># list every tool with its description
-sightline-cli tools
-
-# call one tool, prints JSON
-sightline-cli capture_window --json '{"app": "Safari"}'
-sightline-cli find_text --json '{"text": "Sign in", "window": {"app": "Safari"}}'
-
-# show the usage
-sightline-cli help</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<ul>
-<li><code>--json</code> takes one JSON object with the tool's arguments. Leave it out for a tool without required arguments.</li>
-<li>The CLI sets <code>include_image</code> to <code>false</code> unless you pass it, so the output stays readable.</li>
-<li>On success it prints the result and exits with 0. On an error it prints the message to stderr and exits with 1.</li>
-<li>The first call asks you to allow the terminal app in Sightline, like any new agent. Allowing a terminal also allows anything else you run in it.</li>
-</ul>
-</section>
-<section><h2 id="control"><a class="anchor" href="#control" aria-hidden="true">#</a>You stay in control</h2>
-
-<ul>
-<li><strong>Off by default.</strong> Agents can't use Sightline until you turn on agent access in Settings &gt; AI Agents.</li>
-<li><strong>Each agent asks first.</strong> The first request from a new agent opens a dialog with Deny, Allow Once, Allow This Session and Always Allow. Tick Limit to keep the grant to that one kind of action. Allowed agents are listed in Settings, where you can remove them, end session grants or clear the denied list.</li>
-<li><strong>You see every capture.</strong> Every agent capture plays the capture sound, and a notice names the agent and what it did. Recordings show a recording notice the whole time.</li>
-<li><strong>One folder.</strong> What agents save goes into the <strong>Agent</strong> folder inside your screenshots folder. Agents read and write only there, can't change settings and can't delete presets. Agent captures move to the Trash after 7 days, or the time you choose.</li>
-<li><strong>Credentials stay hidden.</strong> With Hide flagged credentials from agents on, text that looks like a password, key or token is blurred in images and left out of text results and search snippets.</li>
-<li><strong>Your recordings are safe.</strong> A recording you made is never overwritten. Agent recordings never include the microphone or the keys you pressed.</li>
-</ul>
-</section>
+<p>The server announces itself as <code>sightline</code> with Sightline's version and protocol version <code>2025-06-18</code>. It also sends one instruction to the agent: when the user talks about one of their own screenshots or recordings, call <code>list_editors</code> first and pass <code>editor</code> instead of copying files.</p></section>
+<section><h2 id="control"><a class="anchor" href="#control" aria-hidden="true">#</a>Approval and safety</h2>
+<ul><li><strong>Off by default.</strong> Agents can't use Sightline until you turn on <strong>Allow AI agents to use Sightline</strong>.</li><li><strong>Each agent asks first.</strong> Sightline identifies the program that started <code>sightline-cli</code>, such as Claude Code, Codex or Cursor, not the name a client reports. Its first request opens a dialog: <strong>Deny</strong>, <strong>Allow Once</strong>, <strong>Allow This Session</strong> or <strong>Always Allow</strong>. Tick <strong>Limit to ...</strong> to allow only that kind of action, such as window screenshots; unticked, the grant also covers the other screen actions.</li><li><strong>Commands from a terminal</strong> are shown as coming from your Terminal, such as <code>zsh</code>. Allowing them for the session or always also allows anything else you run in that shell.</li><li><strong>Manage grants</strong> in Settings &gt; AI Agents: remove an allowed agent, <strong>End session grants</strong>, or <strong>Clear denied</strong>. Several denials in a short time stop new dialogs for a while (<code>too many approval requests, try again later</code>).</li><li><strong>You notice every capture.</strong> Captures play the capture sound. With <strong>Show a notice when an agent uses Sightline</strong> on, the default, a banner names the agent and what it did. Recordings show a recording notice the whole time.</li><li><strong>One folder.</strong> What agents save goes into the <strong>Agent</strong> folder inside your save folder, by default <code>~/Pictures/Screenshots/Agent</code>. Tools only read files from there, plus the user recordings <code>last_recording</code> returns and pictures open in an editor. Agents can't change settings or delete presets.</li><li><strong>Clean-up.</strong> <strong>Move agent captures to the Trash</strong> is After 7 days by default; you can choose Never, After 1 day or After 30 days.</li><li><strong>Credentials.</strong> On Macs with Apple Intelligence, with <strong>Check captures for sensitive content</strong> and <strong>Hide flagged credentials from agents</strong> on, text that looks like a password, key or token is blurred in images an agent gets and left out of text results and search.</li><li><strong>Your files stay yours.</strong> A recording you made is never overwritten; edits go to a new file. Agent recordings never include the microphone or the keys you pressed.</li></ul></section>
+<section><h2 id="concepts"><a class="anchor" href="#concepts" aria-hidden="true">#</a>Coordinates, files and seconds</h2>
+<h3 id="points-pixels"><a class="anchor" href="#points-pixels" aria-hidden="true">#</a>Points and pixels</h3>
+<p>Screen positions, such as <code>area</code>, <code>pick_color</code> and the frames from <code>list_windows</code> and <code>list_displays</code>, are <strong>points</strong> with the origin at the top left of the main display. Everything inside an image, such as annotation coordinates, <code>crop</code>, <code>region</code> and the boxes <code>find_text</code> returns, is <strong>pixels</strong> of that image with the origin at its top left. A capture's <code>scale</code> says how many pixels one point has, usually 2 on a Retina display.</p>
+<p>Tools that take <code>area</code>, <code>window</code> or <code>display</code> accept only one of them. Leave all out to use the display under the pointer.</p>
+<h3 id="paths"><a class="anchor" href="#paths" aria-hidden="true">#</a>Which files a tool takes</h3>
+<ul><li>Every capture tool returns a <code>path</code> in the Agent folder. Pass it on to <code>annotate</code>, <code>beautify</code>, <code>capture_text</code>, <code>copy_to_clipboard</code> or <code>open_in_editor</code>.</li><li>Leave <code>path</code> out and those tools use <strong>this agent's last screenshot</strong>.</li><li><code>last_recording</code> can return a recording the <strong>user</strong> made. That path works with <code>inspect_recording</code>, <code>annotate</code>, <code>copy_to_clipboard</code> and <code>open_in_editor</code>; results go to a new file.</li><li><code>search_captures</code> returns the user's own files. Read them directly, or copy a screenshot into the Agent folder before annotating it. If it is open in an editor, pass <code>editor</code> instead.</li><li>Pass <code>editor</code> (from <code>list_editors</code>, or <code>front</code>) to work on what the user has open, without any file. See <a href="#live-editor">Working in the open editor</a>.</li></ul>
+<h3 id="seconds"><a class="anchor" href="#seconds" aria-hidden="true">#</a>Seconds in recordings</h3>
+<p>All seconds you pass for a recording, for marks, <code>pieces</code>, <code>trim</code>, <code>sound</code>, <code>zooms</code> and <code>keys</code> parts, count in the <strong>original</strong> recording, before any cut or speed change. A mark at 12 s stays on what was at 12 s wherever its piece ends up, and disappears with a piece that is cut.</p>
+<h3 id="saved-edits"><a class="anchor" href="#saved-edits" aria-hidden="true">#</a>Captures saved with their edit</h3>
+<p>With <strong>Keep saved captures editable</strong> on (the default), Sightline keeps the original of every capture the user edits. Tools then work on that original: <code>open_in_editor</code> and <code>annotate</code> restore the user's marks, crop, Style look, cuts, volumes, zooms, pointer and keys, and the result says <code>restored_edit: true</code>. Pixels and seconds then count in the original, turned the way the edit turned it.</p></section>
 <section><h2 id="tools"><a class="anchor" href="#tools" aria-hidden="true">#</a>Tool reference</h2>
-<p>23 tools. Every tool returns MCP content: JSON text, and for most image tools an inline image unless <code>include_image</code> is <code>false</code>. The examples show the arguments a client sends; with the CLI, pass the <code>arguments</code> object to <code>--json</code>.</p><div class="group"><h3 id="tools-capture"><a class="anchor" href="#tools-capture" aria-hidden="true">#</a>Capture</h3><p>Screens, areas and windows are captured as PNG, JPEG or WebP into the Agent folder. Positions are in points with the origin at the top left of the main display, the same space <code>list_windows</code> and <code>list_displays</code> use. Images come back in pixels, so a Retina capture is twice as large.</p>
+<p>Every tool returns MCP content: a JSON text, and for most image tools an inline image unless <code>include_image</code> is <code>false</code>. Errors come back as a text with <code>isError</code> set. The examples show the tool name and the <code>arguments</code> object a client sends; with the CLI, pass that object to <code>--json</code>. Paths like <code>/Users/you/...</code> stand for real paths a tool returned.</p><div class="group"><h3 id="tools-capture"><a class="anchor" href="#tools-capture" aria-hidden="true">#</a>Capture</h3><p>Captures are saved into the Agent folder in the format you pick and come back with <code>path</code>, <code>width</code> and <code>height</code> in pixels, <code>scale</code>, and an inline preview (with <code>preview_width</code> and <code>preview_height</code>) unless <code>include_image</code> is <code>false</code>. Whether Sightline's own windows, such as pins, appear in screen and area captures follows the <strong>Hide Sightline in captures and recordings</strong> setting.</p>
 <h4 id="capture_screen"><a class="anchor" href="#capture_screen" aria-hidden="true">#</a><code>capture_screen</code></h4>
 <p>Takes a screenshot of a whole display, optionally with marks drawn on it.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>display</code></td><td>integer</td><td>display under the mouse</td><td>Index from <code>list_displays</code>, 0 is the main display.</td></tr><tr><td><code>annotations</code></td><td>array</td><td>none</td><td>Marks to draw before saving, in pixels of the captured image. See <a href="#annotation-object">annotation object</a>.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td><code>png</code></td><td>File type. JPEG and lossy WebP use the quality from Sightline's settings. Transparent images stay PNG.</td></tr><tr><td><code>name</code></td><td>string</td><td>timestamp</td><td>File name without extension, such as <code>login-error</code>. A number is added when the name is taken.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a small inline preview. Set <code>false</code> when you only need the path.</td></tr></tbody></table></div>
-<div class="code"><pre><code class=lang-json>{"tool": "capture_screen", "arguments": {"display": 0, "name": "desktop"}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code> and an inline image.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>display</code></td><td>integer</td><td>display under the pointer</td><td>Index from <code>list_displays</code>; 0 is the main display.</td></tr><tr><td><code>annotations</code></td><td>array</td><td></td><td>Marks to draw before saving, in pixels of the capture. See <a href="#annotation-object">annotation object</a>. A blur by <code>subject</code> only works in <code>annotate</code> and <code>open_in_editor</code>.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td><code>png</code></td><td>File type. JPEG and lossy WebP use the quality from Sightline's settings. Transparent images stay PNG, and images over 16383 pixels are PNG instead of WebP.</td></tr><tr><td><code>name</code></td><td>string</td><td>timestamp</td><td>File name without extension, such as <code>login-error</code>. A number is added when the name is taken.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a downscaled inline preview. Set <code>false</code> to save tokens when only the path is needed.</td></tr></tbody></table></div>
+<p class="muted">The second display as a lossy WebP, without a preview, to keep the agent's context small:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "capture_screen",
+  "arguments": {
+    "display": 1, "format": "webp", "name": "second-display",
+    "include_image": false
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code>, <code>scale</code> and a preview.</p>
 <h4 id="capture_area"><a class="anchor" href="#capture_area" aria-hidden="true">#</a><code>capture_area</code></h4>
 <p>Takes a screenshot of a rectangle given in points.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>x, y, width, height</code></td><td>number</td><td>required</td><td>The area in points.</td></tr><tr><td><code>annotations</code></td><td>array</td><td>none</td><td>Marks to draw before saving, in pixels of the captured image. See <a href="#annotation-object">annotation object</a>.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td><code>png</code></td><td>File type. JPEG and lossy WebP use the quality from Sightline's settings. Transparent images stay PNG.</td></tr><tr><td><code>name</code></td><td>string</td><td>timestamp</td><td>File name without extension, such as <code>login-error</code>. A number is added when the name is taken.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a small inline preview. Set <code>false</code> when you only need the path.</td></tr></tbody></table></div>
-<div class="code"><pre><code class=lang-json>{"tool": "capture_area", "arguments": {"x": 0, "y": 0, "width": 800, "height": 600}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code> and an inline image.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>x, y, width, height</code></td><td>number</td><td>required</td><td>The area in points.</td></tr><tr><td><code>annotations</code></td><td>array</td><td></td><td>Marks to draw before saving, in pixels of the capture. See <a href="#annotation-object">annotation object</a>. A blur by <code>subject</code> only works in <code>annotate</code> and <code>open_in_editor</code>.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td><code>png</code></td><td>File type. JPEG and lossy WebP use the quality from Sightline's settings. Transparent images stay PNG, and images over 16383 pixels are PNG instead of WebP.</td></tr><tr><td><code>name</code></td><td>string</td><td>timestamp</td><td>File name without extension, such as <code>login-error</code>. A number is added when the name is taken.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a downscaled inline preview. Set <code>false</code> to save tokens when only the path is needed.</td></tr></tbody></table></div>
+<p class="muted">The top left 1280 by 800 points, with a numbered callout drawn in at once. Annotation positions are pixels, so on a Retina display x 400 is 200 points in:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "capture_area",
+  "arguments": {
+    "x": 0,
+    "y": 25,
+    "width": 1280,
+    "height": 800,
+    "name": "menu-bar-area",
+    "annotations": [
+      {
+        "type": "number", "x": 400, "y": 120, "label": "Click here first",
+        "number_size": "large"
+      }
+    ]
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code>, <code>scale</code> and a preview.</p>
 <h4 id="capture_window"><a class="anchor" href="#capture_window" aria-hidden="true">#</a><code>capture_window</code></h4>
-<p>Takes a screenshot of one window, picked by app name, title or id.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>app</code></td><td>string</td><td></td><td>Substring of the app name; the frontmost match wins.</td></tr><tr><td><code>title</code></td><td>string</td><td></td><td>Substring of the window title.</td></tr><tr><td><code>id</code></td><td>integer</td><td></td><td>Window id from <code>list_windows</code>; wins over app and title.</td></tr><tr><td><code>annotations</code></td><td>array</td><td>none</td><td>Marks to draw before saving, in pixels of the captured image. See <a href="#annotation-object">annotation object</a>.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td><code>png</code></td><td>File type. JPEG and lossy WebP use the quality from Sightline's settings. Transparent images stay PNG.</td></tr><tr><td><code>name</code></td><td>string</td><td>timestamp</td><td>File name without extension, such as <code>login-error</code>. A number is added when the name is taken.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a small inline preview. Set <code>false</code> when you only need the path.</td></tr></tbody></table></div>
+<p>Takes a screenshot of one window, picked by app name, title or id, without its shadow.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>app</code></td><td>string</td><td></td><td>Case insensitive substring of the app name; the frontmost match wins.</td></tr><tr><td><code>title</code></td><td>string</td><td></td><td>Substring of the window title.</td></tr><tr><td><code>id</code></td><td>integer</td><td></td><td>Window id from <code>list_windows</code>; wins over <code>app</code> and <code>title</code>.</td></tr><tr><td><code>annotations</code></td><td>array</td><td></td><td>Marks to draw before saving, in pixels of the capture. See <a href="#annotation-object">annotation object</a>. A blur by <code>subject</code> only works in <code>annotate</code> and <code>open_in_editor</code>.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td><code>png</code></td><td>File type. JPEG and lossy WebP use the quality from Sightline's settings. Transparent images stay PNG, and images over 16383 pixels are PNG instead of WebP.</td></tr><tr><td><code>name</code></td><td>string</td><td>timestamp</td><td>File name without extension, such as <code>login-error</code>. A number is added when the name is taken.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a downscaled inline preview. Set <code>false</code> to save tokens when only the path is needed.</td></tr></tbody></table></div>
+<p class="muted">The Safari window whose title contains Checkout, with the failing field boxed and a note:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "capture_window",
   "arguments": {
     "app": "Safari",
+    "title": "Checkout",
+    "name": "checkout-error",
     "annotations": [
-      {"type": "rectangle", "x": 40, "y": 120, "width": 300, "height": 60}
+      {
+        "type": "rectangle", "x": 312, "y": 540, "width": 620,
+        "height": 88, "color": "#FF453A", "stroke_width": 6
+      },
+      {
+        "type": "text", "x": 960, "y": 560,
+        "text": "Card number rejected\nbut format is valid", "size": 30,
+        "text_background": "solid"
+      }
     ]
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code> and an inline image.</p>
+<p class="muted">A window by id, as <code>list_windows</code> returned it:</p>
+<div class="code"><pre><code class=lang-json>{"tool": "capture_window", "arguments": {"id": 4211, "format": "jpeg"}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code>, <code>scale</code> and a preview.</p>
 <h4 id="capture_scrolling"><a class="anchor" href="#capture_scrolling" aria-hidden="true">#</a><code>capture_scrolling</code></h4>
 <p>Scrolls a window, an area or a region inside a window and stitches the frames into one tall screenshot.</p>
-<p>The Mac App Store version can't scroll other apps' windows for an agent, so there this tool returns an error. Capture the visible part with <code>capture_window</code>, or have the user take a scrolling capture from Sightline's menu and pass it on with <code>search_captures</code>.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points, origin at the top left of the main display.</td></tr><tr><td><code>region</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in pixels of a <code>capture_window</code> image, to scroll one part of the window, such as a list.</td></tr><tr><td><code>annotations</code></td><td>array</td><td>none</td><td>Marks to draw before saving, in pixels of the captured image. See <a href="#annotation-object">annotation object</a>.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td><code>png</code></td><td>File type. JPEG and lossy WebP use the quality from Sightline's settings. Transparent images stay PNG.</td></tr><tr><td><code>name</code></td><td>string</td><td>timestamp</td><td>File name without extension, such as <code>login-error</code>. A number is added when the name is taken.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a small inline preview. Set <code>false</code> when you only need the path.</td></tr></tbody></table></div>
-<div class="code"><pre><code class=lang-json>{"tool": "capture_scrolling", "arguments": {"window": {"app": "Safari"}}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code> and an inline image.</p>
+<p>In the Mac App Store version this tool returns <code>the App Store build cannot scroll windows for you; ...</code>, because the sandbox doesn't let Sightline scroll other apps. Capture the visible part with <code>capture_window</code>, or ask the user to take a scrolling capture with <kbd>⇧⌘6</kbd> and find it with <code>search_captures</code>. Builds outside the store also need Accessibility permission.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a case insensitive substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points.</td></tr><tr><td><code>region</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in pixels of a <code>capture_window</code> image of the same window, to scroll one part such as a list column.</td></tr><tr><td><code>annotations</code></td><td>array</td><td></td><td>Marks to draw before saving, in pixels of the capture. See <a href="#annotation-object">annotation object</a>. A blur by <code>subject</code> only works in <code>annotate</code> and <code>open_in_editor</code>.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td><code>png</code></td><td>File type. JPEG and lossy WebP use the quality from Sightline's settings. Transparent images stay PNG, and images over 16383 pixels are PNG instead of WebP.</td></tr><tr><td><code>name</code></td><td>string</td><td>timestamp</td><td>File name without extension, such as <code>login-error</code>. A number is added when the name is taken.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a downscaled inline preview. Set <code>false</code> to save tokens when only the path is needed.</td></tr></tbody></table></div>
+<p class="muted">Scroll only the message list of Mail, found in a <code>capture_window</code> image first:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "capture_scrolling",
+  "arguments": {
+    "window": {"app": "Mail"},
+    "region": {"x": 0, "y": 104, "width": 760, "height": 1300},
+    "name": "inbox-full"
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code>, <code>scale</code> and a preview.</p>
 <h4 id="list_windows"><a class="anchor" href="#list_windows" aria-hidden="true">#</a><code>list_windows</code></h4>
-<p>Lists the windows on screen.</p>
+<p>Lists the windows on screen, front to back.</p>
 <p class="muted">No parameters.</p>
 <div class="code"><pre><code class=lang-json>{"tool": "list_windows", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> Each window's app name, title and <code>id</code>.</p>
+<p class="returns"><span>Returns</span> An array of windows, each with <code>id</code>, <code>app</code>, <code>title</code> and the frame <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> in points.</p>
 <h4 id="list_displays"><a class="anchor" href="#list_displays" aria-hidden="true">#</a><code>list_displays</code></h4>
 <p>Lists the connected displays.</p>
 <p class="muted">No parameters.</p>
 <div class="code"><pre><code class=lang-json>{"tool": "list_displays", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>index</code> (what <code>display</code> takes), <code>name</code>, the frame <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> in points, <code>scale</code> and <code>is_main</code>.</p></div><div class="group"><h3 id="tools-read"><a class="anchor" href="#tools-read" aria-hidden="true">#</a>Read the screen</h3><h4 id="capture_text"><a class="anchor" href="#capture_text" aria-hidden="true">#</a><code>capture_text</code></h4>
-<p>Reads the text in an area, a window, a display or a saved image with on-device OCR, and decodes QR codes and barcodes.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points, origin at the top left of the main display.</td></tr><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>display</code></td><td>integer</td><td>display under the mouse</td><td>Index from <code>list_displays</code>, 0 is the main display.</td></tr><tr><td><code>path</code></td><td>string</td><td></td><td>An image in the Agent folder to read instead of the screen.</td></tr></tbody></table></div>
-<div class="code"><pre><code class=lang-json>{"tool": "capture_text", "arguments": {"window": {"app": "Preview"}}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>text</code>, <code>codes</code> (each with payload, symbology and a pixel box), the image <code>width</code> and <code>height</code>, and <code>scale</code> for a capture.</p>
+<p class="returns"><span>Returns</span> An array of displays, each with <code>index</code> (what <code>display</code> takes), <code>name</code>, the frame <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code> in points, <code>scale</code> and <code>is_main</code>.</p></div><div class="group"><h3 id="tools-read"><a class="anchor" href="#tools-read" aria-hidden="true">#</a>Read the screen</h3><h4 id="capture_text"><a class="anchor" href="#capture_text" aria-hidden="true">#</a><code>capture_text</code></h4>
+<p>Reads the text in an area, a window, a display or a saved image with on-device text recognition, and decodes QR codes and barcodes.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points.</td></tr><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a case insensitive substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>display</code></td><td>integer</td><td>display under the pointer</td><td>Index from <code>list_displays</code>; 0 is the main display.</td></tr><tr><td><code>path</code></td><td>string</td><td></td><td>An image in the Agent folder to read instead of the screen. Boxes are then in its pixels.</td></tr></tbody></table></div>
+<p class="muted">Read a terminal window:</p>
+<div class="code"><pre><code class=lang-json>{"tool": "capture_text", "arguments": {"window": {"app": "Terminal"}}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="muted">Read an image the agent captured earlier, for example to quote an error message exactly:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "capture_text",
+  "arguments": {"path": "/Users/you/Pictures/Screenshots/Agent/checkout-error.png"}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>text</code>, <code>codes</code> (each with <code>payload</code>, <code>symbology</code> and a pixel box), the image <code>width</code> and <code>height</code>, and <code>scale</code> for a capture. <code>hidden_lines</code> counts lines left out as credentials.</p>
 <h4 id="find_text"><a class="anchor" href="#find_text" aria-hidden="true">#</a><code>find_text</code></h4>
-<p>Finds where a piece of text is and returns its pixel boxes, ready to place a mark or a blur.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>text</code></td><td>string</td><td>required</td><td>Text to look for, case insensitive.</td></tr><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points, origin at the top left of the main display.</td></tr><tr><td><code>display</code></td><td>integer</td><td>display under the mouse</td><td>Index from <code>list_displays</code>, 0 is the main display.</td></tr><tr><td><code>path</code></td><td>string</td><td></td><td>An image in the Agent folder.</td></tr><tr><td><code>editor</code></td><td>string</td><td></td><td>An id from <code>list_editors</code> or <code>front</code>: search the screenshot open in that editor, in its picture pixels.</td></tr></tbody></table></div>
-<div class="code"><pre><code class=lang-json>{"tool": "find_text", "arguments": {"text": "Checkout", "window": {"app": "Safari"}}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> Each match with a pixel box, plus QR codes and barcodes whose payload contains the text.</p>
+<p>Finds where a piece of text is and returns its pixel boxes, ready for a mark, a blur or a scrolling region.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>text</code></td><td>string</td><td>required</td><td>Text to look for, case insensitive, as part of a recognized line.</td></tr><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a case insensitive substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points.</td></tr><tr><td><code>display</code></td><td>integer</td><td>display under the pointer</td><td>Index from <code>list_displays</code>; 0 is the main display.</td></tr><tr><td><code>path</code></td><td>string</td><td></td><td>An image in the Agent folder to read instead of the screen. Boxes are then in its pixels.</td></tr><tr><td><code>editor</code></td><td>string</td><td></td><td>An id from <code>list_editors</code> or <code>front</code>: search the screenshot open in that editor, marks included, in the pixels <code>annotate</code> with <code>editor</code> uses.</td></tr></tbody></table></div>
+<p class="muted">Where does Total appear in the open invoice screenshot:</p>
+<div class="code"><pre><code class=lang-json>{"tool": "find_text", "arguments": {"text": "Total", "editor": "front"}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="muted">Find a token in a saved capture before blurring it:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "find_text",
+  "arguments": {
+    "text": "sk_live",
+    "path": "/Users/you/Pictures/Screenshots/Agent/env-vars.png"
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>matches</code>, each with <code>text</code> (the whole line) and <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code>; <code>codes</code> whose payload contains the text; the image <code>width</code> and <code>height</code>.</p>
 <h4 id="pick_color"><a class="anchor" href="#pick_color" aria-hidden="true">#</a><code>pick_color</code></h4>
 <p>Reads the color of one point on screen.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>x, y</code></td><td>number</td><td>required</td><td>Position in points from the top left of the main display, or of <code>display</code>.</td></tr><tr><td><code>display</code></td><td>integer</td><td></td><td>Count x and y from this display.</td></tr></tbody></table></div>
-<div class="code"><pre><code class=lang-json>{"tool": "pick_color", "arguments": {"x": 420, "y": 300}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>hex</code> (sRGB), <code>red</code>, <code>green</code>, <code>blue</code> and the <code>x</code>, <code>y</code> read.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>x, y</code></td><td>number</td><td>required</td><td>Position in points from the top left of the main display, or of <code>display</code>.</td></tr><tr><td><code>display</code></td><td>integer</td><td></td><td>Count <code>x</code> and <code>y</code> from this display's top left.</td></tr></tbody></table></div>
+<p class="muted">The color at 612, 344 points on the second display:</p>
+<div class="code"><pre><code class=lang-json>{"tool": "pick_color", "arguments": {"x": 612, "y": 344, "display": 1}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>hex</code> (<code>#RRGGBB</code> in sRGB), <code>red</code>, <code>green</code>, <code>blue</code> from 0 to 255, and the <code>x</code> and <code>y</code> read, rounded down to whole points.</p>
 <h4 id="compare_with_design"><a class="anchor" href="#compare_with_design" aria-hidden="true">#</a><code>compare_with_design</code></h4>
 <p>Compares a design image with a window, an area or a display, the same check as Show Differences on a pin.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>design</code></td><td>string</td><td>required</td><td>A PNG, JPEG or WebP inside the Agent folder. Copy a design there first.</td></tr><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points, origin at the top left of the main display.</td></tr><tr><td><code>display</code></td><td>integer</td><td>display under the mouse</td><td>Index from <code>list_displays</code>, 0 is the main display.</td></tr><tr><td><code>align</code></td><td>boolean</td><td><code>true</code></td><td>Line the design up by up to 8 pixels first.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a small inline preview. Set <code>false</code> when you only need the path.</td></tr></tbody></table></div>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>design</code></td><td>string</td><td>required</td><td>A PNG, JPEG or WebP inside the Agent folder. Copy a design from elsewhere there first.</td></tr><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a case insensitive substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points.</td></tr><tr><td><code>display</code></td><td>integer</td><td>display under the pointer</td><td>Index from <code>list_displays</code>; 0 is the main display.</td></tr><tr><td><code>align</code></td><td>boolean</td><td><code>true</code></td><td>Line the design up by up to 8 pixels first, so a small offset of the whole image doesn't count.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a downscaled inline preview. Set <code>false</code> to save tokens when only the path is needed.</td></tr></tbody></table></div>
+<p class="muted">The running iOS Simulator against the exported design:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "compare_with_design",
   "arguments": {
-    "design": "~/Pictures/Screenshots/Agent/signup-design.png",
+    "design": "/Users/you/Pictures/Screenshots/Agent/signup-design.png",
     "window": {"app": "Simulator"}
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> A marked capture (<code>path</code>, <code>width</code>, <code>height</code>, <code>scale</code>), <code>shift</code>, and up to 20 <code>differences</code>, each with a number, a pixel box and a hint: <code>shifted</code>, <code>only_in_design</code>, <code>only_on_screen</code> or <code>looks_different</code>.</p></div><div class="group"><h3 id="tools-edit"><a class="anchor" href="#tools-edit" aria-hidden="true">#</a>Edit and annotate</h3><p><code>annotate</code> changes a file and returns it. <code>open_in_editor</code> puts the same changes into the Sightline editor, where the user can adjust them before saving. Both take <code>editor</code> instead of a path to change a window the user already has open. Coordinates are image pixels with the origin at the top left.</p>
+<p class="muted">Strict, without lining up, for a pixel exact check:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "compare_with_design",
+  "arguments": {
+    "design": "/Users/you/Pictures/Screenshots/Agent/signup-design.png",
+    "window": {"app": "Simulator"},
+    "align": false,
+    "include_image": false
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> A marked capture with <code>path</code>, <code>width</code>, <code>height</code> and <code>scale</code>; <code>shift</code> with <code>dx</code> and <code>dy</code>; and up to 20 <code>differences</code>, each with <code>number</code>, a pixel box and <code>hint</code>: <code>shifted</code> (with <code>dx</code>, <code>dy</code>), <code>only_in_design</code>, <code>only_on_screen</code> or <code>looks_different</code>.</p></div><div class="group"><h3 id="tools-edit"><a class="anchor" href="#tools-edit" aria-hidden="true">#</a>Edit and annotate</h3><p><code>annotate</code> changes a file and returns it. <code>open_in_editor</code> puts the same changes into the Sightline editor, where the user can adjust them before saving. Both, and <code>beautify</code>, take <code>editor</code> instead of a path to change a window the user already has open.</p>
 <h4 id="annotate"><a class="anchor" href="#annotate" aria-hidden="true">#</a><code>annotate</code></h4>
-<p>Draws marks onto a screenshot or recording, and crops, rotates, flips, resizes, styles or exports it. The recording options are under <a href="#recording-options">Recordings</a>.</p>
-<p>If the file is open in a Sightline editor, the change lands there live as one undo step. A screenshot the user saved with its edit is changed on its unedited original, with the user's marks kept.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>agent's last screenshot</td><td>A file in the Agent folder, as a capture tool returned it, or a recording from <code>last_recording</code>.</td></tr><tr><td><code>editor</code></td><td>string</td><td></td><td>An id from <code>list_editors</code>, or <code>front</code>. The change goes live into that window as one undo step and no file is written.</td></tr><tr><td><code>annotations</code></td><td>array</td><td>required</td><td>Marks to draw, in order. Pass <code>[]</code> to only crop, style or export. See <a href="#annotation-object">annotation object</a>.</td></tr><tr><td><code>crop</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in pixels of the uncropped image, applied after drawing.</td></tr><tr><td><code>rotate</code></td><td><code>90</code> <code>180</code> <code>270</code></td><td></td><td>Turn a screenshot clockwise. Marks move with it.</td></tr><tr><td><code>flip</code></td><td><code>horizontal</code> <code>vertical</code></td><td></td><td>Mirror a screenshot, after <code>rotate</code>.</td></tr><tr><td><code>resize</code></td><td>object</td><td></td><td><code>{scale}</code> from 0.05 to 1, or <code>{width}</code>, <code>{height}</code> or both in pixels. Only shrinks.</td></tr><tr><td><code>beautify</code></td><td>object</td><td></td><td>Set a Style look, as in <a href="#beautify"><code>beautify</code></a>.</td></tr><tr><td><code>export</code></td><td>object</td><td></td><td>Write a one-off copy: <code>{format: png | jpeg | webp, quality: high | medium | small}</code> for a screenshot. Never overwrites the source.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td>source format</td><td>Write the result to a new file in this format.</td></tr><tr><td><code>name</code></td><td>string</td><td></td><td>Write the result to a new file with this name.</td></tr><tr><td><code>output</code></td><td>string</td><td></td><td>Full path for the result inside the Agent folder; must not exist yet.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a small inline preview. Set <code>false</code> when you only need the path.</td></tr></tbody></table></div>
+<p>Draws marks onto a screenshot or recording, and crops, rotates, flips, resizes, styles or exports it. Recording options are under <a href="#recording-options">Editing a recording</a>.</p>
+<p>If the file is open in a Sightline editor, also one the user opened, the change lands there live as one undo step. A capture the user saved with its edit is changed on its unedited original, with the user's marks kept.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>this agent's last screenshot</td><td>An image or recording in the Agent folder, or a recording <code>last_recording</code> returned.</td></tr><tr><td><code>editor</code></td><td>string</td><td></td><td>An id from <code>list_editors</code>, or <code>front</code>. The change appears live in that window as one undo step and no file is written. Leave out <code>path</code>, <code>output</code>, <code>name</code> and <code>export</code>.</td></tr><tr><td><code>annotations</code></td><td>array</td><td>required</td><td>Marks to draw, in order. Pass <code>[]</code> to only crop, style, resize or export. See <a href="#annotation-object">annotation object</a>.</td></tr><tr><td><code>crop</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in pixels of the uncropped image. Marks are drawn first, then the image is cropped.</td></tr><tr><td><code>rotate</code></td><td><code>90</code> <code>180</code> <code>270</code></td><td></td><td>Turn a screenshot clockwise. Marks and crop are given before the turn and move with it; text stays upright.</td></tr><tr><td><code>flip</code></td><td><code>horizontal</code> <code>vertical</code></td><td></td><td>Mirror a screenshot, after <code>rotate</code>. Text stays readable.</td></tr><tr><td><code>resize</code></td><td>object</td><td></td><td><code>{scale}</code> from 0.05 to 1, <code>{width}</code> or <code>{height}</code> (the other side follows), or both (may stretch). Only shrinks, each side at least 16 pixels. Coordinates stay in the full size.</td></tr><tr><td><code>beautify</code></td><td>object</td><td></td><td>A Style look: the fields of <a href="#beautify"><code>beautify</code></a> except paths and output.</td></tr><tr><td><code>export</code></td><td>object</td><td></td><td>A one-off copy, never over the source. Screenshot: <code>{format: png | jpeg | webp, quality: high | medium | small}</code>. Recording: see below.</td></tr><tr><td><code>format</code></td><td><code>png</code> <code>jpeg</code> <code>webp</code></td><td>source format</td><td>Write the result to a new file in this format.</td></tr><tr><td><code>name</code></td><td>string</td><td></td><td>Write the result to a new file with this name.</td></tr><tr><td><code>output</code></td><td>string</td><td></td><td>Full path for the result inside the Agent folder; it must not exist yet.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a downscaled inline preview. Set <code>false</code> to save tokens when only the path is needed.</td></tr></tbody></table></div>
+<p class="muted">Explain a bug on a capture: an arrow, a boxed note in the handwriting font, a pixelated email address, and a crop to the interesting part, written to a new file:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "annotate",
   "arguments": {
-    "path": "~/Pictures/Screenshots/Agent/checkout.png",
+    "path": "/Users/you/Pictures/Screenshots/Agent/checkout-error.png",
+    "name": "checkout-error-marked",
     "annotations": [
-      {"type": "arrow", "from": [200, 400], "to": [520, 260]},
-      {"type": "text", "x": 120, "y": 420, "text": "8 px off", "text_background": "solid"},
-      {"type": "blur", "x": 700, "y": 90, "width": 260, "height": 40, "blur_style": "pixelate"}
+      {
+        "type": "arrow", "from": [1180, 300], "to": [940, 560],
+        "stroke_width": 6, "shadow": true
+      },
+      {
+        "type": "rectangle", "x": 1190, "y": 180, "width": 520,
+        "height": 130, "fill": true, "color": "#FFD60A",
+        "text": "Rejects valid Visa numbers", "font": "handwriting",
+        "size": 34
+      },
+      {
+        "type": "blur", "x": 120, "y": 96, "width": 380, "height": 44,
+        "blur_style": "pixelate"
+      }
+    ],
+    "crop": {"x": 80, "y": 60, "width": 1700, "height": 760}
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="muted">A step by step guide: three numbered badges with labels and a spotlight on the first step, then a small JPEG for a chat:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/settings-window.png",
+    "annotations": [
+      {
+        "type": "spotlight", "x": 40, "y": 220, "width": 560,
+        "height": 120, "dim": 0.6
+      },
+      {"type": "number", "x": 70, "y": 280, "label": "Open General"},
+      {"type": "number", "x": 70, "y": 520, "label": "Turn on Sync"},
+      {"type": "number", "x": 70, "y": 760, "label": "Click Done"}
+    ],
+    "resize": {"width": 1200},
+    "export": {"format": "jpeg", "quality": "medium"}
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="muted">Circle something loosely and magnify a tiny label:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/toolbar.png",
+    "annotations": [
+      {
+        "type": "freehand",
+        "points": [
+          [400, 92],
+          [470, 70],
+          [560, 78],
+          [600, 110],
+          [560, 142],
+          [460, 146],
+          [404, 120],
+          [410, 96]
+        ],
+        "color": "#30D158",
+        "stroke_width": 5
+      },
+      {
+        "type": "magnify", "x": 760, "y": 40, "width": 220, "height": 220,
+        "zoom": 3
+      }
     ]
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code> and <code>height</code> of the result and an inline image. By default the image is updated in place and the same path comes back.</p>
+<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code> and <code>height</code> of the result and a preview. By default a screenshot is updated in place and the same path comes back.</p>
 <h4 id="annotation-object"><a class="anchor" href="#annotation-object" aria-hidden="true">#</a>Annotation object</h4>
 <p>Each entry of <code>annotations</code> is one mark. Every field except <code>type</code> is optional.</p>
-<div class="table"><table><thead><tr><th>Field</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>required</td><td><code>arrow</code> <code>line</code> <code>freehand</code> <code>rectangle</code> <code>ellipse</code> <code>highlight</code> <code>blur</code> <code>spotlight</code> <code>magnify</code> <code>text</code> <code>number</code></td></tr><tr><td><code>from, to</code></td><td>[x, y]</td><td></td><td>Start and end of an <code>arrow</code> or <code>line</code>.</td></tr><tr><td><code>points</code></td><td>[[x, y], ...]</td><td></td><td>For <code>freehand</code>: at least 2 points, smoothed like the editor's pen.</td></tr><tr><td><code>x, y, width, height</code></td><td>number</td><td></td><td>The box of a rectangle, ellipse, highlight, blur, spotlight or magnify. For <code>text</code> the top left, for <code>number</code> the badge center.</td></tr><tr><td><code>text</code></td><td>string</td><td></td><td>The text of a <code>text</code> mark, or text centered inside a rectangle or ellipse. <code>\n</code> breaks a line.</td></tr><tr><td><code>size</code></td><td>number</td><td>24</td><td>Font size in pixels.</td></tr><tr><td><code>font</code></td><td><code>system</code> <code>rounded</code> <code>serif</code> <code>monospaced</code> <code>handwriting</code></td><td><code>system</code></td><td>Typeface for text.</td></tr><tr><td><code>bold</code></td><td>boolean</td><td><code>true</code></td><td>Bold letters.</td></tr><tr><td><code>text_background</code></td><td><code>none</code> <code>solid</code> <code>translucent</code></td><td><code>none</code></td><td>A rounded box behind the text.</td></tr><tr><td><code>text_background_color</code></td><td>hex</td><td>white or black</td><td>Color of that box.</td></tr><tr><td><code>color</code></td><td>hex</td><td><code>#FF453A</code></td><td>Color of every mark except blur, spotlight and magnify.</td></tr><tr><td><code>stroke_width</code></td><td>number</td><td>4</td><td>Line thickness for arrow, line, freehand, rectangle and ellipse.</td></tr><tr><td><code>fill</code></td><td>boolean</td><td><code>false</code></td><td>Fill a rectangle or ellipse.</td></tr><tr><td><code>arrow_head</code></td><td><code>filled</code> <code>open</code> <code>both</code></td><td><code>filled</code></td><td>Arrow head style.</td></tr><tr><td><code>shadow</code></td><td>boolean</td><td><code>false</code></td><td>Drop shadow under the mark.</td></tr><tr><td><code>number, label</code></td><td>integer, string</td><td>next number</td><td>The badge number and an optional label beside it.</td></tr><tr><td><code>number_size</code></td><td><code>small</code> <code>medium</code> <code>large</code> <code>extra_large</code></td><td><code>medium</code></td><td>Badge size.</td></tr><tr><td><code>blur_style</code></td><td><code>blur</code> <code>pixelate</code></td><td><code>blur</code></td><td>Blur or even blocks.</td></tr><tr><td><code>edge</code></td><td><code>sharp</code> <code>soft</code></td><td><code>sharp</code></td><td>Edge of a blur.</td></tr><tr><td><code>subject</code></td><td>[x, y]</td><td></td><td>Blur the whole thing at this point, found with on-device Vision, instead of a box. macOS 27, <code>annotate</code> and <code>open_in_editor</code> only.</td></tr><tr><td><code>dim</code></td><td>number 0 to 1</td><td>0.55</td><td>How dark the area outside a spotlight gets.</td></tr><tr><td><code>zoom</code></td><td><code>1.5</code> <code>2</code> <code>3</code> <code>4</code></td><td>2</td><td>How much a magnify loupe enlarges.</td></tr><tr><td><code>shape</code></td><td><code>round</code> <code>rectangle</code></td><td><code>round</code></td><td>Outline of a magnify loupe.</td></tr><tr><td><code>start_second, end_second</code></td><td>number</td><td>whole clip</td><td>Recordings: when the mark shows, in seconds of the original recording.</td></tr><tr><td><code>follow</code></td><td>boolean</td><td><code>true</code></td><td>Recordings: a blur moves with what it covers.</td></tr><tr><td><code>second</code></td><td>number</td><td>start_second</td><td>Recordings: the frame a blur's box or subject refers to.</td></tr></tbody></table></div>
+<div class="table params"><table><thead><tr><th>Field</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>type</code></td><td>string</td><td>required</td><td><code>arrow</code> <code>line</code> <code>freehand</code> <code>rectangle</code> <code>ellipse</code> <code>highlight</code> <code>blur</code> <code>spotlight</code> <code>magnify</code> <code>text</code> <code>number</code></td></tr><tr><td><code>from, to</code></td><td>[x, y]</td><td></td><td>Start and end of an <code>arrow</code> or <code>line</code>.</td></tr><tr><td><code>points</code></td><td>[[x, y], ...]</td><td></td><td>For <code>freehand</code>: at least 2 points in drawing order. Sightline smooths the line, so a point every 5 to 20 pixels is enough.</td></tr><tr><td><code>x, y, width, height</code></td><td>number</td><td></td><td>The box of a rectangle, ellipse, highlight, blur, spotlight or magnify. For <code>text</code> the top left, for <code>number</code> the badge center.</td></tr><tr><td><code>text</code></td><td>string</td><td></td><td>The text of a <code>text</code> mark, or text centered and wrapped inside a rectangle or ellipse. <code>\n</code> breaks a line.</td></tr><tr><td><code>size</code></td><td>number</td><td>24</td><td>Font size in pixels.</td></tr><tr><td><code>font</code></td><td><code>system</code> <code>rounded</code> <code>serif</code> <code>monospaced</code> <code>handwriting</code></td><td><code>system</code></td><td>Typeface, the same choices as the editor.</td></tr><tr><td><code>bold</code></td><td>boolean</td><td><code>true</code></td><td>Bold letters.</td></tr><tr><td><code>text_background</code></td><td><code>none</code> <code>solid</code> <code>translucent</code></td><td><code>none</code></td><td>A rounded box behind the text.</td></tr><tr><td><code>text_background_color</code></td><td>hex</td><td>white or black</td><td>Color of that box. On its own it draws a solid box.</td></tr><tr><td><code>color</code></td><td>hex</td><td><code>#FF453A</code></td><td>Color of every mark except blur, spotlight and magnify.</td></tr><tr><td><code>stroke_width</code></td><td>number</td><td>4</td><td>Line thickness of arrow, line, freehand, rectangle and ellipse.</td></tr><tr><td><code>fill</code></td><td>boolean</td><td><code>false</code></td><td>Fill a rectangle or ellipse.</td></tr><tr><td><code>arrow_head</code></td><td><code>filled</code> <code>open</code> <code>both</code></td><td><code>filled</code></td><td>Arrow head style.</td></tr><tr><td><code>shadow</code></td><td>boolean</td><td><code>false</code></td><td>Drop shadow under the mark.</td></tr><tr><td><code>number</code></td><td>integer</td><td>next number</td><td>The badge number, counting from 1 in each call.</td></tr><tr><td><code>label</code></td><td>string</td><td></td><td>A label to the right of a number badge.</td></tr><tr><td><code>number_size</code></td><td><code>small</code> <code>medium</code> <code>large</code> <code>extra_large</code></td><td><code>medium</code></td><td>Badge size.</td></tr><tr><td><code>blur_style</code></td><td><code>blur</code> <code>pixelate</code></td><td><code>blur</code></td><td>Blur, or even blocks about a twelfth of the shorter side.</td></tr><tr><td><code>edge</code></td><td><code>sharp</code> <code>soft</code></td><td><code>sharp</code></td><td>Edge of a blur.</td></tr><tr><td><code>subject</code></td><td>[x, y]</td><td></td><td>Blur the whole thing at this point, found with on-device Vision, instead of a box. macOS 27, <code>annotate</code> and <code>open_in_editor</code> only.</td></tr><tr><td><code>dim</code></td><td>number 0 to 1</td><td>0.55</td><td>How dark the area outside a spotlight gets. Several spotlights share one dim layer.</td></tr><tr><td><code>zoom</code></td><td><code>1.5</code> <code>2</code> <code>3</code> <code>4</code></td><td>2</td><td>How much a magnify loupe enlarges.</td></tr><tr><td><code>shape</code></td><td><code>round</code> <code>rectangle</code></td><td><code>round</code></td><td>Outline of a magnify loupe.</td></tr><tr><td><code>start_second, end_second</code></td><td>number</td><td>whole recording</td><td>Recordings: when the mark shows, in seconds of the original.</td></tr><tr><td><code>follow</code></td><td>boolean</td><td><code>true</code> for blurs</td><td>Recordings: a blur moves with what it covers, forward and backward from <code>second</code>, and pauses while that is off screen.</td></tr><tr><td><code>second</code></td><td>number</td><td><code>start_second</code> or 0</td><td>Recordings: the frame a blur's box or subject refers to.</td></tr></tbody></table></div>
 <h4 id="open_in_editor"><a class="anchor" href="#open_in_editor" aria-hidden="true">#</a><code>open_in_editor</code></h4>
-<p>Opens a screenshot or recording in the Sightline editor, optionally with marks, a look, cuts or zooms the user can still change.</p>
-<p>If the file is already open, no second window opens: the open window comes to the front and the change lands there.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>agent's last screenshot</td><td>A file in the Agent folder, as a capture tool returned it, or a recording from <code>last_recording</code>.</td></tr><tr><td><code>editor</code></td><td>string</td><td></td><td>An id from <code>list_editors</code>, or <code>front</code>. The change goes live into that window as one undo step and no file is written.</td></tr><tr><td><code>from_clipboard</code></td><td>boolean</td><td></td><td>Open the picture on the user's clipboard instead of a file.</td></tr><tr><td><code>annotations</code></td><td>array</td><td>none</td><td>Editable marks to add.</td></tr><tr><td><code>beautify</code></td><td>object</td><td></td><td>A Style look.</td></tr><tr><td><code>rotate, flip, resize</code></td><td></td><td></td><td>As in <code>annotate</code>.</td></tr><tr><td><code>pieces, sound, zooms, zoom_on_clicks, pointer, keys</code></td><td></td><td></td><td>Recordings, as in <a href="#recording-options">annotate</a>.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>With <code>editor</code> and a screenshot: an image after the change.</td></tr></tbody></table></div>
+<p>Opens a screenshot or recording in the Sightline editor, brings Sightline to the front and adds marks, a look, cuts or zooms the user can still change.</p>
+<p>If the file is already open, no second window opens: the open window comes to the front and the change lands there as one undo step.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>this agent's last screenshot</td><td>An image or recording in the Agent folder, or a recording <code>last_recording</code> returned.</td></tr><tr><td><code>editor</code></td><td>string</td><td></td><td>An id from <code>list_editors</code>, or <code>front</code>. The change appears live in that window as one undo step and no file is written. Leave out <code>path</code>, <code>output</code>, <code>name</code> and <code>export</code>.</td></tr><tr><td><code>from_clipboard</code></td><td>boolean</td><td></td><td>Open the picture on the user's clipboard instead of a file; leave out <code>path</code>. The picture is not returned to the agent.</td></tr><tr><td><code>annotations</code></td><td>array</td><td></td><td>Editable marks to add.</td></tr><tr><td><code>beautify</code></td><td>object</td><td></td><td>A Style look the user can change in the Style panel.</td></tr><tr><td><code>rotate, flip, resize</code></td><td></td><td></td><td>As in <code>annotate</code>.</td></tr><tr><td><code>pieces, sound, zooms, zoom_on_clicks, pointer, keys</code></td><td></td><td></td><td>Recordings, as in <a href="#recording-options">Editing a recording</a>. <code>trim</code> and <code>export</code> are <code>annotate</code> only.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>With <code>editor</code> and a screenshot: an image of the picture after the change.</td></tr></tbody></table></div>
+<p class="muted">Hand a capture to the user with suggestions they can move or delete:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "open_in_editor",
   "arguments": {
-    "path": "~/Pictures/Screenshots/Agent/checkout.png",
-    "annotations": [{"type": "number", "x": 80, "y": 140, "label": "Tap here"}]
+    "path": "/Users/you/Pictures/Screenshots/Agent/onboarding.png",
+    "annotations": [
+      {
+        "type": "highlight", "x": 210, "y": 404, "width": 520,
+        "height": 48
+      },
+      {
+        "type": "text", "x": 760, "y": 410, "text": "Shorter title?",
+        "color": "#0A84FF", "size": 28
+      }
+    ],
+    "beautify": {"look": "soft", "padding": 48}
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> The <code>path</code> that was opened. For a capture the user saved as editable, <code>restored_edit: true</code> and the restored crop, pieces, zooms, pointer and keys, so you can continue where the user left off.</p></div><div class="group"><h3 id="tools-recordings"><a class="anchor" href="#tools-recordings" aria-hidden="true">#</a>Recordings</h3><p>Recording tools need macOS 15. Recordings are MP4. All seconds you pass, for marks, cuts, volumes, zooms and keys, count in the original recording, so a mark stays on its moment wherever its piece ends up.</p>
+<p class="muted">Open what the user just copied:</p>
+<div class="code"><pre><code class=lang-json>{"tool": "open_in_editor", "arguments": {"from_clipboard": true}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> The <code>path</code> that was opened, or <code>from_clipboard</code>, <code>width</code> and <code>height</code>. For a capture saved with its edit, <code>restored_edit: true</code> plus the restored crop size, resize, and for a recording its duration, pieces, sound, zooms, pointer and keys in the same form as the arguments.</p></div><div class="group"><h3 id="tools-recordings"><a class="anchor" href="#tools-recordings" aria-hidden="true">#</a>Recordings</h3><p>Recording tools need macOS 15. Recordings are MP4 in the codec of Sightline's Recording settings. A recording you made is never overwritten; <code>annotate</code> writes its result to a new file in the Agent folder.</p>
 <h4 id="record_screen"><a class="anchor" href="#record_screen" aria-hidden="true">#</a><code>record_screen</code></h4>
-<p>Records a window, an area or a display for up to 60 seconds. Ask the user to do the steps first, because recording starts right away.</p>
-<p>Sightline notes where the pointer moves and clicks, for click highlights and zooms. Keys are never noted for agent recordings.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>number 1 to 60</td><td>10</td><td>How long to record.</td></tr><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points, origin at the top left of the main display.</td></tr><tr><td><code>display</code></td><td>integer</td><td>display under the mouse</td><td>Index from <code>list_displays</code>, 0 is the main display.</td></tr><tr><td><code>include_audio</code></td><td>boolean</td><td><code>false</code></td><td>Record system audio. The microphone is never recorded.</td></tr><tr><td><code>pointer</code></td><td><code>off</code> <code>video</code> <code>drawn</code></td><td><code>video</code></td><td><code>drawn</code> leaves the pointer out of the file so Sightline can draw it later at any size.</td></tr><tr><td><code>size</code></td><td><code>original</code> <code>1080p</code> <code>720p</code></td><td><code>original</code></td><td>Scale a larger video down.</td></tr><tr><td><code>quality</code></td><td><code>high</code> <code>medium</code> <code>small</code></td><td><code>high</code></td><td>Bit rate. Anything but the defaults encodes once more and keeps the smaller file.</td></tr></tbody></table></div>
+<p>Records a window, an area or a display for up to 60 seconds and notes where the pointer moves and clicks. Recording starts right away, so ask the user to get ready first.</p>
+<p>A drawn pointer is not in the file itself, so pass the result through <code>annotate</code> before handing the file on. Keys are never noted for agent recordings, and the agent recording's pointer track goes with the Agent folder clean-up.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>number 1 to 60</td><td>10</td><td>How long to record.</td></tr><tr><td><code>window</code></td><td>object</td><td></td><td><code>{app, title, id}</code>: a case insensitive substring of the app name or window title, or a window id from <code>list_windows</code>. The frontmost match wins.</td></tr><tr><td><code>area</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in points.</td></tr><tr><td><code>display</code></td><td>integer</td><td>display under the pointer</td><td>Index from <code>list_displays</code>; 0 is the main display.</td></tr><tr><td><code>include_audio</code></td><td>boolean</td><td><code>false</code></td><td>Record system audio. The microphone is never recorded.</td></tr><tr><td><code>pointer</code></td><td><code>off</code> <code>video</code> <code>drawn</code></td><td><code>video</code></td><td><code>drawn</code> leaves the pointer out of the file so Sightline can draw it later at any size, hidden while it rests. The default is <code>off</code> when the user's Pointer setting is off.</td></tr><tr><td><code>size</code></td><td><code>original</code> <code>1080p</code> <code>720p</code></td><td><code>original</code></td><td>Scale the shorter side of a larger video down.</td></tr><tr><td><code>quality</code></td><td><code>high</code> <code>medium</code> <code>small</code></td><td><code>high</code></td><td>Bit rate. Anything but the defaults encodes once more and keeps only the smaller file, with the pointer track scaled to fit.</td></tr></tbody></table></div>
+<p class="muted">Record the Simulator for 20 seconds with its sound, the pointer left out for later, at 1080p:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "record_screen",
   "arguments": {
     "window": {"app": "Simulator"},
-    "seconds": 15,
+    "seconds": 20,
+    "include_audio": true,
+    "pointer": "drawn",
     "size": "1080p"
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>duration</code>, <code>width</code>, <code>height</code> and the <code>pointer</code> used.</p>
+<p class="muted">A small 720p clip of one screen area for a quick bug report:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "record_screen",
+  "arguments": {
+    "area": {"x": 200, "y": 120, "width": 1280, "height": 800},
+    "seconds": 8,
+    "size": "720p",
+    "quality": "small"
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>path</code>, <code>duration</code>, <code>width</code> and <code>height</code> of the file, <code>scale</code>, and the <code>pointer</code> used (<code>drawn</code> falls back to <code>video</code> when the track can't be noted); <code>pointer_note</code> when the track couldn't be saved.</p>
 <h4 id="last_recording"><a class="anchor" href="#last_recording" aria-hidden="true">#</a><code>last_recording</code></h4>
-<p>Returns the newest recording, for "I just recorded this" requests.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>newest</code> <code>mine</code></td><td><code>newest</code></td><td><code>newest</code> looks at the whole screenshots folder, <code>mine</code> only at this agent's recordings.</td></tr></tbody></table></div>
+<p>Returns the newest recording, for requests like "I just recorded this, cut the start".</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>source</code></td><td><code>newest</code> <code>mine</code></td><td><code>newest</code></td><td><code>newest</code> looks at the whole screenshots folder, <code>mine</code> only at recordings this agent made.</td></tr></tbody></table></div>
 <div class="code"><pre><code class=lang-json>{"tool": "last_recording", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>made_by</code> (<code>user</code> or <code>agent</code>), <code>duration</code>, <code>width</code>, <code>height</code> and <code>modified</code>.</p>
+<p class="muted">Only what this agent recorded:</p>
+<div class="code"><pre><code class=lang-json>{"tool": "last_recording", "arguments": {"source": "mine"}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>path</code>, <code>made_by</code> (<code>user</code> or <code>agent</code>), <code>duration</code>, <code>width</code>, <code>height</code> and <code>modified</code> (ISO 8601).</p>
 <h4 id="inspect_recording"><a class="anchor" href="#inspect_recording" aria-hidden="true">#</a><code>inspect_recording</code></h4>
-<p>Looks at a recording without changing it: when it is still or moving, what text a frame shows, where the user clicked and which keys they pressed.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>required</td><td>A recording in the Agent folder or from <code>last_recording</code>.</td></tr><tr><td><code>region</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in video pixels: watch only this area for motion.</td></tr><tr><td><code>text_at_seconds</code></td><td>array of numbers</td><td></td><td>Up to 10 seconds whose frames are read for text.</td></tr><tr><td><code>frame_at_second</code></td><td>number</td><td></td><td>One frame comes back as an image.</td></tr></tbody></table></div>
+<p>Looks at a recording without changing it: when it is still or moving, what text frames show, where the user clicked and which keys they pressed.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>required</td><td>A recording in the Agent folder or from <code>last_recording</code>.</td></tr><tr><td><code>region</code></td><td>object</td><td></td><td><code>{x, y, width, height}</code> in video pixels: watch only this area for motion.</td></tr><tr><td><code>text_at_seconds</code></td><td>array of numbers</td><td></td><td>Up to 10 seconds whose frames are read for text.</td></tr><tr><td><code>frame_at_second</code></td><td>number</td><td></td><td>One frame comes back as an image.</td></tr></tbody></table></div>
+<p class="muted">Find the loading stretch in the content area, read the text at three moments and look at one frame:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "inspect_recording",
   "arguments": {
-    "path": "~/Pictures/Screenshots/Agent/bug.mp4",
-    "text_at_seconds": [2, 6]
+    "path": "/Users/you/Pictures/Screenshots/Agent/signup-flow.mp4",
+    "region": {"x": 0, "y": 120, "width": 1920, "height": 900},
+    "text_at_seconds": [1.5, 6, 11],
+    "frame_at_second": 6
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>duration</code>, <code>width</code>, <code>height</code>, <code>frame_rate</code>, <code>segments</code> (still or moving), text lines with pixel boxes, <code>has_pointer_track</code> with up to 200 <code>clicks</code>, and <code>has_key_track</code> with up to 200 <code>keys</code> (shortcuts such as <code>⇧⌘5</code> and typed words).</p>
-<h4 id="recording-options"><a class="anchor" href="#recording-options" aria-hidden="true">#</a>Editing a recording with annotate</h4>
-<p>Pass the path of an MP4 to <code>annotate</code> (or <code>open_in_editor</code>) and these options apply. Marks, blurs and the options below are drawn into every frame. The result is a new file; a recording the user made is never overwritten.</p>
-<div class="table"><table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>trim</code></td><td>object</td><td></td><td><code>{start_second, end_second}</code>: keep only this part.</td></tr><tr><td><code>pieces</code></td><td>array</td><td></td><td><code>[{start_second, end_second, speed}]</code>: the parts to keep, in play order. <code>speed</code> is 0.5, 1, 1.25, 1.5, 2, 4, 8 or 15; faster than 2x is silent.</td></tr><tr><td><code>sound</code></td><td>array</td><td></td><td><code>[{start_second, end_second, volume}]</code>: volume from 0 (muted) to 4.</td></tr><tr><td><code>zooms</code></td><td>array</td><td></td><td><code>[{start_second, end_second, x, y, width, height, transition, transition_seconds, follow}]</code>. <code>transition</code> is <code>smooth</code> (default) or <code>instant</code>, <code>transition_seconds</code> 0.1 to 3 (0.5), <code>follow</code> is <code>off</code>, <code>pointer</code> or <code>content</code>. At most 6x.</td></tr><tr><td><code>zoom_on_clicks</code></td><td>boolean</td><td><code>false</code></td><td>Add a 2x zoom for every click or group of clicks. Needs the pointer track.</td></tr><tr><td><code>pointer</code></td><td>object</td><td></td><td><code>{shown, size: 1 | 1.5 | 2, hide_when_idle, click_highlight: off | ripple | ring, highlight_color}</code>. Needs the pointer track; <code>shown</code>, <code>size</code> and <code>hide_when_idle</code> need a recording with the pointer left out (<code>pointer: drawn</code>).</td></tr><tr><td><code>keys</code></td><td>object</td><td></td><td><code>{parts: [{start_second, end_second, mode: words | letters | shortcuts | hidden}], position: bottomLeft | bottomCenter | bottomRight | topCenter, size: small | medium | large, look: dark | light}</code>. Needs a recording made with Show keystrokes on.</td></tr><tr><td><code>export</code></td><td>object</td><td></td><td><code>{size: original | 1080p | 720p, format: mp4 | mov, quality: high | medium | small}</code>, or <code>{format: gif, width: 160 to 1920 (640), fps: 1 to 30 (10)}</code> for a looping GIF without sound.</td></tr></tbody></table></div>
+<p class="returns"><span>Returns</span> <code>duration</code>, <code>width</code>, <code>height</code>, <code>frame_rate</code> and <code>segments</code> (each <code>start</code>, <code>end</code>, <code>moving</code>); <code>text</code> with the lines and pixel boxes per second; <code>has_pointer_track</code> and up to 200 <code>clicks</code> (<code>second</code>, <code>x</code>, <code>y</code>, <code>button</code>, <code>count</code>, <code>released_second</code>, plus <code>released_x</code>, <code>released_y</code> for a drag); <code>has_key_track</code> and up to 200 <code>keys</code> (shortcuts such as <code>⇧⌘5</code> and typed words, each with <code>second</code>); <code>clicks_left_out</code> and <code>keys_left_out</code> count the rest; <code>frame</code> for <code>frame_at_second</code>.</p>
+<h4 id="recording-options"><a class="anchor" href="#recording-options" aria-hidden="true">#</a>Editing a recording</h4>
+<p>Pass the path of an MP4 to <code>annotate</code> or <code>open_in_editor</code> and these options apply. Marks and blurs are drawn into every frame, or between their <code>start_second</code> and <code>end_second</code>. <code>crop</code>, <code>rotate</code>, <code>flip</code>, <code>resize</code>, <code>beautify</code> and magnify marks are for screenshots only.</p>
+<div class="table params"><table><thead><tr><th>Option</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>trim</code></td><td>object</td><td></td><td><code>{start_second, end_second}</code>: keep only this part. Use <code>trim</code> or <code>pieces</code>.</td></tr><tr><td><code>pieces</code></td><td>array</td><td></td><td><code>[{start_second, end_second, speed}]</code>: the parts to keep, in play order. Pieces must not overlap and last at least 0.1 s. <code>speed</code> is 0.5, 1, 1.25, 1.5, 2, 4, 8 or 15; up to 2x the sound keeps its pitch, faster is silent.</td></tr><tr><td><code>sound</code></td><td>array</td><td></td><td><code>[{start_second, end_second, volume}]</code>: volume from 0 (muted) over 1 (as recorded) to 4. Raised peaks are softly limited. Replaces a saved edit's volumes.</td></tr><tr><td><code>zooms</code></td><td>array</td><td></td><td><code>[{start_second, end_second, x, y, width, height, transition, transition_seconds, follow}]</code>. The area fills the picture, widened to the video's shape; at most 6x. <code>transition</code> <code>smooth</code> (default) or <code>instant</code>, <code>transition_seconds</code> 0.1 to 3 (0.5), <code>follow</code> <code>off</code>, <code>pointer</code> or <code>content</code>. At least 0.2 s each, no overlaps. Replaces a saved edit's zooms.</td></tr><tr><td><code>zoom_on_clicks</code></td><td>boolean</td><td><code>false</code></td><td>Add a 2x zoom for every left click or group of clicks: clicks less than 1.5 s apart and close together share one zoom, from 0.5 s before the first to 1.5 s after the last. Needs the pointer track.</td></tr><tr><td><code>pointer</code></td><td>object</td><td></td><td><code>{shown, size: 1 | 1.5 | 2, hide_when_idle, click_highlight: off | ripple | ring, highlight_color}</code>. Click highlights work with any pointer track; <code>shown</code>, <code>size</code> and <code>hide_when_idle</code> need a recording with the pointer left out (<code>record_screen</code> with <code>pointer: drawn</code>, or the user's Pointer setting <strong>Editable in the editor</strong>).</td></tr><tr><td><code>keys</code></td><td>object</td><td></td><td><code>{parts: [{start_second, end_second, mode: words | letters | shortcuts | hidden}], position: bottomLeft | bottomCenter | bottomRight | topCenter, size: small | medium | large, look: dark | light}</code>. Needs a recording made with Show keystrokes on. Defaults: bottomCenter, medium, dark.</td></tr><tr><td><code>export</code></td><td>object</td><td></td><td><code>{size: original | 1080p | 720p, format: mp4 | mov, quality: high | medium | small}</code>, or <code>{format: gif, width: 160 to 1920, fps: 1 to 30}</code> for a GIF that loops forever, without sound (defaults 640 wide, 10 fps). A <code>.mov</code> or <code>.gif</code> result can't be edited again, so keep MP4 while more edits follow.</td></tr></tbody></table></div>
+<p>A full edit in one call: cut the first 2 seconds, play the waiting part at 8x, lower a noisy stretch, zoom on every click plus one slow zoom that follows the pointer, ripple highlights, a following blur on an email field, and a 960 pixel GIF:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "annotate",
   "arguments": {
-    "path": "~/Pictures/Screenshots/Agent/demo.mp4",
-    "annotations": [
-      {"type": "blur", "x": 820, "y": 40, "width": 300, "height": 44}
-    ],
+    "path": "/Users/you/Pictures/Screenshots/Agent/signup-flow.mp4",
     "pieces": [
-      {"start_second": 0, "end_second": 4},
-      {"start_second": 4, "end_second": 12, "speed": 4}
+      {"start_second": 2, "end_second": 7.5},
+      {"start_second": 7.5, "end_second": 14, "speed": 8},
+      {"start_second": 14, "end_second": 26}
     ],
+    "sound": [{"start_second": 14, "end_second": 18, "volume": 0.4}],
     "zoom_on_clicks": true,
-    "pointer": {"click_highlight": "ripple"},
-    "export": {"format": "gif", "width": 960}
+    "zooms": [
+      {
+        "start_second": 19, "end_second": 24, "x": 640, "y": 300,
+        "width": 960, "height": 540, "transition_seconds": 0.8,
+        "follow": "pointer"
+      }
+    ],
+    "pointer": {"click_highlight": "ripple", "highlight_color": "#FFD60A"},
+    "annotations": [
+      {
+        "type": "blur", "x": 820, "y": 412, "width": 420, "height": 48,
+        "second": 15, "start_second": 14, "end_second": 26
+      }
+    ],
+    "export": {"format": "gif", "width": 960, "fps": 15}
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>duration</code>, <code>width</code>, <code>height</code>, <code>has_sound</code>, and under <code>following</code> any blur or zoom whose content was lost. No inline image for a recording.</p></div><div class="group"><h3 id="tools-editors"><a class="anchor" href="#tools-editors" aria-hidden="true">#</a>Editors</h3><h4 id="list_editors"><a class="anchor" href="#list_editors" aria-hidden="true">#</a><code>list_editors</code></h4>
-<p>Lists the Sightline editor windows the user has open, front window first, so the agent knows what the user is looking at.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Return an image of the front screenshot editor, at most 1600 pixels on the long side.</td></tr></tbody></table></div>
+<p>Keys for a recording the user made with Show keystrokes on, as <code>last_recording</code> returned it: words while typing a commit message, only shortcuts afterwards, nothing during a password, labels at the top in the light look:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Sightline Recording 2026-10-24 10.12.04.mp4",
+    "keys": {
+      "parts": [
+        {"start_second": 0, "end_second": 12, "mode": "words"},
+        {"start_second": 12, "end_second": 15, "mode": "hidden"},
+        {"start_second": 15, "end_second": 40, "mode": "shortcuts"}
+      ],
+      "position": "topCenter",
+      "size": "large",
+      "look": "light"
+    },
+    "annotations": []
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p>A drawn pointer at double size that hides while it rests, and a smaller MOV for a slide deck:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/demo-drawn.mp4",
+    "annotations": [],
+    "pointer": {
+      "shown": true, "size": 2, "hide_when_idle": true,
+      "click_highlight": "ring"
+    },
+    "export": {"format": "mov", "size": "1080p", "quality": "medium"}
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p><strong>Returns</strong> <code>path</code>, <code>duration</code>, <code>width</code>, <code>height</code>, <code>has_sound</code>, <code>frames</code> for a GIF, and under <code>following</code> any blur or zoom whose content was lost. When the recording is open in the recording editor, the change goes there as one undo step and <code>note</code> says the file was left for the user to save. No inline image for a recording.</p></div><div class="group"><h3 id="tools-editors"><a class="anchor" href="#tools-editors" aria-hidden="true">#</a>Open editors</h3><h4 id="list_editors"><a class="anchor" href="#list_editors" aria-hidden="true">#</a><code>list_editors</code></h4>
+<p>Lists the Sightline editor windows the user has open, front window first, so the agent knows what the user is looking at, also a picture with no file such as a copied capture.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Return an image of the front screenshot editor with its marks, at most 1600 pixels on the long side. A crop or look is not shown in it.</td></tr></tbody></table></div>
 <div class="code"><pre><code class=lang-json>{"tool": "list_editors", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>editors</code>, each with <code>id</code>, <code>kind</code> (<code>screenshot</code> or <code>recording</code>), <code>title</code>, <code>width</code>, <code>height</code>, <code>path</code> (or null) and <code>front</code>. When the image is scaled down, <code>preview_width</code> and <code>preview_height</code> give its size.</p></div><div class="group"><h3 id="tools-style"><a class="anchor" href="#tools-style" aria-hidden="true">#</a>Style</h3><h4 id="beautify"><a class="anchor" href="#beautify" aria-hidden="true">#</a><code>beautify</code></h4>
+<p class="muted">Only the list:</p>
+<div class="code"><pre><code class=lang-json>{"tool": "list_editors", "arguments": {"include_image": false}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>editors</code>, each with <code>id</code> (stays the same while the window is open), <code>kind</code> (<code>screenshot</code> or <code>recording</code>), <code>title</code>, <code>width</code>, <code>height</code>, <code>path</code> or null, and <code>front</code>. When the image is scaled down, <code>preview_width</code> and <code>preview_height</code>: multiply positions in it by <code>width / preview_width</code>.</p></div><div class="group"><h3 id="tools-style"><a class="anchor" href="#tools-style" aria-hidden="true">#</a>Style</h3><h4 id="beautify"><a class="anchor" href="#beautify" aria-hidden="true">#</a><code>beautify</code></h4>
 <p>Puts a screenshot on a background with padding, rounded corners and a shadow, like the editor's Style panel.</p>
-<p>The tool keeps the name <code>beautify</code>; in the app the panel is called Style.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>agent's last screenshot</td><td>A file in the Agent folder, as a capture tool returned it, or a recording from <code>last_recording</code>.</td></tr><tr><td><code>editor</code></td><td>string</td><td></td><td>An id from <code>list_editors</code>, or <code>front</code>. The change goes live into that window as one undo step and no file is written.</td></tr><tr><td><code>look</code></td><td>string</td><td></td><td><code>none</code> <code>soft</code> <code>sunset</code> <code>night</code> <code>paper</code> <code>sightline</code>, a look the user saved, or <code>default</code> for the user's look for new screenshots.</td></tr><tr><td><code>background</code></td><td>string</td><td></td><td><code>soft</code> <code>sunset</code> <code>ocean</code> <code>night</code> <code>sightline</code>, a hex color, two or three hex colors for a gradient, or <code>none</code>.</td></tr><tr><td><code>background_image</code></td><td>string</td><td></td><td>A picture in the Agent folder, scaled to fill.</td></tr><tr><td><code>background_opacity</code></td><td>number 0 to 1</td><td>1</td><td>How strongly the background shows.</td></tr><tr><td><code>padding</code></td><td>number 0 to 300</td><td>64</td><td>Space around the screenshot, in points.</td></tr><tr><td><code>corners</code></td><td>number 0 to 40</td><td>12</td><td>Corner radius in points.</td></tr><tr><td><code>shadow</code></td><td>number 0 to 100</td><td>50</td><td>Shadow strength in percent.</td></tr><tr><td><code>aspect</code></td><td><code>auto</code> <code>16:9</code> <code>4:3</code> <code>1:1</code> <code>9:16</code></td><td><code>auto</code></td><td>Shape of the result.</td></tr><tr><td><code>format, name, output</code></td><td></td><td></td><td>Write to a new file, as in <code>annotate</code>.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a small inline preview. Set <code>false</code> when you only need the path.</td></tr></tbody></table></div>
+<p>The tool keeps the name <code>beautify</code>; in the app the panel is called Style. Without <code>look</code>, the fields change the look the image already has, else Soft.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>this agent's last screenshot</td><td>An image or recording in the Agent folder, or a recording <code>last_recording</code> returned.</td></tr><tr><td><code>editor</code></td><td>string</td><td></td><td>An id from <code>list_editors</code>, or <code>front</code>. The change appears live in that window as one undo step and no file is written. Leave out <code>path</code>, <code>output</code>, <code>name</code> and <code>export</code>.</td></tr><tr><td><code>look</code></td><td>string</td><td></td><td><code>none</code> <code>soft</code> <code>sunset</code> <code>night</code> <code>paper</code> <code>sightline</code>, a look the user saved, or <code>default</code> for the user's look for new screenshots. The other fields change it.</td></tr><tr><td><code>background</code></td><td>string</td><td></td><td><code>soft</code> <code>sunset</code> <code>ocean</code> <code>night</code> <code>sightline</code>, a hex color, two or three hex colors separated by commas for a gradient from the top left, or <code>none</code>.</td></tr><tr><td><code>background_image</code></td><td>string</td><td></td><td>A picture in the Agent folder, scaled to fill. Use instead of <code>background</code>.</td></tr><tr><td><code>background_opacity</code></td><td>number 0 to 1</td><td>1</td><td>How strongly the background shows.</td></tr><tr><td><code>padding</code></td><td>number 0 to 300</td><td>64</td><td>Space around the screenshot, in points.</td></tr><tr><td><code>corners</code></td><td>number 0 to 40</td><td>12</td><td>Corner radius in points.</td></tr><tr><td><code>shadow</code></td><td>number 0 to 100</td><td>50</td><td>Shadow strength in percent.</td></tr><tr><td><code>aspect</code></td><td><code>auto</code> <code>16:9</code> <code>4:3</code> <code>1:1</code> <code>9:16</code></td><td><code>auto</code></td><td>Shape of the result.</td></tr><tr><td><code>format, name, output</code></td><td></td><td></td><td>Write to a new file, as in <code>annotate</code>.</td></tr><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a downscaled inline preview. Set <code>false</code> to save tokens when only the path is needed.</td></tr></tbody></table></div>
+<p class="muted">A social card: a custom two color gradient, square, roomy padding, to a new file:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "beautify",
   "arguments": {
-    "path": "~/Pictures/Screenshots/Agent/dashboard.png",
-    "look": "sightline",
-    "aspect": "16:9"
+    "path": "/Users/you/Pictures/Screenshots/Agent/dashboard.png",
+    "background": "#0FB5A8,#0A7F9A", "aspect": "1:1", "padding": 120,
+    "corners": 18, "shadow": 70, "name": "dashboard-square"
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code> and an inline image. In the editor and on a saved edit the look stays adjustable; on a plain file it is drawn into the pixels.</p>
+<p class="muted">Set the user's own look on the screenshot they have open:</p>
+<div class="code"><pre><code class=lang-json>{"tool": "beautify", "arguments": {"editor": "front", "look": "default"}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>path</code>, <code>width</code>, <code>height</code> and a preview. In the editor and on a saved edit the look stays adjustable; on a plain file it is drawn into the pixels, so a second call wraps it again.</p>
 <h4 id="list_looks"><a class="anchor" href="#list_looks" aria-hidden="true">#</a><code>list_looks</code></h4>
 <p>Lists the built-in looks, the user's presets and the user's default look.</p>
 <p class="muted">No parameters.</p>
 <div class="code"><pre><code class=lang-json>{"tool": "list_looks", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>looks</code>, <code>presets</code> (each with background, opacity, padding, corners, shadow and aspect) and <code>default</code> or null.</p>
+<p class="returns"><span>Returns</span> <code>looks</code>, <code>presets</code> (each with <code>background</code>, <code>background_opacity</code>, <code>padding</code>, <code>corners</code>, <code>shadow</code>, <code>aspect</code>, <code>has_background_image</code> and <code>reachable</code>), and <code>default</code> or null.</p>
 <h4 id="save_look"><a class="anchor" href="#save_look" aria-hidden="true">#</a><code>save_look</code></h4>
 <p>Saves a look as a preset the user can pick in the Style panel.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>required</td><td>1 to 40 characters. Built-in names and <code>default</code> are taken.</td></tr><tr><td><code>look, background, background_image, background_opacity, padding, corners, shadow, aspect</code></td><td></td><td></td><td>As in <code>beautify</code>.</td></tr><tr><td><code>replace</code></td><td>boolean</td><td><code>false</code></td><td>Replace a preset of the same name.</td></tr></tbody></table></div>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td><td>required</td><td>1 to 40 characters. Built-in names and <code>default</code> can't be used.</td></tr><tr><td><code>look, background, background_image, background_opacity, padding, corners, shadow, aspect</code></td><td></td><td></td><td>As in <code>beautify</code>; without <code>look</code> the base is Soft, or the preset being replaced.</td></tr><tr><td><code>replace</code></td><td>boolean</td><td><code>false</code></td><td>Replace a preset with the same name.</td></tr></tbody></table></div>
+<p class="muted">A house style for documentation:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "save_look",
   "arguments": {
-    "name": "Docs",
-    "look": "paper",
-    "padding": 40,
-    "corners": 10
+    "name": "Docs", "look": "paper", "padding": 40, "corners": 10,
+    "shadow": 30, "aspect": "16:9"
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> The saved name and whether it replaced one.</p></div><div class="group"><h3 id="tools-history"><a class="anchor" href="#tools-history" aria-hidden="true">#</a>Captures and history</h3><h4 id="last_screenshot"><a class="anchor" href="#last_screenshot" aria-hidden="true">#</a><code>last_screenshot</code></h4>
+<p class="returns"><span>Returns</span> The saved <code>name</code> and <code>replaced</code>.</p></div><div class="group"><h3 id="tools-history"><a class="anchor" href="#tools-history" aria-hidden="true">#</a>Captures and history</h3><h4 id="last_screenshot"><a class="anchor" href="#last_screenshot" aria-hidden="true">#</a><code>last_screenshot</code></h4>
 <p>Returns this agent's own last capture, the one other tools use when <code>path</code> is left out. For the user's screenshot, call <code>list_editors</code>.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a small inline preview. Set <code>false</code> when you only need the path.</td></tr></tbody></table></div>
-<div class="code"><pre><code class=lang-json>{"tool": "last_screenshot", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> The same fields as a capture tool, plus <code>open_editors</code> and, while an agent's editor is open, <code>agent_editor</code>.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>include_image</code></td><td>boolean</td><td><code>true</code></td><td>Attach a downscaled inline preview. Set <code>false</code> to save tokens when only the path is needed.</td></tr></tbody></table></div>
+<div class="code"><pre><code class=lang-json>{"tool": "last_screenshot", "arguments": {"include_image": false}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> The same fields as a capture, plus <code>open_editors</code> and a <code>hint</code> when the user has editors open, and <code>agent_editor</code> while an editor an agent opened is open.</p>
 <h4 id="search_captures"><a class="anchor" href="#search_captures" aria-hidden="true">#</a><code>search_captures</code></h4>
-<p>Searches the user's screenshots and recordings like Sightline's History, by file name and by the text Sightline read in each screenshot.</p>
-<p>The paths are the user's own files. The other tools take only files in the Agent folder, so copy a screenshot there first, or pass <code>editor</code> when it is open.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>query</code></td><td>string</td><td>newest captures</td><td>Every word has to appear, in any order, ignoring case and accents.</td></tr><tr><td><code>kind</code></td><td><code>screenshot</code> <code>recording</code></td><td>both</td><td>Only one kind.</td></tr><tr><td><code>favorites_only</code></td><td>boolean</td><td><code>false</code></td><td>Only starred captures.</td></tr><tr><td><code>limit</code></td><td>integer 1 to 100</td><td>20</td><td>How many results.</td></tr></tbody></table></div>
+<p>Searches the user's screenshots and recordings like Sightline's History, by file name and by the text Sightline read in each screenshot on the Mac.</p>
+<p>It searches the save folder and the Agent folder. With credential hiding on, text near anything that looks like a credential doesn't match at all.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>query</code></td><td>string</td><td>newest captures</td><td>Every word has to appear in the name or the text, in any order, ignoring case and accents.</td></tr><tr><td><code>kind</code></td><td><code>screenshot</code> <code>recording</code></td><td>both</td><td>Only one kind. Recordings match by file name only.</td></tr><tr><td><code>favorites_only</code></td><td>boolean</td><td><code>false</code></td><td>Only captures the user starred in History.</td></tr><tr><td><code>limit</code></td><td>integer 1 to 100</td><td>20</td><td>How many results at most.</td></tr></tbody></table></div>
+<p class="muted">The invoice screenshots the user starred:</p>
 <div class="code"><pre><code class=lang-json>{
   "tool": "search_captures",
   "arguments": {
-    "query": "invoice total",
-    "kind": "screenshot"
+    "query": "invoice total", "kind": "screenshot", "favorites_only": true,
+    "limit": 5
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p class="returns"><span>Returns</span> <code>results</code>, newest first, each with <code>path</code>, <code>kind</code>, <code>date</code>, <code>favorite</code> and a <code>snippet</code> of the matching text, plus <code>total</code> and <code>reading_text</code>.</p></div><div class="group"><h3 id="tools-clipboard"><a class="anchor" href="#tools-clipboard" aria-hidden="true">#</a>Clipboard and replay</h3><h4 id="copy_to_clipboard"><a class="anchor" href="#copy_to_clipboard" aria-hidden="true">#</a><code>copy_to_clipboard</code></h4>
-<p>Puts a screenshot, or a recording file, on the user's clipboard.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>agent's last screenshot</td><td>A file in the Agent folder, as a capture tool returned it, or a recording from <code>last_recording</code>.</td></tr></tbody></table></div>
-<div class="code"><pre><code class=lang-json>{"tool": "copy_to_clipboard", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="muted">The ten newest recordings:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "search_captures",
+  "arguments": {"kind": "recording", "limit": 10}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
+<p class="returns"><span>Returns</span> <code>results</code>, newest first, each with <code>path</code>, <code>kind</code>, <code>date</code> (ISO 8601), <code>favorite</code> and, when the text matched, a <code>snippet</code>; <code>total</code> counts every match; <code>reading_text</code> says how many screenshots are still being read.</p></div><div class="group"><h3 id="tools-clipboard"><a class="anchor" href="#tools-clipboard" aria-hidden="true">#</a>Clipboard and replay</h3><h4 id="copy_to_clipboard"><a class="anchor" href="#copy_to_clipboard" aria-hidden="true">#</a><code>copy_to_clipboard</code></h4>
+<p>Puts a screenshot on the user's clipboard at the resolution set in Sightline, or a recording as a file that pastes into Finder, Mail and chat apps.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>path</code></td><td>string</td><td>this agent's last screenshot</td><td>An image or recording in the Agent folder, or a recording <code>last_recording</code> returned.</td></tr></tbody></table></div>
+<p class="muted">The marked capture from before:</p>
+<div class="code"><pre><code class=lang-json>{
+  "tool": "copy_to_clipboard",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/checkout-error-marked.png"
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
 <p class="returns"><span>Returns</span> The <code>path</code> that was copied.</p>
 <h4 id="save_replay"><a class="anchor" href="#save_replay" aria-hidden="true">#</a><code>save_replay</code></h4>
-<p>Saves the last seconds of the screen while Replay is on in Settings &gt; Recording. Needs macOS 27.</p>
-<div class="table"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>number 1 to 15</td><td>15</td><td>How many seconds back.</td></tr></tbody></table></div>
+<p>Saves the last seconds of the display while Replay is on in Settings &gt; Recording. Needs macOS 27.</p>
+<div class="table params"><table><thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>seconds</code></td><td>number 1 to 15</td><td>15</td><td>How many seconds back.</td></tr></tbody></table></div>
 <div class="code"><pre><code class=lang-json>{"tool": "save_replay", "arguments": {"seconds": 10}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
 <p class="returns"><span>Returns</span> <code>path</code>, <code>duration</code>, <code>width</code> and <code>height</code>, usable like a <code>record_screen</code> result.</p></div></section>
 <section><h2 id="live-editor"><a class="anchor" href="#live-editor" aria-hidden="true">#</a>Working in the open editor</h2>
-
 <p>When the user says "this screenshot" or "the recording I have open", the agent doesn't need a file:</p>
-<ol>
-<li>Call <code>list_editors</code>. It lists the open editors, front window first, with an image of the front screenshot.</li>
-<li>To place a mark on text, call <code>find_text</code> with the same <code>editor</code>. It returns boxes in that picture's pixels.</li>
-<li>Call <code>annotate</code>, <code>beautify</code> or <code>open_in_editor</code> with <code>editor</code> set to the id, or <code>front</code>.</li>
-</ol>
+<ol><li>Call <code>list_editors</code>. It lists the open editors, front window first, with an image of the front screenshot.</li><li>To place a mark exactly on text, call <code>find_text</code> with the same <code>editor</code>. It returns boxes in that picture's pixels.</li><li>Call <code>annotate</code>, <code>beautify</code> or <code>open_in_editor</code> with <code>editor</code> set to the id, or <code>front</code>.</li></ol>
+<div class="code"><pre><code class=lang-json>{"tool": "find_text", "arguments": {"text": "API key", "editor": "front"}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
 <div class="code"><pre><code class=lang-json>{
   "tool": "annotate",
   "arguments": {
     "editor": "front",
     "annotations": [
-      {"type": "highlight", "x": 312, "y": 188, "width": 240, "height": 36}
+      {
+        "type": "blur", "x": 486, "y": 312, "width": 410, "height": 34,
+        "edge": "soft"
+      },
+      {
+        "type": "arrow", "from": [1100, 200], "to": [910, 318],
+        "color": "#0A84FF"
+      }
     ]
   }
 }</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div>
-<p>The change appears live and animated in that window, with the agent's name, as <strong>one undo step</strong>. No file is written; the user saves as usual. Recording editors take cuts, volumes, zooms, pointer and keys the same way. Ids stay the same while the window is open; an id that no longer exists returns <code>no editor with that id is open; call list_editors</code>.</p>
-</section>
-<section><h2 id="recipes"><a class="anchor" href="#recipes" aria-hidden="true">#</a>Recipes</h2>
-<p>Agents pick the tools themselves. These are prompts that work well:</p><div class="recipe"><b>Mark a bug</b><p>&gt; Screenshot the Simulator, put a red box around the misaligned button and write "8 px off" next to it.</p></div><div class="recipe"><b>Blur before sharing</b><p>&gt; Blur every API key on screen, then copy the screenshot so I can paste it into Slack.</p></div><div class="recipe"><b>Work on what I see</b><p>&gt; In the screenshot I have open, number the three steps of the sign up form.</p></div><div class="recipe"><b>Find an old capture</b><p>&gt; Find the screenshot with the invoice total from last week and open it in the editor.</p></div><div class="recipe"><b>Make a demo GIF</b><p>&gt; Take my last recording, cut the first 3 seconds, speed up the loading part, zoom on every click and export a 960 px GIF.</p></div><div class="recipe"><b>Check against the design</b><p>&gt; Compare the running app with signup-design.png and fix what differs.</p></div></section>
+<p>The change appears live and animated in that window with the agent's name, as <strong>one undo step</strong>. No file is written; the user saves as usual. Recording editors take cuts, volumes, zooms, pointer and keys the same way. If the user is in the middle of an edit, the tool answers <code>the user is editing this picture right now; try again in a moment</code>. A closed window answers <code>no editor with that id is open; call list_editors</code>.</p>
+<p>A file an agent changes that is open in an editor, also one the user opened, gets the change live in that window too, while the file is updated as well.</p></section>
+<section><h2 id="workflows"><a class="anchor" href="#workflows" aria-hidden="true">#</a>Workflows</h2>
+<p>Agents pick the tools themselves. These show how real requests turn into tool calls, with the arguments an agent sends and what comes back.</p><h3 id="flow-secrets"><a class="anchor" href="#flow-secrets" aria-hidden="true">#</a>Blur secrets, then share</h3>
+<div class="flow">
+<p class="ask">&gt; Screenshot my terminal, blur every API key and token, and copy it so I can paste it into Slack.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "capture_window",
+  "arguments": {"app": "Terminal", "name": "env-vars", "include_image": false}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Returns the <code>path</code> and pixel size.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "find_text",
+  "arguments": {
+    "text": "sk_",
+    "path": "/Users/you/Pictures/Screenshots/Agent/env-vars.png"
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Returns a box per line that contains the key. The agent repeats this for <code>token</code> and <code>secret</code>.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/env-vars.png",
+    "annotations": [
+      {
+        "type": "blur", "x": 210, "y": 148, "width": 640, "height": 30,
+        "blur_style": "pixelate"
+      },
+      {
+        "type": "blur", "x": 210, "y": 228, "width": 590, "height": 30,
+        "blur_style": "pixelate"
+      }
+    ]
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Draws the blurs into the file. A blur only covers what it covers, so the agent boxes whole values.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "copy_to_clipboard",
+  "arguments": {"path": "/Users/you/Pictures/Screenshots/Agent/env-vars.png"}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">The image is on the clipboard.</p></li>
+</ol></div><h3 id="flow-gif"><a class="anchor" href="#flow-gif" aria-hidden="true">#</a>Turn a recording into a short GIF</h3>
+<div class="flow">
+<p class="ask">&gt; Take the recording I just made, cut the dead time, zoom in on my clicks and make a GIF for the pull request.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{"tool": "last_recording", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Returns the user's newest recording, <code>made_by: user</code>.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "inspect_recording",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Sightline Recording 2026-10-24 16.40.12.mp4"
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then"><code>segments</code> show still stretches, for example 0 to 3.2 s and 9.8 to 14 s, and <code>clicks</code> list the presses.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Sightline Recording 2026-10-24 16.40.12.mp4",
+    "pieces": [
+      {"start_second": 3.2, "end_second": 9.8},
+      {"start_second": 14, "end_second": 21}
+    ],
+    "zoom_on_clicks": true,
+    "pointer": {"click_highlight": "ripple"},
+    "annotations": [],
+    "export": {"format": "gif", "width": 960}
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Writes a new GIF to the Agent folder and reports its <code>path</code>, <code>duration</code> and <code>frames</code>. The user's recording stays as it was.</p></li>
+</ol></div><h3 id="flow-live"><a class="anchor" href="#flow-live" aria-hidden="true">#</a>Mark up what the user is looking at</h3>
+<div class="flow">
+<p class="ask">&gt; In the screenshot I have open, number the three steps of the sign up form and blur my email.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{"tool": "list_editors", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">The front editor is a screenshot, 2880 by 1800 pixels, with an image of it.</p></li>
+<li><div class="code"><pre><code class=lang-json>{"tool": "find_text", "arguments": {"text": "@", "editor": "front"}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Returns the box of the email line.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "editor": "front",
+    "annotations": [
+      {"type": "number", "x": 300, "y": 520},
+      {"type": "number", "x": 300, "y": 760},
+      {"type": "number", "x": 300, "y": 1010},
+      {"type": "blur", "x": 380, "y": 498, "width": 700, "height": 44}
+    ]
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">The marks appear in the user's window as one undo step. Nothing is saved until the user saves.</p></li>
+</ol></div><h3 id="flow-design"><a class="anchor" href="#flow-design" aria-hidden="true">#</a>Check an app against its design, fix, check again</h3>
+<div class="flow">
+<p class="ask">&gt; Compare the sign up screen in the Simulator with signup-design.png and fix what differs.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "compare_with_design",
+  "arguments": {
+    "design": "/Users/you/Pictures/Screenshots/Agent/signup-design.png",
+    "window": {"app": "Simulator"}
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Returns numbered <code>differences</code>, such as number 2 <code>shifted</code> with <code>dx: 0, dy: 8</code> and number 3 <code>only_in_design</code>, and a marked capture.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "capture_text",
+  "arguments": {"path": "/Users/you/Pictures/Screenshots/Agent/signup-design.png"}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Reads the exact copy from the design to compare labels.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "compare_with_design",
+  "arguments": {
+    "design": "/Users/you/Pictures/Screenshots/Agent/signup-design.png",
+    "window": {"app": "Simulator"},
+    "include_image": false
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">After the agent changed the code and the app reloaded: fewer or no differences. The agent repeats until the list is empty.</p></li>
+</ol></div>
+<p>The design file has to be in the Agent folder. Agents that can run commands copy it there first, next to a path a capture returned.</p><h3 id="flow-bug-report"><a class="anchor" href="#flow-bug-report" aria-hidden="true">#</a>A complete bug report from one prompt</h3>
+<div class="flow">
+<p class="ask">&gt; Record me reproducing the crash in the Simulator, then write a bug report with a marked screenshot of the last screen and a short clip.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "record_screen",
+  "arguments": {"window": {"app": "Simulator"}, "seconds": 30, "pointer": "drawn"}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">The agent asked the user to get ready first. Returns the <code>path</code> of the MP4.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "inspect_recording",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/Sightline Recording 2026-10-24 11.02.33.mp4",
+    "text_at_seconds": [24, 28],
+    "frame_at_second": 28
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Shows the error text at 28 s with its box, and the frame itself.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/Sightline Recording 2026-10-24 11.02.33.mp4",
+    "annotations": [
+      {
+        "type": "rectangle", "x": 160, "y": 1180, "width": 860,
+        "height": 120, "start_second": 26
+      }
+    ],
+    "trim": {"start_second": 12, "end_second": 30},
+    "pointer": {"shown": true, "size": 1.5, "click_highlight": "ring"},
+    "export": {"format": "mp4", "size": "720p", "quality": "medium"}
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">A small 720p clip of the last 18 seconds with the error boxed and the pointer drawn larger.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "capture_window",
+  "arguments": {
+    "app": "Simulator",
+    "name": "crash-last-screen",
+    "annotations": [
+      {"type": "arrow", "from": [900, 900], "to": [620, 1200]},
+      {
+        "type": "text", "x": 700, "y": 840,
+        "text": "Crash after tapping Save", "text_background": "solid"
+      }
+    ]
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">A still of the last screen, marked, for the top of the report.</p></li>
+</ol></div><h3 id="flow-history"><a class="anchor" href="#flow-history" aria-hidden="true">#</a>Find an old capture and continue editing it</h3>
+<div class="flow">
+<p class="ask">&gt; Find the screenshot with the invoice total from last week and open it so I can add a note.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "search_captures",
+  "arguments": {"query": "invoice total", "kind": "screenshot", "limit": 5}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Returns the user's own paths with a <code>snippet</code> around the match, newest first. Those files are outside the Agent folder, so the agent copies the one it wants there, for example with <code>cp</code>.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "open_in_editor",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/invoice-october.png",
+    "annotations": [
+      {
+        "type": "highlight", "x": 1240, "y": 980, "width": 360,
+        "height": 52
+      }
+    ]
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">The editor opens with the highlight as an editable mark the user can move or delete.</p></li>
+</ol></div>
+<p>If the screenshot is already open in an editor, skip the copy: <code>list_editors</code> gives its id, and <code>annotate</code> or <code>open_in_editor</code> with <code>editor</code> change it in place.</p><h3 id="flow-docs"><a class="anchor" href="#flow-docs" aria-hidden="true">#</a>Consistent screenshots for documentation</h3>
+<div class="flow">
+<p class="ask">&gt; Take screenshots of the General, Accounts and Advanced tabs of the app's settings, styled the same way, as WebP for the docs.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "save_look",
+  "arguments": {
+    "name": "Docs", "look": "paper", "padding": 40, "corners": 10,
+    "shadow": 30
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">One preset, so every image matches. The user sees it in the Style panel too.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "capture_window",
+  "arguments": {"title": "General", "name": "settings-general", "include_image": false}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">The agent clicks each tab between captures, or asks the user to.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "beautify",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/settings-general.png",
+    "look": "Docs", "format": "webp", "name": "settings-general-docs"
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Written to a new WebP file; repeated for each tab.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Agent/settings-general-docs.webp",
+    "annotations": [],
+    "resize": {"width": 1600}
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Every image the same width for the site.</p></li>
+</ol></div><h3 id="flow-scrolling"><a class="anchor" href="#flow-scrolling" aria-hidden="true">#</a>Read a long page the agent can't scroll</h3>
+<div class="flow">
+<p class="ask">&gt; Read the full changelog page in Safari and list every deprecated API.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{"tool": "capture_scrolling", "arguments": {"window": {"app": "Safari"}}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">In the App Store version this returns an error saying it can't scroll windows.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "search_captures",
+  "arguments": {"kind": "screenshot", "limit": 1}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">After the agent asked the user to press <kbd>⇧⌘6</kbd> and scroll the page: the newest screenshot is the tall capture.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "find_text",
+  "arguments": {"text": "deprecated", "window": {"app": "Safari"}}
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Or, for what is on screen right now, the boxes of every matching line.</p></li>
+</ol></div>
+<p>Scrolling captures the user takes are in their save folder; <code>search_captures</code> returns the path to read directly.</p><h3 id="flow-recording-live"><a class="anchor" href="#flow-recording-live" aria-hidden="true">#</a>Edit the recording the user has open</h3>
+<div class="flow">
+<p class="ask">&gt; In the recording I have open, speed up the part where the build runs and add a zoom when I click Deploy.</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{"tool": "list_editors", "arguments": {"include_image": false}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">The front editor is a recording with its <code>id</code> and <code>path</code>.</p></li>
+<li><div class="code"><pre><code class=lang-json>{"tool": "last_recording", "arguments": {}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Returns the same path, because it is the newest recording. That lets <code>inspect_recording</code> read the user's file.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "inspect_recording",
+  "arguments": {
+    "path": "/Users/you/Pictures/Screenshots/Sightline Recording 2026-10-24 09.15.40.mp4",
+    "text_at_seconds": [18]
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then"><code>clicks</code> show a press at 18.2 s at x 1540, y 96, and the text at 18 s confirms the Deploy button.</p></li>
+<li><div class="code"><pre><code class=lang-json>{
+  "tool": "annotate",
+  "arguments": {
+    "editor": "front",
+    "annotations": [],
+    "pieces": [
+      {"start_second": 0, "end_second": 6},
+      {"start_second": 6, "end_second": 16, "speed": 4},
+      {"start_second": 16, "end_second": 32}
+    ],
+    "zooms": [
+      {
+        "start_second": 17.6, "end_second": 21, "x": 1100, "y": 0,
+        "width": 960, "height": 540
+      }
+    ]
+  }
+}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">The pieces and the zoom appear on the user's timeline as one undo step; the file is left for the user to save.</p></li>
+</ol></div><h3 id="flow-qr"><a class="anchor" href="#flow-qr" aria-hidden="true">#</a>Read a code and a color from the screen</h3>
+<div class="flow">
+<p class="ask">&gt; What URL is in the QR code on screen, and what is the hex color of the Buy button?</p>
+<ol>
+<li><div class="code"><pre><code class=lang-json>{"tool": "capture_text", "arguments": {"display": 0}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then"><code>codes</code> holds the QR code's <code>payload</code> and box.</p></li>
+<li><div class="code"><pre><code class=lang-json>{"tool": "find_text", "arguments": {"text": "Buy", "display": 0}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then">Returns the box of the button label in pixels; dividing by <code>scale</code> gives points.</p></li>
+<li><div class="code"><pre><code class=lang-json>{"tool": "pick_color", "arguments": {"x": 1012, "y": 640}}</code></pre><button type="button" class="copy" aria-label="Copy">Copy</button></div><p class="then"><code>hex</code> of the point just left of the label, in points.</p></li>
+</ol></div></section>
+<section><h2 id="prompts"><a class="anchor" href="#prompts" aria-hidden="true">#</a>Prompt ideas</h2>
+<div class="recipe"><b>Mark a bug</b><p>&gt; Screenshot the Simulator, put a red box around the misaligned button and write "8 px off" next to it.</p></div><div class="recipe"><b>Blur before sharing</b><p>&gt; Blur every email address and API key in the screenshot I have open.</p></div><div class="recipe"><b>Explain a setting</b><p>&gt; Capture the Privacy settings window and number the three switches I need to turn on, with a spotlight on the first.</p></div><div class="recipe"><b>Make a demo GIF</b><p>&gt; Take my last recording, cut the first 3 seconds, speed up the loading part 8x, zoom on every click and export a 960 px GIF.</p></div><div class="recipe"><b>Keystrokes</b><p>&gt; In my last recording, show what I typed as words until 12 s, hide the password part, and only shortcuts after that.</p></div><div class="recipe"><b>Check against the design</b><p>&gt; Compare the running app with signup-design.png, list the differences by number, then fix them.</p></div><div class="recipe"><b>Find and reuse</b><p>&gt; Find the screenshot with the error code E1042 from this week and copy it to my clipboard.</p></div><div class="recipe"><b>Style for social</b><p>&gt; Put the dashboard screenshot I have open on a square teal background with more padding.</p></div><div class="recipe"><b>Read the screen</b><p>&gt; Read the text in the Terminal window and explain the failing test.</p></div><div class="recipe"><b>Replay</b><p>&gt; Something just flickered on screen. Save the last 10 seconds and tell me what changed.</p></div></section>
 <section><h2 id="troubleshooting"><a class="anchor" href="#troubleshooting" aria-hidden="true">#</a>Troubleshooting</h2>
-
-<div class="table"><table><thead><tr><th>Message</th><th>What to do</th></tr></thead><tbody><tr><td><code>agent access is off in Sightline settings</code></td><td>Turn on Allow AI agents to use Sightline in Settings &gt; AI Agents.</td></tr><tr><td><code>Sightline Pro is required for agent access.</code></td><td>Agent access is part of Sightline Pro. Open Sightline to start the free trial or subscribe.</td></tr><tr><td><code>denied by user</code></td><td>Someone clicked Deny for this agent. Click Clear denied in Settings &gt; AI Agents and try again.</td></tr><tr><td><code>another dialog is open in Sightline, try again in a moment</code></td><td>An approval dialog for another agent is open. Answer it first.</td></tr><tr><td><code>too many approval requests, try again later</code></td><td>Many requests asked for approval at once. Wait a little and try again.</td></tr><tr><td><code>Sightline is not running</code></td><td>The CLI couldn't find or start the app. Open Sightline once, from the Applications folder.</td></tr><tr><td><code>Sightline is running but not answering.</code></td><td>Usually agent access is off. Check Settings &gt; AI Agents.</td></tr><tr><td><code>Sightline has no Screen Recording permission.</code></td><td>Allow Sightline in System Settings &gt; Privacy &amp; Security &gt; Screen &amp; System Audio Recording, then relaunch it.</td></tr><tr><td><code>path must be inside the Sightline Agent folder</code></td><td>Tools only take files in the Agent folder. Copy the file there first, or pass <code>editor</code> for a picture the user has open.</td></tr><tr><td><code>no editor with that id is open; call list_editors</code></td><td>The window was closed. Call <code>list_editors</code> again.</td></tr><tr><td><code>the App Store build cannot scroll windows for you; capture the visible part with capture_window or ask the user to scroll manually</code></td><td>The Mac App Store version can't scroll other apps for an agent. Use <code>capture_window</code>, or take a scrolling capture by hand.</td></tr><tr><td><code>Replay is off.</code></td><td>Turn on Replay in Sightline under Settings &gt; Recording. <code>save_replay</code> needs macOS 27.</td></tr><tr><td><code>recordings need macOS 15</code></td><td>Recording and editing recordings need macOS 15 or later.</td></tr></tbody></table></div>
-<ul>
-<li><strong>The tools don't show up in the client.</strong> Start a new session, or restart Claude Desktop, after connecting. In Settings &gt; AI Agents, a config that points to an older copy of Sightline shows an Update button.</li>
-<li><strong><code>record_screen</code> stops early.</strong> It records at most 60 seconds per call. For longer screencasts, record from Sightline's menu and hand the file to the agent with <code>last_recording</code>.</li>
-<li><strong>An old path is gone.</strong> Agent captures move to the Trash after 7 days by default. Capture again rather than reuse an old path.</li>
-<li><strong>No clicks or keys in <code>inspect_recording</code>.</strong> The pointer track exists for recordings made with Sightline 1.7 or later, not for replays. Keys are noted only for recordings the user makes with Show keystrokes on.</li>
-</ul>
-</section>
+<div class="table plain"><table><thead><tr><th>Message</th><th>What to do</th></tr></thead><tbody><tr><td><code>agent access is off in Sightline settings</code></td><td>Turn on <strong>Allow AI agents to use Sightline</strong> in Settings &gt; AI Agents.</td></tr><tr><td><code>Sightline Pro is required for agent access. Open Sightline to start the free trial or subscribe.</code></td><td>Agent access is part of Sightline Pro.</td></tr><tr><td><code>denied by user</code></td><td>Someone clicked Deny for this agent. Click <strong>Clear denied</strong> in Settings &gt; AI Agents and try again.</td></tr><tr><td><code>another dialog is open in Sightline, try again in a moment</code></td><td>An approval dialog or another Sightline alert is open. Answer it first.</td></tr><tr><td><code>too many approval requests, try again later</code></td><td>Several requests were denied in a short time. Wait a little.</td></tr><tr><td><code>Sightline is not running</code></td><td>The CLI couldn't find the app it belongs to. Run the <code>sightline-cli</code> inside <code>/Applications/Sightline.app</code>, not a copy.</td></tr><tr><td><code>Sightline is running but not answering. Check that AI agent access is on in Settings &gt; AI Agents.</code></td><td>The app didn't open its socket within 8 seconds. Usually agent access is off.</td></tr><tr><td><code>Sightline has no Screen Recording permission. Grant it in System Settings &gt; Privacy &amp; Security &gt; Screen &amp; System Audio Recording and relaunch Sightline.</code></td><td>Allow Sightline there and reopen it.</td></tr><tr><td><code>path must be inside the Sightline Agent folder</code></td><td>Tools only take files from the Agent folder. Copy the file there, or pass <code>editor</code> when the message adds that the file is open in an editor.</td></tr><tr><td><code>no agent screenshot yet</code></td><td>A tool needed this agent's last screenshot. Pass a <code>path</code> or capture first. When the user has an editor open, the result says so; call <code>list_editors</code>.</td></tr><tr><td><code>no window matches</code></td><td>No on-screen window has that app name, title or id. Call <code>list_windows</code>.</td></tr><tr><td><code>another capture is in progress</code></td><td>One capture runs at a time. Try again when the other has finished.</td></tr><tr><td><code>no editor with that id is open; call list_editors</code></td><td>The window was closed. Call <code>list_editors</code> again.</td></tr><tr><td><code>the user is editing this picture right now; try again in a moment</code></td><td>The user is in the middle of an edit in that window.</td></tr><tr><td><code>the App Store build cannot scroll windows for you; capture the visible part with capture_window or ask the user to scroll manually</code></td><td>The Mac App Store version can't scroll other apps for an agent.</td></tr><tr><td><code>Replay is off. Ask the user to turn it on under Settings, Recording in Sightline, then try again.</code></td><td>Replay keeps the last seconds in memory only while it is on.</td></tr><tr><td><code>recordings need macOS 15</code></td><td>Recording and editing recordings need macOS 15 or later. <code>save_replay</code> needs macOS 27.</td></tr><tr><td><code>pointer: shown cannot change, because this recording has the pointer in its video ...</code></td><td>Only <code>click_highlight</code> and <code>highlight_color</code> work then. Record with <code>pointer: drawn</code> to change the pointer later.</td></tr><tr><td><code>keys needs the noted keys, and this recording has none ...</code></td><td>Keys are noted only for recordings the user makes with Show keystrokes on, never for agent recordings or replays.</td></tr><tr><td><code>zoom 1 enlarges more than 6x; make the area at least ... pixels wide</code></td><td>Make the zoom area larger; half the video's width is 2x.</td></tr></tbody></table></div>
+<ul><li><strong>The tools don't show up in the client.</strong> Start a new session, or quit and reopen Claude Desktop, after connecting. In Settings &gt; AI Agents, <strong>Update</strong> appears when a config points to an older copy of Sightline.</li><li><strong><code>record_screen</code> stops early.</strong> It records at most 60 seconds per call. For longer screencasts, record from Sightline's menu and pass the file on with <code>last_recording</code>.</li><li><strong>An old path is gone.</strong> Agent captures move to the Trash after 7 days by default. Capture again rather than reuse an old path.</li><li><strong>No clicks in <code>inspect_recording</code>.</strong> The pointer track exists for recordings made with Sightline 1.7 or later, not for replays or files from elsewhere, and agent recordings lose it with the clean-up.</li><li><strong>A <code>.mov</code> or <code>.gif</code> can't be edited.</strong> Keep MP4 while more edits follow and export at the end.</li></ul></section>
 <section><h2 id="privacy"><a class="anchor" href="#privacy" aria-hidden="true">#</a>Privacy</h2>
-
-<ul>
-<li>The MCP server runs on your Mac and talks to Sightline over a local socket. Sightline sends nothing to the developer or anyone else, and has no analytics.</li>
-<li>Captures stay in your screenshots folder. What happens to an image after an agent receives it is up to that agent and its provider.</li>
-<li>Text recognition, subject detection and design comparison run on the Mac.</li>
-<li>Read the full <a href="/privacy.html">privacy notice</a>.</li>
-</ul>
-</section>
+<ul><li>The MCP server runs on your Mac and talks to Sightline over a local socket that only Sightline's own signed CLI may use. Sightline sends nothing to the developer or anyone else and has no analytics.</li><li>Text recognition, subject detection, design comparison and credential checks run on the Mac.</li><li>Captures stay in your save folder. What happens to an image after an agent receives it is up to that agent and its provider.</li><li>More in <a href="/docs/privacy/">Permissions and privacy</a> and the <a href="/privacy.html">privacy notice</a>.</li></ul></section>
       </article>
     </div>
   </main>
@@ -1001,7 +1464,7 @@ sightline-cli help</code></pre><button type="button" class="copy" aria-label="Co
   <footer class="wrap footer">
     <span>© 2026 Sightline</span>
     <nav>
-      <a href="/docs/mcp/">Docs</a>
+      <a href="/docs/">Docs</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="/imprint.html">Imprint</a>
@@ -1019,7 +1482,7 @@ document.querySelectorAll('.code .copy').forEach(function (button) {
   });
 });
 (function () {
-  var links = Array.prototype.slice.call(document.querySelectorAll('.toc > ol > li > a'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.docs-side .toc > ol > li > a'));
   if (!('IntersectionObserver' in window) || !links.length) return;
   var byId = {};
   links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });

@@ -13,7 +13,35 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/"/>
   </url>
   <url>
+    <loc>https://sightlinemac.com/docs/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
     <loc>https://sightlinemac.com/docs/mcp/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/docs/cli/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/docs/recordings/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/docs/keyboard/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/docs/automation/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/docs/files/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/docs/privacy/</loc>
     <lastmod>2026-10-24</lastmod>
   </url>
 </urlset>
