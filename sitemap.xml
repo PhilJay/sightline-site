@@ -12,4 +12,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/"/>
   </url>
+  <url>
+    <loc>https://sightlinemac.com/docs/mcp/</loc>
+    <lastmod>2026-10-24</lastmod>
+  </url>
 </urlset>

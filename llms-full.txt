@@ -10,6 +10,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - [FAQ](https://sightlinemac.com/#faq): common questions about AI agents, screenshots, recordings and privacy
 - [Short version](https://sightlinemac.com/llms.txt)
 - [Mac App Store](https://apps.apple.com/app/sightline/id6812521593): download Sightline
+- [MCP server and CLI docs](https://sightlinemac.com/docs/mcp/): connect Claude Code, Claude Desktop, Codex or Cursor, the CLI, every tool with its parameters and examples, and troubleshooting
 - [MCP setup for AI agents](https://github.com/PhilJay/sightline-mcp): connect Claude Code, Codex and other MCP clients, with every tool and its options
 - [Privacy policy](https://sightlinemac.com/privacy.html)
 
@@ -46,7 +47,7 @@ Screenshots:
 - `capture_screen` (take a screenshot of the screen): `display`, `annotations`, `format` (png, jpeg, webp), `name`, `include_image`.
 - `capture_area` (take a screenshot of an area): `area` {x, y, width, height} in points, plus the same options.
 - `capture_window` (take a screenshot of a window): `window` by app name, title or window id, plus the same options.
-- `capture_scrolling` (take a scrolling screenshot): `area`, `window` or `region`; stitches the frames into one tall image.
+- `capture_scrolling` (take a scrolling screenshot): `area`, `window` or `region`; stitches the frames into one tall image. The App Store build can't scroll windows for an agent and returns an error; take a scrolling screenshot by hand instead.
 - `list_windows` (list your open windows) and `list_displays` (list your displays).
 - `capture_text` (read text on your screen): on-device OCR of a window, area or display, also QR codes and barcodes.
 - `find_text` (find text on your screen): pixel boxes for `text` in a window, area, display, a saved image or an open `editor`.

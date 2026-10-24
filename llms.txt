@@ -10,6 +10,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - [FAQ](https://sightlinemac.com/#faq): common questions about AI agents, screenshots, recordings and privacy
 - [Full description for AI assistants](https://sightlinemac.com/llms-full.txt): every feature, every MCP tool and the FAQ answers in plain text
 - [Mac App Store](https://apps.apple.com/app/sightline/id6812521593): download Sightline
+- [MCP server and CLI docs](https://sightlinemac.com/docs/mcp/): connect Claude Code, Claude Desktop, Codex or Cursor, the CLI, every tool with its parameters and examples, and troubleshooting
 - [MCP setup for AI agents](https://github.com/PhilJay/sightline-mcp): connect Claude Code, Codex and other MCP clients, with every tool and its options
 - [Privacy policy](https://sightlinemac.com/privacy.html)
 
@@ -41,7 +42,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 ### MCP tools
 
-- `capture_screen`, `capture_area`, `capture_window`, `capture_scrolling`: take screenshots of a display, an area, a window or a whole scrolling page.
+- `capture_screen`, `capture_area`, `capture_window`: take screenshots of a display, an area or a window. (`capture_scrolling` is listed but can't scroll for an agent in the App Store build; scrolling screenshots are taken by hand.)
 - `list_windows`, `list_displays`: find what can be captured.
 - `list_editors`: see the editor windows the user has open, front window first, with an image of the front screenshot.
 - `capture_text`, `find_text`: read the text on screen (OCR) or find where a word is, also in the screenshot open in an editor.
