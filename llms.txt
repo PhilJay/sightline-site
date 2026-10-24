@@ -2,12 +2,13 @@
 
 > Sightline is a screenshot app, screen recorder and screencast editor for Mac, with a built in MCP server and CLI so AI agents like Claude Code, Claude Desktop and Codex can take screenshots, record the screen and annotate on your Mac. Capture anything from the menu bar, polish it in an image and video editor, and keep everything on the Mac, with no account.
 
-Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and adds a screenshot editor, scrolling screenshots, text recognition (OCR), pins, a history, screen recording with sound and voice, a video editor for screencasts and an MCP integration for AI coding agents. It is sold in the Mac App Store and available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch and Brazilian Portuguese.
+Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and adds a screenshot editor, scrolling screenshots, text recognition (OCR), pins, a history, screen recording with sound, voice and keystrokes, a video editor for screencasts and an MCP integration for AI coding agents. It is sold in the Mac App Store, needs macOS 14 or later, and is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch and Brazilian Portuguese. The current version is 1.8.
 
 ## Links
 
 - [Website](https://sightlinemac.com/): features, videos and FAQ
 - [FAQ](https://sightlinemac.com/#faq): common questions about AI agents, screenshots, recordings and privacy
+- [Full description for AI assistants](https://sightlinemac.com/llms-full.txt): every feature, every MCP tool and the FAQ answers in plain text
 - [Mac App Store](https://apps.apple.com/app/sightline/id6812521593): download Sightline
 - [MCP setup for AI agents](https://github.com/PhilJay/sightline-mcp): connect Claude Code, Codex and other MCP clients, with every tool and its options
 - [Privacy policy](https://sightlinemac.com/privacy.html)
@@ -16,8 +17,8 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 - Area, window, full screen and scrolling screenshots with the familiar macOS shortcuts, a magnifier, a precise crosshair (a setting hides it), a timer and a floating thumbnail. Drag the thumbnail into any app, which also saves the capture to the screenshots folder, or right-click it to convert it to another format (PNG, JPEG or WebP; MP4, MOV or GIF for recordings). Scrolling capture shows a live preview of the stitched page. Press F while selecting an area to freeze the screen, so open menus, tooltips and hover states stay in the screenshot; a setting freezes every area selection.
 - History of every capture, searchable by the text inside screenshots (read on the Mac into a private index, the files stay untouched), with a snippet of the match, favorites and filters for screenshots, recordings and favorites. Press Space for Quick Look, open a capture in Preview or another app, copy it with the Copy button on hover, or move it to the Trash.
-- Screenshot editor to annotate screenshots: arrows, lines, shapes, text in five fonts with an optional background box, highlights, step numbers, magnify, pen, blur and pixelate, each on a single key. Crop, rotate, flip and resize a screenshot, and export it as PNG, JPEG or WebP.
-- Beautify: put a screenshot on a background with padding, rounded corners and a shadow; save looks as presets or let Apple Intelligence suggest some.
+- Screenshot editor to annotate screenshots, with a bright stage, a white tool bar with the chosen tool's options beside it and round buttons at the top: arrows, lines, shapes, text in five fonts with an optional background box, highlights, step numbers, magnify, pen, blur and pixelate, each on a single key. Crop, rotate, flip and resize a screenshot, and export it as PNG, JPEG or WebP.
+- Style: put a screenshot on a background with padding, rounded corners and a shadow. The built-in looks are None, Soft, Sunset, Night, Paper and Sightline, each previewed with your own screenshot; save looks as presets, which come first, or let Apple Intelligence suggest some.
 - Capture Text reads the text on screen (OCR) and copies it. A color picker copies any color on screen.
 - Remove Background, pins that float above other windows, and detection of passwords and keys before you share.
 - Show Differences: pin a design or an earlier capture over the running app and Sightline numbers every spot that differs, with a hint whether it moved, is missing or only looks different. Tracing lets clicks reach the app below while the marks follow.
@@ -25,14 +26,16 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 ## Screen recording and screencasts
 
 - Screen recorder for Mac: record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown. The recording controls sit above the recorded area or window.
+- Show keystrokes: with Settings > Recording > Show keystrokes set to Shortcuts only or All keys (needs Input Monitoring), the keys you press appear in the video as small labels. The Keys row of the recording editor sets each part to Words, Letter by Letter, Shortcuts Only or Hidden, and the Keys button sets position, size and a dark or light look. Keys typed into password fields never show.
 - Replay keeps the last 15 seconds of the screen, so you can save what just happened.
-- Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, click highlights and a larger pointer, marks with their own timing, and blurs that follow moving content.
+- Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, click highlights and a larger pointer, keystrokes, marks with their own timing, and blurs that follow moving content. Marks and zooms are named on their bars, such as "2×" or the text of a label, and a right click on a clip, the sound, a zoom, a mark or the keys splits it at the playhead.
 - Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality, or as a looping GIF without sound, at the width and frame rate you choose, 640 px at 10 fps by default.
 - Saved screenshots and recordings stay editable when opened again, and Sightline asks before quitting while an editor has unsaved changes.
 
 ## MCP integration for AI agents
 
 - Sightline has a built in MCP server. AI agents use it to capture the screen, read text, find earlier captures, annotate, record and edit screencasts, and check their own UI work against a design.
+- Agents can work live in the editor the user has open: they list the open editors, and their marks, cuts, zooms and looks appear in that window, animated and with the agent's name, as one undo step per request.
 - Connect: in Sightline, open Settings > AI Agents, turn on agent access and click Connect for Claude Code, Claude Desktop or Codex. Any other MCP client works by running `/Applications/Sightline.app/Contents/MacOS/sightline-cli mcp` as a stdio server. Each agent asks for permission the first time.
 - Command line (CLI): `sightline-cli tools` lists the tools; `sightline-cli <tool> --json '{...}'` calls one and prints JSON.
 
@@ -40,19 +43,26 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 - `capture_screen`, `capture_area`, `capture_window`, `capture_scrolling`: take screenshots of a display, an area, a window or a whole scrolling page.
 - `list_windows`, `list_displays`: find what can be captured.
-- `capture_text`, `find_text`: read the text on screen (OCR) or find where a word is.
+- `list_editors`: see the editor windows the user has open, front window first, with an image of the front screenshot.
+- `capture_text`, `find_text`: read the text on screen (OCR) or find where a word is, also in the screenshot open in an editor.
 - `pick_color`: read the color at a point.
-- `annotate`: draw arrows, boxes, text, highlights, step numbers and blurs on a screenshot or recording; crop, rotate, flip, resize and export; cut, speed up and zoom recordings, also on every click, and export them as MP4, MOV or GIF.
-- `beautify`, `list_looks`, `save_look`: put a screenshot on a background, list or save looks.
+- `annotate`: draw arrows, boxes, text, highlights, step numbers and blurs on a screenshot or recording, also in an open editor; crop, rotate, flip, resize and export; cut, speed up and zoom recordings, also on every click, set how the pressed keys show, and export them as MP4, MOV or GIF.
+- `beautify`, `list_looks`, `save_look`: set the look of the editor's Style panel, list or save looks.
 - `open_in_editor`, `copy_to_clipboard`: hand the result to the user.
-- `record_screen`, `last_recording`, `inspect_recording`, `save_replay`: record the screen, find and inspect recordings, save the last seconds.
-- `last_screenshot`: the newest screenshot.
+- `record_screen`, `last_recording`, `inspect_recording`, `save_replay`: record the screen at its original size, 1080p or 720p, find and inspect recordings with their clicks and keys, save the last seconds.
+- `last_screenshot`: the agent's newest screenshot.
 - `search_captures`: search the user's screenshots and recordings by file name and by the text inside screenshots, like History, with a snippet of the match and favorites.
 - `compare_with_design`: compare the screen with a design image and list what differs.
 
+## Pricing
+
+- Free download. Area and full screen capture, copy, save and pins are free.
+- Sightline Pro adds the editor, window and scrolling capture, Capture Text, AI agents, Focus, Show Differences, Remove Background and the full history: 7 days free, then 3.99 USD a month, 24.99 USD a year or 29.99 USD once (or the same tier in other App Store countries).
+
 ## Privacy
 
-- No account, no analytics and nothing sent to the developer. Screenshots, recordings and recognized text stay on the Mac.
+- No account, no analytics and nothing sent to the developer. Screenshots, recordings, recognized text and noted keystrokes stay on the Mac.
+- Keystrokes are only noted when the user turns on Show keystrokes, only for recordings the user makes, never for agent recordings or Replay.
 - Agent access is off until you turn it on, each agent asks first, and agents only read and write inside the screenshot folder.
 
 ## Optional
