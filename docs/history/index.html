@@ -680,6 +680,9 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   .docs-body .anchor { display: none; }
   .code pre { font-size: 12.5px; }
 }
+.docs-fig { margin: 18px 0 22px; }
+.docs-fig img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.docs-fig figcaption { margin-top: 8px; font-size: 13px; line-height: 1.45; color: var(--text-dim); }
   </style>
   <!-- end styles.css -->
 </head>
@@ -707,7 +710,8 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 <section><h2 id="overview"><a class="anchor" href="#overview" aria-hidden="true">#</a>Overview</h2>
 <p>History is a window with a grid of your captures, newest first. It shows:</p>
 <ul><li>screenshots and recordings in your save folder (PNG, JPEG, WebP, MP4 and MOV), also files you put there yourself,</li><li>captures your AI agents made, from the <strong>Agent</strong> folder inside it,</li><li>screenshots you only copied and never saved, for 7 days.</li></ul>
-<p>Sightline reads the text in every screenshot on your Mac, so you can search for what was on screen, not just for a file name. Your files stay exactly as they are.</p></section>
+<p>Sightline reads the text in every screenshot on your Mac, so you can search for what was on screen, not just for a file name. Your files stay exactly as they are.</p>
+<figure class="docs-fig" style="max-width:520px"><img src="/assets/feature-history-1040.webp" width="1040" height="585" loading="lazy" decoding="async" alt="The History window with the Search captures field, the All, Screenshots, Recordings and Favorites filter and a grid of captures; the pointer is over one card, which shows a Copy button and a star, and two captures are starred"><figcaption>History, with the pointer over a capture.</figcaption></figure></section>
 <section><h2 id="open"><a class="anchor" href="#open" aria-hidden="true">#</a>Opening History</h2>
 <ul><li>Press <kbd>⌃⌥H</kbd> anywhere. Change the shortcut in Settings &gt; Shortcuts.</li><li>Or choose <strong>History...</strong> in Sightline's menu in the menu bar.</li></ul>
 <p>History opens in the middle of the screen with the pointer, above other windows, with the search field ready for typing. It closes when you press <kbd>Esc</kbd>, press <kbd>⌃⌥H</kbd> again, or click somewhere else. Opening a capture in the editor, in another app or in Finder closes it too.</p></section>
@@ -716,6 +720,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 <p>Each time you open History, the search and the filter start fresh on <strong>All</strong>, with the newest capture selected.</p></section>
 <section><h2 id="search"><a class="anchor" href="#search" aria-hidden="true">#</a>Searching by text</h2>
 <p>Type into <strong>Search captures</strong>. History looks in each file name and in the text Sightline read in each screenshot:</p>
+<figure class="docs-fig" style="max-width:640px"><img src="/assets/docs/history-search.webp" width="1280" height="505" loading="lazy" decoding="async" alt="History searching for deploy: four results, each screenshot showing the line its text matched in, with deploy in bold, and a recording found by its name"><figcaption>Searching for deploy shows the line each screenshot matched in.</figcaption></figure>
 <ul><li>Every word you type has to appear, in any order. More words narrow the results.</li><li>Parts of words count: <code>inv</code> finds <code>invoice</code>.</li><li>Upper and lower case and accents don't matter: <code>cafe</code> finds <code>Café</code>.</li><li>When the text matched, the card shows the line it was found in, with your words in bold, instead of the date.</li><li>Recordings are found by their file name only.</li><li>The file name includes its extension, so <code>webp</code> finds your WebP files.</li></ul>
 <h3 id="queries"><a class="anchor" href="#queries" aria-hidden="true">#</a>Searches that work well</h3>
 <div class="table plain"><table><thead><tr><th>Search</th><th>Finds</th></tr></thead><tbody><tr><td><code>error 500</code></td><td>The screenshot of that failed request, wherever the two words appear in it.</td></tr><tr><td><code>invoice total</code></td><td>Invoices and receipts you captured, by the words printed on them.</td></tr><tr><td><code>ssh</code></td><td>A terminal screenshot with an ssh command in it.</td></tr><tr><td><code>Sightline Recording</code></td><td>Your recordings, by the start of their names.</td></tr><tr><td><code>checkout button</code></td><td>With names from what is in a screenshot turned on, also matches names such as <code>Sightline checkout-button-offset.png</code>.</td></tr><tr><td><code>2026-10-24</code></td><td>Captures from one day, by the date in their names.</td></tr></tbody></table></div>
