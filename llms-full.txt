@@ -14,6 +14,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - [Docs: MCP server](https://sightlinemac.com/docs/mcp/): connect Claude Code, Codex or any MCP client. Every tool, its parameters, examples and multi-step workflows
 - [Docs: Command line](https://sightlinemac.com/docs/cli/): call the same tools from the terminal, shell scripts and a Mac build runner, with jq recipes
 - [Docs: Recordings and the video editor](https://sightlinemac.com/docs/recordings/): record with your voice, then cut, speed up, zoom, show clicks and keystrokes, and export MP4, MOV or GIF
+- [Docs: History](https://sightlinemac.com/docs/history/): every capture in one searchable window: find screenshots by the text inside them, star favorites, copy, edit, pin or share
 - [Docs: Keyboard shortcuts](https://sightlinemac.com/docs/keyboard/): every shortcut for capturing, selecting, the editor and the recording editor
 - [Docs: Shortcuts, Siri and Spotlight](https://sightlinemac.com/docs/automation/): the actions Sightline adds to the Shortcuts app, what Siri understands, and finding captures in Spotlight
 - [Docs: Files and editable captures](https://sightlinemac.com/docs/files/): where captures go, formats and names, the Agent folder, clean-up and how saved edits stay editable
