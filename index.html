@@ -58,7 +58,7 @@
       "applicationSubCategory": "Screenshot and screen recording",
       "inLanguage": ["en", "de", "es", "fr", "it", "ja", "ko", "nl", "pt-BR"],
       "applicationCategory": "UtilitiesApplication",
-      "featureList": ["Area, window, full screen and scrolling screenshots from the menu bar", "Screen recording with system sound and your voice from the microphone, with a countdown", "Video editor with a timeline: split, trim and reorder clips, speed from 0.5x to 15x, a sound lane with mute and volume up to 400 %, smooth or instant zooms, zooms on every click that can follow the pointer, click highlights, keystrokes shown as words, letter by letter or shortcuts only, split at the playhead from a right click, and export at 1080p or 720p as MP4 or MOV, or as a looping GIF", "Image editor with arrows, shapes, text in five fonts, highlights, step numbers, magnify, blur and pixelate, plus rotate, flip, resize and export as PNG, JPEG or WebP", "Show Differences: pin a design over the running app and see every spot that differs, with Tracing to click through", "Blurs that follow moving content in recordings", "Style: backgrounds, padding, rounded corners and shadows, with the looks None, Soft, Sunset, Night, Paper and Sightline, your own presets and Apple Intelligence suggestions", "Saved screenshots and recordings stay editable", "Text recognition (OCR), Remove Background, pins and a capture history you can search by the text inside screenshots, with favorites", "Freeze the screen while selecting an area, so open menus and tooltips stay in the screenshot", "Built in MCP server so AI agents such as Claude Code and Codex can capture, annotate and edit, also live in the editor you have open, with one undo step per request"],
+      "featureList": ["Area, window, full screen and scrolling screenshots from the menu bar", "Screen recording with system sound and your voice from the microphone, with a countdown", "Video editor with a timeline: split, trim and reorder clips, speed from 0.5x to 15x, a sound lane with mute and volume up to 400 %, smooth or instant zooms, zooms on every click that can follow the pointer, crop to a free shape or 16:9, 4:3, 1:1 or 9:16, click highlights, a pointer that glides smoothly and still lands on every click, keystrokes shown as words, letter by letter or shortcuts only, split at the playhead from a right click, and export at 1080p or 720p as MP4 or MOV, or as a looping GIF", "Image editor with arrows, shapes, text in five fonts, highlights, step numbers, magnify, blur and pixelate, plus rotate, flip, resize and export as PNG, JPEG or WebP", "Show Differences: pin a design over the running app and see every spot that differs, with Tracing to click through", "Blurs that follow moving content in recordings", "Style: backgrounds, padding, rounded corners and shadows, with the looks None, Soft, Sunset, Night, Paper and Sightline, your own presets and Apple Intelligence suggestions", "Saved screenshots and recordings stay editable", "Text recognition (OCR), Remove Background, pins and a capture history you can search by the text inside screenshots, with favorites", "Freeze the screen while selecting an area, so open menus and tooltips stay in the screenshot", "Built in MCP server so AI agents such as Claude Code and Codex can capture, annotate and edit, also live in the editor you have open, with one undo step per request"],
       "downloadUrl": "https://apps.apple.com/app/sightline/id6812521593",
       "installUrl": "https://apps.apple.com/app/sightline/id6812521593",
       "offers": [
@@ -227,7 +227,7 @@
           "name": "Can I edit screen recordings on a Mac?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, highlight clicks, show the keys you pressed, and add arrows, text and blurs that follow what they cover. Right-click a clip, the sound, a zoom, a mark or the keys to split it at the playhead. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV, or as a GIF."
+            "text": "Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, crop to a shape like 16:9, 1:1 or 9:16, highlight clicks, show the keys you pressed, and add arrows, text and blurs that follow what they cover. Right-click a clip, the sound, a zoom, a mark or the keys to split it at the playhead. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV, or as a GIF."
           }
         },
         {
@@ -256,10 +256,10 @@
         },
         {
           "@type": "Question",
-          "name": "Can I make the pointer larger or hide it after recording?",
+          "name": "Can I make the pointer larger, smoother or hide it after recording?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Before you record, set Pointer to Editable in the editor in Settings > Recording. Sightline then leaves the system pointer out of the video and the editor draws it at 1x, 1.5x or 2x, and can hide it while it isn't moving. With In the video, macOS records the pointer into the picture as it is, and only click highlights can be added."
+            "text": "Yes. Before you record, set Pointer to Editable in the editor in Settings > Recording. Sightline then leaves the system pointer out of the video and the editor draws it at 1x, 1.5x or 2x, and can hide it while it isn't moving. Smooth movement, on by default in the Pointer options, lets the pointer glide instead of jitter and still land exactly on every click. With In the video, macOS records the pointer into the picture as it is, and only click highlights can be added."
           }
         },
         {
@@ -300,6 +300,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Draw arrows, shapes, text, highlights, a spotlight, a magnifier, blur and step numbers, each on a single key. Crop, rotate, flip and resize, remove the background, paste and arrange several captures, and pin a capture over your other windows. Recordings get a timeline with clips, a sound row, zooms on clicks, click highlights, the keys you pressed and a row for every mark, and a right click splits any of them at the playhead. Every mark stays editable, also after you save and open the file again, including the ones your AI agent drew."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does a file open without the editing tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A screenshot or recording you open from Finder or with Open File that Sightline hasn't edited opens in view mode: just the picture or the video, with Share, Copy and Edit, and a recording gets a play bar that fades while it plays. Click Edit, press ⌘E or choose View > Edit Mode for the tools, and press ⌘E again to just look. Opening a file that is already open brings its window to the front."
           }
         },
         {
@@ -1088,7 +1096,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
         <div class="section-head reveal">
           <p class="eyebrow">Recordings</p>
           <h2>Record a screencast. Cut it into shape.</h2>
-          <p class="section-intro">Record with your voice, then edit on a real timeline: clips, sound, zooms, clicks and keystrokes. Export as MP4, MOV or GIF.</p>
+          <p class="section-intro">Record with your voice, then edit on a real timeline: clips, sound, zooms, crop, clicks and keystrokes. Export as MP4, MOV or GIF.</p>
         </div>
         <div class="centerpiece reveal">
           <div class="frame">
@@ -1348,6 +1356,10 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p>Draw arrows, shapes, text, highlights, a spotlight, a magnifier, blur and step numbers, each on a single key. Crop, rotate, flip and resize, remove the background, paste and arrange several captures, and pin a capture over your other windows. Recordings get a timeline with clips, a sound row, zooms on clicks, click highlights, the keys you pressed and a row for every mark, and a right click splits any of them at the playhead. Every mark stays editable, also after you save and open the file again, including the ones your AI agent drew.</p>
           </details>
           <details class="faq-item">
+            <summary>Why does a file open without the editing tools?</summary>
+            <p>A screenshot or recording you open from Finder or with Open File that Sightline hasn&#x27;t edited opens in view mode: just the picture or the video, with Share, Copy and Edit, and a recording gets a play bar that fades while it plays. Click Edit, press ⌘E or choose View &gt; Edit Mode for the tools, and press ⌘E again to just look. Opening a file that is already open brings its window to the front.</p>
+          </details>
+          <details class="faq-item">
             <summary>How do I compare my app with a design?</summary>
             <p>Pin the design, a mockup or an earlier screenshot over the running app and choose Show Differences in the pin&#x27;s bar or right-click menu. Sightline captures what is below the pin, lines it up and numbers every spot that differs, with a list that says whether it moved, is missing or only looks different. Turn on Tracing to click through to the app while the marks follow. Your AI agent can run the same comparison over MCP.</p>
           </details>
@@ -1366,7 +1378,7 @@ kbd { background: rgba(16, 38, 43, 0.05); }
           </details>
           <details class="faq-item">
             <summary>Can I edit screen recordings on a Mac?</summary>
-            <p>Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, highlight clicks, show the keys you pressed, and add arrows, text and blurs that follow what they cover. Right-click a clip, the sound, a zoom, a mark or the keys to split it at the playhead. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV, or as a GIF.</p>
+            <p>Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, crop to a shape like 16:9, 1:1 or 9:16, highlight clicks, show the keys you pressed, and add arrows, text and blurs that follow what they cover. Right-click a clip, the sound, a zoom, a mark or the keys to split it at the playhead. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV, or as a GIF.</p>
           </details>
           <details class="faq-item">
             <summary>Can I export a screen recording as a GIF?</summary>
@@ -1381,8 +1393,8 @@ kbd { background: rgba(16, 38, 43, 0.05); }
             <p>Sightline notes where the pointer moves and clicks while it records, with no extra permission. In the video editor, turn on Click highlights in the Pointer section and pick a ripple or a ring in the color you like. Zoom on Clicks adds a smooth zoom for every click, and a zoom can follow the pointer. The pointer track is only used for editing and stays on your Mac.</p>
           </details>
           <details class="faq-item">
-            <summary>Can I make the pointer larger or hide it after recording?</summary>
-            <p>Yes. Before you record, set Pointer to Editable in the editor in Settings &gt; Recording. Sightline then leaves the system pointer out of the video and the editor draws it at 1x, 1.5x or 2x, and can hide it while it isn&#x27;t moving. With In the video, macOS records the pointer into the picture as it is, and only click highlights can be added.</p>
+            <summary>Can I make the pointer larger, smoother or hide it after recording?</summary>
+            <p>Yes. Before you record, set Pointer to Editable in the editor in Settings &gt; Recording. Sightline then leaves the system pointer out of the video and the editor draws it at 1x, 1.5x or 2x, and can hide it while it isn&#x27;t moving. Smooth movement, on by default in the Pointer options, lets the pointer glide instead of jitter and still land exactly on every click. With In the video, macOS records the pointer into the picture as it is, and only click highlights can be added.</p>
           </details>
           <h3 class="faq-group">Privacy, Apple Intelligence and requirements</h3>
           <details class="faq-item">
