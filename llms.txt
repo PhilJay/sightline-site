@@ -2,7 +2,7 @@
 
 > Sightline is a screenshot app, screen recorder and screencast editor for Mac, with a built in MCP server and CLI so AI agents like Claude Code, Claude Desktop and Codex can take screenshots, record the screen and annotate on your Mac. Capture anything from the menu bar, polish it in an image and video editor, and keep everything on the Mac, with no account.
 
-Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and adds a screenshot editor, scrolling screenshots, text recognition (OCR), pins, a history, screen recording with sound, voice and keystrokes, a video editor for screencasts and an MCP integration for AI coding agents. It is sold in the Mac App Store, needs macOS 14 or later, and is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch and Brazilian Portuguese. The current version is 1.8.
+Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and adds a screenshot editor, scrolling screenshots, text recognition (OCR), pins, a history, screen recording with sound, voice and keystrokes, a video editor for screencasts and an MCP integration for AI coding agents. It is sold in the Mac App Store, needs macOS 14 or later, and is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch and Brazilian Portuguese. The current version is 1.9.
 
 ## Links
 
@@ -13,7 +13,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - [Docs overview](https://sightlinemac.com/docs/): every docs page with a short summary, and how to get started
 - [Docs: MCP server](https://sightlinemac.com/docs/mcp/): connect Claude Code, Codex or any MCP client. Every tool, its parameters, examples and multi-step workflows
 - [Docs: Command line](https://sightlinemac.com/docs/cli/): call the same tools from the terminal, shell scripts and a Mac build runner, with jq recipes
-- [Docs: Recordings and the video editor](https://sightlinemac.com/docs/recordings/): record with your voice, then cut, speed up, zoom, show clicks and keystrokes, and export MP4, MOV or GIF
+- [Docs: Recordings and the video editor](https://sightlinemac.com/docs/recordings/): record with your voice, then cut, speed up, zoom, crop, show clicks and keystrokes, and export MP4, MOV or GIF
 - [Docs: History](https://sightlinemac.com/docs/history/): every capture in one searchable window: find screenshots by the text inside them, star favorites, copy, edit, pin or share
 - [Docs: Keyboard shortcuts](https://sightlinemac.com/docs/keyboard/): every shortcut for capturing, selecting, the editor and the recording editor
 - [Docs: Shortcuts, Siri and Spotlight](https://sightlinemac.com/docs/automation/): the actions Sightline adds to the Shortcuts app, what Siri understands, and finding captures in Spotlight
@@ -26,7 +26,8 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 - Area, window, full screen and scrolling screenshots with the familiar macOS shortcuts, a magnifier, a precise crosshair (a setting hides it), a timer and a floating thumbnail. Drag the thumbnail into any app, which also saves the capture to the screenshots folder, or right-click it to convert it to another format (PNG, JPEG or WebP; MP4, MOV or GIF for recordings). Scrolling capture shows a live preview of the stitched page. Press F while selecting an area to freeze the screen, so open menus, tooltips and hover states stay in the screenshot; a setting freezes every area selection.
 - History of every capture, searchable by the text inside screenshots (read on the Mac into a private index, the files stay untouched), with a snippet of the match, favorites and filters for screenshots, recordings and favorites. Press Space for Quick Look, open a capture in Preview or another app, copy it with the Copy button on hover, or move it to the Trash.
-- Screenshot editor to annotate screenshots, with a bright stage, a white tool bar with the chosen tool's options beside it and round buttons at the top: arrows, lines, shapes, text in five fonts with an optional background box, highlights, step numbers, magnify, pen, blur and pixelate, each on a single key. Crop, rotate, flip and resize a screenshot, and export it as PNG, JPEG or WebP.
+- Screenshot editor to annotate screenshots, with a bright stage, a white tool bar with the chosen tool's options beside it and round buttons at the top: arrows, lines, shapes, text in five fonts with an optional background box, highlights, step numbers, magnify, pen, blur and pixelate, each on a single key. Crop, rotate, flip and resize a screenshot, and export it as PNG, JPEG or WebP. In a narrow window the tools and the timeline's buttons shrink to icons or wrap onto two rows.
+- View mode: a screenshot or recording opened from Finder or with Open File that Sightline hasn't edited shows just the picture or the video, with Share, Copy and Edit; a recording gets a play bar that fades while it plays. Edit, ⌘E or View > Edit Mode switches to the tools and back. Opening a file that is already open brings its window to the front.
 - Style: put a screenshot on a background with padding, rounded corners and a shadow. The built-in looks are None, Soft, Sunset, Night, Paper and Sightline, each previewed with your own screenshot; save looks as presets, which come first, or let Apple Intelligence suggest some.
 - Capture Text reads the text on screen (OCR) and copies it. A color picker copies any color on screen.
 - Remove Background, pins that float above other windows, and detection of passwords and keys before you share.
@@ -37,7 +38,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - Screen recorder for Mac: record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown. The recording controls sit above the recorded area or window.
 - Show keystrokes: with Settings > Recording > Show keystrokes set to Shortcuts only or All keys (needs Input Monitoring), the keys you press appear in the video as small labels. The Keys row of the recording editor sets each part to Words, Letter by Letter, Shortcuts Only or Hidden, and the Keys button sets position, size and a dark or light look. Keys typed into password fields never show.
 - Replay keeps the last 15 seconds of the screen, so you can save what just happened.
-- Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, click highlights and a larger pointer, keystrokes, marks with their own timing, and blurs that follow moving content. Marks and zooms are named on their bars, such as "2×" or the text of a label, and a right click on a clip, the sound, a zoom, a mark or the keys splits it at the playhead.
+- Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, a Crop tool with Free, 16:9, 4:3, 1:1 and 9:16 shapes, click highlights, a larger pointer that glides smoothly and still lands exactly on every click (Smooth movement, on by default, for recordings with the pointer set to Editable in the editor), keystrokes, marks with their own timing, and blurs that follow moving content. Marks and zooms are named on their bars, such as "2×" or the text of a label, and a right click on a clip, the sound, a zoom, a mark or the keys splits it at the playhead.
 - Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality, or as a looping GIF without sound, at the width and frame rate you choose, 640 px at 10 fps by default.
 - Saved screenshots and recordings stay editable when opened again, and Sightline asks before quitting while an editor has unsaved changes.
 
@@ -52,12 +53,12 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 - `capture_screen`, `capture_area`, `capture_window`: take screenshots of a display, an area or a window. (`capture_scrolling` is listed but can't scroll for an agent in the App Store build; scrolling screenshots are taken by hand.)
 - `list_windows`, `list_displays`: find what can be captured.
-- `list_editors`: see the editor windows the user has open, front window first, with an image of the front screenshot.
+- `list_editors`: see the editor windows the user has open, front window first, whether each is in view mode or editing, with an image of the front screenshot.
 - `capture_text`, `find_text`: read the text on screen (OCR) or find where a word is, also in the screenshot open in an editor.
 - `pick_color`: read the color at a point.
-- `annotate`: draw arrows, boxes, text, highlights, step numbers and blurs on a screenshot or recording, also in an open editor; crop, rotate, flip, resize and export; cut, speed up and zoom recordings, also on every click, set how the pressed keys show, and export them as MP4, MOV or GIF.
+- `annotate`: draw arrows, boxes, text, highlights, step numbers and blurs on a screenshot or recording, also in an open editor; crop, rotate, flip, resize and export; cut, speed up, crop and zoom recordings, also on every click, smooth the pointer, set how the pressed keys show, and export them as MP4, MOV or GIF.
 - `beautify`, `list_looks`, `save_look`: set the look of the editor's Style panel, list or save looks.
-- `open_in_editor`, `copy_to_clipboard`: hand the result to the user.
+- `open_in_editor`, `copy_to_clipboard`: hand the result to the user, in an editor in edit or view mode or on the clipboard.
 - `record_screen`, `last_recording`, `inspect_recording`, `save_replay`: record the screen at its original size, 1080p or 720p, find and inspect recordings with their clicks and keys, save the last seconds.
 - `last_screenshot`: the agent's newest screenshot.
 - `search_captures`: search the user's screenshots and recordings by file name and by the text inside screenshots, like History, with a snippet of the match and favorites.
