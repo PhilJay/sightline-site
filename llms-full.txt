@@ -173,6 +173,10 @@ Yes. Before you record, set Pointer to Editable in the editor in Settings > Reco
 
 Choose Scrolling Capture in Sightline's menu, pick the area or window, and scroll yourself or let Sightline scroll for you. It stitches the frames into one tall image, for long web pages, chats or Terminal output.
 
+### Why does ⌘⇧6 ask Siri instead of starting scrolling capture?
+
+On macOS 27 with Siri AI turned on, ⌘⇧6 is also the macOS shortcut for Ask Siri about selected area, and macOS gets it first. Turn it off in System Settings > Keyboard > Keyboard Shortcuts > Screenshots, or give scrolling capture another shortcut in Sightline's Settings > Shortcuts.
+
 ### How do I screenshot an open menu on a Mac?
 
 Press F while you select an area and Sightline freezes the screen, so the open menu, a tooltip or a hover state stays exactly as it was while you drag. Press F again to unfreeze. To freeze every area selection from the start, turn on Freeze the screen while selecting an area in Settings > Capture.
