@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Permissions and privacy · Sightline docs</title>
-  <meta name="description" content="Which macOS permissions Sightline asks for and why: Screen Recording, Microphone, Input Monitoring, Accessibility, and how captures, text recognition and AI agents stay on your Mac.">
+  <meta name="description" content="Which macOS permissions Sightline asks for and why: Screen Recording, Microphone, Camera, Input Monitoring, Accessibility, and how captures, text recognition and AI agents stay on your Mac.">
   <link rel="canonical" href="https://sightlinemac.com/docs/privacy/">
   <link rel="icon" type="image/png" href="/assets/favicon.png?v=10">
   <link rel="apple-touch-icon" href="/assets/icon.png?v=10">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Sightline">
   <meta property="og:title" content="Sightline docs: Permissions and privacy">
-  <meta property="og:description" content="Which macOS permissions Sightline asks for and why: Screen Recording, Microphone, Input Monitoring, Accessibility, and how captures, text recognition and AI agents stay on your Mac.">
+  <meta property="og:description" content="Which macOS permissions Sightline asks for and why: Screen Recording, Microphone, Camera, Input Monitoring, Accessibility, and how captures, text recognition and AI agents stay on your Mac.">
   <meta property="og:url" content="https://sightlinemac.com/docs/privacy/">
   <meta property="og:image" content="https://sightlinemac.com/assets/og-image.png?v=11">
   <script type="application/ld+json">
@@ -22,7 +22,7 @@
   "headline": "Sightline: Permissions and privacy",
   "url": "https://sightlinemac.com/docs/privacy/",
   "inLanguage": "en",
-  "dateModified": "2026-10-24",
+  "dateModified": "2026-11-07",
   "about": {
     "@type": "SoftwareApplication",
     "name": "Sightline",
@@ -708,10 +708,10 @@ kbd { background: rgba(16, 38, 43, 0.05); }
       <nav class="docs-side" aria-label="Docs"><p>Docs</p><ol><li><a href="/docs/">Overview</a></li><li><a href="/docs/mcp/">MCP server</a></li><li><a href="/docs/cli/">Command line</a></li><li><a href="/docs/recordings/">Recordings and the video editor</a></li><li><a href="/docs/history/">History</a></li><li><a href="/docs/keyboard/">Keyboard shortcuts</a></li><li><a href="/docs/automation/">Shortcuts, Siri and Spotlight</a></li><li><a href="/docs/files/">Files and editable captures</a></li><li><a href="/docs/privacy/" aria-current="page">Permissions and privacy</a><div class="toc"><ol><li><a href="#permissions">Permissions</a></li><li><a href="#on-device">What stays on your Mac</a></li><li><a href="#agents">AI agents</a></li></ol></div></li></ol></nav>
       <article class="docs-body">
 <section><h2 id="permissions"><a class="anchor" href="#permissions" aria-hidden="true">#</a>Permissions</h2>
-<div class="table plain"><table><thead><tr><th>Permission</th><th>Used for</th></tr></thead><tbody><tr><td>Screen Recording</td><td>Every capture and recording. macOS asks you to reopen Sightline after you allow it.</td></tr><tr><td>Microphone</td><td>Only with <strong>Record microphone</strong> on.</td></tr><tr><td>Input Monitoring</td><td>Only with <strong>Show keystrokes</strong> set to Shortcuts only or All keys. Sightline listens to key presses only while you record, and macOS may ask you to reopen it.</td></tr><tr><td>Accessibility</td><td>Automatic scrolling in scrolling capture, in versions outside the Mac App Store. In the App Store version you scroll yourself.</td></tr><tr><td>Login Items</td><td>Only for <strong>Launch at login</strong>.</td></tr></tbody></table></div>
+<div class="table plain"><table><thead><tr><th>Permission</th><th>Used for</th></tr></thead><tbody><tr><td>Screen Recording</td><td>Every capture and recording. macOS asks you to reopen Sightline after you allow it.</td></tr><tr><td>Microphone</td><td>Only with <strong>Record microphone</strong> on.</td></tr><tr><td>Camera</td><td>Only when you choose a camera in Settings &gt; Recording. It is off by default.</td></tr><tr><td>Input Monitoring</td><td>Only with <strong>Show keystrokes</strong> set to Shortcuts only or All keys. Sightline listens to key presses only while you record, and macOS may ask you to reopen it.</td></tr><tr><td>Accessibility</td><td>Automatic scrolling in scrolling capture, in versions outside the Mac App Store. In the App Store version you scroll yourself.</td></tr><tr><td>Login Items</td><td>Only for <strong>Launch at login</strong>.</td></tr></tbody></table></div>
 <p>Change them in System Settings &gt; Privacy &amp; Security. Settings &gt; General in Sightline shows the state of Screen Recording and opens the right pane.</p></section>
 <section><h2 id="on-device"><a class="anchor" href="#on-device" aria-hidden="true">#</a>What stays on your Mac</h2>
-<ul><li>Captures and recordings stay in your save folder. Sightline has no account, no cloud and no analytics.</li><li>Text recognition, QR codes, the History search, Remove Background, subject blur and design comparison run on the Mac.</li><li>Names from what is in a screenshot and checks for sensitive content use Apple Intelligence on the Mac. They need the Siri language to match your Mac's language.</li><li>Keys noted for Show keystrokes are stored next to the recording on your Mac and deleted with it. They are never noted for agent recordings or replays.</li></ul></section>
+<ul><li>Captures and recordings stay in your save folder. Sightline has no account, no cloud and no analytics.</li><li>Text recognition, QR codes, the History search, Remove Background, subject blur and design comparison run on the Mac.</li><li>Names from what is in a screenshot and checks for sensitive content use Apple Intelligence on the Mac. They need the Siri language to match your Mac's language.</li><li>Keys noted for Show keystrokes are stored next to the recording on your Mac and deleted with it. They are never noted for agent recordings or replays.</li><li>The camera is recorded into its own file in Sightline's own storage on your Mac and is only added to a video when you save or export it from the editor. Agent recordings and replays never use the microphone or the camera.</li></ul></section>
 <section><h2 id="agents"><a class="anchor" href="#agents" aria-hidden="true">#</a>AI agents</h2>
 <ul><li>Agents can't use Sightline until you turn on <strong>Allow AI agents to use Sightline</strong>, and each agent asks for approval first.</li><li>Agents work through a local socket on your Mac. Sightline sends nothing anywhere; what an agent does with an image it receives is up to that agent and its provider.</li><li>With <strong>Hide flagged credentials from agents</strong> on, text that looks like a password, key or token is blurred in images agents get and left out of text results.</li><li>Details are in <a href="/docs/mcp/#control">MCP server: Approval and safety</a> and the <a href="/privacy.html">privacy notice</a>.</li></ul></section>
       </article>

@@ -13,7 +13,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - [Docs overview](https://sightlinemac.com/docs/): every docs page with a short summary, and how to get started
 - [Docs: MCP server](https://sightlinemac.com/docs/mcp/): connect Claude Code, Codex or any MCP client. Every tool, its parameters, examples and multi-step workflows
 - [Docs: Command line](https://sightlinemac.com/docs/cli/): call the same tools from the terminal, shell scripts and a Mac build runner, with jq recipes
-- [Docs: Recordings and the video editor](https://sightlinemac.com/docs/recordings/): record with your voice, then cut, speed up, zoom, crop, show clicks and keystrokes, and export MP4, MOV or GIF
+- [Docs: Recordings and the video editor](https://sightlinemac.com/docs/recordings/): record with your voice and your camera, then cut, speed up, zoom, crop, show clicks and keystrokes, and export MP4, MOV or GIF
 - [Docs: History](https://sightlinemac.com/docs/history/): every capture in one searchable window: find screenshots by the text inside them, star favorites, copy, edit, pin or share
 - [Docs: Keyboard shortcuts](https://sightlinemac.com/docs/keyboard/): every shortcut for capturing, selecting, the editor and the recording editor
 - [Docs: Shortcuts, Siri and Spotlight](https://sightlinemac.com/docs/automation/): the actions Sightline adds to the Shortcuts app, what Siri understands, and finding captures in Spotlight
@@ -28,7 +28,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - History of every capture, searchable by the text inside screenshots (read on the Mac into a private index, the files stay untouched), with a snippet of the match, favorites and filters for screenshots, recordings and favorites. Press Space for Quick Look, open a capture in Preview or another app, copy it with the Copy button on hover, or move it to the Trash.
 - Screenshot editor to annotate screenshots, with a bright stage, a white tool bar with the chosen tool's options beside it and round buttons at the top: arrows, lines, shapes, text in five fonts with an optional background box, highlights, step numbers, magnify, pen, blur and pixelate, each on a single key. Crop, rotate, flip and resize a screenshot, and export it as PNG, JPEG or WebP. In a narrow window the tools and the timeline's buttons shrink to icons or wrap onto two rows.
 - View mode: a screenshot or recording opened from Finder or with Open File that Sightline hasn't edited shows just the picture or the video, with Share, Copy and Edit; a recording gets a play bar that fades while it plays. Edit, ⌘E or View > Edit Mode switches to the tools and back. Opening a file that is already open brings its window to the front.
-- Several pictures in one window: images opened together from Finder, Open File or History (⌘-click or ⇧-click) share one editor window with a column of thumbnails; the arrow keys switch, ⌘W closes the shown one, and Save All, Copy All and Export All are in the chevron next to Save. Agents open several with open_in_editor paths
+- Several pictures in one window: images opened together from Finder, Open File or History (⌘-click or ⇧-click) share one editor window with a column of thumbnails; the arrow keys switch, ⌘W closes the shown one, and Save All, Copy All and Export All are in the chevron next to Save. Export All asks for the format and quality and can be stopped, Apply to All Pictures in the Style panel gives every picture the same look, and Image > Adjust Size of All Pictures… makes them smaller by a percent or to a width. Drag a thumbnail from the column into another app, or drop pictures on the column or choose File > Add Pictures… to add more. Agents can open, style, resize, copy, export and add to all pictures of a window.
 - Style: put a screenshot on a background with padding, rounded corners and a shadow. The built-in looks are None, Soft, Sunset, Night, Paper and Sightline, each previewed with your own screenshot; save looks as presets, which come first, or let Apple Intelligence suggest some.
 - Capture Text reads the text on screen (OCR) and copies it. A color picker copies any color on screen.
 - Remove Background, pins that float above other windows, and detection of passwords and keys before you share.
@@ -37,9 +37,10 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 ## Screen recording and screencasts
 
 - Screen recorder for Mac: record the screen, a window or an area with system sound and your voice from the microphone, after an optional countdown. The recording controls sit above the recorded area or window.
+- Camera in screen recordings: choose a camera in Settings > Recording (needs Camera permission, off by default) and you appear in a live bubble while you record. Drag it anywhere, also onto a screen you don't record as a mirror, resize it from its edge and switch between a circle and a rounded rectangle. The camera is recorded separately, so the file saved after Stop is the plain screen video, with a camera badge on the thumbnail and in History. In the editor the Camera row splits with ⌘B, hides parts and gives each part its own place, size and shape, gliding between places, with a Shadow option. Crop and zoom never move the camera, and Save or Export in the editor (MP4, MOV, GIF) draw it in. The camera stays on the Mac.
 - Show keystrokes: with Settings > Recording > Show keystrokes set to Shortcuts only or All keys (needs Input Monitoring), the keys you press appear in the video as small labels. The Keys row of the recording editor sets each part to Words, Letter by Letter, Shortcuts Only or Hidden, and the Keys button sets position, size and a dark or light look. Keys typed into password fields never show.
 - Replay keeps the last 15 seconds of the screen, so you can save what just happened.
-- Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, a Crop tool (C) with Free, 16:9, 4:3, 1:1 and 9:16 shapes for the whole recording (crop and zoom do not mix), click highlights, a larger pointer that glides smoothly and still lands exactly on every click (Smooth movement, on by default, for recordings with the pointer set to Editable in the editor), keystrokes, marks with their own timing, and blurs that follow moving content. Marks and zooms are named on their bars, such as "2×" or the text of a label, and a right click on a clip, the sound, a zoom, a mark or the keys splits it at the playhead.
+- Video editor for screencasts with a timeline: split, trim and reorder clips, play parts at 0.5x to 15x, a sound lane to mute or change the volume up to 400 %, smooth or instant zooms, Zoom on Clicks with zooms that can follow the pointer or the content, a Crop tool (C) with Free, 16:9, 4:3, 1:1 and 9:16 shapes for the whole recording (crop and zoom do not mix), click highlights, a larger pointer that glides smoothly and still lands exactly on every click (Smooth movement, on by default, for recordings with the pointer set to Editable in the editor), keystrokes, a camera lane, marks with their own timing, and blurs that follow moving content. Marks and zooms are named on their bars, such as "2×" or the text of a label, and a right click on a clip, the sound, a zoom, a mark or the keys splits it at the playhead.
 - Export recordings at the original size, 1080p or 720p, as MP4 or MOV, in high, medium or small quality, or as a looping GIF without sound, at the width and frame rate you choose, 640 px at 10 fps by default.
 - Saved screenshots and recordings stay editable when opened again, and Sightline asks before quitting while an editor has unsaved changes.
 
@@ -67,17 +68,18 @@ Screenshots:
 Editing:
 
 - `list_editors` (see your open editors): each open editor with `id`, `kind` (screenshot or recording), `title`, `width`, `height`, `path`, `front` and `editing` (false in view mode), plus an image of the front screenshot.
-- `annotate` (annotate a screenshot or recording): `path` or `editor` (an id from list_editors or "front", the change appears live as one undo step), `annotations`, `crop`, `rotate`, `flip`, `resize`, `beautify`, `export`; for recordings also `trim`, `pieces`, `sound`, `zooms`, `zoom_on_clicks`, `crop` (a rectangle in video pixels, `aspect` 16:9, 4:3, 1:1 or 9:16, or `false` to remove it; not with zooms), `pointer` (shown, size, hide_when_idle, `smooth` on by default, click_highlight, highlight_color) and `keys` {parts with start_second, end_second and mode words, letters, shortcuts or hidden; position; size; look}.
-- `open_in_editor` (open a screenshot or recording in the editor): the same marks and recording options as annotate, `editor`, or `from_clipboard`, and `mode` (edit, the default, or view for just the picture or video with Share, Copy and Edit).
-- `beautify` (style a screenshot): sets the look of the editor's Style panel with `look` (none, soft, sunset, night, paper, sightline, a saved preset or default), `background`, `background_image`, `padding`, `corners`, `shadow`, `aspect`, also in an open `editor`.
+- `annotate` (annotate a screenshot or recording): `path` or `editor` (an id from list_editors or "front", the change appears live as one undo step), `annotations`, `crop`, `rotate`, `flip`, `resize`, `beautify`, `export`; for recordings also `trim`, `pieces`, `sound`, `zooms`, `zoom_on_clicks`, `crop` (a rectangle in video pixels, `aspect` 16:9, 4:3, 1:1 or 9:16, or `false` to remove it; not with zooms), `pointer` (shown, size, hide_when_idle, `smooth` on by default, click_highlight, highlight_color), `keys` {parts with start_second, end_second and mode words, letters, shortcuts or hidden; position; size; look} and `camera` {parts with start_second, end_second, x, y, height, shape circle or rounded_rectangle, hidden; shadow} for a recording made with the camera.
+- `open_in_editor` (open a screenshot or recording in the editor): the same marks and recording options as annotate, `editor`, or `from_clipboard`, and `mode` (edit, the default, or view for just the picture or video with Share, Copy and Edit). `paths` opens several screenshots in one window, or adds them to an `editor`'s window, and `all_pictures` with `resize` makes every picture of the window smaller.
+- `beautify` (style a screenshot): sets the look of the editor's Style panel with `look` (none, soft, sunset, night, paper, sightline, a saved preset or default), `background`, `background_image`, `padding`, `corners`, `shadow`, `aspect`, also in an open `editor`, with `all_pictures` for every picture of its window.
 - `list_looks` (list the Style looks) and `save_look` (save a Style look).
-- `copy_to_clipboard` (copy a screenshot or recording to your clipboard).
+- `copy_to_clipboard` (copy a screenshot or recording to your clipboard), with `all_pictures` for every picture of an editor window.
+- `export_pictures` (export the pictures of an editor window): writes every picture of the window, like Export All, into a new folder in the Agent folder.
 - `compare_with_design` (compare a design with the screen): up to 20 numbered differences with a hint and a marked image.
 
 Recordings and captures:
 
-- `record_screen` (record your screen): `seconds` (1 to 60), `area`, `window`, `display`, `include_audio`, `pointer` (off, video, drawn), `size` (original, 1080p, 720p), `quality` (high, medium, small). Never records the microphone or the keys pressed.
-- `inspect_recording` (look at a recording): still and moving stretches, text in chosen frames, a frame as an image, `width` and `height` after the crop with `source_width`, `source_height` and `crop`, `has_pointer_track` with `clicks`, and `has_key_track` with `keys`.
+- `record_screen` (record your screen): `seconds` (1 to 60), `area`, `window`, `display`, `include_audio`, `pointer` (off, video, drawn), `size` (original, 1080p, 720p), `quality` (high, medium, small). Never records the microphone, the camera or the keys pressed.
+- `inspect_recording` (look at a recording): still and moving stretches, text in chosen frames, a frame as an image, `width` and `height` after the crop with `source_width`, `source_height` and `crop`, `has_pointer_track` with `clicks`, `has_key_track` with `keys`, and `has_camera` with the camera's parts.
 - `last_recording` (find the latest recording), `save_replay` (save the last seconds of your screen).
 - `search_captures` (search your captures): `query`, `kind`, `favorites_only`, `limit`.
 
@@ -90,6 +92,7 @@ Recordings and captures:
 
 - No account, no analytics and nothing sent to the developer. Screenshots, recordings, recognized text and noted keystrokes stay on the Mac.
 - Keystrokes are only noted when the user turns on Show keystrokes, only for recordings the user makes, never for agent recordings or Replay.
+- The camera is only on when the user chooses one in Settings > Recording and stays on the Mac. Agent recordings and Replay never use the microphone or the camera.
 - Agent access is off until you turn it on, each agent asks first, and agents only read and write inside the screenshot folder.
 
 ## FAQ
@@ -146,13 +149,17 @@ Yes. Record an area, a window or the whole display to MP4 with system audio and,
 
 Yes. Turn on Record microphone in Settings › Recording and pick a microphone. Your voice is mixed with the system sound into the recording, and the recording bar mutes the microphone or pauses the recording while you talk. Afterwards you cut the screencast into shape in the editor and share it.
 
+### Can I show my camera in a screen recording?
+
+Yes. Choose a camera in Settings › Recording and allow Camera access. While you record, you appear in a bubble you can drag anywhere, resize from its edge and switch between a circle and a rounded rectangle; on a screen you don't record it is just a mirror for you. The camera is recorded on its own, so the file saved after Stop is the plain screen video. In the editor the camera gets its own lane: split it with ⌘B, hide parts, and give each part its own place, size and shape, with a smooth glide between them. Crop and zoom never move it, and it is drawn in when you save or export from the editor, as MP4, MOV or GIF. The camera is off by default, stays on your Mac, and agents never turn it on.
+
 ### How do I record my screen with sound on a Mac?
 
 Choose Record Area, Record Window or Record Full Screen from Sightline in the menu bar. Turn on Record system audio in Settings > Recording for the sound of your Mac, and Record microphone for your voice; you can mute the microphone from the recording bar. Screen recording needs macOS 15 or later.
 
 ### Can I edit screen recordings on a Mac?
 
-Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, crop to a shape like 16:9, 1:1 or 9:16, highlight clicks, show the keys you pressed, and add arrows, text and blurs that follow what they cover. Right-click a clip, the sound, a zoom, a mark or the keys to split it at the playhead. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV, or as a GIF.
+Yes. Open a recording from its thumbnail or from History and Sightline's video editor opens with a timeline: split, trim and reorder clips, play parts from 0.5x to 15x, mute or raise the sound, zoom in by hand or on every click, crop to a shape like 16:9, 1:1 or 9:16, highlight clicks, show the keys you pressed, place, hide and shape your camera, and add arrows, text and blurs that follow what they cover. Right-click a clip, the sound, a zoom, a mark or the keys to split it at the playhead. Copy, Save or Share the result as MP4, or export it at 1080p or 720p as MP4 or MOV, or as a GIF.
 
 ### Can I export a screen recording as a GIF?
 
@@ -200,7 +207,7 @@ A screenshot or recording you open from Finder or with Open File that Sightline 
 
 ### Can I open several screenshots in one window?
 
-Yes. Select a few images in Finder and open them with Sightline, choose them together in Open File, or ⌘-click or ⇧-click several captures in History and open them. They share one editor window with a column of thumbnails on the left: click one, or use the arrow keys or ⌥⌘ and an arrow, to switch. Each picture keeps its own marks and undo, ⌘W closes the one you see, and Save All, Copy All and Export All are in the chevron next to Save. A new capture still opens its own window.
+Yes. Select a few images in Finder and open them with Sightline, choose them together in Open File, or ⌘-click or ⇧-click several captures in History and open them. They share one editor window with a column of thumbnails on the left: click one, or use the arrow keys or ⌥⌘ and an arrow, to switch. Each picture keeps its own marks and undo, ⌘W closes the one you see, and Save All, Copy All and Export All are in the chevron next to Save. Export All asks for the format and quality and can be stopped, Apply to All Pictures in the Style panel gives every picture the same look, and Image > Adjust Size of All Pictures… makes them smaller by a percent or to a width. Drag a thumbnail from the column into another app, or drop pictures on the column or choose File > Add Pictures… to add more. A new capture still opens its own window.
 
 ### Which macOS versions does it need?
 
