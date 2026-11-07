@@ -2,7 +2,7 @@
 
 > Sightline is a screenshot app, screen recorder and screencast editor for Mac, with a built in MCP server and CLI so AI agents like Claude Code, Claude Desktop and Codex can take screenshots, record the screen and annotate on your Mac. Capture anything from the menu bar, polish it in an image and video editor, and keep everything on the Mac, with no account.
 
-Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and adds a screenshot editor, scrolling screenshots, text recognition (OCR), pins, a history, screen recording with sound, voice and keystrokes, a video editor for screencasts and an MCP integration for AI coding agents. It is sold in the Mac App Store, needs macOS 14 or later, and is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch and Brazilian Portuguese. The current version is 1.9.
+Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and adds a screenshot editor, scrolling screenshots, text recognition (OCR), pins, a history, screen recording with sound, voice and keystrokes, a video editor for screencasts and an MCP integration for AI coding agents. It is sold in the Mac App Store, needs macOS 14 or later, and is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch and Brazilian Portuguese. The current version is 2.0.
 
 ## Links
 
@@ -53,7 +53,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 
 ### MCP tools
 
-- `capture_screen`, `capture_area`, `capture_window`: take screenshots of a display, an area or a window. (`capture_scrolling` is listed but can't scroll for an agent in the App Store build; scrolling screenshots are taken by hand.)
+- `capture_screen`, `capture_area`, `capture_window`: take screenshots of a display, an area or a window. (`capture_scrolling` isn't offered in the App Store build, which can't scroll other apps; scrolling screenshots are taken by hand there.)
 - `list_windows`, `list_displays`: find what can be captured.
 - `list_editors`: see the editor windows the user has open, front window first, whether each is in view mode or editing, with an image of the front screenshot.
 - `capture_text`, `find_text`: read the text on screen (OCR) or find where a word is, also in the screenshot open in an editor.
@@ -61,8 +61,9 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - `annotate`: draw arrows, boxes, text, highlights, step numbers and blurs on a screenshot or recording, also in an open editor; crop, rotate, flip, resize and export; cut, speed up, crop and zoom recordings, also on every click, smooth the pointer, set how the pressed keys show, place, shape and hide the camera, and export them as MP4, MOV or GIF.
 - `beautify`, `list_looks`, `save_look`: set the look of the editor's Style panel, also for all pictures of a window, list or save looks.
 - `export_pictures`: write every picture of an editor window, like Export All.
-- `open_in_editor`, `copy_to_clipboard`: hand the result to the user, in an editor in edit or view mode or on the clipboard.
-- `record_screen`, `last_recording`, `inspect_recording`, `save_replay`: record the screen at its original size, 1080p or 720p, find and inspect recordings with their clicks, keys and camera, save the last seconds.
+- `remove_background`: lift the subject of a screenshot off its background into a new transparent PNG, on the Mac (macOS 27).
+- `open_in_editor`, `copy_to_clipboard`: hand the result to the user, in an editor in edit or view mode or on the clipboard; copy a picture the user has open as it looks, or all pictures of its window.
+- `record_screen`, `last_recording`, `inspect_recording`, `save_replay`: record the screen at its original size, 1080p or 720p, never with the microphone or the camera, find and inspect recordings with their clicks, keys and camera, save the last seconds.
 - `last_screenshot`: the agent's newest screenshot.
 - `search_captures`: search the user's screenshots and recordings by file name and by the text inside screenshots, like History, with a snippet of the match and favorites.
 - `compare_with_design`: compare the screen with a design image and list what differs.

@@ -2,7 +2,7 @@
 
 > Sightline is a screenshot app, screen recorder and screencast editor for Mac, with a built in MCP server and CLI so AI agents like Claude Code, Claude Desktop and Codex can take screenshots, record the screen and annotate on your Mac. Capture anything from the menu bar, polish it in an image and video editor, and keep everything on the Mac, with no account.
 
-Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and adds a screenshot editor, scrolling screenshots, text recognition (OCR), pins, a history, screen recording with sound, voice and keystrokes, a video editor for screencasts and an MCP integration for AI coding agents. It is sold in the Mac App Store, needs macOS 14 or later, and is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch and Brazilian Portuguese. The current version is 1.9.
+Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and adds a screenshot editor, scrolling screenshots, text recognition (OCR), pins, a history, screen recording with sound, voice and keystrokes, a video editor for screencasts and an MCP integration for AI coding agents. It is sold in the Mac App Store, needs macOS 14 or later, and is available in English, German, Spanish, French, Italian, Japanese, Korean, Dutch and Brazilian Portuguese. The current version is 2.0.
 
 ## Links
 
@@ -58,7 +58,7 @@ Screenshots:
 - `capture_screen` (take a screenshot of the screen): `display`, `annotations`, `format` (png, jpeg, webp), `name`, `include_image`.
 - `capture_area` (take a screenshot of an area): `area` {x, y, width, height} in points, plus the same options.
 - `capture_window` (take a screenshot of a window): `window` by app name, title or window id, plus the same options.
-- `capture_scrolling` (take a scrolling screenshot): `area`, `window` or `region`; stitches the frames into one tall image. The App Store build can't scroll windows for an agent and returns an error; take a scrolling screenshot by hand instead.
+- `capture_scrolling` (take a scrolling screenshot): `area`, `window` or `region`; stitches the frames into one tall image. The App Store build can't scroll other apps and doesn't offer this tool; take a scrolling screenshot by hand there instead.
 - `list_windows` (list your open windows) and `list_displays` (list your displays).
 - `capture_text` (read text on your screen): on-device OCR of a window, area or display, also QR codes and barcodes.
 - `find_text` (find text on your screen): pixel boxes for `text` in a window, area, display, a saved image or an open `editor`.
@@ -72,8 +72,9 @@ Editing:
 - `open_in_editor` (open a screenshot or recording in the editor): the same marks and recording options as annotate, `editor`, or `from_clipboard`, and `mode` (edit, the default, or view for just the picture or video with Share, Copy and Edit). `paths` opens several screenshots in one window, or adds them to an `editor`'s window, and `all_pictures` with `resize` makes every picture of the window smaller.
 - `beautify` (style a screenshot): sets the look of the editor's Style panel with `look` (none, soft, sunset, night, paper, sightline, a saved preset or default), `background`, `background_image`, `padding`, `corners`, `shadow`, `aspect`, also in an open `editor`, with `all_pictures` for every picture of its window.
 - `list_looks` (list the Style looks) and `save_look` (save a Style look).
-- `copy_to_clipboard` (copy a screenshot or recording to your clipboard), with `all_pictures` for every picture of an editor window.
-- `export_pictures` (export the pictures of an editor window): writes every picture of the window, like Export All, into a new folder in the Agent folder.
+- `copy_to_clipboard` (copy a screenshot or recording to your clipboard): a `path`, or a picture the user has open in an `editor` as it looks there now, like Copy, with `all_pictures` for every picture of its window, like Copy All.
+- `export_pictures` (export the pictures of an editor window): writes every picture of the window, like Export All, into a new folder in the Agent folder, with `format` and `quality`.
+- `remove_background` (remove the background of a screenshot): lifts the main subject off its background with on-device Vision and saves a new transparent PNG in the Agent folder, like Remove Background on a thumbnail, pin or in History. macOS 27.
 - `compare_with_design` (compare a design with the screen): up to 20 numbered differences with a hint and a marked image.
 
 Recordings and captures:
