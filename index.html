@@ -721,6 +721,7 @@ p strong, .cta-note strong { font-weight: 700; color: var(--text); }
 .footer nav { display: flex; gap: 24px; }
 .footer a { color: var(--text-dim); text-decoration: none; }
 .footer a:hover { color: var(--text); }
+.footer-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 .footer-badge img { display: block; }
 
 .legal {
@@ -1482,9 +1483,14 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 
   <footer class="wrap footer">
     <span>© 2026 Sightline</span>
-    <a class="footer-badge" href="https://macpip.com/apps/sightline-screenshots-ai?ref=badge">
-      <img src="https://macpip.com/badge/sightline-screenshots-ai.svg" height="58" alt="Listed on MacPip">
-    </a>
+    <div class="footer-badges">
+      <a class="footer-badge" href="https://macpip.com/apps/sightline-screenshots-ai?ref=badge">
+        <img src="https://macpip.com/badge/sightline-screenshots-ai.svg" height="58" alt="Listed on MacPip">
+      </a>
+      <a class="footer-badge" href="https://nativeshelf.com?ref=badge" target="_blank" title="Featured on NativeShelf.com">
+        <img src="https://nativeshelf.com/badge/dark.png?v=6" alt="Listed on NativeShelf" width="198" height="58">
+      </a>
+    </div>
     <nav>
       <a href="docs/">Docs</a>
       <a href="privacy.html">Privacy</a>
