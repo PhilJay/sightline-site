@@ -377,6 +377,12 @@ def inline_styles(styles):
         write_if_changed(page, with_styles(page.read_text(), styles, page.relative_to(ROOT)))
 
 
+def update_gitignore(pages):
+    """Keeps the built pages out of git. The GitHub Action builds them on every deploy."""
+    lines = ''.join(f'/{p["out"].parent.relative_to(ROOT).as_posix()}/\n' for p in pages)
+    replace_block(ROOT / '.gitignore', '# pages built from _pages/ by build.sh', '# end pages', lines, None)
+
+
 def check_listed():
     """Warns about pages that search engines and AI tools can't find in sitemap.xml or llms.txt."""
     sitemap = (ROOT / 'sitemap.xml').read_text()
@@ -398,5 +404,6 @@ if __name__ == '__main__':
     pages = build_pages(styles)
     update_sitemap(pages)
     update_llms(pages)
+    update_gitignore(pages)
     inline_styles(styles)
     check_listed()

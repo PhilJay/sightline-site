@@ -1,1 +1,6 @@
 .DS_Store
+
+# pages built from _pages/ by build.sh
+/black-friday/
+/de/black-friday/
+# end pages

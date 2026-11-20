@@ -1,6 +1,6 @@
 # Sightline site
 
-This is the static landing site for Sightline, a macOS screenshot app with a built in MCP server for AI agents. Preview it locally with `python3 -m http.server 8000` in this folder and open http://localhost:8000. It deploys as GitHub Pages from the `main` branch.
+This is the static landing site for Sightline, a macOS screenshot app with a built in MCP server for AI agents. Preview it locally with `python3 -m http.server 8000` in this folder and open http://localhost:8000. Every push to `main` deploys it: the GitHub Action in `.github/workflows/deploy.yml` runs `./build.sh` and publishes the site to GitHub Pages, within about a minute. It also runs daily, so pages past their `expires` date go offline by themselves. Build sources and notes (`_pages/`, `design/`, the build scripts and the `.md` files at the top) are not published.
 
 Styles live in `styles.css` and are copied into each page by `./build.sh`, so nothing blocks the first paint. Edit `styles.css`, run the script, and commit both.
 
@@ -28,4 +28,4 @@ Build the content from the components in `_pages/_components`: `x-deal`, `x-sect
 
 Run `./build.sh`. It fills in the components, adds nav, footer, meta tags and structured data from `_pages/_layout.html`, links the English and German version, adds the page to `sitemap.xml`, `llms.txt` and `llms-full.txt`, and turns every `x-question` into FAQ structured data. It stops with an error for a missing field, a wrong component attribute or a taken slug.
 
-After the `expires` day, browsers send visitors of the page to the home page, and the next build removes the page and its entries. Deleting a page file and building does the same. Shared wording for both languages is in `_pages/_strings.json`. Never edit the generated `/<slug>/index.html` files.
+After the `expires` day, browsers send visitors of the page to the home page, and the next build removes the page and its entries. Deleting a page file and building does the same. Shared wording for both languages is in `_pages/_strings.json`. The built `/<slug>/index.html` files are not committed, `build.sh` lists them in `.gitignore`, and the Action builds them on every deploy. Preview locally with `./build.sh` and `python3 -m http.server 8000`.
