@@ -73,5 +73,17 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/claude-code-screenshots/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/claude-code-screenshots/"/>
   </url>
+  <url>
+    <loc>https://sightlinemac.com/resources/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/resources/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/resources/"/>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/de/resources/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/resources/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/resources/"/>
+  </url>
   <!-- end pages -->
 </urlset>

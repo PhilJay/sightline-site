@@ -4,7 +4,7 @@ Always use the PhilJay GitHub account in this repo. Git pushes go through the `g
 
 Styles live in `styles.css`. Edit that file and run `./build.sh`, never the inlined `<style>` block in the pages.
 
-New pages for SEO, offers or AI search go into `_pages/` as `<slug>.en.html` and `<slug>.de.html`, see "Adding a page" in the README. Build them from the components in `_pages/_components` and reuse them instead of writing your own markup or class names. Add a new component only when none fits, and keep it general so later pages can use it. Give time-limited pages an `expires` date. Run `./build.sh`, look at the page in a browser (`python3 -m http.server 8000`), and commit the page source together with the changed `sitemap.xml`, `llms.txt` and `llms-full.txt`. The built `/<slug>/index.html` files stay out of git, `build.sh` lists them in `.gitignore`.
+New pages for SEO, offers or AI search go into `_pages/` as `<slug>.en.html` and `<slug>.de.html`, see "Adding a page" in the README. Build them from the components in `_pages/_components` and reuse them instead of writing your own markup or class names. Add a new component only when none fits, and keep it general so later pages can use it. Give time-limited pages an `expires` date. Give every page a `topic` (for example `AI agents`, `Screen recording` or `Offers`, in the page's language), reuse an existing topic when it fits, and keep the English and German topic names matching. Run `./build.sh`, look at the page in a browser (`python3 -m http.server 8000`), and commit the page source together with the changed `sitemap.xml`, `llms.txt` and `llms-full.txt`. The built `/<slug>/index.html` files stay out of git, `build.sh` lists them in `.gitignore`.
 
 Every page that search engines may index must be in `sitemap.xml`, and every English one also in `llms.txt` with a one-line summary, and listed in `llms-full.txt`. Pages from `_pages/` get this from `./build.sh`. For pages written by hand, like the docs, add the entries yourself, and also set the canonical URL, description, `og:*` tags and, if a German version exists, `hreflang` links. Pages that should stay out of search get `<meta name="robots" content="noindex">`. `./build.sh` warns about every page that is missing from `sitemap.xml` or `llms.txt`, and the build must finish without warnings before you commit.
 
@@ -18,6 +18,14 @@ Every page that search engines may index must be in `sitemap.xml`, and every Eng
 - Comparisons with other products must be factual, sourced, dated ("as of" with the date) and neutral, say where the other product is the better fit, use names only to identify products (no logos), and end with a note that the names are trademarks of their owners and Sightline is not affiliated with them.
 - Every page exists in English and German (`<slug>.en.html` and `<slug>.de.html`), with natural German rather than a word-for-word translation.
 - Agents put new and changed pages on a branch and open a pull request. The owner reviews and merges, agents never push them to `main`.
+
+## Links between pages
+
+`./build.sh` lists every page from `_pages/` on `/resources/` and `/de/resources/`, grouped by `topic`, and adds up to four related pages at the end of each page. The footer of every page links to Resources. For each new page, also add one or two links in the text of existing pages that cover the same subject, for example the matching FAQ answer on the home page or a docs page, with words that describe the target page. Don't add single pages to the footer or the navigation.
+
+## Share data
+
+Every page needs complete share data so it looks good when shared: canonical URL, `og:type`, `og:title`, `og:description`, `og:url`, `og:image` with `og:image:width`, `og:image:height` and `og:image:alt`, `og:locale`, and `twitter:card` set to `summary_large_image` with `twitter:title`, `twitter:description`, `twitter:image` and `twitter:image:alt`. Pages from `_pages/` get all of this from the layout. They use the general share image unless the page sets `image` and `image-alt`, and a custom image must be a 1200x630 PNG or WebP in `/assets`. `./build.sh` warns about missing share data on every page.
 
 ## Deploying
 

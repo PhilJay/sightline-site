@@ -710,6 +710,11 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 .page-section > p small { font-size: 14px; line-height: 1.5; color: var(--text-dim); }
 .page-code { margin: 18px 0 0; }
 .page-code pre { text-align: left; }
+.page-body > .page-section:first-child { margin-top: 0; }
+.page-related { margin-top: 112px; max-width: 1080px; }
+.page-related .section-head { margin-bottom: 32px; }
+.page-related-all { margin-top: 18px; text-align: center; font-size: 15px; font-weight: 600; }
+.page-related-all a { color: var(--accent); text-decoration: none; }
 
 .deal-card {
   position: relative;
