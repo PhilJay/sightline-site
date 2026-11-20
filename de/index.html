@@ -1077,8 +1077,9 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 .resource-filters button:hover { border-color: var(--accent); color: var(--text); }
 .resource-filters button[aria-pressed="true"] { background: #0b1d22; border-color: #0b1d22; color: #fff; }
 .resource-card[hidden] { display: none; }
-.resource-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.resource-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
 .resource-card {
+  flex: 0 1 calc((100% - 48px) / 3);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1100,12 +1101,12 @@ kbd { background: rgba(16, 38, 43, 0.05); }
 .resource-card-text { font-size: 15px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .resource-card-more { margin-top: auto; padding-top: 8px; font-size: 14px; font-weight: 700; color: var(--accent); }
 @media (max-width: 1000px) {
-  .resource-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resource-card { flex-basis: calc((100% - 24px) / 2); }
 }
 @media (max-width: 600px) {
-  .resource-cards { grid-template-columns: minmax(0, 1fr); }
+  .resource-card { flex-basis: 100%; }
 }
-.page-related-all { margin-top: 18px; text-align: center; font-size: 15px; font-weight: 600; }
+.page-related-all { margin-top: 32px; text-align: center; font-size: 15px; font-weight: 600; }
 .page-related-all a { color: var(--accent); text-decoration: none; }
 
 .deal-card {
