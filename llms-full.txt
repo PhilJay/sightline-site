@@ -220,7 +220,7 @@ macOS 14 or later. Screen recording needs macOS 15, the Apple Intelligence featu
 
 https://sightlinemac.com/black-friday/, updated 2026-11-20
 
-Use App Store offer code SIGHTLINEEARLY on the yearly plan. First 3 months free, then $24.99/year. Monthly and lifetime not included. Valid until 7 January 2027.
+Two App Store offer codes: SIGHTLINEEARLY gives 3 months of the yearly plan free, then $24.99/year. SIGHTLINELIFEDISCOUNT26 gets lifetime for $22.99 instead of $29.99.
 
 Black Friday
 
@@ -228,7 +228,7 @@ Black Friday
 
 Sightline Pro on the yearly plan, then $24.99/year.
 
-Monthly and lifetime not included. Valid until 7 January 2027.
+Yearly plan only. Valid until 7 January 2027.
 
 Offer code
 
@@ -236,11 +236,25 @@ SIGHTLINEEARLY
 
 [Redeem code](https://apps.apple.com/redeem?ctx=offercodes&id=6812521593&code=SIGHTLINEEARLY)
 
+Lifetime
+
+#### $22.99 forever
+
+Sightline Pro with one payment, instead of $29.99.
+
+€24.99 instead of €29.99 in the euro area. Prices vary by country. Valid until 31 December 2026.
+
+Offer code
+
+SIGHTLINELIFEDISCOUNT26
+
+[Redeem code](https://apps.apple.com/redeem?ctx=offercodes&id=6812521593&code=SIGHTLINELIFEDISCOUNT26)
+
 #### Redeem in three steps.
 
-- Click Redeem codeThe App Store opens with SIGHTLINEEARLY filled in.
-- Confirm the yearly planSign in with your Apple Account if the App Store asks.
-- Use Sightline ProThe first 3 months are free, then $24.99 a year.
+- Click Redeem codeThe App Store opens with the code filled in.
+- Confirm the offerSign in with your Apple Account if the App Store asks.
+- Use Sightline ProRight away, on the plan you picked.
 
 #### Everything in Sightline Pro.
 
@@ -255,17 +269,17 @@ SIGHTLINEEARLY
 
 #### Questions
 
-##### Which plan does the code work for?
+##### Which plan does each code work for?
 
-Only the yearly plan of Sightline Pro. The monthly plan and the lifetime purchase are not included.
+SIGHTLINEEARLY is for the yearly plan, SIGHTLINELIFEDISCOUNT26 for the lifetime purchase. The monthly plan is not included.
 
 ##### What does it cost after the 3 free months?
 
 $24.99 a year, or the same tier in your App Store country.
 
-##### Until when can I redeem the code?
+##### Until when can I redeem the codes?
 
-Until 7 January 2027.
+SIGHTLINEEARLY until 7 January 2027, SIGHTLINELIFEDISCOUNT26 until 31 December 2026.
 
 
 ### Let Claude Code see your Mac screen
@@ -402,6 +416,6 @@ https://sightlinemac.com/resources/, updated 2026-11-20
 
 Guides, use cases and offers for Sightline, the screenshot and screen recording app for Mac.
 
-[   AI agents Let Claude Code see your Mac screen Give Claude Code screenshots it takes itself. Sightline’s MCP server lets Claude Code capture a window on your Mac, compare it with your design, number what differs and fix it. Read →  ](https://sightlinemac.com/claude-code-screenshots/) [   Design QA Compare your app with the design on your Mac Pin the design over your running app and Sightline numbers every spot that differs, says whether it moved, is missing or looks different, and keeps checking while you fix it. Read →  ](https://sightlinemac.com/compare-design-with-app/) [   Offers Black Friday: 3 months of Sightline Pro free Use App Store offer code SIGHTLINEEARLY on the yearly plan. First 3 months free, then $24.99/year. Monthly and lifetime not included. Valid until 7 January 2027. Read →  ](https://sightlinemac.com/black-friday/)
+[   AI agents Let Claude Code see your Mac screen Give Claude Code screenshots it takes itself. Sightline’s MCP server lets Claude Code capture a window on your Mac, compare it with your design, number what differs and fix it. Read →  ](https://sightlinemac.com/claude-code-screenshots/) [   Design QA Compare your app with the design on your Mac Pin the design over your running app and Sightline numbers every spot that differs, says whether it moved, is missing or looks different, and keeps checking while you fix it. Read →  ](https://sightlinemac.com/compare-design-with-app/) [   Offers Black Friday: 3 months of Sightline Pro free Two App Store offer codes: SIGHTLINEEARLY gives 3 months of the yearly plan free, then $24.99/year. SIGHTLINELIFEDISCOUNT26 gets lifetime for $22.99 instead of $29.99. Read →  ](https://sightlinemac.com/black-friday/)
 
 <!-- end pages -->
