@@ -343,12 +343,6 @@ https://sightlinemac.com/resources/, updated 2026-11-20
 
 Guides, use cases and offers for Sightline, the screenshot and screen recording app for Mac.
 
-#### AI agents
-
-[Let Claude Code see your Mac screenGive Claude Code screenshots it takes itself. Sightline’s MCP server lets Claude Code capture a window on your Mac, compare it with your design, number what differs and fix it.](https://sightlinemac.com/claude-code-screenshots/)
-
-#### Offers
-
-[Black Friday: 3 months of Sightline Pro freeUse App Store offer code SIGHTLINEEARLY on the yearly plan. First 3 months free, then $24.99/year. Monthly and lifetime not included. Valid until 7 January 2027.](https://sightlinemac.com/black-friday/)
+[   AI agents Let Claude Code see your Mac screen Give Claude Code screenshots it takes itself. Sightline’s MCP server lets Claude Code capture a window on your Mac, compare it with your design, number what differs and fix it. Read →  ](https://sightlinemac.com/claude-code-screenshots/) [   Offers Black Friday: 3 months of Sightline Pro free Use App Store offer code SIGHTLINEEARLY on the yearly plan. First 3 months free, then $24.99/year. Monthly and lifetime not included. Valid until 7 January 2027. Read →  ](https://sightlinemac.com/black-friday/)
 
 <!-- end pages -->

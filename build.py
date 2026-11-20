@@ -104,24 +104,30 @@ def image_size(path):
     fail(f'{path.relative_to(ROOT)}: use a PNG or WebP file for the share image')
 
 
-def link_cards(pages):
+def link_cards(pages, t):
+    """Cards with the page's share image on top, then topic, title, description and a read link."""
     cards = ''.join(
-        f'    <a href="{p["url"][len(SITE):]}"><b>{html.escape(p["title"])}</b><span>{html.escape(p["description"])}</span></a>\n'
+        f'    <a class="resource-card" href="{p["url"][len(SITE):]}" data-topic="{html.escape(p.get("topic") or t["default_topic"])}">\n'
+        f'      <span class="resource-card-image"><img src="{html.escape(p.get("image") or t["share_image_path"])}" alt="" width="1200" height="630" loading="lazy"></span>\n'
+        f'      <span class="resource-card-body">\n'
+        f'        <span class="resource-card-topic">{html.escape(p.get("topic") or t["default_topic"])}</span>\n'
+        f'        <b>{html.escape(p["title"])}</b>\n'
+        f'        <span class="resource-card-text">{html.escape(p["description"])}</span>\n'
+        f'        <span class="resource-card-more">{html.escape(t["read"])}</span>\n'
+        f'      </span>\n'
+        f'    </a>\n'
         for p in pages
     )
-    return f'  <div class="hub">\n{cards}  </div>'
+    return f'  <div class="resource-cards">\n{cards}  </div>'
 
 
 def hub_page(lang, pages, t):
-    """The /resources/ page, with every page of one language grouped by topic."""
-    own = [p for p in pages if p['lang'] == lang]
-    topics = {}
-    for p in sorted(own, key=lambda p: p['title'].lower()):
-        topics.setdefault(p.get('topic') or t['default_topic'], []).append(p)
-    sections = [
-        f'<section class="page-section">\n  <div class="section-head">\n    <h2>{html.escape(topic)}</h2>\n  </div>\n{link_cards(items)}\n</section>'
-        for topic, items in sorted(topics.items())
-    ]
+    """The /resources/ page: every page of one language as a card, newest first, with a filter by topic."""
+    own = sorted((p for p in pages if p['lang'] == lang), key=lambda p: (p['updated'], p['title']), reverse=True)
+    topics = sorted({p.get('topic') or t['default_topic'] for p in own})
+    buttons = ''.join(f'    <button type="button" data-filter="{html.escape(topic)}">{html.escape(topic)}</button>\n' for topic in topics)
+    filters = f'  <div class="resource-filters" role="group" aria-label="{html.escape(t["topics"])}">\n    <button type="button" data-filter="" aria-pressed="true">{html.escape(t["all"])}</button>\n{buttons}  </div>\n' if len(topics) > 1 else ''
+    body = f'<div class="resource-groups">\n{filters}{link_cards(own, t)}\n</div>' if own else f'<p>{html.escape(t["resources_empty"])}</p>'
     url_path = f'/{HUB}/' if lang == 'en' else f'/de/{HUB}/'
     return {
         'slug': HUB,
@@ -129,23 +135,23 @@ def hub_page(lang, pages, t):
         'source': HUB_SOURCE,
         'title': t['resources_title'],
         'description': t['resources_description'],
-        'updated': max((p['updated'] for p in own), default=date.today().isoformat()),
+        'updated': max((p['updated'] for p in own), default='2026-11-20'),
         'url': SITE + url_path,
         'out': ROOT / url_path.strip('/') / 'index.html',
-        'body': '\n\n'.join(sections) or f'<p>{html.escape(t["resources_empty"])}</p>',
+        'body': body,
         'hub': True,
     }
 
 
 def related(page, pages, t):
-    """Up to four other pages of the same language, the same topic first."""
+    """Up to three other pages of the same language, the same topic first."""
     others = [p for p in pages.values() if p['lang'] == page['lang'] and p['slug'] != page['slug'] and not p.get('hub')]
     others.sort(key=lambda p: (p.get('topic') != page.get('topic'), p['title'].lower()))
     if page.get('hub') or not others:
         return ''
     return (
         f'  <section class="wrap page-body page-related">\n    <div class="section-head">\n      <h2>{html.escape(t["related"])}</h2>\n    </div>\n'
-        f'{link_cards(others[:4])}\n    <p class="page-related-all"><a href="{t["resources_url"]}">{html.escape(t["all_resources"])}</a></p>\n  </section>'
+        f'{link_cards(others[:3], t)}\n    <p class="page-related-all"><a href="{t["resources_url"]}">{html.escape(t["all_resources"])}</a></p>\n  </section>'
     )
 
 

@@ -21,7 +21,11 @@
     "all_resources": "All resources",
     "default_topic": "More",
     "share_image": "https://sightlinemac.com/assets/og-image.png?v=11",
-    "share_image_alt": "Sightline: capture, record, annotate, done. The editor with a box, an arrow and numbered notes on a captured dashboard."
+    "share_image_alt": "Sightline: capture, record, annotate, done. The editor with a box, an arrow and numbered notes on a captured dashboard.",
+    "read": "Read →",
+    "share_image_path": "/assets/og-image.png?v=11",
+    "all": "All",
+    "topics": "Topics"
   },
   "de": {
     "locale": "de_DE",
@@ -45,6 +49,10 @@
     "all_resources": "Alle Ressourcen",
     "default_topic": "Weitere",
     "share_image": "https://sightlinemac.com/assets/og-image.png?v=11",
-    "share_image_alt": "Sightline: aufnehmen, aufzeichnen, beschriften, fertig. Der Editor mit einem Rahmen, einem Pfeil und nummerierten Notizen auf einem aufgenommenen Dashboard."
+    "share_image_alt": "Sightline: aufnehmen, aufzeichnen, beschriften, fertig. Der Editor mit einem Rahmen, einem Pfeil und nummerierten Notizen auf einem aufgenommenen Dashboard.",
+    "read": "Lesen →",
+    "share_image_path": "/assets/og-image.png?v=11",
+    "all": "Alle",
+    "topics": "Themen"
   }
 }

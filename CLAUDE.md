@@ -21,11 +21,11 @@ Every page that search engines may index must be in `sitemap.xml`, and every Eng
 
 ## Links between pages
 
-`./build.sh` lists every page from `_pages/` on `/resources/` and `/de/resources/`, grouped by `topic`, and adds up to four related pages at the end of each page. The footer of every page links to Resources. For each new page, also add one or two links in the text of existing pages that cover the same subject, for example the matching FAQ answer on the home page or a docs page, with words that describe the target page. Don't add single pages to the footer or the navigation.
+`./build.sh` lists every page from `_pages/` as a card on `/resources/` and `/de/resources/`, newest first with a filter by `topic`, and adds up to three related pages at the end of each page. The footer of every page links to Resources. For each new page, also add one or two links in the text of existing pages that cover the same subject, for example the matching FAQ answer on the home page or a docs page, with words that describe the target page. Don't add single pages to the footer or the navigation.
 
 ## Share data
 
-Every page needs complete share data so it looks good when shared: canonical URL, `og:type`, `og:title`, `og:description`, `og:url`, `og:image` with `og:image:width`, `og:image:height` and `og:image:alt`, `og:locale`, and `twitter:card` set to `summary_large_image` with `twitter:title`, `twitter:description`, `twitter:image` and `twitter:image:alt`. Pages from `_pages/` get all of this from the layout. They use the general share image unless the page sets `image` and `image-alt`, and a custom image must be a 1200x630 PNG or WebP in `/assets`. `./build.sh` warns about missing share data on every page.
+Every page needs complete share data so it looks good when shared: canonical URL, `og:type`, `og:title`, `og:description`, `og:url`, `og:image` with `og:image:width`, `og:image:height` and `og:image:alt`, `og:locale`, and `twitter:card` set to `summary_large_image` with `twitter:title`, `twitter:description`, `twitter:image` and `twitter:image:alt`. Pages from `_pages/` get all of this from the layout. Give every page its own share image: run `design/share-image.sh <slug> "<topic>" "<title>" <screenshot>` (with `<slug>-de` and the German topic and title for the German page), then set `image: /assets/share/<slug>.webp` and a real `image-alt` in the page file. The same image is the page's card on `/resources/` and in the related pages. A share image must be a 1200x630 PNG or WebP in `/assets`, and pages without one fall back to the general image. `./build.sh` warns about missing share data on every page.
 
 ## Deploying
 

@@ -17,7 +17,7 @@ eyebrow: Optional small label above the heading
 updated: 2026-11-20
 expires: Optional last day, YYYY-MM-DD
 topic: The group on /resources/, for example AI agents
-image: Optional share image, 1200x630 PNG or WebP in /assets
+image: Share image, 1200x630, made with design/share-image.sh
 image-alt: Description of the share image, needed with image
 ---
 <x-section title="A heading">
@@ -29,7 +29,7 @@ image-alt: Description of the share image, needed with image
 
 Build the content from the components in `_pages/_components`: `x-deal`, `x-section`, `x-steps`, `x-checks`, `x-image`, `x-code`, `x-faq` and `x-question`. The comment at the top of each file lists its attributes, `_pages/black-friday.en.html` shows most of them and `_pages/claude-code-screenshots.en.html` shows `x-code`. A new component is one HTML file there with `{{attribute}}` and `{{content}}` placeholders, plus its CSS in `styles.css`.
 
-Run `./build.sh`. It fills in the components, adds nav, footer, meta tags and structured data from `_pages/_layout.html`, links the English and German version, adds the page to `sitemap.xml`, `llms.txt` and `llms-full.txt`, and turns every `x-question` into FAQ structured data. It also lists every page by topic on `/resources/` and `/de/resources/`, and adds related pages at the end of each page. It stops with an error for a missing field, a wrong component attribute, a share image in the wrong size or a taken slug, and warns about pages that miss share data or are not in the sitemap or `llms.txt`.
+Run `./build.sh`. It fills in the components, adds nav, footer, meta tags and structured data from `_pages/_layout.html`, links the English and German version, adds the page to `sitemap.xml`, `llms.txt` and `llms-full.txt`, and turns every `x-question` into FAQ structured data. It also lists every page as a card on `/resources/` and `/de/resources/`, with a filter by topic, and adds related pages at the end of each page. `design/share-image.sh` makes the share image of a page, which is also its card picture. It stops with an error for a missing field, a wrong component attribute, a share image in the wrong size or a taken slug, and warns about pages that miss share data or are not in the sitemap or `llms.txt`.
 
 After the `expires` day, browsers send visitors of the page to the home page, and the next build removes the page and its entries. Deleting a page file and building does the same. Shared wording for both languages is in `_pages/_strings.json`. The built `/<slug>/index.html` files are not committed, `build.sh` lists them in `.gitignore`, and the Action builds them on every deploy. Preview locally with `./build.sh` and `python3 -m http.server 8000`.
 
