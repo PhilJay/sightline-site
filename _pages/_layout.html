@@ -79,7 +79,8 @@
 document.querySelectorAll('[data-copy]').forEach(function (button) {
   var label = button.textContent;
   button.addEventListener('click', function () {
-    navigator.clipboard.writeText(button.dataset.copy).then(function () {
+    var text = button.dataset.copy || button.parentNode.querySelector('code').textContent;
+    navigator.clipboard.writeText(text).then(function () {
       button.textContent = button.dataset.copied;
       setTimeout(function () { button.textContent = label; }, 1600);
     });

@@ -61,5 +61,17 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/black-friday/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/black-friday/"/>
   </url>
+  <url>
+    <loc>https://sightlinemac.com/claude-code-screenshots/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/claude-code-screenshots/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/claude-code-screenshots/"/>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/de/claude-code-screenshots/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/claude-code-screenshots/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/claude-code-screenshots/"/>
+  </url>
   <!-- end pages -->
 </urlset>
