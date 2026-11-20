@@ -268,79 +268,67 @@ $24.99 a year, or the same tier in your App Store country.
 Until 7 January 2027.
 
 
-### Let Claude Code screenshot and check your Mac UI
+### Let Claude Code see your Mac screen
 
 https://sightlinemac.com/claude-code-screenshots/, updated 2026-11-20
 
-Sightline gives Claude Code, Codex and other MCP clients a Mac screenshot and recording app. The agent captures a window, compares it with your design, marks what differs and fixes it, and every mark stays editable for you.
+Give Claude Code screenshots it takes itself. Sightline’s MCP server lets Claude Code capture a window on your Mac, compare it with your design, number what differs and fix it.
 
-#### Build, look, fix, look again.
+#### Stop pasting screenshots into Claude Code.
 
-Claude Code reads your files and runs your commands, but it has to guess how the UI looks until it gets a picture. Pasting a screenshot works once. When the agent should check its own work, mark what is wrong and try again, it is faster when it can take the screenshot itself.
+Claude Code can’t see your UI until you give it a picture. With Sightline, a Mac screenshot app with a built-in MCP server, Claude Code takes the screenshot itself, checks its work and tries again.
 
-Sightline is a Mac screenshot and screen recording app with an MCP server and a command line tool built in. Connect Claude Code, Claude Desktop, Codex or another MCP client and ask in plain words. The agent works in the same app and editor you use.
+#### How a Claude Code MCP screenshot works.
 
-#### What Claude Code can do with Sightline.
+Claude Code calls sightline-cli, a small MCP server inside the app. Sightline captures on your Mac and sends back the image with numbered differences.
 
-- Capture a window, an area or a display, and get the file and a preview back
-- Compare with a design and get up to 20 numbered differences, each shifted, only in the design, only on screen or looking different
-- Mark it up with boxes, arrows, text, step numbers and blur
-- Edit live in the Sightline editor you have open, as one undo step you can change or undo
+#### What Claude Code can do.
+
+- Capture a window, an area or a display
+- Compare to a design with numbered differences
+- Mark up with boxes, arrows, text and blur
+- Edit live in the Sightline editor you have open
 - Read the screen: text, QR codes and colors
-- Record up to 60 seconds, then cut, speed up, zoom on clicks or export a GIF
-- Search old captures by the text inside them
-- Blur secrets that look like passwords, keys or tokens before it shares
+- Record up to 60 seconds, then cut or export a GIF
 
 #### Check the app against the design.
 
-Ask “Compare the sign up screen in the Simulator with signup-design.png and fix what differs.” Claude Code runs the same check as Show Differences on a pinned design: it lines the design up, numbers every spot that differs and says whether it moved, is missing or only looks different. It changes the code, the app reloads, and it checks again until the list is empty.
-
-You can run the check yourself too. Pin the design over your running app, turn on Show Differences, and with Tracing your clicks go through to the app while the marks follow your changes.
+Ask “Compare the sign up screen in the Simulator with signup-design.png and fix what differs.” Claude Code numbers each mismatch, fixes the code and checks again until none are left.
 
 #### Connect Claude Code in a minute.
 
-- Install SightlineGet it from the Mac App Store and allow Screen Recording.
-- Turn on AI AgentsIn Settings › AI Agents, turn on Allow AI agents to use Sightline and click Connect next to Claude Code.
-- Start a new sessionRun claude mcp list or /mcp to see sightline, then ask for a screenshot.
+- Install SightlineFrom the Mac App Store, then allow Screen Recording.
+- Click ConnectIn Settings › AI Agents, turn on agent access and click Connect next to Claude Code.
+- Ask for a screenshotStart a new session. /mcp lists sightline.
 
-Prefer the terminal? claude mcp add --scope user sightline -- "/Applications/Sightline.app/Contents/MacOS/sightline-cli" mcp does the same. All tools are in the [MCP reference](https://sightlinemac.com/docs/mcp/) and the [command line docs](https://sightlinemac.com/docs/cli/).
+claude mcp add --scope user sightline -- \ "/Applications/Sightline.app/Contents/MacOS/sightline-cli" mcp
 
-#### Sightline and Claude’s computer use.
-
-Claude Code also has a built-in computer use server on macOS, a research preview at the time of writing. It lets Claude open apps, click, type and take screenshots. Use it when the agent has to operate an app, for example to click through onboarding.
-
-Use Sightline when the agent needs a capture tool: a sharp screenshot of one window, a design check with numbered differences, marks you can still edit, a searchable history and a recording you can cut. The two work well together, and Anthropic’s docs say Claude reaches for a dedicated MCP server first when one fits the task.
+Prefer the terminal? The command above does the same. Every tool is in the [MCP reference](https://sightlinemac.com/docs/mcp/).
 
 #### You stay in control.
 
 - Off until you turn it on in Settings › AI Agents
 - Each agent asks first: Deny, Allow Once, Allow This Session or Always Allow
-- You notice every capture: a banner names the agent, on by default
-- One folder: agents save to the Agent folder and only read from there and what you open
-- No microphone, no camera in recordings an agent makes
-- On your Mac: no account, no analytics, no Sightline server
+- You see every capture: a banner names the agent, on by default
+- No account, no analytics, no Sightline server
 
 #### Questions
 
 ##### Can Claude Code take screenshots on a Mac?
 
-You can paste a screenshot into Claude Code yourself. To let it capture on its own, connect an MCP server such as Sightline, or turn on Claude Code’s computer use. With Sightline, Claude Code can capture a window, an area or a display, compare it with a design and mark it up.
+Yes, through an MCP server such as Sightline, or with Claude Code’s computer use, a research preview. Sightline adds design checks, editable marks and recordings.
 
 ##### Which AI apps work with Sightline?
 
-Any app that speaks the Model Context Protocol, such as Claude Code, Claude Desktop, Codex and Cursor. Connect sets up Claude Code, Claude Desktop and Codex CLI for you.
+Any MCP client, such as Claude Code, Claude Desktop, Codex and Cursor.
 
 ##### Does it cost anything?
 
-Sightline is a free download. Agent access is part of Sightline Pro, with a free 7 day trial, then $3.99 a month, $24.99 a year or $29.99 once in the US, or the same tier in your App Store country.
+Sightline is a free download. Agent access is part of Sightline Pro: 7 days free, then $3.99 a month, $24.99 a year or $29.99 once (US prices).
 
 ##### Where do the screenshots go?
 
-They stay in your save folder on your Mac. Sightline sends nothing anywhere. What happens to an image after an agent receives it is up to that agent and its provider, the same as a screenshot you paste yourself.
-
-##### Can the agent scroll and capture a whole page?
-
-Not in the Mac App Store version, because the sandbox does not let Sightline scroll other apps. Take a scrolling capture yourself with Sightline and ask the agent to use that file.
+Into the Agent folder on your Mac. Sightline sends nothing anywhere. What happens to an image after the agent gets it is up to the agent and its provider.
 
 ##### Which macOS do I need?
 

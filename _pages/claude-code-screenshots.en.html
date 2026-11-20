@@ -1,68 +1,63 @@
 ---
-title: Let Claude Code screenshot and check your Mac UI
-description: Sightline gives Claude Code, Codex and other MCP clients a Mac screenshot and recording app. The agent captures a window, compares it with your design, marks what differs and fixes it, and every mark stays editable for you.
-lead: Claude Code captures the window, compares it with your design, numbers what differs and fixes it. You get the marks in an editor, not just a picture in a chat.
+title: Let Claude Code see your Mac screen
+description: Give Claude Code screenshots it takes itself. Sightline’s MCP server lets Claude Code capture a window on your Mac, compare it with your design, number what differs and fix it.
+lead: Sightline’s MCP server lets Claude Code take its own screenshots, check them against your design and fix what differs.
 eyebrow: Claude Code and MCP
 updated: 2026-11-20
 ---
-<x-section title="Build, look, fix, look again.">
-  <p>Claude Code reads your files and runs your commands, but it has to guess how the UI looks until it gets a picture. Pasting a screenshot works once. When the agent should check its own work, mark what is wrong and try again, it is faster when it can take the screenshot itself.</p>
-  <p>Sightline is a Mac screenshot and screen recording app with an MCP server and a command line tool built in. Connect Claude Code, Claude Desktop, Codex or another MCP client and ask in plain words. The agent works in the same app and editor you use.</p>
+<x-section title="Stop pasting screenshots into Claude Code.">
+  <p>Claude Code can’t see your UI until you give it a picture. With Sightline, a Mac screenshot app with a built-in MCP server, Claude Code takes the screenshot itself, checks its work and tries again.</p>
   <x-image src="/assets/feature-v3-agent-2080.webp" alt="A Claude Code terminal saying the button is 8 px off and fixing it, next to a checkout form where a red guide measures the 8 px gap" width="2080" height="1300" />
 </x-section>
 
-<x-section title="What Claude Code can do with Sightline.">
+<x-section title="How a Claude Code MCP screenshot works.">
+  <p>Claude Code calls <code>sightline-cli</code>, a small MCP server inside the app. Sightline captures on your Mac and sends back the image with numbered differences.</p>
+  <x-image src="/assets/seo/claude-code-mcp-flow.svg" alt="Diagram: Claude Code calls compare_with_design over MCP, sightline-cli passes it to the Sightline app over a local socket, and a marked capture with numbered differences goes back to Claude Code" width="1600" height="1000" />
+</x-section>
+
+<x-section title="What Claude Code can do.">
   <x-checks>
-    <li><b>Capture</b> a window, an area or a display, and get the file and a preview back</li>
-    <li><b>Compare with a design</b> and get up to 20 numbered differences, each shifted, only in the design, only on screen or looking different</li>
-    <li><b>Mark it up</b> with boxes, arrows, text, step numbers and blur</li>
-    <li><b>Edit live</b> in the Sightline editor you have open, as one undo step you can change or undo</li>
+    <li><b>Capture</b> a window, an area or a display</li>
+    <li><b>Compare to a design</b> with numbered differences</li>
+    <li><b>Mark up</b> with boxes, arrows, text and blur</li>
+    <li><b>Edit live</b> in the Sightline editor you have open</li>
     <li><b>Read the screen</b>: text, QR codes and colors</li>
-    <li><b>Record</b> up to 60 seconds, then cut, speed up, zoom on clicks or export a GIF</li>
-    <li><b>Search old captures</b> by the text inside them</li>
-    <li><b>Blur secrets</b> that look like passwords, keys or tokens before it shares</li>
+    <li><b>Record</b> up to 60 seconds, then cut or export a GIF</li>
   </x-checks>
 </x-section>
 
 <x-section title="Check the app against the design.">
-  <p>Ask “Compare the sign up screen in the Simulator with signup-design.png and fix what differs.” Claude Code runs the same check as Show Differences on a pinned design: it lines the design up, numbers every spot that differs and says whether it moved, is missing or only looks different. It changes the code, the app reloads, and it checks again until the list is empty.</p>
-  <p>You can run the check yourself too. Pin the design over your running app, turn on Show Differences, and with Tracing your clicks go through to the app while the marks follow your changes.</p>
+  <p>Ask “Compare the sign up screen in the Simulator with signup-design.png and fix what differs.” Claude Code numbers each mismatch, fixes the code and checks again until none are left.</p>
   <x-image src="/assets/feature-differences-2080.webp" alt="A sign up design next to the running app, where three numbered pink boxes mark a changed heading, a lighter Continue button and a renamed Sign in with Apple button, with a badge saying 3 differences" width="2080" height="1300" />
 </x-section>
 
 <x-section title="Connect Claude Code in a minute.">
   <x-steps>
-    <li><b>Install Sightline</b>Get it from the Mac App Store and allow Screen Recording.</li>
-    <li><b>Turn on AI Agents</b>In Settings › AI Agents, turn on Allow AI agents to use Sightline and click Connect next to Claude Code.</li>
-    <li><b>Start a new session</b>Run <code>claude mcp list</code> or <code>/mcp</code> to see sightline, then ask for a screenshot.</li>
+    <li><b>Install Sightline</b>From the Mac App Store, then allow Screen Recording.</li>
+    <li><b>Click Connect</b>In Settings › AI Agents, turn on agent access and click Connect next to Claude Code.</li>
+    <li><b>Ask for a screenshot</b>Start a new session. <code>/mcp</code> lists sightline.</li>
   </x-steps>
-  <p>Prefer the terminal? <code>claude mcp add --scope user sightline -- "/Applications/Sightline.app/Contents/MacOS/sightline-cli" mcp</code> does the same. All tools are in the <a href="/docs/mcp/">MCP reference</a> and the <a href="/docs/cli/">command line docs</a>.</p>
-</x-section>
-
-<x-section title="Sightline and Claude’s computer use.">
-  <p>Claude Code also has a built-in computer use server on macOS, a research preview at the time of writing. It lets Claude open apps, click, type and take screenshots. Use it when the agent has to operate an app, for example to click through onboarding.</p>
-  <p>Use Sightline when the agent needs a capture tool: a sharp screenshot of one window, a design check with numbered differences, marks you can still edit, a searchable history and a recording you can cut. The two work well together, and Anthropic’s docs say Claude reaches for a dedicated MCP server first when one fits the task.</p>
+  <x-code copy="Copy" copied="Copied">claude mcp add --scope user sightline -- \
+  "/Applications/Sightline.app/Contents/MacOS/sightline-cli" mcp</x-code>
+  <p>Prefer the terminal? The command above does the same. Every tool is in the <a href="/docs/mcp/">MCP reference</a>.</p>
 </x-section>
 
 <x-section title="You stay in control.">
   <x-checks>
     <li><b>Off until you turn it on</b> in Settings › AI Agents</li>
     <li><b>Each agent asks first</b>: Deny, Allow Once, Allow This Session or Always Allow</li>
-    <li><b>You notice every capture</b>: a banner names the agent, on by default</li>
-    <li><b>One folder</b>: agents save to the Agent folder and only read from there and what you open</li>
-    <li><b>No microphone, no camera</b> in recordings an agent makes</li>
-    <li><b>On your Mac</b>: no account, no analytics, no Sightline server</li>
+    <li><b>You see every capture</b>: a banner names the agent, on by default</li>
+    <li><b>No account, no analytics</b>, no Sightline server</li>
   </x-checks>
 </x-section>
 
 <x-section title="Questions">
   <x-faq>
-    <x-question q="Can Claude Code take screenshots on a Mac?">You can paste a screenshot into Claude Code yourself. To let it capture on its own, connect an MCP server such as Sightline, or turn on Claude Code’s computer use. With Sightline, Claude Code can capture a window, an area or a display, compare it with a design and mark it up.</x-question>
-    <x-question q="Which AI apps work with Sightline?">Any app that speaks the Model Context Protocol, such as Claude Code, Claude Desktop, Codex and Cursor. Connect sets up Claude Code, Claude Desktop and Codex CLI for you.</x-question>
-    <x-question q="Does it cost anything?">Sightline is a free download. Agent access is part of Sightline Pro, with a free 7 day trial, then $3.99 a month, $24.99 a year or $29.99 once in the US, or the same tier in your App Store country.</x-question>
-    <x-question q="Where do the screenshots go?">They stay in your save folder on your Mac. Sightline sends nothing anywhere. What happens to an image after an agent receives it is up to that agent and its provider, the same as a screenshot you paste yourself.</x-question>
-    <x-question q="Can the agent scroll and capture a whole page?">Not in the Mac App Store version, because the sandbox does not let Sightline scroll other apps. Take a scrolling capture yourself with Sightline and ask the agent to use that file.</x-question>
+    <x-question q="Can Claude Code take screenshots on a Mac?">Yes, through an MCP server such as Sightline, or with Claude Code’s computer use, a research preview. Sightline adds design checks, editable marks and recordings.</x-question>
+    <x-question q="Which AI apps work with Sightline?">Any MCP client, such as Claude Code, Claude Desktop, Codex and Cursor.</x-question>
+    <x-question q="Does it cost anything?">Sightline is a free download. Agent access is part of Sightline Pro: 7 days free, then $3.99 a month, $24.99 a year or $29.99 once (US prices).</x-question>
+    <x-question q="Where do the screenshots go?">Into the Agent folder on your Mac. Sightline sends nothing anywhere. What happens to an image after the agent gets it is up to the agent and its provider.</x-question>
     <x-question q="Which macOS do I need?">macOS 14 or later. Recording needs macOS 15.</x-question>
   </x-faq>
-  <p>Claude and Claude Code are trademarks of Anthropic. Sightline is not affiliated with or endorsed by Anthropic.</p>
+  <p><small>Claude and Claude Code are trademarks of Anthropic. Sightline is not affiliated with or endorsed by Anthropic.</small></p>
 </x-section>
