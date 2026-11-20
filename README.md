@@ -24,8 +24,10 @@ expires: Optional last day, YYYY-MM-DD
 </x-section>
 ```
 
-Build the content from the components in `_pages/_components`: `x-deal`, `x-section`, `x-steps`, `x-checks`, `x-image`, `x-faq` and `x-question`. The comment at the top of each file lists its attributes, and `_pages/black-friday.en.html` uses all of them. A new component is one HTML file there with `{{attribute}}` and `{{content}}` placeholders, plus its CSS in `styles.css`.
+Build the content from the components in `_pages/_components`: `x-deal`, `x-section`, `x-steps`, `x-checks`, `x-image`, `x-code`, `x-faq` and `x-question`. The comment at the top of each file lists its attributes, `_pages/black-friday.en.html` shows most of them and `_pages/claude-code-screenshots.en.html` shows `x-code`. A new component is one HTML file there with `{{attribute}}` and `{{content}}` placeholders, plus its CSS in `styles.css`.
 
 Run `./build.sh`. It fills in the components, adds nav, footer, meta tags and structured data from `_pages/_layout.html`, links the English and German version, adds the page to `sitemap.xml`, `llms.txt` and `llms-full.txt`, and turns every `x-question` into FAQ structured data. It stops with an error for a missing field, a wrong component attribute or a taken slug.
 
 After the `expires` day, browsers send visitors of the page to the home page, and the next build removes the page and its entries. Deleting a page file and building does the same. Shared wording for both languages is in `_pages/_strings.json`. The built `/<slug>/index.html` files are not committed, `build.sh` lists them in `.gitignore`, and the Action builds them on every deploy. Preview locally with `./build.sh` and `python3 -m http.server 8000`.
+
+Keep pages short and check them at desktop and phone width before opening a pull request. The full SEO page guidelines (length, spacing, new graphics, facts, comparisons, English and German, branch and pull request) are in `CLAUDE.md`.
