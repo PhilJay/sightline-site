@@ -1,0 +1,30 @@
+{
+  "en": {
+    "locale": "en_US",
+    "home_url": "/",
+    "home": "Home",
+    "docs": "Docs",
+    "download": "Download",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "imprint": "Imprint",
+    "other_language": "Deutsch",
+    "get": "Get Sightline.",
+    "store_label": "Download Sightline on the Mac App Store",
+    "needs": "Needs macOS 14 or later. Recording needs macOS 15. Replay, subject blur and Remove Background need macOS 27."
+  },
+  "de": {
+    "locale": "de_DE",
+    "home_url": "/de/",
+    "home": "Start",
+    "docs": "Doku (Englisch)",
+    "download": "Laden",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "imprint": "Impressum",
+    "other_language": "English",
+    "get": "Hol dir Sightline.",
+    "store_label": "Sightline im Mac App Store laden",
+    "needs": "Braucht macOS 14 oder neuer. Aufzeichnen braucht macOS 15. Replay, Unschärfe nach Form und Hintergrund entfernen brauchen macOS 27."
+  }
+}

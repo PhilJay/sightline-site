@@ -213,3 +213,58 @@ Yes. Select a few images in Finder and open them with Sightline, choose them tog
 ### Which macOS versions does it need?
 
 macOS 14 or later. Screen recording needs macOS 15, the Apple Intelligence features macOS 26, and Remove Background and Replay macOS 27.
+
+## Pages
+
+### Black Friday: 3 months of Sightline Pro free
+
+https://sightlinemac.com/black-friday/, updated 2026-11-20
+
+Use App Store offer code SIGHTLINEEARLY on the yearly plan. First 3 months free, then $24.99/year. Monthly and lifetime not included. Valid until 7 January 2027.
+
+Black Friday
+
+#### 3 months free
+
+Sightline Pro on the yearly plan, then $24.99/year.
+
+Monthly and lifetime not included. Valid until 7 January 2027.
+
+Offer code
+
+SIGHTLINEEARLY
+
+[Redeem code](https://apps.apple.com/redeem?ctx=offercodes&id=6812521593&code=SIGHTLINEEARLY)
+
+#### Redeem in three steps.
+
+- Click Redeem codeThe App Store opens with SIGHTLINEEARLY filled in.
+- Confirm the yearly planSign in with your Apple Account if the App Store asks.
+- Use Sightline ProThe first 3 months are free, then $24.99 a year.
+
+#### Everything in Sightline Pro.
+
+- The screenshot editor with arrows, blur, steps and Style
+- Window and scrolling capture
+- Capture Text to copy any text on screen
+- AI agents that capture and annotate through MCP
+- Show Differences between a design and your app
+- Remove Background from any capture
+- The video editor for screencasts, with cuts, zooms and keystrokes
+- The full history, searchable by the text inside
+
+#### Questions
+
+##### Which plan does the code work for?
+
+Only the yearly plan of Sightline Pro. The monthly plan and the lifetime purchase are not included.
+
+##### What does it cost after the 3 free months?
+
+$24.99 a year, or the same tier in your App Store country.
+
+##### Until when can I redeem the code?
+
+Until 7 January 2027.
+
+<!-- end pages -->

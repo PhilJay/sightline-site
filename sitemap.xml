@@ -48,4 +48,18 @@
     <loc>https://sightlinemac.com/docs/privacy/</loc>
     <lastmod>2026-11-07</lastmod>
   </url>
+  <!-- pages from _pages/, written by build.sh -->
+  <url>
+    <loc>https://sightlinemac.com/black-friday/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/black-friday/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/black-friday/"/>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/de/black-friday/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/black-friday/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/black-friday/"/>
+  </url>
+  <!-- end pages -->
 </urlset>

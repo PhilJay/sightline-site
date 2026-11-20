@@ -1,0 +1,102 @@
+<!doctype html>
+{{mark}}
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}} · Sightline</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="{{url}}">
+{{alternates}}
+{{language_redirect}}
+{{expiry_redirect}}
+  <link rel="icon" type="image/png" href="/assets/favicon.png?v=10">
+  <link rel="apple-touch-icon" href="/assets/icon.png?v=10">
+  <link rel="preload" href="/assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sightline">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="https://sightlinemac.com/assets/og-image.png?v=11">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="{{t.locale}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:image" content="https://sightlinemac.com/assets/og-image.png?v=11">
+  <script type="application/ld+json">
+{{structured_data}}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="stage">
+  <header class="wrap nav">
+    <a class="brand" href="{{t.home_url}}"><img src="/assets/icon-68.webp" srcset="/assets/icon-68.webp 2x, /assets/icon-102.webp 3x" alt="" width="34" height="34">Sightline</a>
+    <nav class="nav-links">
+      <a href="{{t.home_url}}">{{t.home}}</a>
+      <a href="{{t.home_url}}#faq">FAQ</a>
+      <a href="/docs/" hreflang="en">{{t.docs}}</a>
+      <a href="https://apps.apple.com/app/sightline/id6812521593">{{t.download}}</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero page-hero">
+      {{eyebrow}}
+      <h1>{{title}}</h1>
+      <p class="lead">{{lead}}</p>
+    </section>
+    <div class="wrap page-body">
+{{body}}
+    </div>
+  </main>
+
+  <section class="band">
+    <div class="wrap closing">
+      <h2>{{t.get}}</h2>
+      <a class="store-badge" href="https://apps.apple.com/app/sightline/id6812521593" aria-label="{{t.store_label}}">
+        <img src="/assets/mac-app-store-badge-black.svg" alt="" width="156" height="40">
+      </a>
+      <p class="fine">{{t.needs}}</p>
+    </div>
+  </section>
+
+  <footer class="wrap footer">
+    <span>© 2026 Sightline</span>
+    <nav>
+      <a href="/docs/" hreflang="en">{{t.docs}}</a>
+      <a href="/privacy.html">{{t.privacy}}</a>
+      <a href="/terms.html">{{t.terms}}</a>
+      <a href="/imprint.html">{{t.imprint}}</a>
+      <a href="{{other_url}}" hreflang="{{other_lang}}" lang="{{other_lang}}" data-lang="{{other_lang}}">{{t.other_language}}</a>
+    </nav>
+  </footer>
+</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function (button) {
+  var label = button.textContent;
+  button.addEventListener('click', function () {
+    navigator.clipboard.writeText(button.dataset.copy).then(function () {
+      button.textContent = button.dataset.copied;
+      setTimeout(function () { button.textContent = label; }, 1600);
+    });
+  });
+});
+document.querySelectorAll('[data-countdown]').forEach(function (line) {
+  var card = line.closest('[data-ends]');
+  var days = Math.ceil((new Date(card.dataset.ends + 'T23:59:59') - new Date()) / 86400000);
+  if (days < 1) return;
+  line.textContent = days === 1 ? line.dataset.lastDay : line.dataset.countdown.replace('{n}', days);
+  line.hidden = false;
+});
+document.querySelectorAll('[data-lang]').forEach(function (link) {
+  link.addEventListener('click', function () {
+    try { localStorage.setItem('sightline-lang', link.dataset.lang); } catch (e) {}
+  });
+});
+</script>
+</body>
+</html>

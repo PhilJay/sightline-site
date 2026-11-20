@@ -80,6 +80,12 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 - The camera is only on when the user chooses one in Settings > Recording and stays on the Mac. Agent recordings and Replay never use the microphone or the camera.
 - Agent access is off until you turn it on, each agent asks first, and agents only read and write inside the screenshot folder.
 
+## Pages
+
+- [Black Friday: 3 months of Sightline Pro free](https://sightlinemac.com/black-friday/): Use App Store offer code SIGHTLINEEARLY on the yearly plan. First 3 months free, then $24.99/year. Monthly and lifetime not included. Valid until 7 January 2027.
+
+<!-- end pages -->
+
 ## Optional
 
 - [Website in German](https://sightlinemac.com/de/)

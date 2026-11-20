@@ -4,4 +4,28 @@ This is the static landing site for Sightline, a macOS screenshot app with a bui
 
 Styles live in `styles.css` and are copied into each page by `./build.sh`, so nothing blocks the first paint. Edit `styles.css`, run the script, and commit both.
 
-The landing page comes in English (`index.html`, the default) and German (`de/index.html`). A text change goes into both. Browsers that prefer German over English start on the German page until the visitor picks a language in the footer. The legal pages are English only.
+## Adding a page
+
+Pages for SEO, offers and AI search live in `_pages/`. Add `_pages/<slug>.en.html` for `/<slug>/` and `_pages/<slug>.de.html` for `/de/<slug>/`. Each file starts with a short header, followed by the page content:
+
+```
+---
+title: The page title, shown as the big heading
+description: One or two sentences for search results, social previews and llms.txt
+lead: Optional shorter line under the heading, the description is used otherwise
+eyebrow: Optional small label above the heading
+updated: 2026-11-20
+expires: Optional last day, YYYY-MM-DD
+---
+<x-section title="A heading">
+  <x-checks>
+    <li><b>Point</b> with a short explanation</li>
+  </x-checks>
+</x-section>
+```
+
+Build the content from the components in `_pages/_components`: `x-deal`, `x-section`, `x-steps`, `x-checks`, `x-image`, `x-faq` and `x-question`. The comment at the top of each file lists its attributes, and `_pages/black-friday.en.html` uses all of them. A new component is one HTML file there with `{{attribute}}` and `{{content}}` placeholders, plus its CSS in `styles.css`.
+
+Run `./build.sh`. It fills in the components, adds nav, footer, meta tags and structured data from `_pages/_layout.html`, links the English and German version, adds the page to `sitemap.xml`, `llms.txt` and `llms-full.txt`, and turns every `x-question` into FAQ structured data. It stops with an error for a missing field, a wrong component attribute or a taken slug.
+
+After the `expires` day, browsers send visitors of the page to the home page, and the next build removes the page and its entries. Deleting a page file and building does the same. Shared wording for both languages is in `_pages/_strings.json`. Never edit the generated `/<slug>/index.html` files.
