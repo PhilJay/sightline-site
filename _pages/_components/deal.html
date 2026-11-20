@@ -1,10 +1,11 @@
 <!--
 A dark offer card with the code, a copy button, the redeem button and a countdown.
-Attributes: label, headline, text, note, code-label, code, copy, copied, url, button, ends (YYYY-MM-DD), countdown ({n} becomes the days left), last-day.
+Attributes: label, was (old price, struck through; empty to leave out), badge (short saving like "Save $7"), headline, text, note, code-label, code, copy, copied, url, button, ends (YYYY-MM-DD), countdown ({n} becomes the days left), last-day.
 -->
 <div class="deal-card" data-ends="{{ends}}">
   <div class="deal-card-main">
     <p class="deal-card-label">{{label}}</p>
+    <p class="deal-card-price"><s>{{was}}</s><span class="deal-card-badge">{{badge}}</span></p>
     <h2>{{headline}}</h2>
     <p class="deal-card-text">{{text}}</p>
     <p class="deal-card-note">{{note}}</p>

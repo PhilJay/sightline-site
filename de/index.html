@@ -1179,6 +1179,11 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   background-clip: text;
   color: transparent;
 }
+.deal-card-price { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.deal-card-price s { font-size: 22px; font-weight: 600; color: rgba(255, 255, 255, 0.55); text-decoration-thickness: 2px; text-decoration-color: rgba(255, 140, 140, 0.9); }
+.deal-card-price s:empty { display: none; }
+.deal-card-badge { padding: 5px 11px; border-radius: 999px; font-size: 14px; font-weight: 800; color: #0b1d22; background: #9ff0e6; box-shadow: 0 0 18px rgba(159, 240, 230, 0.35); }
+.deal-card-price + h2 { margin-top: 10px; }
 .deal-card-text { font-size: 18px; line-height: 1.5; color: rgba(255, 255, 255, 0.86); }
 .deal-card-note { margin-top: 10px; font-size: 14px; color: rgba(255, 255, 255, 0.6); }
 .deal-card + .deal-card { margin-top: 28px; }
@@ -1197,16 +1202,16 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  container-type: inline-size;
   flex-wrap: wrap;
-  gap: 12px;
-  padding: 10px 10px 10px 18px;
+  gap: 10px;
+  padding: 10px 10px 10px 14px;
   border-radius: 14px;
   border: 1.5px dashed rgba(159, 240, 230, 0.55);
   background: rgba(0, 0, 0, 0.2);
 }
-.deal-code code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: clamp(15px, 1.5vw, 18px); font-weight: 700; letter-spacing: 0.04em; overflow-wrap: anywhere; }
-.deal-code code:not(:only-child) { flex: 1 0 auto; max-width: 100%; }
-.deal-code button { flex: none; font: inherit; font-size: 13px; font-weight: 700; color: #0b1d22; background: #fff; border: 0; border-radius: 9px; padding: 8px 14px; cursor: pointer; }
+.deal-code code { flex: 1 0 auto; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: clamp(10px, calc((100cqi - 96px) / 14), 18px); font-weight: 700; letter-spacing: 0.02em; white-space: nowrap; }
+.deal-code button { flex: none; font: inherit; font-size: 12px; font-weight: 700; color: #0b1d22; background: #fff; border: 0; border-radius: 8px; padding: 7px 10px; cursor: pointer; }
 .deal-card-button {
   display: flex;
   justify-content: center;
@@ -1250,7 +1255,8 @@ kbd { background: rgba(16, 38, 43, 0.05); }
   .page-hero { padding-block: 48px 40px; }
   .page-section { margin-top: 80px; }
   .deal-card { padding: 28px 22px; border-radius: 24px; }
-  .deal-card-side { padding: 20px; }
+  .deal-card-side { padding: 16px; }
+  .deal-code { padding-left: 12px; }
   .page-steps, .page-checks { grid-template-columns: 1fr; }
   .page-checks { padding: 4px 20px; }
   .page-checks li:nth-child(2) { border-top: 1px solid var(--line); }
