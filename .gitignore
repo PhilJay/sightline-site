@@ -3,4 +3,6 @@
 # pages built from _pages/ by build.sh
 /black-friday/
 /de/black-friday/
+/resources/
+/de/resources/
 # end pages

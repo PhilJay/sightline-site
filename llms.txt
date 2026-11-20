@@ -83,6 +83,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 ## Pages
 
 - [Black Friday: 3 months of Sightline Pro free](https://sightlinemac.com/black-friday/): Use App Store offer code SIGHTLINEEARLY on the yearly plan. First 3 months free, then $24.99/year. Monthly and lifetime not included. Valid until 7 January 2027.
+- [Resources](https://sightlinemac.com/resources/): Guides, use cases and offers for Sightline, the screenshot and screen recording app for Mac.
 
 <!-- end pages -->
 

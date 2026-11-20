@@ -11,7 +11,17 @@
     "other_language": "Deutsch",
     "get": "Get Sightline.",
     "store_label": "Download Sightline on the Mac App Store",
-    "needs": "Needs macOS 14 or later. Recording needs macOS 15. Replay, subject blur and Remove Background need macOS 27."
+    "needs": "Needs macOS 14 or later. Recording needs macOS 15. Replay, subject blur and Remove Background need macOS 27.",
+    "resources": "Resources",
+    "resources_url": "/resources/",
+    "resources_title": "Resources",
+    "resources_description": "Guides, use cases and offers for Sightline, the screenshot and screen recording app for Mac.",
+    "resources_empty": "New guides are coming soon.",
+    "related": "More resources",
+    "all_resources": "All resources",
+    "default_topic": "More",
+    "share_image": "https://sightlinemac.com/assets/og-image.png?v=11",
+    "share_image_alt": "Sightline: capture, record, annotate, done. The editor with a box, an arrow and numbered notes on a captured dashboard."
   },
   "de": {
     "locale": "de_DE",
@@ -25,6 +35,16 @@
     "other_language": "English",
     "get": "Hol dir Sightline.",
     "store_label": "Sightline im Mac App Store laden",
-    "needs": "Braucht macOS 14 oder neuer. Aufzeichnen braucht macOS 15. Replay, Unschärfe nach Form und Hintergrund entfernen brauchen macOS 27."
+    "needs": "Braucht macOS 14 oder neuer. Aufzeichnen braucht macOS 15. Replay, Unschärfe nach Form und Hintergrund entfernen brauchen macOS 27.",
+    "resources": "Ressourcen",
+    "resources_url": "/de/resources/",
+    "resources_title": "Ressourcen",
+    "resources_description": "Anleitungen, Anwendungsfälle und Angebote für Sightline, die Screenshot- und Bildschirmaufnahme-App für den Mac.",
+    "resources_empty": "Neue Anleitungen kommen bald.",
+    "related": "Mehr Ressourcen",
+    "all_resources": "Alle Ressourcen",
+    "default_topic": "Weitere",
+    "share_image": "https://sightlinemac.com/assets/og-image.png?v=11",
+    "share_image_alt": "Sightline: aufnehmen, aufzeichnen, beschriften, fertig. Der Editor mit einem Rahmen, einem Pfeil und nummerierten Notizen auf einem aufgenommenen Dashboard."
   }
 }
