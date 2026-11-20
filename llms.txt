@@ -83,6 +83,7 @@ Sightline replaces the macOS screenshot tool (⌘⇧3, ⌘⇧4, ⌘⇧5) and add
 ## Pages
 
 - [Black Friday: 3 months of Sightline Pro free](https://sightlinemac.com/black-friday/): Use App Store offer code SIGHTLINEEARLY on the yearly plan. First 3 months free, then $24.99/year. Monthly and lifetime not included. Valid until 7 January 2027.
+- [Let Claude Code screenshot and check your Mac UI](https://sightlinemac.com/claude-code-screenshots/): Sightline gives Claude Code, Codex and other MCP clients a Mac screenshot and recording app. The agent captures a window, compares it with your design, marks what differs and fixes it, and every mark stays editable for you.
 
 <!-- end pages -->
 
