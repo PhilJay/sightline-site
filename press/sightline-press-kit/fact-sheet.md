@@ -5,7 +5,7 @@ Sightline is a screenshot and screen recording app for the Mac with an image and
 ## Facts
 
 - Developer: Philipp Jahoda, indie developer from Austria
-- Released: 22 September 2026 on the Mac App Store, current version 1.9.0
+- Released: 22 September 2026 on the Mac App Store, current version 2.0.1
 - Platform: macOS 14 or later, recording needs macOS 15
 - Price: free download with area and full screen capture. Sightline Pro: 7 days free, then $3.99 a month, $24.99 a year or $29.99 once
 - Languages: English, German, French, Spanish, Italian, Dutch, Portuguese, Japanese, Korean
@@ -23,13 +23,19 @@ That became the idea: one app that is a really good screenshot and recording too
 
 - Screenshots: area, window, full screen and scrolling capture with the macOS shortcuts, freeze the screen, text recognition and QR codes
 - Image editor: arrows, shapes, text, highlights, spotlight, step numbers and a blur that follows a face or a line of text, each on a single key. Style adds a background, padding and a shadow. Remove Background on macOS 27
-- Screen recording and video editor: a timeline with clips, speed from 0.5x to 15x, sound, crop, zoom on clicks, keystrokes, a smooth pointer, and blurs that stay on what they cover while the page scrolls. Export to MP4, MOV or GIF
+- Show Differences: pin a design or an earlier capture over your running app; Sightline numbers every mismatch and says whether it moved, is missing or only looks different. An AI agent can run the same check
+- Screen recording and video editor: record with a camera overlay you can still move later, then edit on a timeline with clips, speed from 0.5x to 15x, sound, crop, zoom on clicks, keystrokes, a smooth pointer, and blurs that stay on what they cover while the page scrolls. Export to MP4, MOV or GIF
 - History: everything you copied or saved, searchable by the text inside the screenshots. Captures are named after what is in them
-- Privacy: passwords and API keys are found and blurred before you share. No account, no analytics, no server; text recognition, naming and the secret check run on device
-- For AI agents: a local MCP server and CLI with 23 tools. Agent access is off by default, every new agent asks once, and agents only read and write inside the screenshot folder
+- Privacy: passwords and API keys are found and blurred before you share. AI features run on-device with Apple Intelligence. No account, no analytics, no Sightline server; text recognition, naming and the secret check run on the Mac
+- For AI agents: a local MCP server and CLI with 24 tools, also available as a Claude Code plugin (https://github.com/PhilJay/sightline-mcp). Agent access is off by default, every new agent asks once, and agents only read and write inside the screenshot folder
 
 ## Files
 
+- `graphics/`: quieter marketing images for articles and listings
+  - `feature-graphic-2400.png` and `feature-graphic-1200.png`: the official feature graphic (editors, recording, Claude Code)
+  - `design-differences-compare.svg` / `.png` (English and `-de`): Show Differences compared with a plain opacity overlay
+  - `claude-code-mcp-flow.svg` / `.png` (English and `-de`): Claude Code talking to Sightline over MCP
+  - `producthunt/`: 1270 x 760 gallery images and a 240 x 240 thumbnail
 - `screenshots/`: the framed App Store screenshots, 2880 x 1800
 - `icon/`: the app icon at 1024 x 1024
 - `video/`: the 1080p App Store preview, only in the kit from https://sightlinemac.com/press/sightline-press-kit.zip
