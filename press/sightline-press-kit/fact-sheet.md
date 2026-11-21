@@ -32,7 +32,7 @@ That became the idea: one app that is a really good screenshot and recording too
 ## Files
 
 - `graphics/`: quieter marketing images for articles and listings
-  - `feature-graphic-2400.png` and `feature-graphic-1200.png`: the official feature graphic (editors, recording, Claude Code)
+  - `feature-graphic-2400.png` and `feature-graphic-1200.png`: the official feature graphic: the video editor with its timeline (clips, camera, sound with a speed change, zoom and following blur), plus the screenshot editor and Claude Code
   - `design-differences-compare.svg` / `.png` (English and `-de`): Show Differences compared with a plain opacity overlay
   - `claude-code-mcp-flow.svg` / `.png` (English and `-de`): Claude Code talking to Sightline over MCP
   - `producthunt/`: 1270 x 760 gallery images and a 240 x 240 thumbnail
