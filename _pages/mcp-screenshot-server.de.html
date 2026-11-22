@@ -1,0 +1,75 @@
+---
+title: Ein Screenshot-MCP-Server für Claude Code, Codex und Cursor
+description: Sightline ist eine Screenshot-App für den Mac mit eingebautem Screenshot-MCP-Server. Claude Code, Claude Desktop, Codex, Cursor oder jeder andere MCP-Client nimmt deinen Bildschirm auf, liest, beschriftet und zeichnet ihn auf, alles auf deinem Mac.
+lead: Ein lokaler MCP-Server gibt jedem KI-Agenten 24 Werkzeuge, um deinen Mac-Bildschirm aufzunehmen, zu lesen, zu vergleichen, zu beschriften und aufzuzeichnen.
+eyebrow: MCP-Server
+updated: 2026-11-22
+topic: KI-Agenten
+image: /assets/share/mcp-screenshot-server-de.webp
+image-alt: Ein Screenshot-MCP-Server für deinen Mac: Diagramm von KI-Agenten, die sightline-cli mcp und die Sightline-App auf einem Mac aufrufen
+---
+<x-section title="Gib deinem KI-Agenten Augen für deinen Mac.">
+  <p>Von sich aus sehen Agenten deinen Bildschirm nicht. Sightline ist eine Screenshot-App für den Mac mit eingebautem Screenshot-MCP-Server: Claude Code, Claude Desktop, Codex, Cursor oder jeder andere MCP-Client macht den Screenshot einfach selbst.</p>
+  <x-image src="/assets/seo/mcp-screenshot-server-de.svg" alt="Diagramm: Claude Code, Claude Desktop, Codex CLI, Cursor oder ein anderer MCP-Client startet sightline-cli mcp über stdio. Jeder Aufruf geht über einen lokalen Socket an die Sightline-App, die Werkzeuge zum Aufnehmen, Lesen von Text und Farben, Vergleichen mit dem Design, Beschriften, Aufzeichnen und Finden alter Aufnahmen bietet" width="1600" height="940" />
+</x-section>
+
+<x-section title="Was der Screenshot-MCP-Server kann.">
+  <p>Die Version aus dem Mac App Store hat 24 Werkzeuge. Im Terminal laufen dieselben über <code>sightline-cli</code>.</p>
+  <x-checks>
+    <li><b>Aufnehmen</b>: Bildschirm, Bereich oder Fenster nach App oder Titel</li>
+    <li><b>Den Bildschirm lesen</b>: Text, QR-Codes, Barcodes und Farben</li>
+    <li><b>Mit dem Design vergleichen</b>, Unterschiede nummeriert</li>
+    <li><b>Beschriften</b> mit Rahmen, Pfeilen, Nummern, Text und Unschärfe</li>
+    <li><b>Aufzeichnen</b> bis zu 60 Sekunden, dann schneiden, zoomen oder als GIF exportieren</li>
+    <li><b>Alte Aufnahmen finden</b> über den Text darin</li>
+  </x-checks>
+</x-section>
+
+<x-section title="Deinen Client verbinden.">
+  <x-steps>
+    <li><b>Agentenzugriff einschalten</b>In Sightline unter Einstellungen › KI-Agenten „KI-Agenten dürfen Sightline verwenden“ einschalten.</li>
+    <li><b>Verbinden klicken</b>Ein Klick für Claude Code, Claude Desktop und Codex CLI. Danach eine neue Sitzung starten.</li>
+    <li><b>Oder selbst eintragen</b>Jeder Client, der einen stdio-Server startet, funktioniert, etwa Cursor.</li>
+  </x-steps>
+  <p>Cursor liest diesen Eintrag aus <code>~/.cursor/mcp.json</code>, Claude Desktop aus seiner <code>claude_desktop_config.json</code>:</p>
+  <x-code copy="Kopieren" copied="Kopiert">{
+  "mcpServers": {
+    "sightline": {
+      "command": "/Applications/Sightline.app/Contents/MacOS/sightline-cli",
+      "args": ["mcp"]
+    }
+  }
+}</x-code>
+  <p>Codex CLI liest einen Block in <code>~/.codex/config.toml</code>. Beides steht in der <a href="/docs/mcp/#connect" hreflang="en">MCP-Anleitung</a> (Englisch).</p>
+</x-section>
+
+<x-section title="Mehr als ein Screenshot-Skript.">
+  <p>Ein kleines Skript rund um screencapture von macOS liefert ein rohes Bild. Sightline nimmt in der eigenen App auf und liefert gleich mit, was ein Agent als Nächstes braucht.</p>
+  <x-checks>
+    <li><b>Bearbeitbare Ergebnisse</b>, die sich im Sightline-Editor öffnen</li>
+    <li><b>Live bearbeiten</b> im Editor, den du gerade offen hast</li>
+    <li><b>Design-Vergleiche</b>, die jede Abweichung nummerieren</li>
+    <li><b>Weniger Kontext</b>, wenn ein Dateipfad reicht</li>
+  </x-checks>
+</x-section>
+
+<x-section title="Von Haus aus sicher.">
+  <x-checks>
+    <li><b>Aus, bis du es einschaltest</b>, in Einstellungen › KI-Agenten</li>
+    <li><b>Jeder Agent fragt zuerst</b>: einmal, pro Sitzung oder immer</li>
+    <li><b>Ein Hinweis nennt den Agenten</b> bei jeder Aufnahme</li>
+    <li><b>Nur lokal</b>: kein Konto, keine Analyse, kein Netz</li>
+  </x-checks>
+</x-section>
+
+<x-section title="Fragen">
+  <x-faq>
+    <x-question q="Was ist ein Screenshot-MCP-Server?">Ein Programm, über das ein KI-Agent per Model Context Protocol Screenshots macht und liest. Bei Sightline ist das <code>sightline-cli mcp</code>, das in der App steckt.</x-question>
+    <x-question q="Braucht mein Terminal die Erlaubnis zur Bildschirmaufnahme?">Nein, nur Sightline. Der Server gibt jeden Aufruf an die laufende Sightline-App weiter, und die nimmt mit ihren eigenen Rechten auf.</x-question>
+    <x-question q="Kann er auch den Bildschirm aufzeichnen?">Ja, bis zu 60 Sekunden pro Aufruf ab macOS 15. Mikrofon und Kamera sind bei Aufzeichnungen von Agenten nie dabei.</x-question>
+    <x-question q="Kann er Passwörter und Schlüssel verbergen?">Auf Macs mit Apple Intelligence ja. Mit „Aufnahmen auf vertrauliche Inhalte prüfen“ und „Erkannte Zugangsdaten vor Agenten verbergen“ wird Text, der wie ein Passwort, Schlüssel oder Token aussieht, in Bildern für Agenten unscharf.</x-question>
+    <x-question q="Was kostet das?">Sightline ist ein kostenloser Download. Der Zugriff für Agenten gehört zu Sightline Pro: 7 Tage gratis, dann 3,99 $ im Monat, 24,99 $ im Jahr oder einmalig 29,99 $ (US-Preise).</x-question>
+  </x-faq>
+  <p>Du nutzt Claude Code? So <a href="/de/claude-code-screenshots/">prüft Claude Code deine App gegen das Design</a>.</p>
+  <p><small>Claude und Claude Code sind Marken von Anthropic, Codex von OpenAI und Cursor von Anysphere. Sightline ist mit keinem dieser Unternehmen verbunden und wird von keinem unterstützt.</small></p>
+</x-section>
