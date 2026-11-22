@@ -86,14 +86,26 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/compare-design-with-app/"/>
   </url>
   <url>
+    <loc>https://sightlinemac.com/mcp-screenshot-server/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/mcp-screenshot-server/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/mcp-screenshot-server/"/>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/de/mcp-screenshot-server/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/mcp-screenshot-server/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/mcp-screenshot-server/"/>
+  </url>
+  <url>
     <loc>https://sightlinemac.com/resources/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/resources/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/resources/"/>
   </url>
   <url>
     <loc>https://sightlinemac.com/de/resources/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/resources/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/resources/"/>
   </url>
