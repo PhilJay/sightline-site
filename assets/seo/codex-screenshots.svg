@@ -64,8 +64,8 @@
 <text x="1068" y="692" class="h">Codex fixes and checks</text>
 <text x="1068" y="732" class="m">compare_with_design again</text>
 <text x="1068" y="766" class="s">until the list is empty</text>
-<path d="M1530 705 C 1582 705, 1582 235, 1536 235" fill="none" stroke="#1f9fa1" stroke-width="4" stroke-dasharray="10 9" marker-end="url(#ar)"/>
-<path d="M870 470 C 915 470, 915 245, 952 245" fill="none" stroke="#1f9fa1" stroke-width="3" stroke-opacity="0.7"/>
+<path d="M1530 705 C 1582 705, 1582 235, 1532.333 235" fill="none" stroke="#1f9fa1" stroke-width="4" stroke-dasharray="10 9" marker-end="url(#ar)"/>
+<path d="M870 470 C 915 470, 915 235, 957.667 235" fill="none" stroke="#1f9fa1" stroke-width="4" marker-end="url(#ar)"/>
 <rect x="70" y="846" width="1460" height="2" fill="#10262b" fill-opacity="0.08"/>
 <circle cx="84" cy="894" r="8" fill="#2fb4b6"/>
 <text x="106" y="902" class="s">Codex starts sightline-cli mcp. Everything stays on your Mac.</text>
