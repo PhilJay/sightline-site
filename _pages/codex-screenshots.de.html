@@ -1,0 +1,69 @@
+---
+title: Codex-Screenshots auf deinem Mac
+description: Codex-Screenshots ohne Kopieren und Einfügen. Mit dem eingebauten MCP-Server von Sightline nimmt Codex CLI ein Fenster auf deinem Mac auf, vergleicht es mit deinem Design, behebt, was abweicht, und prüft erneut.
+lead: Mit Sightline macht Codex CLI seine Screenshots auf deinem Mac selbst, prüft seine Arbeit und versucht es erneut.
+eyebrow: Codex und MCP
+updated: 2026-11-25
+topic: KI-Agenten
+image: /assets/share/codex-screenshots-de.webp
+image-alt: Codex-Screenshots auf deinem Mac: eine Codex-CLI-Sitzung vergleicht einen Registrierungs-Screen über Sightline mit dem Design und behebt drei Abweichungen
+---
+<x-section title="Codex-Screenshots, von Codex selbst gemacht.">
+  <p>Codex CLI sieht einen Screenshot, wenn du ihn einfügst oder mit <code>codex -i</code> übergibst. Mit Sightline, einer Screenshot-App für den Mac mit eingebautem MCP-Server, macht Codex den Screenshot selbst, prüft seinen Fix und versucht es erneut.</p>
+  <x-image src="/assets/seo/codex-screenshots-de.svg" alt="Diagramm: In Codex CLI bittest du Codex, den Registrierungs-Screen mit einem Design zu vergleichen. Codex ruft das Sightline-Werkzeug compare_with_design auf, bekommt 3 nummerierte Unterschiede und eine markierte Aufnahme, ändert den Code und prüft erneut, bis keine Unterschiede mehr da sind" width="1600" height="940" />
+</x-section>
+
+<x-section title="So macht Codex einen Screenshot auf deinem Mac.">
+  <p>Codex startet <code>sightline-cli mcp</code>, einen kleinen Server in der App. Sightline nimmt mit den eigenen Rechten auf und schickt den Dateipfad und ein Vorschaubild zurück.</p>
+  <x-checks>
+    <li><b>Aufnehmen</b>: Fenster nach App oder Titel, Bereich oder Bildschirm</li>
+    <li><b>Mit dem Design vergleichen</b>, Unterschiede nummeriert</li>
+    <li><b>Den Bildschirm lesen</b>: Text, QR-Codes und Farben</li>
+    <li><b>Beschriften</b> mit Rahmen, Pfeilen, Nummern, Text und Unschärfe</li>
+    <li><b>Aufzeichnen</b> bis zu 60 Sekunden, dann schneiden oder als GIF exportieren</li>
+    <li><b>Im offenen Editor arbeiten</b>, am Screenshot, den du gerade offen hast</li>
+  </x-checks>
+</x-section>
+
+<x-section title="Codex CLI mit einem Klick verbinden.">
+  <x-steps>
+    <li><b>Agentenzugriff einschalten</b>In Sightline unter Einstellungen › KI-Agenten „KI-Agenten dürfen Sightline verwenden“ einschalten.</li>
+    <li><b>Verbinden klicken</b>Neben Codex CLI. Beim ersten Mal wählst du den Ordner mit der Codex-Konfiguration.</li>
+    <li><b>Neue Codex-Sitzung starten</b>Dann Codex bitten, einen Screenshot zu machen.</li>
+  </x-steps>
+  <p>Lieber selbst eintragen? Füge diesen Block in <code>~/.codex/config.toml</code> ein:</p>
+  <x-code copy="Kopieren" copied="Kopiert">[mcp_servers.sightline]
+command = "/Applications/Sightline.app/Contents/MacOS/sightline-cli"
+args = ["mcp"]</x-code>
+  <p>Oder klicke auf „Deinen Agenten selbst verbinden lassen“ und füge den Prompt in Codex ein. Alle drei Wege stehen in der <a href="/docs/mcp/#codex" hreflang="en">Anleitung für Codex CLI</a> (Englisch).</p>
+</x-section>
+
+<x-section title="Prompts für Codex.">
+  <x-checks>
+    <li><b>Design prüfen</b>: „Vergleiche die laufende App mit signup-design.png und behebe, was abweicht.“</li>
+    <li><b>Fehler markieren</b>: „Mach einen Screenshot vom Simulator und rahme den verrutschten Button ein.“</li>
+    <li><b>Fehlermeldung lesen</b>: „Lies den Text im Terminal-Fenster und erklär den fehlgeschlagenen Test.“</li>
+    <li><b>Aufnahme wiederfinden</b>: „Finde den Screenshot mit dem Fehlercode E1042 von dieser Woche.“</li>
+  </x-checks>
+</x-section>
+
+<x-section title="Von Haus aus sicher.">
+  <x-checks>
+    <li><b>Aus, bis du es einschaltest</b>, in Einstellungen › KI-Agenten</li>
+    <li><b>Codex fragt zuerst</b>: Ablehnen, Einmal erlauben, Für diese Sitzung erlauben oder Immer erlauben</li>
+    <li><b>Ein Hinweis nennt den Agenten</b> bei jeder Aufnahme</li>
+    <li><b>Nur lokal</b>: kein Konto, keine Analyse, kein Netz</li>
+  </x-checks>
+</x-section>
+
+<x-section title="Fragen">
+  <x-faq>
+    <x-question q="Wie gebe ich Codex auf dem Mac einen Screenshot?">Von sich aus nimmt Codex CLI ein Bild, das du in die Eingabe einfügst oder mit <code>codex -i</code> übergibst, laut OpenAIs Codex-Doku (Stand 25. November 2026). Mit Sightline macht Codex den Screenshot auch selbst.</x-question>
+    <x-question q="Braucht mein Terminal die Erlaubnis zur Bildschirmaufnahme?">Nein, nur Sightline. Der Server gibt jeden Aufruf an die laufende Sightline-App weiter, und die nimmt mit ihren eigenen Rechten auf.</x-question>
+    <x-question q="Kann ich Codex einen eigenen Screenshot geben?">Ja. Beschrifte ihn im Sightline-Editor und frag Codex danach: Codex liest den offenen Screenshot samt Markierungen, ganz ohne Datei.</x-question>
+    <x-question q="Und was ist mit Appshots in der Codex-App?">In der ChatGPT-Desktop-App schicken Appshots das vorderste Fenster samt Text, wenn du beide ⌘-Tasten drückst, praktisch für ein einzelnes Fenster, aber die CLI kann keine erstellen (OpenAI, Stand 25. November 2026). Sightline funktioniert aus Codex CLI und nimmt auch Bereiche auf, vergleicht mit Designs und zeichnet auf.</x-question>
+    <x-question q="Was kostet das?">Sightline ist ein kostenloser Download. Der Zugriff für Agenten gehört zu Sightline Pro: 7 Tage gratis, dann 3,99 $ im Monat, 24,99 $ im Jahr oder einmalig 29,99 $ (US-Preise).</x-question>
+  </x-faq>
+  <p>Auch für Claude Code und Cursor: <a href="/de/mcp-screenshot-server/">der Screenshot-MCP-Server für jeden Client</a>.</p>
+  <p><small>Codex und ChatGPT sind Marken von OpenAI. Sightline ist mit OpenAI nicht verbunden und wird von OpenAI nicht unterstützt.</small></p>
+</x-section>
