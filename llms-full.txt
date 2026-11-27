@@ -566,10 +566,82 @@ Claude and Claude Code are trademarks of Anthropic, Codex of OpenAI and Cursor o
 
 ### Resources
 
-https://sightlinemac.com/resources/, updated 2026-11-25
+https://sightlinemac.com/resources/, updated 2026-11-27
 
 Guides, use cases and offers for Sightline, the screenshot and screen recording app for Mac.
 
-[   AI agents Give Codex screenshots on your Mac Codex screenshots without copy and paste. Sightline’s built-in MCP server lets Codex CLI capture a window on your Mac, compare it with your design, fix what differs and check again. Read →  ](https://sightlinemac.com/codex-screenshots/) [   AI agents A screenshot MCP server for Claude Code, Codex and Cursor Sightline is a Mac screenshot app with a screenshot MCP server built in. Claude Code, Claude Desktop, Codex, Cursor or any MCP client can capture, read, mark up and record your screen, all on your Mac. Read →  ](https://sightlinemac.com/mcp-screenshot-server/) [   AI agents Let Claude Code see your Mac screen Give Claude Code screenshots it takes itself. Sightline’s MCP server lets Claude Code capture a window on your Mac, compare it with your design, number what differs and fix it. Read →  ](https://sightlinemac.com/claude-code-screenshots/) [   Design QA Compare your app with the design on your Mac Pin the design over your running app and Sightline numbers every spot that differs, says whether it moved, is missing or looks different, and keeps checking while you fix it. Read →  ](https://sightlinemac.com/compare-design-with-app/) [   Offers Black Friday: 3 months of Sightline Pro free Two App Store offer codes: SIGHTLINEEARLY gives 3 months of the yearly plan free, then $24.99/year. SIGHTLINELIFEDISCOUNT26 gets lifetime for $22.99 instead of $29.99. Read →  ](https://sightlinemac.com/black-friday/)
+[   Screen recording Screen recording with webcam on your Mac Screen record with your webcam on a Mac. Sightline shows you in a camera bubble while you record and keeps the camera editable, so you can move, reshape or hide it later in the video editor. Read →  ](https://sightlinemac.com/screen-recording-with-webcam-mac/) [   AI agents Give Codex screenshots on your Mac Codex screenshots without copy and paste. Sightline’s built-in MCP server lets Codex CLI capture a window on your Mac, compare it with your design, fix what differs and check again. Read →  ](https://sightlinemac.com/codex-screenshots/) [   AI agents A screenshot MCP server for Claude Code, Codex and Cursor Sightline is a Mac screenshot app with a screenshot MCP server built in. Claude Code, Claude Desktop, Codex, Cursor or any MCP client can capture, read, mark up and record your screen, all on your Mac. Read →  ](https://sightlinemac.com/mcp-screenshot-server/) [   AI agents Let Claude Code see your Mac screen Give Claude Code screenshots it takes itself. Sightline’s MCP server lets Claude Code capture a window on your Mac, compare it with your design, number what differs and fix it. Read →  ](https://sightlinemac.com/claude-code-screenshots/) [   Design QA Compare your app with the design on your Mac Pin the design over your running app and Sightline numbers every spot that differs, says whether it moved, is missing or looks different, and keeps checking while you fix it. Read →  ](https://sightlinemac.com/compare-design-with-app/) [   Offers Black Friday: 3 months of Sightline Pro free Two App Store offer codes: SIGHTLINEEARLY gives 3 months of the yearly plan free, then $24.99/year. SIGHTLINELIFEDISCOUNT26 gets lifetime for $22.99 instead of $29.99. Read →  ](https://sightlinemac.com/black-friday/)
+
+
+### Screen recording with webcam on your Mac
+
+https://sightlinemac.com/screen-recording-with-webcam-mac/, updated 2026-11-27
+
+Screen record with your webcam on a Mac. Sightline shows you in a camera bubble while you record and keeps the camera editable, so you can move, reshape or hide it later in the video editor.
+
+#### Screen record with your webcam, and change it later.
+
+To screen record with your webcam on a Mac, choose a camera in Sightline and record as usual. You appear in a webcam bubble, and since the camera is recorded next to the screen, it stays editable in the video editor.
+
+#### How to record your screen and webcam together.
+
+- Pick a cameraIn Settings › Recording, choose one under Camera and allow Camera access.
+- RecordPress ⇧⌘7 and drag an area, or choose Record Window… or Record Full Screen, then click Record.
+- Stop and editPress ⇧⌘7 again and open the recording from its thumbnail.
+
+#### A webcam bubble that stays editable.
+
+In the editor the camera gets its own Camera row in the timeline, next to the clips and the sound.
+
+- Move and resize the camera in the video, part by part
+- Split the Camera row with ⌘B and give each part its own place
+- Hide a part with ⌫ or Hide Camera in the right-click menu
+- Shape: Circle or Rounded Rectangle, with Corners and a Shadow
+- Glide smoothly between places, like a zoom
+- Stay in sync: crop and zoom never move it, cuts keep it with your voice
+
+Save or Export draws the camera in, as MP4, MOV or GIF. Save Camera Video… writes the camera on its own.
+
+#### Camera overlay recording, with a full video editor.
+
+- Up to 4K at 60 fps, as far as your camera offers it, 720p at 30 fps by default
+- Your voice and system audio in the same recording
+- Hide camera in the recording controls stops filming until you show it
+- Zooms, keystrokes and blurs that follow what they cover, in the same editor
+
+Every option is in the [camera section of the recording docs](https://sightlinemac.com/docs/recordings/#camera).
+
+#### The built-in ways on macOS.
+
+macOS has no switch for a webcam overlay, but two built-in tools come close (Apple Support, as of 27 November 2026).
+
+- QuickTime Player: File › New Movie Recording shows your camera, View › Float on Top keeps it in front
+- Presenter Overlay: puts you over a screen you share in a video call, macOS 14 or later, Apple silicon
+
+Both are free. With QuickTime the camera is baked into the picture, so it can’t move later.
+
+#### Questions
+
+##### How do I screen record with my webcam on a Mac?
+
+Choose a camera in Sightline under Settings › Recording, then record an area, a window or the full screen. You appear in a bubble you can drag, resize and reshape while you record.
+
+##### Can I move or hide the webcam after recording?
+
+Yes. The camera is recorded next to the screen, so in the editor you can move, resize, reshape or hide each part of it.
+
+##### Why isn’t the camera in the file saved after Stop?
+
+That file is the plain screen video, with a camera badge on its thumbnail. Save or Export in the editor draws the camera in.
+
+##### What does it cost?
+
+Sightline is a free download. Recording is part of Sightline Pro and needs macOS 15: 7 days free, then $3.99 a month, $24.99 a year or $29.99 once (US prices).
+
+##### Does the camera leave my Mac?
+
+No. The camera is only on when you choose one, stays on your Mac, and AI agents connected to Sightline never turn it on.
+
+QuickTime, macOS and FaceTime are trademarks of Apple Inc. Sightline is not affiliated with or endorsed by Apple.
 
 <!-- end pages -->
