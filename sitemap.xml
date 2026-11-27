@@ -111,15 +111,27 @@
   </url>
   <url>
     <loc>https://sightlinemac.com/resources/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/resources/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/resources/"/>
   </url>
   <url>
     <loc>https://sightlinemac.com/de/resources/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/resources/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/resources/"/>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/screen-recording-with-webcam-mac/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/screen-recording-with-webcam-mac/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/screen-recording-with-webcam-mac/"/>
+  </url>
+  <url>
+    <loc>https://sightlinemac.com/de/screen-recording-with-webcam-mac/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sightlinemac.com/screen-recording-with-webcam-mac/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sightlinemac.com/de/screen-recording-with-webcam-mac/"/>
   </url>
   <!-- end pages -->
 </urlset>
